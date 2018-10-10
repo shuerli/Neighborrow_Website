@@ -17,6 +17,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 			t.text :feature, array: true
 			t.text :amazon_id
 			t.text :walmart_id
+			t.text :isbn
       t.timestamps
     end
   end

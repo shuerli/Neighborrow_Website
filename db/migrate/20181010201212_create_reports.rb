@@ -7,6 +7,8 @@ class CreateReports < ActiveRecord::Migration[5.2]
 			t.text :content
 			t.text :status
 			t.text :handler
+			t.timestamp :time_submitted
+			t.timestamp :time_closed
 			t.integer :request_id
       t.timestamps
     end

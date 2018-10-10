@@ -4,8 +4,7 @@ class CreateChats < ActiveRecord::Migration[5.2]
 			t.integer :chat_id
 			t.integer :request_id
 			t.integer :report_id
-			t.timestamp :time_submitted
-			t.timestamp :time_closed
+			t.timestamp :time
 			t.text :sender
 			t.text :receiver
 			t.text :content
