@@ -1,0 +1,2 @@
+class FeedbackToLender < ApplicationRecord
+end

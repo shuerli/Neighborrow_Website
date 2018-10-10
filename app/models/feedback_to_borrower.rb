@@ -1,0 +1,2 @@
+class FeedbackToBorrower < ApplicationRecord
+end
