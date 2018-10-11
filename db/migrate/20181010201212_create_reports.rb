@@ -1,7 +1,6 @@
 class CreateReports < ActiveRecord::Migration[5.2]
   def change
-    create_table :reports, :id => false, :primary_key => :report_id do |t|
-			t.integer :report_id, null: false
+    create_table :reports do |t|
 			t.text :type, null: false
 			t.text :subject, null: false
 			t.text :content, null: false
@@ -11,7 +10,9 @@ class CreateReports < ActiveRecord::Migration[5.2]
 			t.timestamp :time_closed, null: false
 			t.integer :request_id
       t.timestamps
-    end
+		end
+		
+		
   end
 end
 
