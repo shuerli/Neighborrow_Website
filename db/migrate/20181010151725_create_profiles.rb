@@ -1,7 +1,7 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
 		create_table :profiles, :id => false do |t|
-			t.text :email
+			t.text :email, null: false
 			t.text :first_name
 			t.text :middle_name
 			t.text :last_name

@@ -1,17 +1,17 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items, :id => false, :primary_key => :item_id do |t|
-			t.integer :item_id
-			t.text :owner
-			t.text :condition
-			t.text :category
+			t.integer :item_id, null: false
+			t.text :owner, null: false
+			t.text :condition, null: false
+			t.integer :category, null: false
 			t.text :rate_level
-			t.text :address_option, array: true
-			t.timestamp :time_start
-			t.timestamp :time_end
-			t.timestamp :time_pickup, array: true
-			t.text :name
-			t.text :description
+			t.text :address_option, array: true, null: false
+			t.timestamp :time_start, null: false
+			t.timestamp :time_end, null: false
+			t.timestamp :time_pickup, array: true, null: false
+			t.text :name, null: false
+			t.text :description, null: false
 			t.text :brand
 			t.integer :year
 			t.text :feature, array: true
