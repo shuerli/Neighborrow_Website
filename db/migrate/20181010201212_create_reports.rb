@@ -1,6 +1,6 @@
 class CreateReports < ActiveRecord::Migration[5.2]
   def change
-    create_table :reports do |t|
+    create_table :reports, :id => false, :primary_key => :report_id do |t|
 			t.integer :report_id
 			t.text :type
 			t.text :subject

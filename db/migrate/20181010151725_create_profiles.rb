@@ -1,6 +1,6 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
-		create_table :profiles do |t|
+		create_table :profiles, :id => false do |t|
 			t.text :email
 			t.text :first_name
 			t.text :middle_name
@@ -15,7 +15,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
 			t.text :wechat
 			t.text :twitter
 			t.text :avatar_url, null: false
-			t.text interest, array: true
+			t.text :interest, array: true
       t.timestamps
     end
   end

@@ -1,6 +1,6 @@
 class CreateRequests < ActiveRecord::Migration[5.2]
   def change
-    create_table :requests do |t|
+    create_table :requests, :id => false, :primary_key => :request_id do |t|
 			t.integer :request_id
 			t.integer :item_id
 			t.text :lender

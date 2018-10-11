@@ -1,6 +1,6 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :items do |t|
+    create_table :items, :id => false, :primary_key => :item_id do |t|
 			t.integer :item_id
 			t.text :owner
 			t.text :condition
