@@ -2,7 +2,7 @@ class CreateRequests < ActiveRecord::Migration[5.2]
   def change
     create_table :requests do |t|
 			t.integer :item_id, null: false
-			t.text :lender, null: false
+			t.text :borrower, null: false
 			t.integer :address
 			t.text :status, default: 'pending'
 			t.text :rejected_reason
