@@ -16,7 +16,7 @@
  Qingqing Zhuo| | 
  Geling Li| | 
  Zeyu Feng| | 
- Da Fu| | 
+ Da Fu| da.fu@mail.utoronto.ca | da-fu 
  Zi Wang| zikevin.wang@mail.utoronto.ca| kwanstyle 
 
 
