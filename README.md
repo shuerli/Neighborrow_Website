@@ -23,6 +23,7 @@
 ## Documentations
 + [Project Milestones](https://github.com/kwanstyle/CSC444_SoftwareEngineering/milestones)
 + [Project Proposal (Team Member Access Only)](https://docs.google.com/document/d/1LSJnhbu8LUnlg9GXCxQAKoWms1x-ORPf1S7OiuAZvgM/edit?usp=sharing)
++ [Other Resources (designed sketches, database schema, etc.)](https://drive.google.com/drive/folders/1wLOfv08g56IYMotBPUgqe-QspyiexFZa?usp=sharing)
 
 
 ## Quickstart
