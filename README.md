@@ -13,7 +13,7 @@
  Name  | Email  | Github Username 
 ---|---|---
  Shuer Li | | 
- Qingqing Zhuo| | 
+ Qingqing Zhuo| qingqing.zhuo@mail.utoronto.ca | zhuoqing
  Geling Li| | 
  Zeyu Feng| | 
  Da Fu| da.fu@mail.utoronto.ca | da-fu 
