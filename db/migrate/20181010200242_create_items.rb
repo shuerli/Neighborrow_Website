@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 			t.text :condition, null: false
 			t.integer :category, null: false
 			t.text :rate_level
-			t.text :address_option, array: true, null: false
+			#t.text :address_option, array: true, null: false
 			t.timestamp :time_start, null: false
 			t.timestamp :time_end, null: false
 			t.timestamp :time_pickup, array: true, null: false
