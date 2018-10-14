@@ -8574,3 +8574,791 @@ Processing by PageController#main as HTML
 Completed 200 OK in 65ms (Views: 58.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-13 22:55:20 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PageController#main as HTML
+  Rendering page/main.html.erb within layouts/application
+  Rendered page/main.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 367ms (Views: 358.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:31:47 -0400
+Processing by PageController#main as HTML
+  Rendering page/main.html.erb within layouts/application
+  Rendered page/main.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 187ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:34:59 -0400
+Processing by PageController#main as HTML
+  Rendering page/main.html.erb within layouts/application
+  Rendered page/main.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:23: syntax error, unexpected '<'
+...uffer.append=( link_to "Home"></li>
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:25: unknown regexp option - a
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:26: syntax error, unexpected '<'
+                  </li>
+                  ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:29: unknown regexp option - a
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+                  </li>
+                  ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:31: unknown regexp option - l
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:32: syntax error, unexpected '<'
+              <form class="form-inline mt-2 ...
+              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+                  <input class="form-control mr-...
+                  ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ass="form-control mr-sm-2" type="text" placeholder="Search" ...
+...                           ^~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r-sm-2" type="text" placeholder="Search" aria-label="Search">
+...                    ^~~~~~~~~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+...text" placeholder="Search" aria-label="Search">
+...                           ^~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+                      <button class="btn btn-outline...
+                      ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+...line-success my-2 my-sm-0" type="submit">Search</button>
+...                           ^~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:35: unknown regexp options - fr
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+          </div>
+          ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:37: unknown regexp options - av
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+    <%= yield );@output_buffer.saf...
+    ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/layouts/application.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:25: unknown regexp option - a
+app/views/layouts/application.html.erb:26: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:29: unknown regexp option - a
+app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:31: unknown regexp option - l
+app/views/layouts/application.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:33: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp options - fr
+app/views/layouts/application.html.erb:36: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:37: unknown regexp options - av
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:48:28 -0400
+  
+ActionController::RoutingError (uninitialized constant PageController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:48:48 -0400
+  
+LoadError (Unable to autoload constant PagesController, expected /Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/pages_controller.rb to define it):
+  
+activesupport (5.2.1) lib/active_support/dependencies.rb:507:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.1) lib/active_support/dependencies.rb:193:in `const_missing'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.1) lib/active_support/dependencies.rb:578:in `get'
+activesupport (5.2.1) lib/active_support/dependencies.rb:609:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:50:19 -0400
+  
+ActionController::RoutingError (Couldn't find PagesHelper, expected it to be defined in helpers/pages_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:50:36 -0400
+  
+ActionController::RoutingError (Couldn't find PagesHelper, expected it to be defined in helpers/pages_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:51:01 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (Couldn't find PagesHelper, expected it to be defined in helpers/pages_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:51:30 -0400
+  
+LoadError (Unable to autoload constant PagesController, expected /Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/pages_controller.rb to define it):
+  
+activesupport (5.2.1) lib/active_support/dependencies.rb:507:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.1) lib/active_support/dependencies.rb:193:in `const_missing'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.1) lib/active_support/dependencies.rb:578:in `get'
+activesupport (5.2.1) lib/active_support/dependencies.rb:609:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.1) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:51:55 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 678ms (Views: 673.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-13 23:52:04 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:19:52 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 58ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:19:56 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:19:57 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:19:59 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 127ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:20:00 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:21:48 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 92ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:21:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:21:53 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:21:55 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:21:56 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-10-14 00:21:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:46 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 118ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:48 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 56ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:50 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 73ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 101ms (Views: 94.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:52 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:23:53 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account" for 127.0.0.1 at 2018-10-14 00:31:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/account"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts" for 127.0.0.1 at 2018-10-14 00:31:26 -0400
+Processing by AccountsController#index as HTML
+Completed 406 Not Acceptable in 155ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (AccountsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:32:12 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 214ms (Views: 206.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:33:35 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 71ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:33:37 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:33:38 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:33:40 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 68ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:33:40 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 55ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:33:41 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:35:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:35:52 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 72ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:36:35 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 157ms (Views: 137.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:36:36 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (391.5ms)
+Completed 500 Internal Server Error in 422ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x00007fdeb661d3d8>:0x00007fdeb7f4cb60>
+Did you mean?  submit_tag):
+    11:     </p>
+    12: 
+    13:     <p>
+    14:         <%= submit tag 'Submit' %>
+    15:     </p>
+    16: <% end %>
+  
+app/views/accounts/new.html.erb:14:in `block in _app_views_accounts_new_html_erb__4094432111680914267_70297272871500'
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb__4094432111680914267_70297272871500'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:37:12 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 110ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:38:51 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 74ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-10-14 00:38:55 -0400
+Processing by AccountsController#index as HTML
+Completed 406 Not Acceptable in 165ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (AccountsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:39:13 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 62ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-14 00:39:51 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QMRxa6Fb/6ygY9ebvjm/hT3BXAGmFEEaGjO1JJ+e2c/DuvE5x6MTCGMAYFPZuhWK1ssJSRL+mLWcxuSc5ayg8A==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-14 00:40:16 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QMRxa6Fb/6ygY9ebvjm/hT3BXAGmFEEaGjO1JJ+e2c/DuvE5x6MTCGMAYFPZuhWK1ssJSRL+mLWcxuSc5ayg8A==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
