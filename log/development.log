@@ -12161,3 +12161,731 @@ Processing by AccountsController#show as HTML
 Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-17 21:44:53 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 307ms (Views: 294.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/1" for 127.0.0.1 at 2018-10-17 21:44:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts" for 127.0.0.1 at 2018-10-17 21:45:11 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 87ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:45:14 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 68ms (Views: 34.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:45:16 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 35.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 21:45:19 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/4" for 127.0.0.1 at 2018-10-17 21:45:22 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/5" for 127.0.0.1 at 2018-10-17 21:45:24 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/6" for 127.0.0.1 at 2018-10-17 21:45:26 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/7" for 127.0.0.1 at 2018-10-17 21:45:29 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 51.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 22:35:27 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 222ms (Views: 193.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-17 22:35:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/sessions/new.html.erb:3: syntax error, unexpected ',', expecting ')'
+...er.append=  form_for (:session, url: login_path) do |f| @out...
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/sessions/new.html.erb:3: syntax error, unexpected ',', expecting ')'
+app/views/sessions/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2018-10-17 22:38:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 162ms (Views: 146.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 22:38:51 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-10-17 22:44:45 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 203ms (Views: 193.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-17 22:44:56 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-17 22:45:13 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:12:21 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+...  session[:userid] = auth_user:id
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : home
+                    ^):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:12:42 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+...  session[:userid] = auth_user: id
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : home
+                    ^):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:13:09 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+... session[:userid] = auth_user :id
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : home
+                    ^):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:14:13 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : home
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:14:23 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : 'home'
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:14:53 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : action => 'home'
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:16:52 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : 'pages#main'
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:17:06 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : 'root'
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:17:17 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : root
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:17:59 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : root_url
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:18:31 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+        redirect_to : "localhost:3000"
+                    ^):
+  
+app/controllers/sessions_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+Started GET "/login" for 127.0.0.1 at 2018-10-17 23:18:45 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAccount Load (3.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 79ms (Views: 43.5ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:18:47 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:20:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aAliPIx0sYWyiLMK87umpswQPHM6e3IDcQqEdW6/dIzrd+Ju6oxdIXHrBMKUOAypJxppO46Rq6z3/9XNFI0Nsw==", "session"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 73ms (Views: 56.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:20:03 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxvU40ciU9Ckv3sjHvjP8kNu5lAVxUltaTCnppndfH7UZVSxIdq/dGfczOt5e2X9qGSzGKEvkMLvxfYe4+8FQQ==", "session"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:20:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UEsBD24G4zMKai1hEPkL/sWxEOtvDXCXISVwYtnFokzTNYFdCP4Pl8kJmql3eqHxLrtFo9vnqTin0CHao/fbcw==", "session"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:20:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"diwdzY3s6i+AGac6xvhYXukdib1uUj5EJCmS1bRVwED1Up2f6xQGi0N6EPKhe/JRAhfc9dq45+ui3MNtzme5fw==", "session"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:25:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rw4omE9UcIKbjII2NYrbm+uZYYh9yQliAtH/2z5FCiTEcKjKKaycJljvNf5SCXGUAJM0wMkj0M2EJK5jRHdzGw==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 139ms (Views: 121.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:26:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2n9u6vFPVJKVbOEiEWeDnrXoTBO++P1oBRpI8UMRGfdZAe64l7e4NlYPVup25CmRXuIZWwoSJMeD7xlJOSNgyA==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-17 23:27:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvxQHc5JUWgYEwiFRc7XW2W0Dojc29uZpZRAWQMOOw/NgtBPqLG9zNtwv00iTX1Ujr5bwGgxAjYjYRHheTxCMA==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Class:0x00007fa7e3139100>):
+  
+app/models/account.rb:45:in `authenticate'
+app/controllers/sessions_controller.rb:4:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:07:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvxQHc5JUWgYEwiFRc7XW2W0Dojc29uZpZRAWQMOOw/NgtBPqLG9zNtwv00iTX1Ujr5bwGgxAjYjYRHheTxCMA==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `Id' for #<Account:0x00007fa7e370ba60>
+Did you mean?  id?
+               id=):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:08:26 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+... session[:userid] = auth_user :Id
+...                              ^):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:08:38 -0400
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+...  session[:userid] = auth_user:Id
+...                              ^):
+  
+app/controllers/sessions_controller.rb:6: syntax error, unexpected ':', expecting keyword_end
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:09:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvxQHc5JUWgYEwiFRc7XW2W0Dojc29uZpZRAWQMOOw/NgtBPqLG9zNtwv00iTX1Ujr5bwGgxAjYjYRHheTxCMA==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `Id' for #<Account:0x00007fa7e192a2d0>
+Did you mean?  id?
+               id=):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:09:33 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 76.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:09:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 177ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:09:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XtC18/psE30S6wArc3hdTkoky0lZUmtQXqMFoWMxwrjIGp4+uPvk6sASuIQ2U2rOKdSQSKBvVvk3Pj9zvx/4g==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.9ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `Id' for #<Account:0x00007fa7e344df08>
+Did you mean?  id?
+               id=):
+  
+app/controllers/sessions_controller.rb:6:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:10:04 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XtC18/psE30S6wArc3hdTkoky0lZUmtQXqMFoWMxwrjIGp4+uPvk6sASuIQ2U2rOKdSQSKBvVvk3Pj9zvx/4g==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to localhost:3000
+Completed 302 Found in 24ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:10:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 50ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:10:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBIvswpbOLX6oVtRE4KvOYN8e8XjcFkOGTnqh6hGidCfbK/hbKPUETnC7Jl0AQU2aHYujVeagKGfzLs/0nTw7w==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to localhost:3000
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:12:14 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 74ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-18 00:12:16 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:12:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:13:10 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:13:14 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 66ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:13:20 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+gAi5xPnVi/eAwlumCZq7XlONWqUrEFGLfoK/YSou3dsygkqUXChuAz6scHdDV1tGr5ua22RfO9EZzAvWIaBQ==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to localhost:3000
+Completed 302 Found in 27ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:15:53 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:16:01 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6FCgr0BePJYbXuH2u0IJl3bhnxbkj9h/XZJ/piUQ/7lrLiD9JqbQMtg9Vj7cwaOYnevKXlBlAdDbZy4eXyKGhg==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to localhost:3000
+Completed 302 Found in 32ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:16:12 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-18 00:16:16 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 73ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:16:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 53ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-18 00:16:21 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:17:25 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:17:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XuQ9/PyRnxdDge9zWH+1q/IH0TV2guElF4vVdKsNd5FYvxVTyZvAyRzKCZHlaxl184gQWXFmFdOyLaGf4H3PeQ==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to http://www.rubyonrails.org
+Completed 302 Found in 36ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:17:40 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:21:47 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 84ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-18 00:21:48 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 119ms (Views: 65.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:21:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:21:57 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U13fO3dqCLRA6/aE8OBg2g+twgXfGfjzwl9JrrESEVdVBveUQmBXah+gEGZN9MwEDiIDadj9DAVn+T1F+mKpvw==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to http://localhost:3000main
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:23:25 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 68ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:23:47 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:24:08 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 215ms (Views: 184.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:24:11 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:24:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZqrUnrKNrYubRhPeYo5yIU5aYOqwAPJFmKSbRgOs0Ctg8fwxh4fyVcQN9Tzfmt7/T9WhhrfkBrM9Au+tSNxoww==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:24:16 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
