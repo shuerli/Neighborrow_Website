@@ -12,7 +12,7 @@
 ## Team Members
  Name  | Email  | Github Username 
 ---|---|---
- Shuer Li | | 
+ Shuer Li |shuer.li@mail.utoronto.ca | lishu11
  Qingqing Zhuo| qingqing.zhuo@mail.utoronto.ca | lillizhuo
  Geling Li| geling.li@mail.utoronto.ca | gloriali2011 
  Zeyu Feng| zeyu.feng@mail.utoronto.ca| Zeeyuu 
