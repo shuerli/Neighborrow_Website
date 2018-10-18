@@ -12889,3 +12889,42 @@ Processing by PagesController#main as HTML
 Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:31:08 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 364ms (Views: 354.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-18 00:31:10 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 97ms (Views: 66.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-10-18 00:31:11 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-10-18 00:31:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nezUKlVOxafSCK23CLpp7Xb0pXlwxR/NSqfCvjvkZsWbt/yFYESaeY1DS1W1rsUzd3tkFXch6zvvAbZVcJTeLQ==", "session"=>{"email"=>"zeyu.feng@mail.utoronto.ca", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ app/models/account.rb:42
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-18 00:31:17 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+

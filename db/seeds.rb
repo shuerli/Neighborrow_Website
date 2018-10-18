@@ -31,6 +31,7 @@
                 {id:8, email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
 				{id:9, email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
                 {id:10, email:'shuer.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'}
+				{id:10, email:'qingqing.zhuo@mail.utoronto.ca', role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
 			])
 
 
