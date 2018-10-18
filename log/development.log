@@ -9362,3 +9362,2802 @@ Processing by AccountsController#create as HTML
 Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:45 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 390ms (Views: 378.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:49 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:50 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:51 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 56ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:53 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:53 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:54 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:55 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:56 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:56 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:57 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 57ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:57 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:48:59 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:48:59 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-14 00:49:05 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GJaAz3zSGRF7YjqPGvR/i5J2ciyYddLGs4knMuBVI/FLsjZeY33y/Mv4aDK+fad8npTwz141vFuJGGANdQtYHw==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:49:11 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:49:17 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 69ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:49:18 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:49:19 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:49:19 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 00:49:20 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 00:49:20 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 11:46:58 -0400
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 11:46:59 -0400
+Processing by AccountsController#new as HTML
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (23.5ms)
+  Rendered pages/main.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 355ms (Views: 336.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 417ms (Views: 324.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 11:47:00 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 69ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 11:47:01 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 19:00:24 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 367ms (Views: 351.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 19:02:05 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 131ms (Views: 116.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-14 19:02:06 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-14 19:02:07 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:03:51 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 169ms (Views: 138.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:03:59 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 12:04:00 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 61ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:04:00 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 237ms (Views: 230.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 12:04:01 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:04:04 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 59ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 12:04:05 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:04:10 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:04:24 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 70ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 12:04:25 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 70ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 12:04:26 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 12:04:27 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 64ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 15:21:33 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 210ms (Views: 123.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 15:21:37 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 70ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 15:21:38 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 15:21:40 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 83ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 15:21:44 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 58ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 15:21:46 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 55ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 15:21:48 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 20:05:09 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 102ms (Views: 87.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 20:05:12 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 99ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 20:05:13 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 62ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 20:05:21 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xFHzem3JwB7xu1CwDmqWNkucAHACaYqMVpDm6r/5xwmXdUXrcmYr80EhAg2q407BR36Ck8Qp5BFsAaHVKqe85w==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+Unpermitted parameters: :title, :body
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:5
+  [1m[36mAccount Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:5
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 135ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-10-15 20:05:21 -0400
+Processing by AccountsController#index as HTML
+Completed 406 Not Acceptable in 157ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (AccountsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts" for 127.0.0.1 at 2018-10-15 20:08:55 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 109ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 20:08:57 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 221ms (Views: 193.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 20:08:58 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 69ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 20:09:00 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 20:09:01 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 56ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 20:09:04 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+TRgRohBI98eLZ4scVXXU7cLqKmyGV/zZP/MC7EB+9WqENbXl+7IMq63zJHV3A+ku+kqSnRZMW5ebos0JF+AOw==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+Unpermitted parameters: :title, :body
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:5
+  [1m[36mAccount Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:5
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 31ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-10-15 20:09:05 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 22:11:12 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 88ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:11:14 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:11:18 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I+mUsFxuIFmOsUfG7UH7KcLSm2s6PQJNmx0M3lbAHxhwzSIhQ8HLtD4rFXtJyCPezjAZiPx9bNChjEvhw55k9g==", "account"=>{"title"=>"dummy@gmail.com", "body"=>"dummy"}, "commit"=>"Save Account"}
+Unpermitted parameters: :title, :body
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to http://localhost:3000/accounts
+Completed 302 Found in 51ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-10-15 22:11:19 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 22:39:19 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 94ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:39:20 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant AccountsController::Post):
+  
+app/controllers/accounts_controller.rb:21:in `new'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:39:52 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (80.0ms)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Account:0x00007ff6df6c40c0>):
+    2: <%= form_for :account, url: accounts_path do |f| %>
+    3:     <p>
+    4:         <%= f.label :email %><br>
+    5:         <%= f.text_field :title %><br>
+    6:     </p>
+    7: 
+    8:     <p>
+  
+app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb___86175986336889346_70349143387120'
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb___86175986336889346_70349143387120'
+Started GET "/" for 127.0.0.1 at 2018-10-15 22:44:10 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 98ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:44:12 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1209.8ms)
+Completed 500 Internal Server Error in 1231ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create' for #<#<Class:0x00007ff6df674fe8>:0x00007ff6dbe6aaa8>):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for :account, url: {action:create} do |f| %>
+    3:     <%= f.label :email, 'email:' %><br>
+    4:     <%= f.label :password, 'password:' %><br>
+    5:     <%= submit tag 'Add' %>
+  
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb___86175986336889346_70349114005980'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:46:20 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 149ms (Views: 135.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:46:43 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (43.9ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_field' for #<Account:0x00007ff6df557250>):
+    2: <%= form_for :account, url: accounts_path do |f| %>
+    3:     <p>
+    4:         <%= f.label :email %><br>
+    5:         <%= f.text_field :text_field %><br>
+    6:     </p>
+    7: 
+    8:     <p>
+  
+app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb___86175986336889346_70349142798140'
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb___86175986336889346_70349142798140'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:47:30 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (63.9ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Account:0x00007ff6df67c978>):
+    2: <%= form_for :account, url: accounts_path do |f| %>
+    3:     <p>
+    4:         <%= f.label :email %><br>
+    5:         <%= f.text_field :title %><br>
+    6:     </p>
+    7: 
+    8:     <p>
+  
+app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb___86175986336889346_70349143472500'
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb___86175986336889346_70349143472500'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:48:04 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:48:26 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sn0TLFeYcjg6b6cN9ETdIp7AZZuSq85M1F/GZTQgkszJA5N+MWCenPkMEMWTx3ctdcow0yZBF+NSqpfdThLr8w==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Account"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 61ms (Views: 39.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:48:28 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6lho3nYOaMu3LA5tc4UK59xQcp+u87gAjmpURm1ZrwhpJuiMEPaEb3RPuaUUBqDoN1on1xoZYa8InwX+F2vWNw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:48:29 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cisfXpEe5e38ZpNv9q4f/lsdcDEcC1/dGI0WD5MtzZ/xVZ8M9+YJST8FJKeRLbXxsBcleajhhnKeeEe36R+0oA==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:52:12 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ayBuxOzeEBZ/Z+zQ6t1PhvbBlDVoQ/fSwuBO5p2nR6LoXu6Wiib8srwEWxiNXuWJHcvBfdypLn1EFR9e55U+nQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Account"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...append=( if @post.errors.any? );@output_buffer.safe_append='
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/accounts/new.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/accounts/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/accounts/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/accounts/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/accounts_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-15 22:52:55 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 155ms (Views: 140.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:52:57 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...end=( if @account.errors.any? );@output_buffer.safe_append='
+...                              ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/accounts/new.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/accounts/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/accounts/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/accounts/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 22:53:12 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/accounts/new.html.erb:24: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 22:53:59 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/qr96ZAihxKkAQuEH8rtTQXxhFej7z/n5fag/ShVJvetjkt4j41s/xSbWTm7QzW6CRMGtGWvUXrfZ+fCvQtdGQ==", "account"=>{"title"=>"", "body"=>""}, "commit"=>"Save Account"}
+Unpermitted parameters: :title, :body
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 198ms (Views: 130.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-15 23:11:33 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 70ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-15 23:11:35 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 87ms (Views: 42.5ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-15 23:11:40 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RxvOqpY+irxxXqu704Vng/9q8Joh7Y4ZdefqIMb1FwQUP3g7iZFhUcHE+QZ3DL9084hyeeet4IRPdq0fU6ts6g==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 28.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 11:12:43 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 353ms (Views: 296.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 11:12:45 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (75.5ms)
+Completed 200 OK in 197ms (Views: 167.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 11:12:49 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SDaJHZTgs9d0ULIdP74doA+jacGDjROC1Lwz+Vwxl6UbEj+Mi09YOsTK4KCbN8VXA0HrIkXNfR/uLXTGyW/sSw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 186ms (Views: 109.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:16:02 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 273ms (Views: 212.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:16:08 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 129ms (Views: 118.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:16:27 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (157.9ms)
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "email: ":String):
+     6:         <% end %>
+     7:     <% end %>
+     8:     <p>
+     9:     <%= f.text_field :email, "email: " %><br>
+    10:     </p>
+    11: 
+    12:     <p>
+  
+app/views/accounts/new.html.erb:9:in `block in _app_views_accounts_new_html_erb___86175986336889346_70349100926640'
+app/views/accounts/new.html.erb:2:in `_app_views_accounts_new_html_erb___86175986336889346_70349100926640'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:19:11 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (620.3ms)
+Completed 200 OK in 1170ms (Views: 1162.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:21:52 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 194ms (Views: 181.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:21:58 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 81ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:22:55 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 359ms (Views: 353.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:22:58 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 73ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:23:53 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 177ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:24:23 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/views/accounts/new.html.erb:22: syntax error, unexpected ':'
+...tput_buffer.append=( f.submit : Sign up);@output_buffer.safe...
+...                              ^):
+  
+app/views/accounts/new.html.erb:22: syntax error, unexpected ':'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:24:45 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 19:37:09 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sZE4djvSGzjyveOkjYTIWo4G4ezsnfk51cCt5P1XAjgy77gkXSr3nDHeVGzqB2JVZQy0pFh3IJZTNfxch2V7Bw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+    before_validation: encrypt_password
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_role
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_status
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/accounts_controller.rb:5:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:38:35 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 174ms (Views: 162.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:38:39 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+    before_validation: encrypt_password
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_role
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_status
+                     ^):
+  
+app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:40:33 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+    before_validation: encrypt_password, on: :create
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_role, on: :create
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_status, on: :create
+                     ^):
+  
+app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:47:31 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting end-of-input
+    before_validation: encrypt_password, on: :create
+                     ^):
+  
+app/models/account.rb:11: syntax error, unexpected ':', expecting end-of-input
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:48:03 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+    before_validation: encrypt_password, on: :create
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:13: syntax error, unexpected ':', expecting end-of-input
+    before_validation: assign_role, on: :create
+                     ^):
+  
+app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:13: syntax error, unexpected ':', expecting end-of-input
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:50:41 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 56ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:50:42 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+    before_validation: encrypt_password, on: :create
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_role, on: :create
+                     ^
+/Users/youhuashu/Desktop/4th year/CSC444_SoftwareEngineering/app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+    before_validation: assign_status, on: :create
+                     ^):
+  
+app/models/account.rb:10: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:11: syntax error, unexpected ':', expecting keyword_end
+app/models/account.rb:12: syntax error, unexpected ':', expecting keyword_end
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:53:04 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 76ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:53:08 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 295ms (Views: 181.8ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 19:53:17 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S9a7bps1NBYbGhJJm8cqrfV7DaXjbzusEOH6ahSbJdEY8g3/hJrf+6uAQPQ/TvJa+ZmPRiUvVTEqcL1VgcVePw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:16:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:55:29 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 57ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:55:30 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 198ms (Views: 115.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 19:55:38 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"odltJ7w8igPmgV3YdzjjjhnVO1BpG3CTivMqZb1lCVny/du2o5Nh7lYbD2XTsTt5FTe5s69bHg6wYm1aKDtytw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:17:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:58:28 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 189ms (Views: 169.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 19:58:29 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 91ms (Views: 76.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 19:58:36 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sPhlJ3AQfglG7hStJgkPzQmhckcEym1fooBCZLkgQN7j3NO2b7+V5PZ0RhCCgNc6BUPwpMKKA8KYEQVbLH47MA==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:17:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 19:59:56 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 152ms (Views: 127.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:00:00 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 86ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:00:07 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"73lj4oiXXAGPDb9NxbL3AQpISHeGeHZyjJMIHnW53qO8XdVzlzi37D+X7fBhOy/2BqrKlEA4GO+2Ak8h4OelTQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:17:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:00:37 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 326ms (Views: 316.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:00:38 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 73ms (Views: 46.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:00:45 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LcxpaOJgVpyq3RG8PJGDLrohbrT6m5AO1duuThl3rql+6N/5/c+9cRpHQwGYGFvZtsPsVzzb/pPvSulxjCnVRw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:17:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:01:59 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 273ms (Views: 259.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:02:01 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 111ms (Views: 62.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:02:08 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GarSlC45cxnvKGV5P5b3cigNa06+sKYOlpYLKf5lprBKjmQFMZaY9F+yN8SbHy+FJO/prXjwyJOsB0wWazvdXg==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:05:58 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 119ms (Views: 110.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:06:00 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 83ms (Views: 36.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:06:07 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NLXeyFE3+9GqALXaOlA2XuxU0E8+Ufvwyo1ZwTqPvWdnkWhZTpgQPBqa52ee2e6p4LZSrPgRlW3wHB7+r9HGiQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant Account::Bcrypt):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:07:45 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 89ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:07:53 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 95ms (Views: 59.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:07:57 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c3mYe6lNwe7Lj8VMgd1W+REw5u6f/wLP3HcYlXjNgLsgXS7qtuIqA3sVl/ElVI4OHdJkDVm/bFLm5l+q7ZP7VQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (uninitialized constant Bcrypt):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:09:19 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 128ms (Views: 107.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:11:10 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 272ms (Views: 261.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:11:17 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 70ms (Views: 38.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:11:21 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"82hhCrCnrxO5ccCc5tLTMJjaXEccms4J1tYdanK3oQGgTNebrwhE/gnrkiFCWwvHlDjepNraoJTsR1pV5+na7w==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Bcrypt):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:22:38 -0400
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:22:48 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 63ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:22:50 -0400
+Processing by AccountsController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (cannot load such file -- digest/sha):
+  
+app/models/account.rb:1:in `<main>'
+app/controllers/accounts_controller.rb:23:in `new'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:23:27 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 116ms (Views: 65.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:23:32 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JMcPOQItSmwQZy8pYGYWGSh4ZFrfVqnZyoRmloC02lOnuY9rZNWmyNMEmOEH5bwWw3IxEmu8cHZMcTcu+oajbA==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+LoadError (library not found for class Digest::SHAI -- digest/shai):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:24:10 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 73ms (Views: 41.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:24:14 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"krQbmFGebRXoSiWocrwUsz4+bIXNgoaaHcdhGGmxZqYRypvKN2aBsSspkmAVP7681TQ5zXloXzWbMjCgE4MfmQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+LoadError (library not found for class Digest::SHAI -- digest/shai):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:24:40 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 96ms (Views: 64.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:24:44 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TkVCIyYonBotzuPBVijNmL03BUtrIMF+sgMv+YMM9yvNO8JxQNBwvu6tVAkxq2eXVj1QA9/KGNE09n5B+T6OFA==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `time' for #<Account:0x00007fcf81d81398>
+Did you mean?  timeout):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:25:34 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 82ms (Views: 48.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:25:38 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vPFek/VuAp2B1d+r/T4i7iLwdlA8uA7u1rUqoq5wgKo/j97Bk5buOUK2aGOavYjhyfojGIhS10FQQHsa1EL5lQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `hexdigit' for Digest::SHA1:Class
+Did you mean?  hexdigest):
+  
+app/models/account.rb:18:in `encrypt_password'
+app/controllers/accounts_controller.rb:6:in `create'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:27:08 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 106ms (Views: 65.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:27:12 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cqtFkLm+QueZqQqIUpof/OnpszaXoJ6XdOUD6RL26ZTx1cXC30auQ1rKvUA1GbXzAuPmfiNKRzjyEFJRaMSQqw==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dummy@gmail.com"], ["role", "user"], ["password", "6bb992ea363b1ed6786613cde03e7cd0b1ab467d"], ["salt", "e559afc7c9f1061a08d58b0f2c3ea6ec6bc258ba"], ["status", "created"], ["created_at", "2018-10-18 00:27:12.578935"], ["updated_at", "2018-10-18 00:27:12.578935"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to 
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/accounts_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:35:59 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 139ms (Views: 131.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:36:02 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 130ms (Views: 86.1ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:36:06 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dwk7Bm4KXPjqQ9o/oTevzwOfYtyTHSByEGi/hf2QL3tcLY2XcaW3FVrZiIIFvnc4D33gP1VdTu8q+fi6aM5UlQ==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:36:35 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tQeFnPKpQsTxrVn/lRWPlvfYS2hcecf+juIBLhXh1tU2eQXOlFGuYDLO7jfyliWZHNIeIOiTHlEIF1CWb9Ov6g==", "account"=>{"email"=>"dummy1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dummy1@gmail.com"], ["role", "user"], ["password", "52204bb44464b6f31e4904e1b13a89016631741a"], ["salt", "bbe2713f0f9aecc3e9a758d08f9c6be4e55adb30"], ["status", "created"], ["created_at", "2018-10-18 00:36:35.286700"], ["updated_at", "2018-10-18 00:36:35.286700"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to 
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/accounts_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2018-10-17 20:45:35 -0400
+Processing by PagesController#main as HTML
+  Rendering pages/main.html.erb within layouts/application
+  Rendered pages/main.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 78ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:45:36 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 157ms (Views: 41.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:45:44 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYMNhBtWDQLHZUThIlhegG6gpbeedWwWf4+Ns1hMfGwip7sVBPnm73f/FlyG0YZ3YkInVFg1AotFHsqMzRIHgg==", "account"=>{"email"=>"dummy2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dummy2@gmail.com"], ["role", "user"], ["password", "3ab558a339b19dc00a2b29b424633905d860f9ca"], ["salt", "373d92a3c550f832c266130e89fa4173779663ca"], ["status", "created"], ["created_at", "2018-10-18 00:45:44.482816"], ["updated_at", "2018-10-18 00:45:44.482816"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to 
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/accounts_controller.rb:8:in `create'
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:45:58 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 91ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 20:46:04 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::UnknownPrimaryKey (Unknown primary key for table accounts in model Account.):
+  
+app/controllers/accounts_controller.rb:15:in `show'
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 20:46:08 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::UnknownPrimaryKey (Unknown primary key for table accounts in model Account.):
+  
+app/controllers/accounts_controller.rb:15:in `show'
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 20:46:13 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::UnknownPrimaryKey (Unknown primary key for table accounts in model Account.):
+  
+app/controllers/accounts_controller.rb:15:in `show'
+Started GET "/accounts" for 127.0.0.1 at 2018-10-17 20:55:06 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 79ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:55:09 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 93ms (Views: 56.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:55:17 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3FhoR37Ff+yivGe1knD+eUPtS3Bveq9cgA+K3aSl1IqPfN7WYWqUARImNQg2+SaOTw/Jk6k6wcG6ns3iMfuvZA==", "account"=>{"email"=>"dummy@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 42.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:55:37 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fB6KrreHLkEo9y4/IlE/ElQhqCm4N3vnnUvfGw5FBq7/YAr80X/C5euUmfdF0pUdvyv9YQzdokgbvo6jdHd/kQ==", "account"=>{"email"=>"dummy4@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy4@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dummy4@gmail.com"], ["role", "user"], ["password", "b0248c189c026bb4953e23e4f660eca942ac887d"], ["salt", "3a709862ef9f1689b45f293a17252e1b4f334bb2"], ["status", "created"], ["created_at", "2018-10-18 00:55:37.272578"], ["updated_at", "2018-10-18 00:55:37.272578"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to 
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/accounts_controller.rb:8:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 20:57:35 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `password' for nil:NilClass):
+    1: <h1>HI</h1>
+    2: <h2><%= @account.email %></h2>
+    3: <p><%= @accout.password %></p>
+  
+app/views/accounts/show.html.erb:3:in `_app_views_accounts_show_html_erb__297158119085883267_70264568400780'
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 20:58:16 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52ms (Views: 46.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 20:58:19 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 20:58:22 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/4" for 127.0.0.1 at 2018-10-17 20:58:25 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/5" for 127.0.0.1 at 2018-10-17 20:58:29 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-10-17 20:58:42 -0400
+Processing by AccountsController#index as HTML
+  Rendering accounts/index.html.erb within layouts/application
+  Rendered accounts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 54ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 20:58:45 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 59ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 20:58:51 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+ujeN0UZh2Qc3/wlnoJh4AEEpVdPzaQD2adMLogW4w8zxXpwruN8CDpLU0y89FwjOaQdpt/WA0199oPL34gYg==", "account"=>{"email"=>"dummy1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 47ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:08:46 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 87ms (Views: 56.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:08:49 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 56ms (Views: 48.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 21:08:51 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/4" for 127.0.0.1 at 2018-10-17 21:08:55 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:09:48 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 81ms (Views: 53.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:09:50 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-17 21:10:03 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 60ms (Views: 43.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-17 21:10:14 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MZMbFArN8MzXaSEGUNSZ6sGUIQxnngOxjF26sZZ5k9Fit62FFWIbIWfzc7v0XUEdzXaj76HebSy2zP2OAyfoPw==", "account"=>{"email"=>"dummy7@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "dummy7@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "dummy7@gmail.com"], ["role", "user"], ["password", "2995093f87fbb39430fb4270c005b7d836d2f6b9"], ["salt", "4b4a213a4e053a7e0f17d6baecd47995089423fd"], ["status", "created"], ["created_at", "2018-10-18 01:10:14.760236"], ["updated_at", "2018-10-18 01:10:14.760236"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to 
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"accounts", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/accounts_controller.rb:8:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:13:00 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 149ms (Views: 72.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:13:03 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 37.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:16:00 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 215ms (Views: 111.1ms | ActiveRecord: 2.5ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateAccounts (20181010144455)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "role" text NOT NULL, "password" text NOT NULL, "salt" text NOT NULL, "status" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010144455_create_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010144455"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateProfiles (20181010151725)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "profiles" ("email" text NOT NULL, "first_name" text, "middle_name" text, "last_name" text, "display_name" text NOT NULL, "phone_number" text, "gender" text, "language" text NOT NULL, "country" text DEFAULT 'Canada', "facebook" text, "google" text, "wechat" text, "twitter" text, "avatar_url" text NOT NULL, "interest" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010151725_create_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010151725"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateAddresses (20181010154056)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "address_line1" text NOT NULL, "address_line2" text, "city" text NOT NULL, "province" text NOT NULL, "country" text NOT NULL, "postal_code" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010154056_create_addresses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010154056"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateItems (20181010200242)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "owner" text NOT NULL, "condition" text NOT NULL, "category" integer NOT NULL, "rate_level" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "name" text NOT NULL, "description" text NOT NULL, "brand" text, "year" integer, "feature" text, "amazon_id" text, "walmart_id" text, "isbn" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010200242_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010200242"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateRequests (20181010201106)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer NOT NULL, "borrower" text NOT NULL, "address" integer, "status" text DEFAULT 'pending', "rejected_reason" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "received" boolean DEFAULT 0 NOT NULL, "returned" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201106_create_requests.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201106"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateCategories (20181010201117)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "department" text NOT NULL, "name" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201117_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201117"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateFeedbackToBorrowers (20181010201133)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "feedback_to_borrowers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201133_create_feedback_to_borrowers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201133"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateFeedbackToLenders (20181010201202)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "feedback_to_lenders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201202_create_feedback_to_lenders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201202"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateReports (20181010201212)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "report_type" text NOT NULL, "subject" text NOT NULL, "content" text NOT NULL, "status" text NOT NULL, "handler" text, "time_submitted" datetime NOT NULL, "time_closed" datetime, "request_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201212_create_reports.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201212"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateChats (20181010201221)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer, "report_id" integer, "time" datetime NOT NULL, "sender" text NOT NULL, "receiver" text NOT NULL, "content" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181010201221_create_chats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010201221"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-18 01:16:45.110056"], ["updated_at", "2018-10-18 01:16:45.110056"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "role" text NOT NULL, "password" text NOT NULL, "salt" text NOT NULL, "status" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "address_line1" text NOT NULL, "address_line2" text, "city" text NOT NULL, "province" text NOT NULL, "country" text NOT NULL, "postal_code" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "department" text NOT NULL, "name" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer, "report_id" integer, "time" datetime NOT NULL, "sender" text NOT NULL, "receiver" text NOT NULL, "content" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "feedback_to_borrowers"[0m
+  ↳ db/schema.rb:55
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "feedback_to_borrowers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "feedback_to_lenders"[0m
+  ↳ db/schema.rb:65
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "feedback_to_lenders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "items"[0m
+  ↳ db/schema.rb:75
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "owner" text NOT NULL, "condition" text NOT NULL, "category" integer NOT NULL, "rate_level" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "name" text NOT NULL, "description" text NOT NULL, "brand" text, "year" integer, "feature" text, "amazon_id" text, "walmart_id" text, "isbn" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:75
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:95
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "profiles" ("email" text NOT NULL, "first_name" text, "middle_name" text, "last_name" text, "display_name" text NOT NULL, "phone_number" text, "gender" text, "language" text NOT NULL, "country" text DEFAULT 'Canada', "facebook" text, "google" text, "wechat" text, "twitter" text, "avatar_url" text NOT NULL, "interest" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:95
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:115
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "report_type" text NOT NULL, "subject" text NOT NULL, "content" text NOT NULL, "status" text NOT NULL, "handler" text, "time_submitted" datetime NOT NULL, "time_closed" datetime, "request_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:115
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "requests"[0m
+  ↳ db/schema.rb:128
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer NOT NULL, "borrower" text NOT NULL, "address" integer, "status" text DEFAULT 'pending', "rejected_reason" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "received" boolean DEFAULT 0 NOT NULL, "returned" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:128
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "role" text NOT NULL, "password" text NOT NULL, "salt" text NOT NULL, "status" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" text NOT NULL, "address_line1" text NOT NULL, "address_line2" text, "city" text NOT NULL, "province" text NOT NULL, "country" text NOT NULL, "postal_code" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "department" text NOT NULL, "name" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer, "report_id" integer, "time" datetime NOT NULL, "sender" text NOT NULL, "receiver" text NOT NULL, "content" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "feedback_to_borrowers"[0m
+  ↳ db/schema.rb:55
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "feedback_to_borrowers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "feedback_to_lenders"[0m
+  ↳ db/schema.rb:65
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "feedback_to_lenders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "request_id" integer NOT NULL, "rate" integer NOT NULL, "tag" text, "credit" integer NOT NULL, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:65
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "items"[0m
+  ↳ db/schema.rb:75
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "owner" text NOT NULL, "condition" text NOT NULL, "category" integer NOT NULL, "rate_level" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "name" text NOT NULL, "description" text NOT NULL, "brand" text, "year" integer, "feature" text, "amazon_id" text, "walmart_id" text, "isbn" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:75
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles"[0m
+  ↳ db/schema.rb:95
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "profiles" ("email" text NOT NULL, "first_name" text, "middle_name" text, "last_name" text, "display_name" text NOT NULL, "phone_number" text, "gender" text, "language" text NOT NULL, "country" text DEFAULT 'Canada', "facebook" text, "google" text, "wechat" text, "twitter" text, "avatar_url" text NOT NULL, "interest" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:95
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:115
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "report_type" text NOT NULL, "subject" text NOT NULL, "content" text NOT NULL, "status" text NOT NULL, "handler" text, "time_submitted" datetime NOT NULL, "time_closed" datetime, "request_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:115
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "requests"[0m
+  ↳ db/schema.rb:128
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_id" integer NOT NULL, "borrower" text NOT NULL, "address" integer, "status" text DEFAULT 'pending', "rejected_reason" text, "time_start" datetime NOT NULL, "time_end" datetime NOT NULL, "time_pickup" datetime NOT NULL, "received" boolean DEFAULT 0 NOT NULL, "returned" boolean DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:128
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181010201221)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010201133),
+(20181010144455),
+(20181010200242),
+(20181010201106),
+(20181010151725),
+(20181010201212),
+(20181010154056),
+(20181010201117),
+(20181010201202);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-18 01:17:06.995292"], ["updated_at", "2018-10-18 01:17:06.995292"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-10-18 01:17:07.001011"], ["key", "environment"]]
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/youhuashu/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "createduser@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["email", "createduser@gmail.com"], ["role", "user"], ["password", "d279359609b4d542a7c157e626f58a15234aca9e"], ["salt", "91d963f05c932b89ffd8fe163338d7dc04f506ab"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.033799"], ["updated_at", "2018-10-18 01:17:07.033799"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "activeuser@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 2], ["email", "activeuser@gmail.com"], ["role", "user"], ["password", "79612fe23299441d577c44fc69dfd6e256019f1c"], ["salt", "2589acdf12d9745096b0e157409eca15630060b7"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.038640"], ["updated_at", "2018-10-18 01:17:07.038640"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "suspendeduser@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["email", "suspendeduser@gmail.com"], ["role", "user"], ["password", "43ebceb6901efaf958007abfc9d8c0081fd4ddf3"], ["salt", "f6e2adce556558071bcd6a33636b810a8ae2834e"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.046497"], ["updated_at", "2018-10-18 01:17:07.046497"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "banneduser@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 4], ["email", "banneduser@gmail.com"], ["role", "user"], ["password", "087ff27c036bba584b0bde27ac2fa35be56bbf51"], ["salt", "6f539e551a27ae43a9495f70642b781fd2b8646c"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.053170"], ["updated_at", "2018-10-18 01:17:07.053170"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "raymondfzy@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 5], ["email", "raymondfzy@gmail.com"], ["role", "user"], ["password", "13cc15e3a54a45ea3542c7f0e7cc845be649c37b"], ["salt", "07355ca1adc5e7dc250fe00d221830845d71b8b5"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.058529"], ["updated_at", "2018-10-18 01:17:07.058529"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 6], ["email", "zeyu.feng@mail.utoronto.ca"], ["role", "user"], ["password", "233dfa5d4653674ccaaaf7384a08c399d770bd45"], ["salt", "b91f6f59790c81745d25bd2b3ce1ea5fcceb84c0"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.062598"], ["updated_at", "2018-10-18 01:17:07.062598"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "geling.li@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 7], ["email", "geling.li@mail.utoronto.ca"], ["role", "user"], ["password", "83cbb1761905c93138dea5fa940cdc9e0a8321f4"], ["salt", "871cab5d8fd0602206666dcc7eda2623b25f629f"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.068066"], ["updated_at", "2018-10-18 01:17:07.068066"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "zikevin.wang@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 8], ["email", "zikevin.wang@mail.utoronto.ca"], ["role", "user"], ["password", "65a162a050681f13b71c73a0961bf15a1395661a"], ["salt", "8901b58367f2caf5c3d2c3bcef94c7e0a2b6319f"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.072431"], ["updated_at", "2018-10-18 01:17:07.072431"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "da.fu@mail.utoronto.ca"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("id", "email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 9], ["email", "da.fu@mail.utoronto.ca"], ["role", "user"], ["password", "ba043b6e163a3de8551465f87044ed9aa1c5599f"], ["salt", "2d54a9766eed5fd984ad47aa9d98b62325e8e68a"], ["status", "created"], ["created_at", "2018-10-18 01:17:07.076671"], ["updated_at", "2018-10-18 01:17:07.076671"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "display_name", "language", "avatar_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "createduser@gmail.com"], ["display_name", "created1"], ["language", "English"], ["avatar_url", "https://cdn.onlinewebfonts.com/svg/img_311846.png"], ["created_at", "2018-10-18 01:17:07.105225"], ["updated_at", "2018-10-18 01:17:07.105225"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "first_name", "last_name", "display_name", "language", "country", "avatar_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "activeuser@gmail.com"], ["first_name", "Jiro"], ["last_name", "Active"], ["display_name", "active2"], ["language", "English"], ["country", "USA"], ["avatar_url", "https://cdn.onlinewebfonts.com/svg/img_311846.png"], ["created_at", "2018-10-18 01:17:07.108935"], ["updated_at", "2018-10-18 01:17:07.108935"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "first_name", "last_name", "display_name", "language", "country", "avatar_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "suspendeduser@gmail.com"], ["first_name", "Saburo"], ["last_name", "Suspended"], ["display_name", "suspended3"], ["language", "English"], ["country", "England"], ["avatar_url", "https://cdn.onlinewebfonts.com/svg/img_311846.png"], ["created_at", "2018-10-18 01:17:07.119620"], ["updated_at", "2018-10-18 01:17:07.119620"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (0.5ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "first_name", "last_name", "display_name", "language", "avatar_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "activeuser@gmail.com"], ["first_name", "Shiro"], ["last_name", "Banned"], ["display_name", "banned4"], ["language", "English"], ["avatar_url", "https://cdn.onlinewebfonts.com/svg/img_311846.png"], ["created_at", "2018-10-18 01:17:07.123276"], ["updated_at", "2018-10-18 01:17:07.123276"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (6.1ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "first_name", "middle_name", "last_name", "display_name", "phone_number", "gender", "language", "facebook", "google", "avatar_url", "interest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "raymondfzy@gmail.com"], ["first_name", "Yu"], ["middle_name", "Ze"], ["last_name", "Feng"], ["display_name", "Yu F"], ["phone_number", "6478673581"], ["gender", "Male"], ["language", "Chinese"], ["facebook", "https://www.facebook.com/profile.php?id=100007708830271"], ["google", "raymondfzy@gmail.com"], ["avatar_url", "https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929"], ["interest", "Games"], ["created_at", "2018-10-18 01:17:07.127662"], ["updated_at", "2018-10-18 01:17:07.127662"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "display_name", "language", "avatar_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "zeyu.feng@mail.utoronto.ca"], ["display_name", "admZY"], ["language", "Chinese"], ["avatar_url", "https://cdn.onlinewebfonts.com/svg/img_311846.png"], ["created_at", "2018-10-18 01:17:07.147097"], ["updated_at", "2018-10-18 01:17:07.147097"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (76.7ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "raymondfzy@gmail.com"], ["address_line1", "211-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.205758"], ["updated_at", "2018-10-18 01:17:07.205758"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (0.7ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "raymondfzy@gmail.com"], ["address_line1", "212-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.298563"], ["updated_at", "2018-10-18 01:17:07.298563"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (0.5ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "raymondfzy@gmail.com"], ["address_line1", "213-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.311652"], ["updated_at", "2018-10-18 01:17:07.311652"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (0.8ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "createduser@gmail.com"], ["address_line1", "211-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.322129"], ["updated_at", "2018-10-18 01:17:07.322129"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (0.8ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "suspendeduser@gmail.com"], ["address_line1", "211-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.330370"], ["updated_at", "2018-10-18 01:17:07.330370"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mAddress Create (0.5ms)[0m  [1m[32mINSERT INTO "addresses" ("email", "address_line1", "city", "province", "country", "postal_code", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "banneduser@gmail.com"], ["address_line1", "211-325 South Park Rd"], ["city", "Thornhill"], ["province", "Ontario"], ["country", "Canada"], ["postal_code", "L3T 0B8"], ["created_at", "2018-10-18 01:17:07.336591"], ["updated_at", "2018-10-18 01:17:07.336591"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "rate_level", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Brand New"], ["category", 1], ["rate_level", "4"], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Introduction to Database"], ["description", "A brand new textbook, whoever uses it will likely get 4.0 gpa on that course"], ["brand", "brand1"], ["year", 2007], ["created_at", "2018-10-18 01:17:07.400148"], ["updated_at", "2018-10-18 01:17:07.400148"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "rate_level", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Like New"], ["category", 1], ["rate_level", "5"], ["time_start", "2018-12-12 00:00:00"], ["time_end", "2018-12-26 13:23:04"], ["time_pickup", "2018-12-12 08:30:00"], ["name", "Introduction to algorithm"], ["description", "used textbook"], ["brand", "brand2"], ["year", 2015], ["created_at", "2018-10-18 01:17:07.404076"], ["updated_at", "2018-10-18 01:17:07.404076"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "rate_level", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Very Good"], ["category", 2], ["rate_level", "3"], ["time_start", "2018-11-16 00:00:00"], ["time_end", "2018-12-23 13:23:04"], ["time_pickup", "2018-11-19 08:30:00"], ["name", "King Lear"], ["description", "see the picture"], ["brand", "brand3"], ["year", 2000], ["created_at", "2018-10-18 01:17:07.407964"], ["updated_at", "2018-10-18 01:17:07.407964"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "rate_level", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Good"], ["category", 2], ["rate_level", "2"], ["time_start", "2018-11-08 00:00:00"], ["time_end", "2019-01-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Don Quixote"], ["description", "This dude is lazy and did not leave anything here"], ["brand", "brand4"], ["year", 2006], ["created_at", "2018-10-18 01:17:07.411405"], ["updated_at", "2018-10-18 01:17:07.411405"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Adequate"], ["category", 3], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Halo 7"], ["description", "This dude is lazy and did not leave anything here"], ["brand", "brand1"], ["year", 2018], ["created_at", "2018-10-18 01:17:07.415379"], ["updated_at", "2018-10-18 01:17:07.415379"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (5.6ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "raymondfzy@gmail.com"], ["condition", "Defective"], ["category", 3], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Resident Evil"], ["description", "This dude is lazy and did not leave anything here"], ["brand", "brand1"], ["year", 2017], ["created_at", "2018-10-18 01:17:07.421824"], ["updated_at", "2018-10-18 01:17:07.421824"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "createduser@gmail.com"], ["condition", "Brand New"], ["category", 1], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Quantum Mechanics"], ["description", "slaknfw93*(&%^&@#)(Unkasbfjweo"], ["brand", "Sciencene"], ["year", 1994], ["created_at", "2018-10-18 01:17:07.430841"], ["updated_at", "2018-10-18 01:17:07.430841"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "suspendeduser@gmail.com"], ["condition", "Brand New"], ["category", 2], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Frankenstein"], ["description", "frank"], ["brand", "brand3"], ["year", 2003], ["created_at", "2018-10-18 01:17:07.437417"], ["updated_at", "2018-10-18 01:17:07.437417"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "banneduser@gmail.com"], ["condition", "Brand New"], ["category", 3], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Monster Hunter"], ["description", "3ds version"], ["brand", "Kapkom"], ["year", 2015], ["created_at", "2018-10-18 01:17:07.444285"], ["updated_at", "2018-10-18 01:17:07.444285"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "geling.li@mail.utoronto.ca"], ["condition", "Like New"], ["category", 1], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Learn C++ in 21 Days"], ["description", "This dude is lazy and did not leave anything here"], ["brand", "XinHua"], ["year", 2004], ["created_at", "2018-10-18 01:17:07.451987"], ["updated_at", "2018-10-18 01:17:07.451987"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("owner", "condition", "category", "time_start", "time_end", "time_pickup", "name", "description", "brand", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "geling.li@mail.utoronto.ca"], ["condition", "Good"], ["category", 3], ["time_start", "2018-11-12 00:00:00"], ["time_end", "2018-12-25 13:23:04"], ["time_pickup", "2018-11-12 08:30:00"], ["name", "Tomb Raider"], ["description", "The best one of the series"], ["brand", "3DM Private Games"], ["year", 2017], ["created_at", "2018-10-18 01:17:07.455425"], ["updated_at", "2018-10-18 01:17:07.455425"]]
+  ↳ db/seeds.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 1], ["borrower", "activeuser@gmail.com"], ["address", 1], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.491059"], ["updated_at", "2018-10-18 01:17:07.491059"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 2], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.494773"], ["updated_at", "2018-10-18 01:17:07.494773"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 3], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.498974"], ["updated_at", "2018-10-18 01:17:07.498974"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 4], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.502114"], ["updated_at", "2018-10-18 01:17:07.502114"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 5], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.505640"], ["updated_at", "2018-10-18 01:17:07.505640"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 6], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.509449"], ["updated_at", "2018-10-18 01:17:07.509449"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 1], ["borrower", "geling.li@mail.utoronto.ca"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.513410"], ["updated_at", "2018-10-18 01:17:07.513410"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 1], ["borrower", "createduser@gmail.com"], ["address", 1], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.516884"], ["updated_at", "2018-10-18 01:17:07.516884"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 2], ["borrower", "suspendeduser@gmail.com"], ["address", 1], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.520474"], ["updated_at", "2018-10-18 01:17:07.520474"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.5ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 3], ["borrower", "banneduser@gmail.com"], ["address", 1], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.524532"], ["updated_at", "2018-10-18 01:17:07.524532"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 7], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.528660"], ["updated_at", "2018-10-18 01:17:07.528660"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.7ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 8], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.534239"], ["updated_at", "2018-10-18 01:17:07.534239"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 9], ["borrower", "activeuser@gmail.com"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.543070"], ["updated_at", "2018-10-18 01:17:07.543070"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 7], ["borrower", "geling.li@mail.utoronto.ca"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.547028"], ["updated_at", "2018-10-18 01:17:07.547028"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 8], ["borrower", "geling.li@mail.utoronto.ca"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.550205"], ["updated_at", "2018-10-18 01:17:07.550205"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[36mRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "requests" ("item_id", "borrower", "address", "time_start", "time_end", "time_pickup", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["item_id", 9], ["borrower", "geling.li@mail.utoronto.ca"], ["address", 2], ["time_start", "2018-09-25 00:00:00"], ["time_end", "2018-11-22 00:00:00"], ["time_pickup", "2018-10-11 00:00:00"], ["created_at", "2018-10-18 01:17:07.553574"], ["updated_at", "2018-10-18 01:17:07.553574"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[36mCategory Create (13.5ms)[0m  [1m[32mINSERT INTO "categories" ("department", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["department", "Books"], ["name", "Textbooks"], ["created_at", "2018-10-18 01:17:07.584179"], ["updated_at", "2018-10-18 01:17:07.584179"]]
+  ↳ db/seeds.rb:165
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("department", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["department", "Books"], ["name", "Novels"], ["created_at", "2018-10-18 01:17:07.601893"], ["updated_at", "2018-10-18 01:17:07.601893"]]
+  ↳ db/seeds.rb:165
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("department", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["department", "Video Games"], ["name", "PC Gaming"], ["created_at", "2018-10-18 01:17:07.606265"], ["updated_at", "2018-10-18 01:17:07.606265"]]
+  ↳ db/seeds.rb:165
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("department", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["department", "Electronics"], ["name", "Tv & Video"], ["created_at", "2018-10-18 01:17:07.609530"], ["updated_at", "2018-10-18 01:17:07.609530"]]
+  ↳ db/seeds.rb:165
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:165
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[36mFeedbackToBorrower Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback_to_borrowers" ("request_id", "rate", "credit", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["request_id", 1], ["rate", 4], ["credit", 4], ["comment", "good"], ["created_at", "2018-10-18 01:17:07.643925"], ["updated_at", "2018-10-18 01:17:07.643925"]]
+  ↳ db/seeds.rb:182
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[36mFeedbackToBorrower Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback_to_borrowers" ("request_id", "rate", "credit", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["request_id", 8], ["rate", 4], ["credit", 4], ["comment", "good 2"], ["created_at", "2018-10-18 01:17:07.647707"], ["updated_at", "2018-10-18 01:17:07.647707"]]
+  ↳ db/seeds.rb:182
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[36mFeedbackToBorrower Create (0.7ms)[0m  [1m[32mINSERT INTO "feedback_to_borrowers" ("request_id", "rate", "credit", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["request_id", 12], ["rate", 5], ["credit", 4], ["created_at", "2018-10-18 01:17:07.655285"], ["updated_at", "2018-10-18 01:17:07.655285"]]
+  ↳ db/seeds.rb:182
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:182
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[36mFeedbackToLender Create (0.7ms)[0m  [1m[32mINSERT INTO "feedback_to_lenders" ("request_id", "rate", "credit", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["request_id", 1], ["rate", 5], ["credit", 2], ["comment", "This lender is great"], ["created_at", "2018-10-18 01:17:07.754863"], ["updated_at", "2018-10-18 01:17:07.754863"]]
+  ↳ db/seeds.rb:196
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[36mFeedbackToLender Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback_to_lenders" ("request_id", "rate", "credit", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["request_id", 8], ["rate", 3], ["credit", 2], ["comment", "That lender is great 2"], ["created_at", "2018-10-18 01:17:07.762549"], ["updated_at", "2018-10-18 01:17:07.762549"]]
+  ↳ db/seeds.rb:196
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[36mFeedbackToLender Create (0.8ms)[0m  [1m[32mINSERT INTO "feedback_to_lenders" ("request_id", "rate", "credit", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["request_id", 12], ["rate", 3], ["credit", 4], ["created_at", "2018-10-18 01:17:07.765956"], ["updated_at", "2018-10-18 01:17:07.765956"]]
+  ↳ db/seeds.rb:196
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:196
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.8ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "system"], ["subject", "system report subject1"], ["content", "random complains about system problems"], ["status", "submitted"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.793008"], ["updated_at", "2018-10-18 01:17:07.793008"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "system"], ["subject", "system report subject2"], ["content", "random complains about system problems"], ["status", "in progress"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.797150"], ["updated_at", "2018-10-18 01:17:07.797150"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "system"], ["subject", "system report subject3"], ["content", "random complains about system problems"], ["status", "resolved"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.800465"], ["updated_at", "2018-10-18 01:17:07.800465"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.3ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "client"], ["subject", "client report subject1"], ["content", "random complains about client problems"], ["status", "submitted"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.803387"], ["updated_at", "2018-10-18 01:17:07.803387"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "client"], ["subject", "client report subject2"], ["content", "random complains about client problems"], ["status", "in progress"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.806568"], ["updated_at", "2018-10-18 01:17:07.806568"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "client"], ["subject", "client report subject3"], ["content", "random complains about client problems"], ["status", "resolved"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.809545"], ["updated_at", "2018-10-18 01:17:07.809545"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "suggestion"], ["subject", "suggestion report subject1"], ["content", "random complains about suggestion problems"], ["status", "submitted"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.812636"], ["updated_at", "2018-10-18 01:17:07.812636"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.3ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "suggestion"], ["subject", "suggestion report subject2"], ["content", "random complains about suggestion problems"], ["status", "in progress"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.815568"], ["updated_at", "2018-10-18 01:17:07.815568"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "suggestion"], ["subject", "suggestion report subject3"], ["content", "random complains about suggestion problems"], ["status", "resolved"], ["handler", "geling.li@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.818933"], ["updated_at", "2018-10-18 01:17:07.818933"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "system"], ["subject", "system report - created admin1"], ["content", "random complains"], ["status", "submitted"], ["handler", "zeyu.feng@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.822742"], ["updated_at", "2018-10-18 01:17:07.822742"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "system"], ["subject", "system report - created admin2"], ["content", "random complains"], ["status", "in progress"], ["handler", "zeyu.feng@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.826093"], ["updated_at", "2018-10-18 01:17:07.826093"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "client"], ["subject", "client report - suspended admin1"], ["content", "random complains"], ["status", "submitted"], ["handler", "zikevin.wang@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.829682"], ["updated_at", "2018-10-18 01:17:07.829682"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "client"], ["subject", "client report - suspended admin2"], ["content", "random complains"], ["status", "in progress"], ["handler", "zikevin.wang@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.833119"], ["updated_at", "2018-10-18 01:17:07.833119"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "suggestion"], ["subject", "suggestion report - banned admin1"], ["content", "random complains"], ["status", "submitted"], ["handler", "da.fu@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.839627"], ["updated_at", "2018-10-18 01:17:07.839627"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("report_type", "subject", "content", "status", "handler", "time_submitted", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["report_type", "suggestion"], ["subject", "suggestion report - banned admin2"], ["content", "random complains"], ["status", "in progress"], ["handler", "da.fu@mail.utoronto.ca"], ["time_submitted", "2018-09-23 00:00:00"], ["created_at", "2018-10-18 01:17:07.846922"], ["updated_at", "2018-10-18 01:17:07.846922"]]
+  ↳ db/seeds.rb:211
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:211
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mChat Create (3.1ms)[0m  [1m[32mINSERT INTO "chats" ("time", "sender", "receiver", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["time", "2018-09-20 19:00:00"], ["sender", "zeyu.feng@mail.utoronto.ca"], ["receiver", "zikevin.wang@mail.utoronto.ca"], ["content", "Hi"], ["created_at", "2018-10-18 01:17:07.868557"], ["updated_at", "2018-10-18 01:17:07.868557"]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mChat Create (0.5ms)[0m  [1m[32mINSERT INTO "chats" ("time", "sender", "receiver", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["time", "2018-09-22 19:00:00"], ["sender", "da.fu@mail.utoronto.ca"], ["receiver", "zikevin.wang@mail.utoronto.ca"], ["content", "Hola"], ["created_at", "2018-10-18 01:17:07.875693"], ["updated_at", "2018-10-18 01:17:07.875693"]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mChat Create (0.3ms)[0m  [1m[32mINSERT INTO "chats" ("time", "sender", "receiver", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["time", "2018-09-23 19:00:00"], ["sender", "geling.li@mail.utoronto.ca"], ["receiver", "da.fu@mail.utoronto.ca"], ["content", "Bonjour"], ["created_at", "2018-10-18 01:17:07.879215"], ["updated_at", "2018-10-18 01:17:07.879215"]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mChat Create (0.5ms)[0m  [1m[32mINSERT INTO "chats" ("time", "sender", "receiver", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["time", "2018-09-24 19:00:00"], ["sender", "geling.li@mail.utoronto.ca"], ["receiver", "zeyu.feng@mail.utoronto.ca"], ["content", "Privet"], ["created_at", "2018-10-18 01:17:07.882159"], ["updated_at", "2018-10-18 01:17:07.882159"]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:235
+  [1m[36mChat Create (0.5ms)[0m  [1m[32mINSERT INTO "chats" ("time", "sender", "receiver", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["time", "2018-09-20 19:00:00"], ["sender", "zeyu.feng@mail.utoronto.ca"], ["receiver", "da.fu@mail.utoronto.ca"], ["content", "konchya"], ["created_at", "2018-10-18 01:17:07.885773"], ["updated_at", "2018-10-18 01:17:07.885773"]]
+  ↳ db/seeds.rb:235
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:235
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:17:10 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 76ms (Views: 53.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:17:13 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 21:17:16 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 37.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/account/3" for 127.0.0.1 at 2018-10-17 21:17:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/account/3"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 21:17:31 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (1.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 94ms (Views: 71.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/accounts/3" for 127.0.0.1 at 2018-10-17 21:18:22 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 35.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:18:24 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 38.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:19:35 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-10-17 21:20:24 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 92ms (Views: 85.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/2" for 127.0.0.1 at 2018-10-17 21:20:27 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:15
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+

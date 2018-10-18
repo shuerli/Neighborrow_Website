@@ -1,16 +1,24 @@
 <h1>Sign Up</h1>
-<%= form_for :account, url: accounts_path do |f| %>
+<%= form_for @account, url: accounts_path do |f| %>
+    <% if @account.errors.any? %>
+        <% @account.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+
     <p>
-        <%= f.label :email %><br>
-        <%= f.text_field :title %><br>
+    Email:</br><%= f.text_field :email %><br>
     </p>
 
     <p>
-        <%= f.label :password %><br>
-        <%= f.text_field :body %>
+    Password:</br><%= f.password_field :password %>
     </p>
 
     <p>
-        <%= f.submit %>
+    Password confirmation:</br><%= f.password_field :password_confirmation %>
+    </p>
+
+    <p>
+    <%= f.submit%>
     </p>
 <% end %>

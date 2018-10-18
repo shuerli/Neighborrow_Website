@@ -17,19 +17,19 @@
 
 	accounts = Account.create([
 				#create users with different status
-				{email:'createduser@gmail.com', role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
-				{email:'activeuser@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-				{email:'suspendeduser@gmail.com', role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
-				{email:'banneduser@gmail.com', role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
+                {id:1, email:'createduser@gmail.com', role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
+				{id:2, email:'activeuser@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+				{id:3, email:'suspendeduser@gmail.com', role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
+				{id:4, email:'banneduser@gmail.com', role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
 				
 				#create a testing user
-				{email:'raymondfzy@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+				{id:5, email:'raymondfzy@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
 
 				#create admins with different status
-				{email:'zeyu.feng@mail.utoronto.ca', role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
-				{email:'geling.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
-				{email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
-				{email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'}
+				{id:6, email:'zeyu.feng@mail.utoronto.ca', role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
+                {id:7, email:'geling.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
+                {id:8, email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
+				{id:9, email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'}
 			])
 
 
