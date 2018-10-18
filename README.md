@@ -15,7 +15,7 @@
  Shuer Li | | 
  Qingqing Zhuo| qingqing.zhuo@mail.utoronto.ca | lillizhuo
  Geling Li| geling.li@mail.utoronto.ca | gloriali2011 
- Zeyu Feng| | 
+ Zeyu Feng| zeyu.feng@mail.utoronto.ca| Zeeyuu 
  Da Fu| da.fu@mail.utoronto.ca | da-fu 
  Zi Wang| zikevin.wang@mail.utoronto.ca| kwanstyle 
 
