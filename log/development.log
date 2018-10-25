@@ -14124,3 +14124,121 @@ Processing by AccountsController#show as HTML
 Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/accounts/9" for 127.0.0.1 at 2018-10-25 08:59:21 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/zeyu/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:16
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 152ms (Views: 136.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-25 08:59:23 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-25 08:59:35 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mY1jIEQmGx1Bic7z+JbyCj/yKv43NHK4v99r1ZnRvHyOL9vVdJetgL3cjwkSyt7FRmDqJwrxXjVWJroeU9TmqA==", "account"=>{"email"=>"sadsadasdasda@sdf.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "sadsadasdasda@sdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sadsadasdasda@sdf.com"], ["role", "user"], ["password", "$2a$10$WwZ2pDOdSN/HRkTK0lBAsetp//azLfT0Dtge4oaTZK.S14JxD7TPG"], ["salt", "$2a$10$WwZ2pDOdSN/HRkTK0lBAse"], ["status", "created"], ["created_at", "2018-10-25 12:59:35.634650"], ["updated_at", "2018-10-25 12:59:35.634650"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to http://localhost:3000/accounts/10
+Completed 302 Found in 95ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/accounts/10" for 127.0.0.1 at 2018-10-25 08:59:35 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:16
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/10" for 127.0.0.1 at 2018-10-25 09:02:59 -0400
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-25 09:03:09 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:16
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 0.7ms)
+
+
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-25 09:03:53 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0nTyDcqzJm459WbqTG1BcqOmeujNBCgtihXDCgEn0p2kv2YPZAZ04Z8cqq+Le+USG6mMceh/UmrGo1NBsPr+ZQ==", "account"=>{"email"=>"sdsjdzyhddp@jsdf.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "sdsjdzyhddp@jsdf.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sdsjdzyhddp@jsdf.com"], ["role", "user"], ["password", "$2a$10$FyUBpQR.09Yvq/22XUDOYeQNwvMmSgffZlcDOBj.Ez.45w9Psmtaa"], ["salt", "$2a$10$FyUBpQR.09Yvq/22XUDOYe"], ["status", "created"], ["created_at", "2018-10-25 13:03:53.967672"], ["updated_at", "2018-10-25 13:03:53.967672"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to http://localhost:3000/accounts/11
+Completed 302 Found in 62ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/accounts/11" for 127.0.0.1 at 2018-10-25 09:03:53 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:16
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2018-10-25 10:09:07 -0400
+Processing by AccountsController#new as HTML
+  Rendering accounts/new.html.erb within layouts/application
+  Rendered accounts/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-10-25 10:09:21 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cQgSx1MGOta/eP2oSDrVgAqOpGWP/+xAAJFsC8+gzvJmqqoyY7eMS0MtvFKiZvlPcxxkvLI6wM3paL3ABaWUJg==", "account"=>{"email"=>"wadlsjieuq@fma.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "accounts" WHERE "accounts"."email" = ? LIMIT ?[0m  [["email", "wadlsjieuq@fma.com"], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("email", "role", "password", "salt", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "wadlsjieuq@fma.com"], ["role", "user"], ["password", "$2a$10$p.O.ZzBpG5CULoGLoVUWkO7U5ySiehqHT41exGLORNKH5hBaZluVi"], ["salt", "$2a$10$p.O.ZzBpG5CULoGLoVUWkO"], ["status", "created"], ["created_at", "2018-10-25 14:09:21.859285"], ["updated_at", "2018-10-25 14:09:21.859285"]]
+  ↳ app/controllers/accounts_controller.rb:6
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/accounts_controller.rb:6
+Redirected to http://localhost:3000/accounts/12
+Completed 302 Found in 66ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/accounts/12" for 127.0.0.1 at 2018-10-25 10:09:21 -0400
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:16
+  Rendering accounts/show.html.erb within layouts/application
+  Rendered accounts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+

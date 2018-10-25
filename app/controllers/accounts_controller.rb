@@ -33,14 +33,20 @@ class AccountsController < ApplicationController
         #Set the url to be the home page
         @url = 'https://github.com/mikel/mail'
 
+        #Reading the email body file as erb instead of plain text or html
+        email_body = ERB.new(File.read('./app/views/mail_texts/welcome_email.html.erb')).result(binding)
+        
+        #Compose welcome_email
         mail = Mail.new do
             from    'zeyu.feng@mail.utoronto.ca'
             to      account.email
             subject 'Welcome to Neighborrow!'
-            body    File.read('./app/views/mail_texts/welcome_email.text.erb')
+            content_type 'text/html; charset=UTF-8'
+            body    email_body
         end
        
-        mail.delivery_method :logger
+        #mail.delivery_method :sendmail
+        mail.delivery_method :logger 
         mail.deliver
     end
 
