@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
         if (@account.save)
             flash[:notice] = "Sign up successful!"
             redirect_to @account
-        else
+            else
             render 'new'
         end
     end
@@ -23,7 +23,7 @@ class AccountsController < ApplicationController
     end
     
     private def account_params
-        params.require(:account).permit(:email, :password)
+        params.require(:account).permit(:email, :password, :password_confirmation)
     end
     
 end

@@ -1,19 +1,21 @@
 class SessionsController < ApplicationController
   
-  def create
-      auth_user = Account.authenticate(params[:session][:email], params[:session][:password])
-    if auth_user
-        #session[:userid] = auth_user.id
-        redirect_to "http://localhost:3000/"
-    else
-        flash[:notice] = "Wrong password/email combination"
-        render 'new'
-    end
-    
-  end
-  
-  
   def new
   end
   
+  def create
+      user = Account.find_by(email: params[:session][:email])
+      if user && user.authenticate(params[:session][:email], params[:session][:password])
+          #log_in user
+          redirect_to user
+          else
+          flash.now[:danger] = 'Invalid email/password combination'
+          render 'new'
+      end
+  end
+  
+  def destroy
+      log_out
+      redirect_to root_url
+  end
 end
