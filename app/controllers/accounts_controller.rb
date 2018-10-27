@@ -1,3 +1,4 @@
+require 'mail'
 class AccountsController < ApplicationController
     
     def create
@@ -27,8 +28,8 @@ class AccountsController < ApplicationController
         params.require(:account).permit(:email, :password, :password_confirmation)
     end
     
+    
     def welcome_email account
-        require 'mail'
 
         #Set the url to be the home page
         @url = 'https://github.com/mikel/mail'

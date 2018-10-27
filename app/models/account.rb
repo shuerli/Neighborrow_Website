@@ -7,8 +7,10 @@ class Account < ApplicationRecord
     validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :role, presence: true, :inclusion => {:in => ROLE_OPTIONS}
     validates :status, presence: true, :inclusion => {:in => STATUS_OPTIONS}
-    validates :password, :presence => true, confirmation:true, length: { minimum: 6 }
+    validates :password, presence: true, confirmation:true, length: { minimum: 6 }
     
+    has_many :addresses
+
     before_save :encrypt_password
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
