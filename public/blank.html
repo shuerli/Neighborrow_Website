@@ -1,9 +1,9 @@
 <!-- 
-	* This template file is referenced to coreui.io, along with other third-party stylesheets and javascript files
+	* This modified template file is referenced to coreui.io, 
+	* along with other third-party stylesheets and javascript files.
 	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
 -->
 
-<!DOCTYPE html>
 <!--
 * CoreUI - Free Bootstrap Admin Template
 * @version v2.1.7
@@ -12,9 +12,11 @@
 * Licensed under MIT (https://coreui.io/license)
 -->
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+	<!-- Meta information used for SEO -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -22,14 +24,18 @@
 	<meta name="author" content="Neighborrow">
 	<meta name="keyword" content="Borrow, Lend, CSC444">
 	<title>Neighborrow - Blank</title>
-	<!-- Icons-->
+	
+	<!-- CSS files for third-party icons-->
 	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
 	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
 	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-	<!-- Main styles for this application-->
+	
+	<!-- Base stylesheets & third-party stylesheets-->
 	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
 	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+	<!-- Customized stylesheet goes here-->
 
 </head>
 
@@ -44,7 +50,7 @@
 			<span id="subHeaderModule"></span>
 			
 			<div class="container-fluid">
-				<!-- Main section - Put all your codes into this block -->
+				<!-- Main section - Codes for main functionalities in this block -->
 			</div>
 		</main>
 	</div>
@@ -53,21 +59,16 @@
 
 
 
-	<!-- CoreUI and necessary plugins-->
+	<!-- CoreUI and other third-party plugins (js files) -->
 	<script src="/vendors/jquery/js/jquery.min.js"></script>
 	<script src="/vendors/popper.js/js/popper.min.js"></script>
 	<script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/vendors/pace-progress/js/pace.min.js"></script>
 	<script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
 	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
-	<script>
-		$(function () {
-			$("#headerModule").load("./modules/header.html")
-			$("#menuModule").load("./modules/menu.html");
-			$("#subHeaderModule").load("./modules/subheader.html");
-			$("#footerModule").load("./modules/footer.html");
-		});
-	</script>
+
+	<!-- Customized Javascript file goes here -->
+	<script src="/assets/js/dashboard-init.js"></script>
 
 </body>
 
