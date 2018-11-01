@@ -42,8 +42,9 @@
 			<img class="navbar-brand-full" src="img/brand/logo.svg" width="89" height="25" alt="Logo">
 			<img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
 		</a>
-		<div class="row d-md-down-none" style="padding-left:75px;width:80%">
-				<input type="text" style="width:90%" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+		<div class="row d-md-down-none" style="padding-left:15%;width:80%">
+				<input type="text" style="width:90%" class="form-control" placeholder="Search for items which you're looking for" name="srch-term" id="srch-term">
+				<button class="btn btn-primary" style="margin-left:-40px"><i class="fa fa-search"></i></button>
 		</div>
 		<ul class="nav navbar-nav ml-auto">
 			<li class="nav-item dropdown">
@@ -52,7 +53,7 @@
 				</a>
 				<div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="#">
-						<i class="fa fa-lock"></i> Logout</a>
+						<i class="fa fa-sign-out"></i> Sign out</a>
 				</div>
 			</li>
 		</ul>
@@ -78,8 +79,9 @@
 							<span class="text-warning">Rate</span>
 							<div class="text-warning"><strong><i class="fa fa-star"></i> 4.5</strong></div>
 					</div>
-
+					
 				</div>
+				<hr style="border-color: white;background-color:white;color:white">
 			</div>
 
 
@@ -87,9 +89,9 @@
 			
 
 
-			<nav class="sidebar-nav">
-					<hr style="border-color: white;background-color:white;color:white">
-				<ul class="nav">
+			<nav class="sidebar-nav" style="overflow:hidden">
+				
+				<ul class="nav" style="overflow:hidden">
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">
 							<i class="nav-icon icon-home"></i> Home
@@ -145,13 +147,19 @@
 
 				</ul>
 			</nav>
-			<button class="sidebar-minimizer brand-minimizer" type="button"></button>
+			<!--button class="sidebar-minimizer brand-minimizer" type="button"></button-->
 
 		</div>
 
 		<main class="main">
 			<!-- Breadcrumb-->
-			<ol class="breadcrumb">
+			<ol class="breadcrumb d-xl-none d-lg-none">
+				<div class="row text-center" style="width:100%">
+					<input type="text" style="width:80%;margin-left:10%" class="form-control" placeholder="Looking for something?" name="srch-term" id="srch-term">
+					<button class="btn btn-primary" style="margin-left:-30px"><i class="fa fa-search"></i></button>
+				</div>
+			</ol>
+			<ol class="breadcrumb d-md-down-none">
 				<li class="breadcrumb-item">
 					<a href="#">Step 1</a>
 				</li>
@@ -167,11 +175,10 @@
 	</div>
 	<footer class="app-footer" id="footerModule">
 		<div>
-			<a href="https://coreui.io">CoreUI</a>
-			<span>&copy; 2018 creativeLabs.</span>
+			<span>Copyright &copy; 2018 Neighborrow. All rights reserved.</span>
 		</div>
-		<div class="ml-auto">
-			<span>Modified on & Powered by</span>
+		<div class="ml-auto d-md-down-none">
+			<span>View Powered by</span>
 			<a href="https://coreui.io">CoreUI</a>
 		</div>
 	</footer>
