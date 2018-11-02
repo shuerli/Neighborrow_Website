@@ -7,14 +7,14 @@ class Account < ApplicationRecord
     validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :role, presence: true, :inclusion => {:in => ROLE_OPTIONS}
     validates :status, presence: true, :inclusion => {:in => STATUS_OPTIONS}
-    validates :password, presence: true, confirmation:true, length: { minimum: 6 }
+    validates :password, presence: true, confirmation:true, length: { minimum: 5 }
     
     has_many :addresses
 
     before_save :encrypt_password
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
-    after_save :clear_password
+
     
     ###################### USED FOR SIGN IN ######################
     
@@ -24,10 +24,7 @@ class Account < ApplicationRecord
             self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
         end
     end
-    
-    def clear_password
-        self.password = nil
-    end
+
     
     #FIXME temporarily make all accounts "ROLE = user"
     def assign_role
