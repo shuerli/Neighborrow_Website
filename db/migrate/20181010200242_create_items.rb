@@ -8,11 +8,11 @@ class CreateItems < ActiveRecord::Migration[5.2]
 			#t.text :address_option, array: true, null: false
 			t.timestamp :time_start, null: false
 			t.timestamp :time_end, null: false
-			t.timestamp :time_pickup, array: true, null: false
+			#t.timestamp :time_pickup, array: true, null: false
 			t.text :name, null: false
+			t.text :photo_url
 			t.text :description, null: false
 			t.text :brand
-			t.integer :year
 			t.text :feature, array: true
 			t.text :amazon_id
 			t.text :walmart_id
