@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  def new
+  def login
       respond_to do |format|
           format.html
           format.js
