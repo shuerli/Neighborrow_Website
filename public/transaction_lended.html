@@ -1,0 +1,174 @@
+<!-- 
+	* This modified template file is referenced to coreui.io, 
+	* along with other third-party stylesheets and javascript files.
+	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.7
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta information used for SEO -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
+	<meta name="author" content="Neighborrow">
+	<meta name="keyword" content="Borrow, Lend, CSC444">
+	<title>Neighborrow - Blank</title>
+
+	<!-- CSS files for third-party icons-->
+	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+	<!-- Base stylesheets & third-party stylesheets-->
+	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+	<!-- Customized stylesheet goes here-->
+
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show">
+	<header class="app-header navbar" style="width:100%" id="headerModule">
+
+	</header>
+	<div class="app-body">
+		<div class="sidebar" id="menuModule"></div>
+
+		<main class="main">
+			<span id="subHeaderModule"></span>
+
+			<div class="container-fluid">
+				<!-- Main section - Codes for main functionalities in this block -->
+				<h2>Lending Request History</h2>
+				<hr>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="email" class="form-control" id="transaction_search" placeholder="Search by item's name, item's id, borrower's name or request id">
+					</div>
+					<div class="col-md-4 d-sm-down-none">
+						<button class="btn btn-outline-info" id="filter_init" data-toggle="collapse" href="#filter_section" aria-controls="filter_section">More
+							Filters</button>
+					</div>
+					<div class="col-md-2 d-sm-down-none">
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option>Sort by Time</option>
+							<option>Sort by Item's Name (A-Z)</option>
+							<option>Sort by Borrower's Name (A-Z)</option>
+						</select>
+					</div>
+					<div class="collapse col-md-12" id="filter_section" style="margin-top:3.5vh;">
+						<div class="card card-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="exampleFormControlInput1">Show entries created in</label>
+										<select class="form-control" id="fadfa">
+											<option>last week</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-3">
+
+								</div>
+								<div class="col-md-3">
+
+								</div>
+								<div class="col-md-3">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="row">
+									<div class="col-lg-4 col-sm-6 col-xs-6">
+										<strong class="text-muted">Request ID</strong><br>
+										<a>12312312</a>
+									</div>
+									<div class="col-lg-6 d-md-down-none">
+											<strong class="text-muted">Request Date</strong><br>
+											<a>Jan 1st, 2019</a>
+										</div>
+										<div class="col-lg-2 col-sm-6 col-xs-6">
+												<strong class="text-muted">Status</strong><br>
+												<a class="text-success"><i class="fa fa-check-circle"></i> Completed</a>
+											</div>
+									
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-8">
+
+									</div>
+									<div class="col-md-4 text-center">
+										<button class="btn btn-primary" style="width:65%;margin-bottom: 15px;">Contact Borrower</button>
+										<button class="btn btn-primary" style="width:65%;margin-bottom: 15px;"></button>
+										<button class="btn btn-primary" style="width:65%;">haha</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+							<nav aria-label="Page navigation example">
+									<ul class="pagination justify-content-center">
+										<li class="page-item disabled">
+											<a class="page-link" href="#" tabindex="-1">Previous</a>
+										</li>
+										<li class="page-item active"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">2</a></li>
+										<li class="page-item"><a class="page-link" href="#">3</a></li>
+										<li class="page-item">
+											<a class="page-link" href="#">Next</a>
+										</li>
+									</ul>
+								</nav>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<footer class="app-footer" id="footerModule"></footer>
+
+
+
+	<!-- CoreUI and other third-party plugins (js files) -->
+	<script src="/vendors/jquery/js/jquery.min.js"></script>
+	<script src="/vendors/popper.js/js/popper.min.js"></script>
+	<script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/vendors/pace-progress/js/pace.min.js"></script>
+	<script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+
+	<!-- Customized Javascript file goes here -->
+	<script src="/assets/js/dashboard-init.js"></script>
+	<script src="/assets/js/transaction_lended.js"></script>
+
+</body>
+
+</html>
