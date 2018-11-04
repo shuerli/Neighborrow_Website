@@ -7,5 +7,13 @@ Rails.application.routes.draw do
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
   get   '/temp',     to: 'pages#temp'
-  resources:accounts
+	resources:accounts
+	
+	# Routes related to request manipulation, request history and relevant api
+	get '/request_borrowed' => 'request#page_borrowed'
+	get '/request_lended' => 'request#page_lended'
+	get '/request' => 'request#show'
+	post '/request' => 'request#create'
+	put '/request' => 'request#update'
+
 end
