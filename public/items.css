@@ -1,3 +1,36 @@
+/* Add asterisk sign before required fields */
+#item-name:before,#item-condition:before,#date-start:before,#date-end:before{
+    content:"*";
+    font-weight:bold;
+    color:red;
+}
+
+/* Style for image adding button when registering a new item */
+#add-img {
+    height: 150px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 0.5px solid black;
+    text-align: center;
+}
+
+/* Style for calendar when choosing available time for a new item */
+input#date_from, input#date_to {
+    border: 1px solid #dfdfdf;
+    font-family: Roboto, Arial, Helvetica;
+    font-size: 14px;
+    color: #404040;
+    background-color: #fafafa;
+    border: #c0c0c0 1px solid;
+    width: 100px;
+}
+span.label {
+    font-family: Roboto, Arial, Helvetica;
+    font-size: 18px;
+    color: #404040;
+}
+
+/* Style for grid view in item page */
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -13,6 +46,7 @@
     width: 200px;
   }
   
+/* Style for delete button @ top right of registered items in item page */
 .img-wrap {
     position: relative;
     display: inline-block;
