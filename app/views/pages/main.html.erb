@@ -8,18 +8,24 @@
         <link rel="icon" href="../../../../favicon.ico">
                             
         <title>Carousel Template for Bootstrap</title>
-                            
-        <%= stylesheet_link_tag 'carousel.css' %>
+        
         <!-- Custom styles for this template -->
-
-    <body>
+        <%= stylesheet_link_tag 'carousel.css' %>
         
 
+        <!-- Button trigger modal -->
+        <%= link_to 'launch login', login_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#myModalLabel', class: 'btn btn-primary'}  %>
+
+        <!-- Modal holder -->
         <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content"></div>
             </div>
         </div>
+
+        
+    <body>
+        
         
         <main role="main">
             
