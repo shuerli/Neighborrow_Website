@@ -115,6 +115,23 @@ color: #999;
 &:hover {color: darken(#999, 13%);}
 }
 
+.agree-term {
+font-size: 12px;
+display: inline-block;
+width: auto;
+}
+
+.term-service {
+font-size: 12px;
+colot: black;
+}
+
+.label-agree-term {
+font-size: 12px;
+position: relative;
+top: 0%;
+}
+
 #error_explanation {
 color: red;
 ul {
