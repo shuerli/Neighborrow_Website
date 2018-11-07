@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
 			t.text :owner, null: false
 			t.text :condition, null: false
-			t.integer :category, null: false
+            t.reference :category, foreign_key: true, index = true
 			t.text :rate_level
 			#t.text :address_option, array: true, null: false
 			t.timestamp :time_start, null: false

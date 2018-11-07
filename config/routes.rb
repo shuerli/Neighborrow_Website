@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
   get   '/temp',     to: 'pages#temp'
-	resources:accounts
+
+  resources:accounts
+  resources:categories
 	
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'

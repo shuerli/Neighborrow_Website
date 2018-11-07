@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
         #render plain: params[:account].inspect
         @account = Account.new(account_params)
         if (@account.save)
+            log_in @account
             welcome_email @account
             flash[:notice] = "Sign up successful!"
             redirect_to @account
