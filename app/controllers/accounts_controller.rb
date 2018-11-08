@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
             welcome_email @account
             flash[:notice] = "Sign up successful!"
             redirect_to @account
-            else
+        else
             render 'new'
         end
     end

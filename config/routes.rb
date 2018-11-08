@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
   get   '/temp',     to: 'pages#temp'
-
+  
+  get '/borrow',    to: 'item#borrow'
   resources:accounts
   resources:categories
   resources:items
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
 	get '/request' => 'request#show'
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
-
+    
+    
 end
