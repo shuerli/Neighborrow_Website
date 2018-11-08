@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources:accounts
   resources:categories
-	
+  resources:items
+  
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
 	get '/request_lended' => 'request#page_lended'
