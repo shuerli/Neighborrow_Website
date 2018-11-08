@@ -73,23 +73,23 @@ ActiveRecord::Schema.define(version: 2018_10_10_201221) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "category_id"
     t.text "owner", null: false
     t.text "condition", null: false
-    t.integer "category", null: false
     t.text "rate_level"
     t.datetime "time_start", null: false
     t.datetime "time_end", null: false
-    t.datetime "time_pickup", null: false
     t.text "name", null: false
+    t.text "photo_url"
     t.text "description", null: false
     t.text "brand"
-    t.integer "year"
     t.text "feature"
     t.text "amazon_id"
     t.text "walmart_id"
     t.text "isbn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "profiles", id: false, force: :cascade do |t|
@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 2018_10_10_201221) do
     t.text "rejected_reason"
     t.datetime "time_start", null: false
     t.datetime "time_end", null: false
-    t.datetime "time_pickup", null: false
     t.boolean "received", default: false, null: false
     t.boolean "returned", default: false, null: false
     t.datetime "created_at", null: false

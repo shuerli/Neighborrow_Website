@@ -92,12 +92,11 @@
 # category_id: identifier for each category entry
 # department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
 # name: name of this category, referencing to Walmart/Amazon/Ebay
-categories = Category.create([
-                             {department:'Books', name:'Textbooks'},
-                             {department:'Books', name:'Novels'},
-                             {department:'Video Games', name: 'PC Gaming'},
-                             {department:'Electronics', name:'Tv & Video'}
-                             ])
+category1 = Category.create!(department:'Books', name:'Textbooks')
+category2 = Category.create!(department:'Books', name:'Novels')
+category3 = Category.create!(department:'Video Games', name: 'PC Gaming')
+category4 = Category.create!(department:'Electronics', name:'Tv & Video')
+
 
 # Creating data for 'Item' table, definition as follows
 # owner: email of the user owning this item
@@ -109,7 +108,25 @@ categories = Category.create([
 # time_end: the last day that the item is available for borrowing
 # time_pickup: available pick-up time
 
+category1.items.create!([
+                       {owner:'raymondfzy@gmail.com', condition:'Brand New', rate_level: 4, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Introduction to Database', description:'A brand new textbook, whoever uses it will likely get 4.0 gpa on that course', brand:'brand1'},
+                       {owner:'raymondfzy@gmail.com', condition:'Like New', rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
+                       {owner:'createduser@gmail.com', condition:'Brand New',time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
+                       {owner:'geling.li@mail.utoronto.ca', condition:'Like New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Learn C++ in 21 Days', description:'This dude is lazy and did not leave anything here', brand:'XinHua'}
+                       ])
 
+category2.items.create!([
+                    {owner:'raymondfzy@gmail.com', condition:'Very Good', rate_level: 3, time_start:'2018-11-16 00:00:00', time_end: '2018-12-23 13:23:04', name:'King Lear',description:'see the picture', brand:'brand3'},
+                    {owner:'raymondfzy@gmail.com', condition:'Good', rate_level: 2, time_start:'2018-11-08 00:00:00', time_end: '2019-01-25 13:23:04', name:'Don Quixote', description:'This dude is lazy and did not leave anything here', brand:'brand4'},
+                    {owner:'suspendeduser@gmail.com', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Frankenstein', description:'frank', brand:'brand3'}
+                       ])
+
+category3.items.create!([
+                    {owner:'raymondfzy@gmail.com', condition:'Adequate', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Halo 7',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
+                    {owner:'raymondfzy@gmail.com', condition:'Defective', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Resident Evil',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
+                    {owner:'banneduser@gmail.com', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Monster Hunter', description:'3ds version', brand:'Kapkom'},
+                    {owner:'geling.li@mail.utoronto.ca', condition:'Good', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Tomb Raider', description:'The best one of the series', brand:'3DM Private Games'}
+                    ])
 
 
 # Creating data for 'Request' table, definition as follows
@@ -127,27 +144,27 @@ categories = Category.create([
 
 	requests = Request.create([
 		#requests from active users/admin to active owners
-		{item_id:1, borrower:'activeuser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:2, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:3, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:4, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:5, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:6, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:1, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
+		{item_id:1, borrower:'activeuser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:4, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:5, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:6, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:1, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 		
 
 		#requests from inactive users to active owners
-		{item_id:1, borrower:'createduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:2, borrower:'suspendeduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:3, borrower:'banneduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
+		{item_id:1, borrower:'createduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'suspendeduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'banneduser@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 
 		#requests from active users/admin to inactive owners
-		{item_id:7, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:8, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:9, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:7, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:8, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'},
-		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00', time_pickup:'2018-10-11 00:00:00'}
+		{item_id:7, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'activeuser@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:7, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
 	])
 
 
