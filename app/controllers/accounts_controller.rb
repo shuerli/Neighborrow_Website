@@ -52,4 +52,7 @@ class AccountsController < ApplicationController
         mail.deliver
     end
 
+    def settings
+        @account = Account.find_by(id: 1)
+    end
 end

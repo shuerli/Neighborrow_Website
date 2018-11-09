@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get   '/temp',     to: 'pages#temp'
   
   get '/borrow',    to: 'item#borrow'
+  
+  get '/settings', to: 'accounts#settings'
+  
   resources:accounts
   resources:categories
   resources:items
