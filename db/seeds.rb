@@ -88,6 +88,16 @@
 	])
 
 
+# Creating data for 'Category' table, definition as follows
+# category_id: identifier for each category entry
+# department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
+# name: name of this category, referencing to Walmart/Amazon/Ebay
+category1 = Category.create!(department:'Books', name:'Textbooks')
+category2 = Category.create!(department:'Books', name:'Novels')
+category3 = Category.create!(department:'Video Games', name: 'PC Gaming')
+category4 = Category.create!(department:'Electronics', name:'Tv & Video')
+
+
 # Creating data for 'Item' table, definition as follows
 # owner: email of the user owning this item
 # condition: item condition, referenced to the standard on Ebay
@@ -98,27 +108,25 @@
 # time_end: the last day that the item is available for borrowing
 # time_pickup: available pick-up time
 
+category1.items.create!([
+                       {owner:'raymondfzy@gmail.com', condition:'Brand New', rate_level: 4, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Introduction to Database', description:'A brand new textbook, whoever uses it will likely get 4.0 gpa on that course', brand:'brand1'},
+                       {owner:'raymondfzy@gmail.com', condition:'Like New', rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
+                       {owner:'createduser@gmail.com', condition:'Brand New',time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
+                       {owner:'geling.li@mail.utoronto.ca', condition:'Like New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Learn C++ in 21 Days', description:'This dude is lazy and did not leave anything here', brand:'XinHua'}
+                       ])
 
+category2.items.create!([
+                    {owner:'raymondfzy@gmail.com', condition:'Very Good', rate_level: 3, time_start:'2018-11-16 00:00:00', time_end: '2018-12-23 13:23:04', name:'King Lear',description:'see the picture', brand:'brand3'},
+                    {owner:'raymondfzy@gmail.com', condition:'Good', rate_level: 2, time_start:'2018-11-08 00:00:00', time_end: '2019-01-25 13:23:04', name:'Don Quixote', description:'This dude is lazy and did not leave anything here', brand:'brand4'},
+                    {owner:'suspendeduser@gmail.com', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Frankenstein', description:'frank', brand:'brand3'}
+                       ])
 
-	items = Item.create([
-			#create items for active user
-			{owner:'raymondfzy@gmail.com', status:'registered',condition:'Brand New', category: 1, rate_level: 4, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Introduction to Database', description:'A brand new textbook, whoever uses it will likely get 4.0 gpa on that course', brand:'brand1'},
-			{owner:'raymondfzy@gmail.com', condition:'Like New', category: 1, rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
-			{owner:'raymondfzy@gmail.com', condition:'Very Good', category: 2, rate_level: 3, time_start:'2018-11-16 00:00:00', time_end: '2018-12-23 13:23:04', name:'King Lear',description:'see the picture', brand:'brand3'},
-			{owner:'raymondfzy@gmail.com', condition:'Good', category: 2, rate_level: 2, time_start:'2018-11-08 00:00:00', time_end: '2019-01-25 13:23:04', name:'Don Quixote', description:'This dude is lazy and did not leave anything here', brand:'brand4'},
-			{owner:'raymondfzy@gmail.com', condition:'Adequate', category: 3, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Halo 7',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-			{owner:'raymondfzy@gmail.com', condition:'Defective', category: 3, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Resident Evil',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-			
-			#create items for user with other status
-			{owner:'createduser@gmail.com', condition:'Brand New', category: 1, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
-			{owner:'suspendeduser@gmail.com', condition:'Brand New', category: 2, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Frankenstein', description:'frank', brand:'brand3'},
-			{owner:'banneduser@gmail.com', condition:'Brand New', category: 3, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Monster Hunter', description:'3ds version', brand:'Kapkom'},
-			
-			#create items for active admin
-			{owner:'geling.li@mail.utoronto.ca', condition:'Like New', category: 1, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Learn C++ in 21 Days', description:'This dude is lazy and did not leave anything here', brand:'XinHua'},
-			{owner:'geling.li@mail.utoronto.ca', condition:'Good', category: 3, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Tomb Raider', description:'The best one of the series', brand:'3DM Private Games'}
-	])
-
+category3.items.create!([
+                    {owner:'raymondfzy@gmail.com', condition:'Adequate', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Halo 7',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
+                    {owner:'raymondfzy@gmail.com', condition:'Defective', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Resident Evil',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
+                    {owner:'banneduser@gmail.com', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Monster Hunter', description:'3ds version', brand:'Kapkom'},
+                    {owner:'geling.li@mail.utoronto.ca', condition:'Good', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Tomb Raider', description:'The best one of the series', brand:'3DM Private Games'}
+                    ])
 
 
 # Creating data for 'Request' table, definition as follows
@@ -160,16 +168,6 @@
 	])
 
 
-# Creating data for 'Category' table, definition as follows
-# category_id: identifier for each category entry
-# department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
-# name: name of this category, referencing to Walmart/Amazon/Ebay
-	categories = Category.create([
-			{department:'Books', name:'Textbooks'},
-			{department:'Books', name:'Novels'},
-			{department:'Video Games', name: 'PC Gaming'},
-			{department:'Electronics', name:'Tv & Video'}
-	])
 
 
 # Creating data for 'FeedbackToBorrower' table, definition as follows

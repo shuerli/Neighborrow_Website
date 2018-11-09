@@ -5,10 +5,11 @@ class AccountsController < ApplicationController
         #render plain: params[:account].inspect
         @account = Account.new(account_params)
         if (@account.save)
+            log_in @account
             welcome_email @account
             flash[:notice] = "Sign up successful!"
             redirect_to @account
-            else
+        else
             render 'new'
         end
     end
@@ -51,4 +52,7 @@ class AccountsController < ApplicationController
         mail.deliver
     end
 
+    def settings
+        @account = Account.find_by(id: 1)
+    end
 end
