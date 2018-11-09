@@ -2,6 +2,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
 			t.text :owner, null: false
+			t.text :status, null: false, default:'registered'
 			t.text :condition, null: false
 			t.integer :category, null: false
 			t.text :rate_level
