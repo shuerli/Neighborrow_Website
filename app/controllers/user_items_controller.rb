@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class UserItemsController < ApplicationController
     def index
     end
   

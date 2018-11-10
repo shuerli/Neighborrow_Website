@@ -9,7 +9,7 @@ $('.img-wrap .close').on('click', function() {
 //Receive data from controller when page loads
 $(document).ready(function() {
   //Add image and name for lent items
-  $.get("/item?type=lent",function(data){
+  $.get("/user_item?type=lent",function(data){
       for (var i=0;i<data.result.length;i++){
         var divImage = document.createElement('div');
         divImage.innerHTML = '<h2><img src="imgplaceholder.gif" alt="my lent item" width="150" height="150" ></h2>\
@@ -18,7 +18,7 @@ $(document).ready(function() {
       }
   });
   //Add image and name for registered items, and add new item button
-  $.get("/item?type=registered",function(data){
+  $.get("/user_item?type=registered",function(data){
     for (var i=0;i<data.result.length;i++){
       var divImage = document.createElement('div');
       divImage.className = "img-wrap";

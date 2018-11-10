@@ -24,8 +24,8 @@ Rails.application.routes.draw do
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
     
-  get '/item' => 'items#show'
-	post '/item' => 'items#create'
-	put '/item' => 'items#update'
+  get '/user_item' => 'user_items#show'
+	post '/user_item' => 'user_items#create'
+	put '/user_item' => 'user_items#update'
     
 end
