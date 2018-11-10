@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
     def index
     end
   
-  
     def show
       user_email = 'raymondfzy@gmail.com'
       case params[:type]
@@ -18,11 +17,6 @@ class ItemsController < ApplicationController
       end
     end
 
-
-    
-
-
-    
   
     def new
     end
