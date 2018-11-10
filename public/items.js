@@ -12,7 +12,7 @@ $(document).ready(function() {
   $.get("/item?type=lent",function(data){
       for (var i=0;i<data.result.length;i++){
         var divImage = document.createElement('div');
-        divImage.innerHTML = '<h2><img src="' + data.result[i].photo_url + '" alt="my lent item" width="150" height="150" ></h2>\
+        divImage.innerHTML = '<h2><img src="imgplaceholder.gif" alt="my lent item" width="150" height="150" ></h2>\
                             <p>' + data.result[i].name + '</p>';
         document.getElementById("lent-items").appendChild(divImage);
       }
