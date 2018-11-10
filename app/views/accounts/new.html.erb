@@ -40,6 +40,9 @@
 
 <!-- Customized stylesheet goes here-->
 
+<!-- Google sign in script-->
+<meta name="google-signin-client_id" content="744444716406-i96vaelj3bln6r24i9evqs339osuhpmc.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <%= stylesheet_link_tag "accounts" %>
@@ -96,21 +99,9 @@
 </li>
 
 <div class="col-md-12">
-<strong>Third-Party Links: </strong>
 <br>
 <div class="row">
-<div class="col-md-1"> </div>
-<div class="col-md-11">
-<button type="button" class="btn btn-brand btn-facebook">
-<i class="fa fa-facebook"></i>
-</button>
-<button type="button" class="btn btn-brand btn-twitter">
-<i class="fa fa-twitter"></i>
-</button>
-<button type="button" class="btn btn-brand btn-google">
-<i class="fa fa-google"></i>
-</button>
-</div>
+<i class="g-signin2" data-onsuccess="OnSignIn"></i>
 </div>
 </div>
 
