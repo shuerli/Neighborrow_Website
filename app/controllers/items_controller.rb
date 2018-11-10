@@ -1,52 +1,51 @@
 class ItemsController < ApplicationController
     def index
-        @items = Item.all
     end
   
   
     def show
-        @item = Item.find(params[:id])
+      user_email = 'raymondfzy@gmail.com'
+      case params[:type]
+      when 'lent'
+          lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user_email}' AND Items.status = 'lent' ORDER BY Items.time_start;")
+          render :json => {:status => 200, :result => lent_items}
+
+      when 'registered'
+          registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user_email}' AND Items.status = 'registered' ORDER BY Items.time_start;")
+          render :json => {:status => 200, :result => registered_items}
+      else
+        render :json => {:status => 404}
+      end
     end
+
+
+    
+
+
     
   
     def new
-      @item = Item.new
     end
   
   
     def edit
-      @item = Item.find(params[:id])
     end
   
   
     def create
-        @item = Item.new(item_params)
-      if @item.save
-        redirect_to @item
-      else
-        render 'new'
-      end
+
     end
    
   
-   def update
-      @item = Item.find(params[:id])
-      if @item.update(item_params)
-        redirect_to @item
-      else
-        render 'edit'
+    def update
+ 
     end
-   end
   
   
     def destroy
-      @tiem = Item.find(params[:id])
-      @item.destroy
-      redirect_to 
+
     end
   
   
-    private def item_params
-        params.require(:item).permit()
-    end
+   
 end

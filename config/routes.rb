@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   resources:accounts
   resources:categories
-  resources:items
+  
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
@@ -24,5 +24,8 @@ Rails.application.routes.draw do
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
     
+  get '/item' => 'items#show'
+	post '/item' => 'items#create'
+	put '/item' => 'items#update'
     
 end
