@@ -235,14 +235,82 @@
 
     <footer class="app-footer" id="footerModule"></footer>
 
+    <!-- Modal for Confirmation on Request Cancellation -->
+    <div class="modal" tabindex="-1" id="cancellation_modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmation of cancellation</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"><p>Are you sure that you want to cancel this request?</p><p class="text-danger">This action cannot be undone.</p></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Return
+			</button>
+			<button type="button" class="btn btn-danger" id="cancel_confirmed">Yes, cancel it</button>
+          </div>
+        </div>
+      </div>
+	</div>
+	
+
+	<!-- Modal for Help Request to Admin -->
+
+
+
+	<!-- Modal for Feedback Submission to Lender -->
+	<div class="modal" tabindex="-1" id="feedback_modal" role="dialog">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Your Review Matters</h5>
+				  <button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				  >
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					<p class="text-muted">Your comments are important for your lender, as it ma</p>
+				</div>
+				<div class="modal-footer">
+				  <button
+					type="button"
+					class="btn btn-secondary"
+					data-dismiss="modal"
+				  >
+					Return
+				  </button>
+				  <button type="button" class="btn btn-danger" id="feedback_form">Yes, cancel it</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+
     <!-- CoreUI and other third-party plugins (js files) -->
     <script src="/vendors/jquery/js/jquery.min.js"></script>
     <script src="/vendors/popper.js/js/popper.min.js"></script>
     <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="/vendors/pace-progress/js/pace.min.js"></script>
     <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
-	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
-	<script src="/vendors/momentjs/moment.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+    <script src="/vendors/momentjs/moment.js"></script>
 
     <!-- Customized Javascript file goes here -->
     <script src="/assets/js/dashboard-init.js?version=1"></script>
