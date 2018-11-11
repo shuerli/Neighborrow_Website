@@ -30,40 +30,7 @@ span.label {
     color: #404040;
 }
 
-/* Style for grid view in item page */
-/*
-.grid-container {
-    align-content:start;
 
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 10px;
-    background-color:blue;
-    padding: 10px;
-  }
-.grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 0.5px solid black
-    text-align: center;
-    padding: 20px 0;
-    height: 200px;
-    width: 200px;
-  }
-*/
-.grid-container {
-  display: grid;
-  align-content: start;
-  grid-template-columns: auto auto auto auto auto;
-  grid-gap: 35px;
-  background-color: #2196F3;
-  padding: 10px;
-}
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
 
 /* Style for delete button @ top right of registered items in item page */
 .img-wrap {
