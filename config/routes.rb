@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   get '/user_item' => 'user_items#show'
 	post '/user_item' => 'user_items#create'
   put '/user_item/:id' => 'user_items#update'
+
+	get '/404' => 'application#page_not_found'
     
 end
