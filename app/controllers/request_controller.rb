@@ -2,7 +2,6 @@ class RequestController < ApplicationController
 	layout false
 
 	def page_borrowed
-
 	end
 
 	def page_lended
@@ -76,13 +75,46 @@ class RequestController < ApplicationController
 			end
 
 		when'lended'
-			case params[:sorted_by]
-			when 'time'
+			case params[:range]
+			when 'all'
+				user_email = Account.find_by(id: 1).email
+				lended_requests_query = "SELECT Requests.*, Items.id AS item_id, Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.item_id=Items.id"
+				feedbacks_to_lender_query = "SELECT Requests.id AS request_id, Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Items, Feedback_to_lenders WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.item_id=Items.id AND Requests.id = Feedback_to_lenders.request_id"
+				feedbacks_to_borrower_query = "SELECT Requests.id AS request_id, feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Items, Requests, feedback_to_borrowers WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id"
+				associated_borrower_query = "SELECT Profiles.display_name, Requests.id AS request_id, Profiles.email From Requests, Profiles, Items WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.item_id = Items.id AND Requests.borrower = Profiles.email;"
+				associated_addresses_query = "SELECT Requests.id AS request_id, Addresses.* FROM Requests, Addresses, Items WHERE Requests.address = Addresses.id AND Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.item_id=Items.id;"
+				case params[:sorted_by]
+				when 'update_time'
+					order_query = " ORDER BY Requests.updated_at DESC;"
+					lended_requests = ActiveRecord::Base.connection.exec_query(lended_requests_query + order_query)
+					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query + order_query)
+					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query + order_query)
+					associated_borrowers = ActiveRecord::Base.connection.exec_query(associated_borrower_query)
+					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
+					render :json => {:status => 200, :result => lended_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_borrowers, :addresses => associated_addresses}
+				when 'item_name'
+					order_query = " ORDER BY Items.name ASC;"
+					lended_requests = ActiveRecord::Base.connection.exec_query(lended_requests_query + order_query)
+					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query + order_query)
+					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query + order_query)
+					associated_borrowers = ActiveRecord::Base.connection.exec_query(associated_borrower_query)
+					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
+					render :json => {:status => 200, :result => lended_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_borrowers, :addresses => associated_addresses}
+				when 'request_id'
+					order_query = " ORDER BY Requests.id ASC;"
+					lended_requests = ActiveRecord::Base.connection.exec_query(lended_requests_query + order_query)
+					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query + order_query)
+					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query + order_query)
+					associated_borrowers = ActiveRecord::Base.connection.exec_query(associated_borrower_query)
+					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
+					render :json => {:status => 200, :result => lended_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_borrowers, :addresses => associated_addresses}
+				end
+			when 'keyword'
+				if params[:keyword].match(/^(\d)+$/)!=nil
+				
+				else
 
-			when 'itemName'
-
-			when 'status'
-
+				end
 			end
 		else
 			render :json => {:status => 404}
