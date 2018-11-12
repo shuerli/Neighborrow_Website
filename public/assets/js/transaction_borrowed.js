@@ -543,7 +543,10 @@ $("#borrowed_searchbar").keyup(function(event) {
       }
     );
   } else if (event.keyCode === 8) {
-	if($("#borrowed_searchbar").val()==="")
+	if($("#borrowed_searchbar").val()===""){
 		appendSection(cache);
+		$("#filter_init").prop("disabled", false);
+    	$("#sort_order").prop("disabled", false);
+	}
   }
 });
