@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 	get '/request' => 'request#show'
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
+
+	# Routes related to feedback manipulation and relevant api
+	post '/feedback/to-borrower' => 'feedback#create_toBorrower'
+	post '/feedback/to-lender' => 'feedback#create_toLorrower'
+	get '/feedback' => 'feedback#show'
     
   get '/user_item' => 'user_items#show'
 	post '/user_item' => 'user_items#create'
