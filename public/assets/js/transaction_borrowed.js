@@ -91,6 +91,135 @@ let appendSection = info => {
     let photo_url = "";
     if (photo_url !== null) photo_url = request.photo_url;
 
+    // Handling the display of progressbar section
+    /*
+		Progressbar status:
+			1. Completed
+				-	Last update: item returned
+				-	If feedback_to_lender doesn't exist:
+					Next Task: Provide feedback, 95% yellow progress bar
+				-	If it exists
+					No next task, green 100% progress bar
+			2. Cancelled
+				-	grey progress bar
+				-	Last update: request cancelled
+			3. Rejected
+				-	Grey progress bar
+				-	Last update: request rejected
+			4. Accepted
+				-	Last update: request has been accepted
+				-	Item hasn't beed delievered
+					-	Get your item, 35% progress bar
+				-	Item hasn't been returned
+					-	Return the item upon request, 75% progress bar
+			5. Pending
+				-	15% Progress bar
+				-	Last update: request submitted
+				-	Next Task: waiting for approval
+	*/
+
+    // This entry is fixed
+    let progressbar_last_update_date = moment(request.updated_at).format(
+      "MMMM Do, YYYY"
+    );
+
+    let progressbar_percentage = "";
+    let progressbar_color = "";
+    let progressbar_last_update_task = "";
+    let progressbar_next_task =
+      '<a class="pull-right">Next Task</a><br /><strong class="pull-right" >Get your item</strong >';
+    let progressbar_next_date =
+      '<br /><small class="text-muted" >November 11, 2018</small >';
+
+    switch (request.status) {
+      case "pending":
+        progressbar_percentage = "15";
+        progressbar_color = "bg-info";
+        progressbar_last_update_task = "Request Submitted";
+        progressbar_next_task =
+          '<a class="pull-right">Next Task</a><br /><strong class="pull-right" >Waiting for Approval</strong >';
+        progressbar_next_date = "";
+        break;
+      case "accepted":
+        if (
+          moment(time_start).isSameOrAfter(moment().format()) &&
+          moment(time_end).isSameOrAfter(moment().format())
+        ) {
+          progressbar_percentage = "45";
+          progressbar_color = "bg-info";
+          progressbar_last_update_task = "Request Accepted";
+          progressbar_next_task =
+            '<a class="pull-right">Next Task</a><br /><strong class="pull-right" >Get This Item</strong >';
+          progressbar_next_date =
+            '<br /><small class="text-muted" >Before or On ' +
+            moment(request.time_start).format("MMMM Do, YYYY") +
+            "</small >";
+        } else if (
+          moment(time_start).isSameOrBefore(moment().format()) &&
+          moment(time_end).isSameOrAfter(moment().format())
+        ) {
+          progressbar_percentage = "70";
+          progressbar_color = "bg-info";
+          progressbar_last_update_task = "Item Received";
+          progressbar_next_task =
+            '<a class="pull-right">Next Task</a><br /><strong class="pull-right" >Return This Item</strong >';
+          progressbar_next_date =
+            '<br /><small class="text-muted" >Before or On ' +
+            moment(request.time_end).format("MMMM Do, YYYY") +
+            "</small >";
+        }
+        break;
+      case "completed":
+        if (
+          info.feedbackToLender.filter(x => x.request_id === request.id)
+            .length === 1
+        ) {
+          progressbar_percentage = "100";
+          progressbar_color = "bg-success";
+          progressbar_last_update_task = "Feedback Submitted";
+          progressbar_next_task = "";
+          progressbar_next_date = "";
+        } else {
+          progressbar_percentage = "95";
+          progressbar_color = "bg-warning";
+          progressbar_last_update_task = "Item Returned";
+          progressbar_next_task =
+            '<a class="pull-right">Next Task</a><br /><strong class="pull-right" >Provide Your Feedback</strong >';
+          progressbar_next_date = "";
+        }
+        break;
+      case "rejected":
+        progressbar_percentage = "100";
+        progressbar_color = "bg-secondary";
+        progressbar_last_update_task = "Request Rejected";
+        progressbar_next_task = "";
+        progressbar_next_date = "";
+        break;
+      case "cancelled":
+        progressbar_percentage = "100";
+        progressbar_color = "bg-secondary";
+        progressbar_last_update_task = "Request Cancelled";
+        progressbar_next_task = "";
+        progressbar_next_date = "";
+        break;
+    }
+    let progressbar_section =
+      '<div class="row"> <div class="col-md-12"> <div class="progress-group"> <div class="progress-group-header"> <div> <a class="pull-left">Last Update</a ><br /><strong>' +
+      progressbar_last_update_task +
+      '</strong><br /> <small class="text-muted" >' +
+      progressbar_last_update_date +
+      '</small > </div> <div class="ml-auto">' +
+      progressbar_next_task +
+      progressbar_next_date +
+      '</div> </div> <div class="progress-group-bars"> <div class="progress"> <div class="progress-bar ' +
+      progressbar_color +
+      '" role="progressbar" style="width: ' +
+      progressbar_percentage +
+      '%" aria-valuenow="' +
+      progressbar_percentage +
+      '" aria-valuemin="0" aria-valuemax="100" ></div>' +
+      " </div> </div> </div></div></div>";
+
     // Handling the display of button sections
     /*
 			Functional buttons for each borrowed items
@@ -117,38 +246,99 @@ let appendSection = info => {
 
 			* "Re-submit" & "Borrow this again" are dealt by the same handler
 		*/
-	let button_section = "", cancel_button = "", contact_button = "", help_button = "", feedback_button = "", reorder_button = "", resubmit_button = ""
+    let button_section = "",
+      cancel_button = "",
+      contact_button = "",
+      help_button = "",
+      feedback_button = "",
+      resubmit_button = "";
     switch (request.status) {
-	  case "pending":
-		cancel_button = '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request('+request.id+')"> Cancel this request </button>';
-		contact_button = '<a href="mailto:'+info.lenders.filter(x => x.request_id === request.id)[0].email+'"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-		button_section = contact_button + cancel_button;
+      case "pending":
+        cancel_button =
+          '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
+          request.id +
+          ')"> Cancel this request </button>';
+        contact_button =
+          '<a href="mailto:' +
+          info.lenders.filter(x => x.request_id === request.id)[0].email +
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+        button_section =
+          contact_button +
+          cancel_button +
+          '<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback(' +
+          request.id +
+          ')" > Provide Feedback </button>';
         break;
-	  case "accepted":
-		help_button = '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
-		cancel_button = '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request('+request.id+')"> Cancel this request </button>';
-		contact_button = '<a href="mailto:'+info.lenders.filter(x => x.request_id === request.id)[0].email+'"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-		button_section = contact_button + cancel_button + help_button;
+      case "accepted":
+        help_button =
+          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+        cancel_button =
+          '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
+          request.id +
+          ')"> Cancel this request </button>';
+        contact_button =
+          '<a href="mailto:' +
+          info.lenders.filter(x => x.request_id === request.id)[0].email +
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+        button_section = contact_button + cancel_button + help_button;
         break;
-	  case "completed":
-		if(info.feedbackToLender.filter(x => x.request_id === request.id).length===0){
-			feedback_button = '<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback('+ request.id +')" > Provide Feedback </button>';
-		}
-		reorder_button = '<button class="btn btn-outline-success" style="width:65%;margin-bottom: 15px;" > Borrow this again </button>';
-		contact_button = '<a href="mailto:'+info.lenders.filter(x => x.request_id === request.id)[0].email+'"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-		button_section = feedback_button + contact_button + reorder_button
-		break;
-	  case "rejected":
-		resubmit_button = '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
-		help_button = '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
-		contact_button = '<a href="mailto:'+info.lenders.filter(x => x.request_id === request.id)[0].email+'"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-		button_section = contact_button + help_button + resubmit_button
-		break;
-	  case "cancelled":
-	  	resubmit_button = '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
-		contact_button = '<a href="mailto:'+info.lenders.filter(x => x.request_id === request.id)[0].email+'"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-		button_section = contact_button + resubmit_button
-		break;
+      case "completed":
+        if (
+          info.feedbackToLender.filter(x => x.request_id === request.id)
+            .length === 0
+        ) {
+          feedback_button =
+            '<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback(' +
+            request.id +
+            ')" > Provide Feedback </button>';
+        }
+        contact_button =
+          '<a href="mailto:' +
+          info.lenders.filter(x => x.request_id === request.id)[0].email +
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+        button_section = feedback_button + contact_button;
+        break;
+      case "rejected":
+        resubmit_button =
+          '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
+        help_button =
+          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+        contact_button =
+          '<a href="mailto:' +
+          info.lenders.filter(x => x.request_id === request.id)[0].email +
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+        button_section = contact_button + help_button + resubmit_button;
+        break;
+      case "cancelled":
+        resubmit_button =
+          '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
+        contact_button =
+          '<a href="mailto:' +
+          info.lenders.filter(x => x.request_id === request.id)[0].email +
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+        button_section = contact_button + resubmit_button;
+        break;
+    }
+
+    // Handling the display of pick-up location
+    let address = info.addresses.filter(x => x.request_id === request.id);
+    let address_section = "";
+    if (address.length === 0) {
+      address_section =
+        "<a>Please contact the lender for this information.</a>";
+    } else {
+      address_section =
+        "<a>" +
+        address[0].address_line1 +
+        "</a><br /> <a>" +
+        address[0].address_line2 +
+        "</a><br /><a>" +
+        address[0].city +
+        ", " +
+        address[0].province +
+        "</a><br /> <a>" +
+        address[0].postal_code +
+        "</a><br />";
     }
 
     let content =
@@ -169,9 +359,11 @@ let appendSection = info => {
       '</h4> <h6 class="text-muted">Owned by <a id="user_name">' +
       info.lenders.filter(x => x.request_id === request.id)[0].display_name +
       '</a></h6> <small ><a href="https://www.google.ca/" >View Item Detail</a ></small > | <small ><a href="https://www.google.ca/" >View Lender Profile</a ></small > </div> </div> ' +
-      '<hr /> <div class="row"> <div class="col-md-12"> <div class="progress-group"> <div class="progress-group-header"> <div> <a class="pull-left">Last Update</a ><br /><strong>Request Approved</strong><br /> <small class="text-muted" >November 11, 2018</small > </div> <div class="ml-auto"> <a class="pull-right">Next Task</a>' +
-      '<br /><strong class="pull-right" >Get your item</strong ><br /><small class="text-muted" >November 11, 2018</small > </div> </div> <div class="progress-group-bars"> <div class="progress"> <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" ></div>' +
-      ' </div> </div> </div></div></div><div class="row" style="margin-top:15px;"> <div class="col-md-6"> <strong>Pick-up Location</strong><br /> <span id="pickup_location"></span> <a>40 St George St</a><br /> <a>Toronto, Ontario</a><br /> <a>M5S 2E4</a><br /> </div> <div class="col-md-6"> <strong>Time Range</strong><br /> ' +
+      "<hr />" +
+      progressbar_section +
+      '<div class="row" style="margin-top:15px;"> <div class="col-md-6"> <strong>Pick-up Location</strong><br /> <span id="pickup_location"></span> ' +
+      address_section +
+      ' </div> <div class="col-md-6"> <strong>Time Range</strong><br /> ' +
       '<a id="time_range">' +
       moment(request.time_start).format("MMMM Do, YYYY") +
       " - " +
@@ -179,7 +371,9 @@ let appendSection = info => {
       '</a> </div> <div class="col-md-12"> <br /> ' +
       reason_of_rejection_section +
       review_section +
-      '  </div> </div> </div> <div class="col-md-4 text-center" id="button_area">'+button_section+'</div> </div> </div> </div> </div>';
+      '  </div> </div> </div> <div class="col-md-4 text-center" id="button_area">' +
+      button_section +
+      "</div> </div> </div> </div> </div>";
     $("#list_section").append(content);
   });
 };
@@ -205,19 +399,33 @@ let status_check = status => {
 };
 
 let cancel_request = request_id => {
-	$("#cancel_confirmed").attr("onclick","cancel_handler("+request_id+")");
-	$('#cancellation_modal').modal('show')
-}
+  $("#cancel_confirmed").attr("onclick", "cancel_handler(" + request_id + ")");
+  $("#cancellation_modal").modal("show");
+};
 
 let cancel_handler = request_id => {
-	alert(request_id)
-}
+  alert(request_id);
+  $.put("/request", { id: request_id, action: "cancel" }, function(data) {
+
+  });
+};
 
 let provide_feedback = request_id => {
-	$("#feedback_form").attr("onclick","feedback_handler("+request_id+")");
-	$('#feedback_modal').modal('show')
-}
+  $("#feedback_form").attr("onclick", "feedback_handler(" + request_id + ")");
+  $("#feedback_modal").modal("show");
+};
 
 let feedback_handler = request_id => {
-	alert(request_id)
-}
+  //alert($("#feedback_rate option:selected").text());
+  //alert($("#feedback_comment").val());
+  $.post(
+    "/feedback_to_lender",
+    {
+      rate: $("#feedback_rate option:selected").text(),
+      comment: $("#feedback_comment").val()
+    },
+    function(data) {
+		
+	}
+  );
+};
