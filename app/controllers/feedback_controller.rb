@@ -1,13 +1,5 @@
 class FeedbackController < ApplicationController
 
-	def create_toBorrower
-
-	end
-
-	def create_toLender
-
-	end
-
 	def show
 		case params[:scope]
 		when 'user'
@@ -21,7 +13,6 @@ class FeedbackController < ApplicationController
 			as_borrower_rate = ActiveRecord::Base.connection.exec_query(as_borrower_rate_query)
 			render :json => {:status => 200, :as_lender => feedback_to_lender_list, :as_borrower => feedback_to_borrower_list, :rate_as_lender => as_lender_rate, :rate_as_borrower => as_borrower_rate}
 		when 'items'
-
 		else
 			render :json => {:status => 404}
 		end
