@@ -56,11 +56,178 @@
 				<!-- Main section - Codes for main functionalities in this block -->
 				<h2>Settings</h2>
 				<hr>
-				<div class="row">
-					
 					
 				<div class="row">
-					<div class="col-md-12">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <i class="fa fa-edit"></i>Profile</div>
+                  <div class="card-body">
+                    <form class="form-horizontal">
+						<div class="progress-group">
+							<div class="progress-group-header">
+								<i class="cui-user progress-group-icon"></i>
+								<div>Male</div>
+								<div class="ml-auto font-weight-bold">43%</div>
+							</div>
+							<div class="progress-group-bars">
+								<div class="progress progress-xs">
+									<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
+									 aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						</div>
+						<br>
+	                    
+                    	<div class="form-group">
+	                      <label for="username">User Name</label>
+	                      <input class="form-control" id="username" type="text" value="John Doe">
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="email">Email Address</label>
+	                      <input class="form-control" id="email" type="text" value=<%= @account.email %>>
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="phoneNumber">Phone Number</label>
+	                      <input class="form-control" id="phoneNumber" type="text" value="+1 (647)123-45678">
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="street">Street</label>
+	                      <input class="form-control" id="street" type="text" placeholder="Enter street name">
+	                    </div>
+	                    <div class="row">
+	                      <div class="form-group col-sm-8">
+	                        <label for="city">City</label>
+	                        <input class="form-control" id="city" type="text" placeholder="Enter your city">
+	                      </div>
+	                      <div class="form-group col-sm-4">
+	                        <label for="postal-code">Postal Code</label>
+	                        <input class="form-control" id="postal-code" type="text" placeholder="Postal Code">
+	                      </div>
+	                    </div>
+	                    <div class="form-group">
+	                      <label for="country">Country</label>
+	                      <input class="form-control" id="country" type="text" placeholder="Country name">
+	                    </div>
+	                    
+	                    
+	                  
+	                    
+	                    
+                    	<div class="form-group">
+                    		<label class="col-form-label" for="file-input">Interested Categories</label>​
+		                    <div class="btn-group-toggle" data-toggle="buttons">
+							  <label class="btn btn-info active">
+							    <input type="checkbox" checked="checked" class="form-check-input"> Toys
+							  </label>
+							  <label class="btn btn-info ">
+							    <input type="checkbox" checked autocomplete="off"> Fashion
+							  </label>
+							  <label class="btn btn-info active">
+							    <input type="checkbox" checked="checked" autocomplete="off"> Garden
+							  </label>
+							  <label class="btn btn-info active">
+							    <input type="checkbox"  autocomplete="off"> Pets
+							  </label>
+							  <label class="btn btn-info active">
+							    <input type="checkbox" checked="checked" autocomplete="off"> Technology
+							  </label>
+							  <label class="btn btn-info ">
+							    <input type="checkbox"  autocomplete="off"> Home
+							  </label>
+							  <label class="btn btn-info ">
+							    <input type="checkbox" checked="checked" hidden autocomplete="off"> Beauty
+							  </label>							  
+							</div>
+	                    </div>
+	                    
+						<div class="form-group">
+	                        <label class="col-form-label" for="file-input">Profile Picture</label>
+	                        <br>
+	                        <input id="file-input" type="file" name="file-input">
+	                    </div>
+                      
+                      <div class="form-actions">
+                        <button class="btn btn-primary pull-right" type="submit" >Save changes</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->	
+            
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <i class="fa fa-edit"></i>Password</div>
+                  <div class="card-body">
+                    <form class="form-horizontal">
+                    	<div class="form-group">
+							<label for="password">Original Password</label>
+							<input class="form-control" type="password" name="account[oldpassword]" id="password" placeholder="********" required />
+						</div>
+                    	<div class="form-group">
+							<label for="password">New Password</label>
+							<input class="form-control" type="password" name="account[password]" id="password" placeholder="********" required />
+						</div>
+							
+						<div class="form-group">
+							<label for="passwordRepeat">Repeat New Password</label>
+							<input class="form-control" type="password" name="account[password_confirmation]" id="password" placeholder="********" required />
+						</div>
+                      <div class="form-actions">
+                        <button class="btn btn-primary pull-right" type="submit">Change Password</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->	
+            
+            
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <i class="fa fa-edit"></i>Security Options</div>
+                  <div class="card-body">
+                    <form class="form-horizontal">
+                    	<div class="form-group">
+                        <label class="col-form-label">Allow below groups to see your items</label>
+                        <div class="col-form-label">
+                          <div class="form-check checkbox">
+                            <input class="form-check-input" id="check1" type="checkbox" value=" " checked>
+                            <label class="form-check-label" for="check1">Friends</label>
+                          </div>
+                          <div class="form-check checkbox">
+                            <input class="form-check-input" id="check2" type="checkbox" value="" checked>
+                            <label class="form-check-label" for="check2">Registered Users</label>
+                          </div>
+                          <div class="form-check checkbox">
+                            <input class="form-check-input" id="check3" type="checkbox" value="">
+                            <label class="form-check-label" for="check3">Visitors</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-actions">
+                        <button class="btn btn-primary pull-right" type="submit">Save changes</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->	
+            
+            
+				<div class="row">
+					<div class="col-lg-12">
 						<div class="card">
 							<div class="card-header">
 								<div class="row">
@@ -71,9 +238,9 @@
 							</div>
 							<div class="card-body">
 								<div class="row">
-									<div class="col-md-8">
+									<div class="col-lg-8">
 										<div class="row">
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<div class="progress-group">
 													<div class="progress-group-header">
 														<i class="cui-user progress-group-icon"></i>
@@ -88,42 +255,42 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>User Name: </strong>
 												<a>John Doe</a>
 												<button type="button" class="btn btn-link">Edit</button>												
 											</div>
 											<br>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Email Address: </strong>
 												<a><%= @account.email %></a>
 												<button type="button" class="btn btn-link">Edit</button>												
 											</div>
 											<br>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Phone Number: </strong>
 												<a>+1 (647)123-45678</a>
 												<button type="button" class="btn btn-link">Edit</button>												
 											</div>
 											<br>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Password: </strong>
 												<a>********</a>
 												<button type="button" class="btn btn-link">Edit</button>												
 											</div>
 											<br>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Address: </strong>
 												<a>#1, 123 Avenue, Toronto, ON, Canada A1B 2C3</a>
 												<button type="button" class="btn btn-link">Edit</button>												
 											</div>
 											<br>
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Interested Categories: </strong>
 												<br>
 												<div class="row">
-													<div class="col-md-1"> </div>
-													<div class="col-md-11">
+													<div class="col-lg-1"> </div>
+													<div class="col-lg-11">
 														<button type="button" class="btn btn-info"><span class="cui-contrast"></span> Toys</button>
 														<button type="button" class="btn btn-warning"><span class="cui-contrast"></span> Fashion</button>
 														<button type="button" class="btn btn-success"><span class="cui-contrast"></span> Garden</button>												
@@ -134,12 +301,12 @@
 												</div>							
 											</div>
 											<br>			
-											<div class="col-md-12">
+											<div class="col-lg-12">
 												<strong>Third-Party Links: </strong>
 												<br>
 												<div class="row">
-													<div class="col-md-1"> </div>
-													<div class="col-md-11">
+													<div class="col-lg-1"> </div>
+													<div class="col-lg-11">
 														<button type="button" class="btn btn-brand btn-facebook">
 														  <i class="fa fa-facebook"></i>
 														</button>
@@ -162,21 +329,21 @@
 										</div>
 										<hr>
 										<div class="row">
-											<div class="col-md-12 ">
+											<div class="col-lg-12 ">
 												<strong>Security Options: </strong>
 											</div>
 										</div>
 										<br>
 										<div class="row">
-											<div class="col-md-1"> </div>
-											<div class="col-md-11">
+											<div class="col-lg-1"> </div>
+											<div class="col-lg-11">
 												<a>Allow below groups to see your items:</a> 				
 											</div>					
 										</div>
 										<br>
 										<div class="row">
-											<div class="col-md-1"></div>		
-											<div class="col-md-11">
+											<div class="col-lg-1"></div>		
+											<div class="col-lg-11">
 												<label  class="switch switch-sm switch-pill switch-info">
 												  <input type="checkbox" class="switch-input" checked>
 												  <span class="switch-slider"></span>
@@ -198,7 +365,7 @@
 										</div>
 									</div>
 									
-									<div class="col-md-4 text-center" >
+									<div class="col-lg-4 text-center" >
 										<div class="col-12 text-center">
 											<img class="img-thumbnail" style="width:75px;" src="https://upload.wikimedia.org/wikipedia/commons/f/fb/M%C3%BCnze_Niederl%C3%A4ndische_Ostindien_Companie.jpg">
 											<br>
@@ -209,7 +376,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
 				</div>
 				
 			</div>
