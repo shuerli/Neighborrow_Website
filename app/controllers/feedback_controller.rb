@@ -27,4 +27,22 @@ class FeedbackController < ApplicationController
 		end
 	end
 
+	def create_toLender
+		entry = FeedbackToLender.new
+		entry.request_id = params[:request_id]
+		entry.rate = params[:rate].to_i
+		entry.comment = params[:comment]
+		entry.credit = 5
+		entry.save 
+	end
+
+	def create_toBorrower
+		entry = FeedbackToLender.new
+		entry.request_id = params[:request_id]
+		entry.rate = params[:rate].to_i
+		entry.comment = params[:comment]
+		entry.credit = 5
+		entry.save 
+	end
+
 end
