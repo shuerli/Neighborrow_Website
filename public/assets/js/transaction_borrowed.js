@@ -1,5 +1,14 @@
 // Global Variable
 let filter_switch = false;
+let filterOut_status = {
+  pending: false,
+  accepted: false,
+  rejected: false,
+  cancelled: false,
+  completed: false
+};
+let filter_range = "all";
+let cache = null;
 
 $("#filter_init").click(function() {
   if (!filter_switch) {
@@ -19,6 +28,7 @@ $("#filter_init").click(function() {
 
 $(document).ready(function() {
   $.get("/request?type=borrowed&range=all&sorted_by=update_time", data => {
+    cache = data;
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
     else appendSection(data);
@@ -28,6 +38,24 @@ $(document).ready(function() {
 let appendSection = info => {
   $("#list_section").empty();
   info.result.forEach(request => {
+    // Cache every requests into a specific category based on their status
+    if (filterOut_status[request.status]) return;
+
+    // Apply the filter of date range on each request
+    if (filter_range === "1month") {
+      if (moment(request.created_at).isBefore(moment().subtract(1, "month")))
+        return;
+    } else if (filter_range === "3month") {
+      if (moment(request.created_at).isBefore(moment().subtract(3, "month")))
+        return;
+    } else if (filter_range === "6month") {
+      if (moment(request.created_at).isBefore(moment().subtract(6, "month")))
+        return;
+    } else if (filter_range === "1year") {
+      if (moment(request.created_at).isBefore(moment().subtract(1, "year")))
+        return;
+    }
+
     // Handling the display of status section
     let status_span = status_check(request.status);
 
@@ -257,17 +285,13 @@ let appendSection = info => {
         cancel_button =
           '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
           request.id +
-          ')"> Cancel this request </button>';
+          ')"> Cancel This Request </button>';
         contact_button =
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-        button_section =
-          contact_button +
-          cancel_button +
-          '<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback(' +
-          request.id +
-          ')" > Provide Feedback </button>';
+        button_section = contact_button + cancel_button;
+        //+'<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback(' +request.id +')" > Provide Feedback </button>';
         break;
       case "accepted":
         help_button =
@@ -275,7 +299,7 @@ let appendSection = info => {
         cancel_button =
           '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
           request.id +
-          ')"> Cancel this request </button>';
+          ')"> Cancel This Request </button>';
         contact_button =
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
@@ -300,7 +324,7 @@ let appendSection = info => {
         break;
       case "rejected":
         resubmit_button =
-          '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
+          '<a href="/"><button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button></a>';
         help_button =
           '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
         contact_button =
@@ -311,7 +335,7 @@ let appendSection = info => {
         break;
       case "cancelled":
         resubmit_button =
-          '<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button>';
+          '<a href="/"><button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button></a>';
         contact_button =
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
@@ -400,14 +424,26 @@ let status_check = status => {
 
 let cancel_request = request_id => {
   $("#cancel_confirmed").attr("onclick", "cancel_handler(" + request_id + ")");
+  $("#cancel_error_block").hide();
   $("#cancellation_modal").modal("show");
 };
 
 let cancel_handler = request_id => {
-  alert(request_id);
-  $.put("/request", { id: request_id, action: "cancel" }, function(data) {
-
-  });
+  $.ajax({
+    url: "/request",
+    method: "PUT",
+    data: {
+      authenticity_token: window._token,
+      id: request_id,
+      type: "cancel"
+    }
+  })
+    .done(function(data) {
+      window.location = "/request_borrowed";
+    })
+    .fail(function(data) {
+      $("#cancel_error_block").show();
+    });
 };
 
 let provide_feedback = request_id => {
@@ -419,13 +455,95 @@ let feedback_handler = request_id => {
   //alert($("#feedback_rate option:selected").text());
   //alert($("#feedback_comment").val());
   $.post(
-    "/feedback_to_lender",
+    "/feedback/to-lender",
     {
+      authenticity_token: window._token,
+      request_id: request_id,
       rate: $("#feedback_rate option:selected").text(),
       comment: $("#feedback_comment").val()
     },
     function(data) {
-		
-	}
+      window.location = "/request_borrowed";
+    }
   );
 };
+
+$("#sort_order").on("change", function() {
+  $.get("/request?type=borrowed&range=all&sorted_by=" + this.value, data => {
+    if (data.status === 404) window.location("/404");
+    else if (data.status === 403) window.location("/login");
+    else appendSection(data);
+  });
+});
+
+$("#completed_checkbox").on("change", function() {
+  if ($(this).is(":checked")) filterOut_status["completed"] = false;
+  else filterOut_status["completed"] = true;
+  appendSection(cache);
+});
+
+$("#pending_checkbox").on("change", function() {
+  if ($(this).is(":checked")) filterOut_status["pending"] = false;
+  else filterOut_status["pending"] = true;
+  appendSection(cache);
+});
+
+$("#accepted_checkbox").on("change", function() {
+  if ($(this).is(":checked")) filterOut_status["accepted"] = false;
+  else filterOut_status["accepted"] = true;
+  appendSection(cache);
+});
+
+$("#rejected_checkbox").on("change", function() {
+  if ($(this).is(":checked")) filterOut_status["rejected"] = false;
+  else filterOut_status["rejected"] = true;
+  appendSection(cache);
+});
+
+$("#cancelled_checkbox").on("change", function() {
+  if ($(this).is(":checked")) filterOut_status["cancelled"] = false;
+  else filterOut_status["cancelled"] = true;
+  appendSection(cache);
+});
+
+$("#range_filter").on("change", function() {
+  switch (this.value) {
+    case "all":
+      filter_range = "all";
+      appendSection(cache);
+      break;
+    case "1month":
+      filter_range = "1month";
+      appendSection(cache);
+      break;
+    case "3month":
+      filter_range = "3month";
+      appendSection(cache);
+      break;
+    case "6month":
+      filter_range = "6month";
+      appendSection(cache);
+      break;
+    case "1year":
+      filter_range = "1year";
+      appendSection(cache);
+      break;
+  }
+});
+
+$("#borrowed_searchbar").keyup(function(event) {
+  if (event.keyCode === 13) {
+    $("#filter_init").attr("disabled", true);
+    $("#sort_order").attr("disabled", true);
+    $.get(
+      "/request?type=borrowed&range=keyword&keyword=" +
+        $("#borrowed_searchbar").val(),
+      data => {
+        appendSection(data);
+      }
+    );
+  } else if (event.keyCode === 8) {
+	if($("#borrowed_searchbar").val()==="")
+		appendSection(cache);
+  }
+});

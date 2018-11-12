@@ -28,9 +28,8 @@
     />
     <meta name="author" content="Neighborrow" />
     <meta name="keyword" content="Borrow, Lend, CSC444" />
-    <%= csrf_meta_tags %> <%= javascript_tag "window._token =
-    '#{form_authenticity_token}'" %> <%= javascript_include_tag 'application',
-    'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
+    javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <title>Neighborrow - Blank</title>
 
     <!-- CSS files for third-party icons -->
@@ -82,8 +81,8 @@
               <input
                 type="email"
                 class="form-control"
-                id="transaction_search"
-                placeholder="Search by item's name, item id or request id"
+                id="borrowed_searchbar"
+                placeholder="Search by item's name or item id or request id, then press enter"
               />
             </div>
             <div class="col-md-4 d-sm-down-none">
@@ -98,9 +97,10 @@
               </button>
             </div>
             <div class="col-md-2 d-sm-down-none">
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Sort by Update Time</option>
-                <option>Sort by Item's Name (A-Z)</option>
+              <select class="form-control" id="sort_order">
+                <option value="update_time">Sort by Update Time</option>
+                <option value="item_name">Sort by Item's Name (A-Z)</option>
+                <option value="request_id">Sort by Request ID</option>
               </select>
             </div>
             <div
@@ -119,8 +119,9 @@
                             <input
                               class="form-check-input"
                               type="checkbox"
-                              id="inlineCheckbox1"
+                              id="pending_checkbox"
                               value="option1"
+                              checked
                             />
                             <label
                               class="form-check-label"
@@ -134,8 +135,9 @@
                             <input
                               class="form-check-input"
                               type="checkbox"
-                              id="inlineCheckbox2"
+                              id="completed_checkbox"
                               value="option2"
+                              checked
                             />
                             <label
                               class="form-check-label"
@@ -149,8 +151,9 @@
                             <input
                               class="form-check-input"
                               type="checkbox"
-                              id="inlineCheckbox3"
+                              id="accepted_checkbox"
                               value="option3"
+                              checked
                             />
                             <label
                               class="form-check-label"
@@ -164,8 +167,9 @@
                             <input
                               class="form-check-input"
                               type="checkbox"
-                              id="inlineCheckbox4"
+                              id="rejected_checkbox"
                               value="option3"
+                              checked
                             />
                             <label
                               class="form-check-label"
@@ -179,8 +183,9 @@
                             <input
                               class="form-check-input"
                               type="checkbox"
-                              id="inlineCheckbox5"
+                              id="cancelled_checkbox"
                               value="option3"
+                              checked
                             />
                             <label
                               class="form-check-label"
@@ -194,14 +199,14 @@
                   </div>
                   <div class="col-md-4">
                     <label for="exampleFormControlInput1"
-                      ><strong>Show requests submitted in</strong></label
+                      ><strong>Show requests created</strong></label
                     >
-                    <select class="form-control form-control-sm" id="dd">
-                      <option>last 1 week</option>
-                      <option>last 1 month</option>
-                      <option>last 3 months</option>
-                      <option>last 6 months</option>
-                      <option>last 1 year</option>
+                    <select class="form-control form-control-sm" id="range_filter">
+                      <option value="all">since your account created</option>
+                      <option value="1month">in last 1 month</option>
+                      <option value="3month">in last 3 months</option>
+                      <option value="6month">in last 6 months</option>
+                      <option value="1year">in last 1 year</option>
                     </select>
                   </div>
                 </div>
@@ -250,58 +255,99 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body"><p>Are you sure that you want to cancel this request?</p><p class="text-danger">This action cannot be undone.</p></div>
+          <div class="modal-body">
+            <div
+              class="alert alert-danger"
+              style="display:none;"
+              id="cancel_error_block"
+              role="alert"
+            >
+              Ooops... Something's wrong on our server. Please try again later.
+            </div>
+            <p>Are you sure that you want to cancel this request?</p>
+            <p class="text-danger font-weight-bold">
+              This action cannot be undone.
+            </p>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-outline-secondary"
               data-dismiss="modal"
             >
               Return
-			</button>
-			<button type="button" class="btn btn-danger" id="cancel_confirmed">Yes, cancel it</button>
+            </button>
+            <button type="button" class="btn btn-danger" id="cancel_confirmed">
+              Yes, cancel it
+            </button>
           </div>
         </div>
       </div>
-	</div>
-	
+    </div>
 
-	<!-- Modal for Help Request to Admin -->
+    <!-- Modal for Help Request to Admin -->
 
-
-
-	<!-- Modal for Feedback Submission to Lender -->
-	<div class="modal" tabindex="-1" id="feedback_modal" role="dialog">
-			<div class="modal-dialog" role="document">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title">Your Review Matters</h5>
-				  <button
-					type="button"
-					class="close"
-					data-dismiss="modal"
-					aria-label="Close"
-				  >
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<div class="modal-body">
-					<p class="text-muted">Your comments are important for your lender, as it ma</p>
-				</div>
-				<div class="modal-footer">
-				  <button
-					type="button"
-					class="btn btn-secondary"
-					data-dismiss="modal"
-				  >
-					Return
-				  </button>
-				  <button type="button" class="btn btn-danger" id="feedback_form">Yes, cancel it</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-
+    <!-- Modal for Feedback Submission to Lender -->
+    <div class="modal" tabindex="-1" id="feedback_modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Review Matters</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted">
+              Lenders would like to know about your experience, so do we. Please
+              complete this feedback form to let us know where we can do better.
+            </p>
+            <hr />
+            <div class="form-group">
+              <label for="feedback_rate"
+                >Rate your lender from 0 to 5
+                <a class="text-danger">(Required)</a></label
+              >
+              <select class="form-control" id="feedback_rate">
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+                <option>0</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="feedback_comment"
+                >Anything else you want to share?</label
+              >
+              <textarea
+                class="form-control"
+                id="feedback_comment"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Return
+            </button>
+            <button type="button" class="btn btn-success" id="feedback_form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- CoreUI and other third-party plugins (js files) -->
     <script src="/vendors/jquery/js/jquery.min.js"></script>
