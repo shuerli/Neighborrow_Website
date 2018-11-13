@@ -1,5 +1,5 @@
 class AccountMailer < ActionMailer::Base
-    default from: 'qingqing.zhuo@mail.utoronto.ca'
+    default from: 'sixneighborrow@gmail.com'
     
     def registration_confirmation(account)
         @account = account
