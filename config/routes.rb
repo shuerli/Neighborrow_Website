@@ -23,9 +23,16 @@ Rails.application.routes.draw do
 	get '/request' => 'request#show'
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
+
+	# Routes related to feedback manipulation and relevant api
+	post '/feedback/to-borrower' => 'feedback#create_toBorrower'
+	post '/feedback/to-lender' => 'feedback#create_toLorrower'
+	get '/feedback' => 'feedback#show'
     
-  get '/item' => 'items#show'
-	post '/item' => 'items#create'
-	put '/item' => 'items#update'
+  get '/user_item' => 'user_items#show'
+	post '/user_item' => 'user_items#create'
+  put '/user_item/:id' => 'user_items#update'
+
+	get '/404' => 'application#page_not_found'
     
 end

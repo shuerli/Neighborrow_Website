@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class UserItemsController < ApplicationController
     def index
     end
   
@@ -17,29 +17,19 @@ class ItemsController < ApplicationController
       end
     end
 
-  
     def new
     end
-  
-  
     def edit
     end
-  
-  
     def create
-
     end
-   
-  
     def update
- 
     end
-  
-  
-    def destroy
 
+
+    def destroy
+        @item = Items.find(params[])
+        @item.update(params.require(:item).permit(:status))
     end
-  
-  
-   
+
 end

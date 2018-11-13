@@ -86,7 +86,8 @@ ActiveRecord::Schema.define(version: 2018_10_10_201221) do
     t.text "feature"
     t.text "amazon_id"
     t.text "walmart_id"
-    t.text "isbn"
+		t.text "isbn"
+		t.text "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
