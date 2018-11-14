@@ -14,6 +14,7 @@ class Account < ApplicationRecord
     before_save :encrypt_password
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
+    before_create :confirmation_token
 
     
     ###################### USED FOR SIGN IN ######################
@@ -36,6 +37,11 @@ class Account < ApplicationRecord
         self.status = "created"
     end
     
+    def email_activate
+        self.email_confirmed = true
+        self.confirm_token = nil
+        save!(:validate => false)
+    end
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")
@@ -53,4 +59,18 @@ class Account < ApplicationRecord
         end
     end
     
+    #used for email verification#
+    
+    def email_activate
+        self.email_confirmed = true
+        self.confirm_token = nil
+        save!(:validate => false)
+    end
+    
+    private
+    def confirmation_token
+        if self.confirm_token.blank?
+            self.confirm_token = SecureRandom.urlsafe_base64.to_s
+        end
+    end
 end
