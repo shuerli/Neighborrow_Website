@@ -146,8 +146,17 @@ class RequestController < ApplicationController
 	end
 
 	def create
-		
-		render :json => {:status => nil}
+		request = Request.new
+		request.item_id = params[:item_id]
+		request.borrower = params[current_user.email]
+		request.address = params[:address]
+		request.rejected_reason = params[:rejected_reason]
+		request.time_start = params[:time_start]
+		request.time_end = params[:time_end]
+		if(request.save)
+			render :json => {:status => 200}
+		else
+			render :json => {:status => 500}
 	end
 
 	def update
@@ -158,11 +167,19 @@ class RequestController < ApplicationController
 			render :json => {:status => 200}
 		when 'reject'
 			entry = Request.find(params[:id])
-			entry.update( :status => 'rejected')
+			entry.update( :status => 'rejected', :rejected_reason => params[:reason])
 			render :json => {:status => 200}
 		when 'complete'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'completed')
+			render :json => {:status => 200}
+		when 'receive'
+			entry = Request.find(params[:id])
+			entry.update( :received => true)
+			render :json => {:status => 200}
+		when 'return'
+			entry = Request.find(params[:id])
+			entry.update( :returned => false)
 			render :json => {:status => 200}
 		else
 			render :json => {:status => 404}
