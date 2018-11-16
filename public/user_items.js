@@ -38,12 +38,13 @@ $(document).ready(function () {
       document.getElementById("lent-items").appendChild(divImage);
     }
   });
+  
   //Add image and name for registered items, and add new item button
   $.get("/user_item?type=registered", function (data) {
     for (var i = 0; i < data.result.length; i++) {
       var divImage = document.createElement('div');
       divImage.className = "img-wrap col-2"
-      divImage.innerHTML = '<span class="close">&times;</span>\
+      divImage.innerHTML = '<span class="close" onclick="btnDelete(' + i +')" >&times;</span>\
                           <h2><img src="' + data.result[i].photo_url + '" alt="imgplaceholder.gif" class="img-fluid img-thumbnail" ></h2>\
                             <p>' + data.result[i].name + '</p>';
       document.getElementById("registered-items").appendChild(divImage);
