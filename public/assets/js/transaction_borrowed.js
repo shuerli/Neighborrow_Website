@@ -171,7 +171,9 @@ let appendSection = info => {
       case "accepted":
         if (
           moment(time_start).isSameOrAfter(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format())
+          moment(time_end).isSameOrAfter(moment().format()) &&
+          !request.received &&
+          !request.returned
         ) {
           progressbar_percentage = "45";
           progressbar_color = "bg-info";
@@ -184,7 +186,9 @@ let appendSection = info => {
             "</small >";
         } else if (
           moment(time_start).isSameOrBefore(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format())
+          moment(time_end).isSameOrAfter(moment().format()) &&
+          request.received &&
+          !request.returned
         ) {
           progressbar_percentage = "70";
           progressbar_color = "bg-info";
@@ -280,6 +284,7 @@ let appendSection = info => {
       help_button = "",
       feedback_button = "",
       resubmit_button = "";
+    received_button = "";
     switch (request.status) {
       case "pending":
         cancel_button =
@@ -294,6 +299,11 @@ let appendSection = info => {
         //+'<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" onclick="provide_feedback(' +request.id +')" > Provide Feedback </button>';
         break;
       case "accepted":
+        if (!request.received)
+          received_button =
+            '<button class="btn btn-success" style="width:65%;margin-bottom: 15px;" onclick="receive_item(' +
+            request.id +
+            ')"> Item Received </button>';
         help_button =
           '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
         cancel_button =
@@ -304,7 +314,12 @@ let appendSection = info => {
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-        button_section = contact_button + cancel_button + help_button;
+        if (!request.received)
+          button_section =
+            received_button + contact_button + cancel_button + help_button;
+        else
+          button_section =
+            received_button + contact_button + cancel_button + help_button;
         break;
       case "completed":
         if (
@@ -446,6 +461,20 @@ let cancel_handler = request_id => {
     });
 };
 
+let receive_item = request_id => {
+  $.ajax({
+    url: "/request",
+    method: "PUT",
+    data: {
+      authenticity_token: window._token,
+      id: request_id,
+      type: "receive"
+    }
+  }).done(function(data) {
+    window.location = "/request_borrowed";
+  });
+};
+
 let provide_feedback = request_id => {
   $("#feedback_form").attr("onclick", "feedback_handler(" + request_id + ")");
   $("#feedback_modal").modal("show");
@@ -543,10 +572,12 @@ $("#borrowed_searchbar").keyup(function(event) {
       }
     );
   } else if (event.keyCode === 8) {
-	if($("#borrowed_searchbar").val()===""){
-		appendSection(cache);
-		$("#filter_init").prop("disabled", false);
-    	$("#sort_order").prop("disabled", false);
-	}
+    if ($("#borrowed_searchbar").val() === "") {
+      appendSection(cache);
+      $("#filter_init").prop("disabled", false);
+      $("#sort_order").prop("disabled", false);
+    }
   }
 });
+
+$("#");
