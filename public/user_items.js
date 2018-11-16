@@ -1,5 +1,23 @@
- // For item removing button on top right of item image
-function btnDelete(itemId){
+ function btnItemDetail(itemId){
+  $.get("/user_item/" + itemId, function (data) {
+      //itemInfo = data.result;
+     // window.location = "http://localhost:3000/user_items_detial";
+     // document.getElementById('item-name-input').value = itemInfo.name;
+     alert(data.result.name)
+  });
+  // $.ajax({
+  //   method: "PUT",
+  //   url: '/user_item/'+itemId,
+  //   data: { 
+  //         status: "disabled", 
+  //         authenticity_token: window._token}
+  // }).done(function( msg ) {
+  //     alert( "Item removed: " + msg );
+  //   });
+    //alert('detail' + itemId);
+   };
+
+ function btnItemDelete(itemId){
   
   // $.ajax({
   //   method: "PUT",
@@ -10,9 +28,9 @@ function btnDelete(itemId){
   // }).done(function( msg ) {
   //     alert( "Item removed: " + msg );
   //   });
-    alert(itemId);
+    alert('delete' + itemId);
    };
-function btnAddItem(){
+function btnItemAdd(){
     // $.ajax({
   //   method: "POST",
   //   url: '/user_item',
@@ -23,7 +41,7 @@ function btnAddItem(){
   // }).done(function( msg ) {
   //     alert( "Item added: " + msg );
   //   });
-  alert('function responsive');
+  alert('Add item');
 };
 
 //Receive data from controller when page loads
@@ -33,7 +51,7 @@ $(document).ready(function () {
     for (var i = 0; i < data.result.length; i++) {
       var divImage = document.createElement('div');
       divImage.className = "col-2"
-      divImage.innerHTML = '<h2><img src="' + data.result[i].photo_url + '" alt="imgplaceholder.gif" class="img-fluid img-thumbnail"></h2>\
+      divImage.innerHTML = '<h2><img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="imgplaceholder.gif" class="img-fluid img-thumbnail" onclick="btnItemDetail('+ data.result[i].id +')"></h2>\
                             <p>' + data.result[i].name + '</p>';
       document.getElementById("lent-items").appendChild(divImage);
     }
@@ -44,15 +62,15 @@ $(document).ready(function () {
     for (var i = 0; i < data.result.length; i++) {
       var divImage = document.createElement('div');
       divImage.className = "img-wrap col-2"
-      divImage.innerHTML = '<span class="close" onclick="btnDelete(' + i +')" >&times;</span>\
-                          <h2><img src="' + data.result[i].photo_url + '" alt="imgplaceholder.gif" class="img-fluid img-thumbnail" ></h2>\
+      divImage.innerHTML = '<span class="close" onclick="btnItemDelete(' + i +')" >&times;</span>\
+                          <h2><img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="imgplaceholder.gif" class="img-fluid img-thumbnail" onclick="btnItemDetail('+ data.result[i].id +')"></h2>\
                             <p>' + data.result[i].name + '</p>';
       document.getElementById("registered-items").appendChild(divImage);
     }
     //onclick = "test(' + id + ')"
 
     var buttonAddImage = document.createElement('button');
-    buttonAddImage.setAttribute('onclick', 'btnAddItem()');
+    buttonAddImage.setAttribute('onclick', 'btnItemAdd()');
 
     buttonAddImage.className = "btn btn-secondary col-2";
     buttonAddImage.innerHTML = '<i class="fa fa-plus fa-5x"></i>'
