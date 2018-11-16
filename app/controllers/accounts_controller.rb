@@ -7,6 +7,7 @@ class AccountsController < ApplicationController
         if (@account.save)
             log_in @account
             welcome_email @account
+            AccountMailer.registration_confirmation(@account).deliver
             flash[:notice] = "Sign up successful!"
             redirect_to @account
         else
@@ -33,7 +34,7 @@ class AccountsController < ApplicationController
     def welcome_email account
 
         #Set the url to be the home page
-        @url = 'https://github.com/mikel/mail'
+        @url = '/blank'
 
         #Reading the email body file as erb instead of plain text or html
         email_body = ERB.new(File.read('./app/views/mail_texts/welcome_email.html.erb')).result(binding)
@@ -47,11 +48,23 @@ class AccountsController < ApplicationController
             body    email_body
         end
        
-        #mail.delivery_method :sendmail
-        mail.delivery_method :logger 
+        mail.delivery_method :sendmail
+        #mail.delivery_method :logger
         mail.deliver
     end
 
+    def confirm_email
+        user = Account.find_by_confirm_token(params[:id])
+        if user
+            user.email_activate
+            flash[:success] = "Welcome to the Neighborrow! Your email has been confirmed. Please sign in to continue."
+            redirect_to '/login'
+            else
+            flash[:error] = "Sorry. User does not exist"
+            redirect_to home_path
+        end
+    end
+    
     def settings
         @account = Account.find_by(id: 1)
     end

@@ -1,264 +1,365 @@
-<!-- 
-	* This modified template file is referenced to coreui.io, 
-	* along with other third-party stylesheets and javascript files.
-	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+<!--
+  * This modified template file is referenced to coreui.io,
+  * along with other third-party stylesheets and javascript files.
+  * Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
 -->
 
 <!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.7
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
+  * CoreUI - Free Bootstrap Admin Template
+  * @version v2.1.7
+  * @link https://coreui.io
+  * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+  * Licensed under MIT (https://coreui.io/license)
 -->
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta information used for SEO -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Neighborrow - Your Platform to Borrow and Lend"
+    />
+    <meta name="author" content="Neighborrow" />
+    <meta name="keyword" content="Borrow, Lend, CSC444" />
+    <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
+    javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Neighborrow - Blank</title>
 
-<head>
-	<!-- Meta information used for SEO -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
-	<meta name="author" content="Neighborrow">
-	<meta name="keyword" content="Borrow, Lend, CSC444">
-	<%= csrf_meta_tags %>
-	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	<title>Neighborrow - Blank</title>
+    <!-- CSS files for third-party icons -->
+    <link
+      href="/vendors/@coreui/icons/css/coreui-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/flag-icon-css/css/flag-icon.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
 
-	<!-- CSS files for third-party icons-->
-	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
-	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
-	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Base stylesheets & third-party stylesheets -->
+    <link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet" />
+    <link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet" />
 
-	<!-- Base stylesheets & third-party stylesheets-->
-	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
-	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <!-- Customized stylesheet goes here -->
+  </head>
 
-	<!-- Customized stylesheet goes here-->
+  <body
+    class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show"
+    data-turbolinks="false"
+  >
+    <header
+      class="app-header navbar"
+      style="width:100%"
+      id="headerModule"
+    ></header>
+    <div class="app-body">
+      <div class="sidebar" id="menuModule"></div>
 
-</head>
+      <main class="main">
+        <span id="subHeaderModule"></span>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
-	<header class="app-header navbar" style="width:100%" id="headerModule">
+        <div class="container-fluid">
+          <!-- Main section - Codes for main functionalities in this block -->
+          <h3>Your borrowed items</h3>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <input
+                type="email"
+                class="form-control"
+                id="borrowed_searchbar"
+                placeholder="Search by item's name or item id or request id, then press enter"
+              />
+            </div>
+            <div class="col-md-4 d-sm-down-none">
+              <button
+                class="btn btn-outline-info"
+                id="filter_init"
+                data-toggle="collapse"
+                href="#filter_section"
+                aria-controls="filter_section"
+              >
+                More Filters
+              </button>
+            </div>
+            <div class="col-md-2 d-sm-down-none">
+              <select class="form-control" id="sort_order">
+                <option value="update_time">Sort by Update Time</option>
+                <option value="item_name">Sort by Item's Name (A-Z)</option>
+                <option value="request_id">Sort by Request ID</option>
+              </select>
+            </div>
+            <div
+              class="collapse col-md-12"
+              id="filter_section"
+              style="margin-top:3.5vh;"
+            >
+              <div class="card card-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label><strong>Show requests that are</strong></label>
+                      <div class="row">
+                        <div class="col-sm-2">
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="pending_checkbox"
+                              value="option1"
+                              checked
+                            />
+                            <label
+                              class="form-check-label"
+                              for="inlineCheckbox1"
+                              >Pending</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="completed_checkbox"
+                              value="option2"
+                              checked
+                            />
+                            <label
+                              class="form-check-label"
+                              for="inlineCheckbox2"
+                              >Completed</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="accepted_checkbox"
+                              value="option3"
+                              checked
+                            />
+                            <label
+                              class="form-check-label"
+                              for="inlineCheckbox3"
+                              >Accepted</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="rejected_checkbox"
+                              value="option3"
+                              checked
+                            />
+                            <label
+                              class="form-check-label"
+                              for="inlineCheckbox3"
+                              >Rejected</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="cancelled_checkbox"
+                              value="option3"
+                              checked
+                            />
+                            <label
+                              class="form-check-label"
+                              for="inlineCheckbox3"
+                              >Cancelled</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="exampleFormControlInput1"
+                      ><strong>Show requests created</strong></label
+                    >
+                    <select class="form-control form-control-sm" id="range_filter">
+                      <option value="all">since your account created</option>
+                      <option value="1month">in last 1 month</option>
+                      <option value="3month">in last 3 months</option>
+                      <option value="6month">in last 6 months</option>
+                      <option value="1year">in last 1 year</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row" id="list_section"></div>
+          <!--
+            div class="row">
+            	<div class="col-12">
+            		<nav aria-label="Page navigation example">
+            			<ul class="pagination justify-content-center">
+            				<li class="page-item disabled">
+            					<a class="page-link" href="#" tabindex="-1">Previous</a>
+            				</li>
+            				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+            				<li class="page-item"><a class="page-link" href="#">2</a></li>
+            				<li class="page-item"><a class="page-link" href="#">3</a></li>
+            				<li class="page-item">
+            					<a class="page-link" href="#">Next</a>
+            				</li>
+            			</ul>
+            		</nav>
+            	</div>
+            </div
+          -->
+        </div>
+      </main>
+    </div>
 
-	</header>
-	<div class="app-body">
-		<div class="sidebar" id="menuModule"></div>
+    <footer class="app-footer" id="footerModule"></footer>
 
-		<main class="main">
-			<span id="subHeaderModule"></span>
+    <!-- Modal for Confirmation on Request Cancellation -->
+    <div class="modal" tabindex="-1" id="cancellation_modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirmation of cancellation</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="alert alert-danger"
+              style="display:none;"
+              id="cancel_error_block"
+              role="alert"
+            >
+              Ooops... Something's wrong on our server. Please try again later.
+            </div>
+            <p>Are you sure that you want to cancel this request?</p>
+            <p class="text-danger font-weight-bold">
+              This action cannot be undone.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Return
+            </button>
+            <button type="button" class="btn btn-danger" id="cancel_confirmed">
+              Yes, cancel it
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-			<div class="container-fluid">
-				<!-- Main section - Codes for main functionalities in this block -->
-				<h2>Borrowing Request History</h2>
-				<hr>
-				<div class="row">
-					<div class="col-md-6">
-						<input type="email" class="form-control" id="transaction_search" placeholder="Search by item's name, item's id, borrower's name or request id">
-					</div>
-					<div class="col-md-4 d-sm-down-none">
-						<button class="btn btn-outline-info" id="filter_init" data-toggle="collapse" href="#filter_section" aria-controls="filter_section">More
-							Filters</button>
-					</div>
-					<div class="col-md-2 d-sm-down-none">
-						<select class="form-control" id="exampleFormControlSelect1">
-							<option>Sort by Type</option>
-							<option>Sort by Submission Time</option>
-							<option>Sort by Item's Name (A-Z)</option>
-							<option>Sort by Borrower's Name (A-Z)</option>
-						</select>
-					</div>
-					<div class="collapse col-md-12" id="filter_section" style="margin-top:3.5vh;">
-						<div class="card card-body">
-							<div class="row">
-								<div class="col-md-8">
-									<div class="form-group">
-										<label for="exampleFormControlInput1"><strong>Show requests that are</strong></label>
-										<div class="row">
-											<div class="col-sm-2">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-													<label class="form-check-label" for="inlineCheckbox1">Pending</label>
-												</div>
-											</div>
-											<div class="col-sm-2">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-													<label class="form-check-label" for="inlineCheckbox2">Completed</label>
-												</div>
-											</div>
-											<div class="col-sm-2">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Accepted</label>
-												</div>
-											</div>
-											<div class="col-sm-2">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Rejected</label>
-												</div>
-											</div>
-											<div class="col-sm-2">
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option3">
-													<label class="form-check-label" for="inlineCheckbox3">Cancelled</label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<label for="exampleFormControlInput1"><strong>Show requests submitted in</strong></label>
-									<select class="form-control form-control-sm" id="dd">
-										<option>last 1 week</option>
-										<option>last 1 month</option>
-										<option>last 3 months</option>
-										<option>last 6 months</option>
-										<option>last 1 year</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<div class="row">
-									<div class="col-lg-4 col-sm-6 col-xs-6">
-										<strong class="text-muted">Request ID</strong><br>
-										<a>12312312</a>
-									</div>
-									<div class="col-lg-6 d-md-down-none">
-										<strong class="text-muted">Request Date</strong><br>
-										<a>Jan 1st, 2019</a>
-									</div>
-									<div class="col-lg-2 col-sm-6 col-xs-6">
-										<strong class="text-muted">Status</strong><br>
-										<a class="text-success"><i class="fa fa-star"></i> Completed</a>
-										<a class="text-dark"><i class="fa fa-trash"></i> Cancelled</a>
-										<a class="text-danger"><i class="fa fa-times-circle"></i> Rejected</a>
-										<a class="text-primary"><i class="fa fa-check-circle"></i> Accepted</a>
-										<a class="text-warning"><i class="fa fa-hourglass-half"></i> Pending</a>
-									</div>
+    <!-- Modal for Help Request to Admin -->
 
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-8">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="progress-group">
-													<div class="progress-group-header">
-														<i class="cui-user progress-group-icon"></i>
-														<div>Male</div>
-														<div class="ml-auto font-weight-bold">43%</div>
-													</div>
-													<div class="progress-group-bars">
-														<div class="progress progress-xs">
-															<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
-															 aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-4">
-												<strong>Pick-up Time</strong><br>
-												<a>14:00</a><br>
-												<a>Wed, February 12, 2018</a>
-											</div>
-											<div class="col-md-4">
-												<strong>Pick-up Location</strong><br>
-												<a>40 St George St</a><br>
-												<a>Toronto, Ontario</a><br>
-												<a>M5S 2E4</a><br>
-											</div>
-											<div class="col-md-4">
-												<strong>Time Range</strong><br>
-												<a>February 12, 2018 - February 19, 2018</a>
-											</div>
-											<div class="col-md-12">
-												<br>
-												<dl class="row">
-													<dt class="col-sm-3">Reason of Rejection</dt>
-													<dd class="col-sm-9">djf fjwiaf iowajf iowjaf aw;oe</dd>
-												</dl>
+    <!-- Modal for Feedback Submission to Lender -->
+    <div class="modal" tabindex="-1" id="feedback_modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Review Matters</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted">
+              Lenders would like to know about your experience, so do we. Please
+              complete this feedback form to let us know where we can do better.
+            </p>
+            <hr />
+            <div class="form-group">
+              <label for="feedback_rate"
+                >Rate your lender from 0 to 5
+                <a class="text-danger">(Required)</a></label
+              >
+              <select class="form-control" id="feedback_rate">
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+                <option>0</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="feedback_comment"
+                >Anything else you want to share?</label
+              >
+              <textarea
+                class="form-control"
+                id="feedback_comment"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Return
+            </button>
+            <button type="button" class="btn btn-success" id="feedback_form">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-											</div>
-										</div>
-										<hr>
-										<div class="row">
-											<div class="col-md-2 text-center">
-												<img src="https://staticshop.o2.co.uk/product/images/iphone-x-space-grey-sku-header.png?cb=25dc5afb0412fc40a28aa29d82cb53d0"
-												 alt="......." class="img-thumbnail" style="width:80px;">
-											</div>
-											<div class="col-md-10">
-												<h4>iPhone X 64GB Space Grey O2 Version</h4>
-												<h6 class="text-muted">Owned by <a>Kevin Wang</a></h6>
-												<small><a href="https://www.google.ca/">View Item Detail</a></small> | <small><a href="https://www.google.ca/">View Lender Profile</a></small>
-											</div>
-										</div>
+    <!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+    <script src="/vendors/momentjs/moment.js"></script>
 
-									</div>
-									<div class="col-md-4 text-center" style="border-left: 1px solid grey;">
-										<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;">Provide Feedback</button>
-										<button class="btn btn-warning" style="width:65%;margin-bottom: 15px;" disabled>Provide Feedback</button>
-										<button class="btn btn-primary" style="width:65%;margin-bottom: 15px;">Contact Lender</button>
-										<button class="btn btn-light" style="width:65%;margin-bottom: 15px;">Request for help </button>
-										<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;">Cancel this request</button>
-										<button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;">Re-submit this request</button>
-										<button class="btn btn-outline-success" style="width:65%;margin-bottom: 15px;">Borrow this again</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<nav aria-label="Page navigation example">
-							<ul class="pagination justify-content-center">
-								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1">Previous</a>
-								</li>
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item">
-									<a class="page-link" href="#">Next</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</main>
-	</div>
-
-	<footer class="app-footer" id="footerModule"></footer>
-
-
-
-	<!-- CoreUI and other third-party plugins (js files) -->
-	<script src="/vendors/jquery/js/jquery.min.js"></script>
-	<script src="/vendors/popper.js/js/popper.min.js"></script>
-	<script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/vendors/pace-progress/js/pace.min.js"></script>
-	<script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
-	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
-
-	<!-- Customized Javascript file goes here -->
-	<script src="/assets/js/dashboard-init.js"></script>
-	<script src="/assets/js/transaction_borrowed.js"></script>
-
-</body>
-
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/transaction_borrowed.js?version=1"></script>
+  </body>
 </html>

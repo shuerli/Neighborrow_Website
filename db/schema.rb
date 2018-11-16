@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_201221) do
+ActiveRecord::Schema.define(version: 2018_11_10_232429) do
 
   create_table "accounts", force: :cascade do |t|
     t.text "email", null: false
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2018_10_10_201221) do
     t.text "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "email_confirmed", default: false
+    t.string "confirm_token"
   end
 
   create_table "addresses", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_201221) do
     t.text "amazon_id"
     t.text "walmart_id"
     t.text "isbn"
+    t.text "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"

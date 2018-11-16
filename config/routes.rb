@@ -13,9 +13,14 @@ Rails.application.routes.draw do
   
   get '/settings', to: 'accounts#settings'
   
-  resources:accounts
-  resources:categories
+  resources:accounts do
+      member do
+          get :confirm_email
+      end
+  end
   
+  resources:categories
+  resources:items
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
@@ -23,9 +28,17 @@ Rails.application.routes.draw do
 	get '/request' => 'request#show'
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
+
+	# Routes related to feedback manipulation and relevant api
+	post '/feedback/to-borrower' => 'feedback#create_toBorrower'
+	post '/feedback/to-lender' => 'feedback#create_toLender'
+	get '/feedback' => 'feedback#show'
     
-  get '/item' => 'items#show'
-	post '/item' => 'items#create'
-	put '/item' => 'items#update'
+  # Routes related to items in user dashboard
+  get '/user_item' => 'user_items#show'
+  post '/user_item' => 'user_items#create'
+  put '/user_item/:id' => 'user_items#update'
+
+	get '/404' => 'application#page_not_found'
     
 end
