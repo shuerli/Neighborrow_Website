@@ -1,114 +1,163 @@
 <!--
-* This modified template file is referenced to coreui.io,
+* This modified template file is referenced to codelab,
 * along with other third-party stylesheets and javascript files.
-* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+* Source Repository: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=sign-up-form-with-icons
 -->
 
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.7
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<!-- Meta information used for SEO -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
-<meta name="author" content="Neighborrow">
-<meta name="keyword" content="Borrow, Lend, CSC444">
-<%= csrf_meta_tags %>
-<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<title>Neighborrow - Blank</title>
-
-<!-- CSS files for third-party icons-->
-<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
-<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
-<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-<!-- Base stylesheets & third-party stylesheets-->
-<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
-<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-
-<!-- Customized stylesheet goes here-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Bootstrap Sign up Form with Icons</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Google sign in script-->
 <meta name="google-signin-client_id" content="744444716406-i96vaelj3bln6r24i9evqs339osuhpmc.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<style type="text/css">
+body {
+color: #fff;
+background: #19aa8d;
+font-family: 'Roboto', sans-serif;
+}
+.form-control, .form-control:focus, .input-group-addon {
+border-color: #e1e1e1;
+}
+.form-control, .btn {
+border-radius: 3px;
+}
+.signup-form {
+width: 390px;
+margin: 0 auto;
+padding: 30px 0;
+}
+.signup-form form {
+color: #999;
+border-radius: 3px;
+margin-bottom: 15px;
+background: #fff;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+padding: 30px;
+}
+.signup-form h2 {
+color: #333;
+font-weight: bold;
+margin-top: 0;
+}
+.signup-form hr {
+margin: 0 -30px 20px;
+}
+.signup-form .form-group {
+margin-bottom: 20px;
+}
+.signup-form label {
+font-weight: normal;
+font-size: 13px;
+}
+.signup-form .form-control {
+min-height: 38px;
+box-shadow: none !important;
+}
+.signup-form .input-group-addon {
+max-width: 42px;
+text-align: center;
+}
+.signup-form input[type="checkbox"] {
+margin-top: 2px;
+}
+.signup-form .btn{
+font-size: 16px;
+font-weight: bold;
+background: #19aa8d;
+border: none;
+min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+background: #179b81;
+outline: none;
+}
+.signup-form a {
+color: #fff;
+text-decoration: underline;
+}
+.signup-form a:hover {
+text-decoration: none;
+}
+.signup-form form a {
+color: #19aa8d;
+text-decoration: none;
+}
+.signup-form form a:hover {
+text-decoration: underline;
+}
+.signup-form .fa {
+font-size: 21px;
+}
+.signup-form .fa-paper-plane {
+font-size: 18px;
+}
+.signup-form .fa-check {
+color: #fff;
+left: 17px;
+top: 18px;
+font-size: 7px;
+position: absolute;
+}
+</style>
 </head>
 
-<%= stylesheet_link_tag "accounts" %>
-<%= form_for @account, url: accounts_path do |f| %>
-<%= render 'shared/error_messages' %>
-
-<div class="signup__container">
-<div class="container__child signup__thumbnail">
-<div class="thumbnail__logo">
-
-</div>
-<div class="thumbnail__content text-center">
-<h1 class="heading--primary">Welcome to Neighborrow.</h1>
-<h2 class="heading--secondary">Are you ready to join us?</h2>
-</div>
-<div class="thumbnail__links">
-
-</div>
-<div class="signup__overlay"></div>
-</div>
-
-<div class="container__child signup__form">
-<form action="#">
-
+<body>
+<div class="signup-form">
+<form action="/examples/actions/confirmation.php" method="post">
+<h2>Sign Up</h2>
+<p>Are you ready to join Neighborrow?</p>
+<hr>
 <div class="form-group">
-<label for="email">Email</label>
-<input class="form-control" type="text" name="account[email]" id="email" placeholder="example@neighborrow.ca" required />
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+<input type="email" class="form-control" name="account[email]" placeholder="Email Address" required="required">
 </div>
-
+</div>
 <div class="form-group">
-<label for="password">Password</label>
-<input class="form-control" type="password" name="account[password]" id="password" placeholder="********" required />
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+<input type="text" class="form-control" name="account[password]" placeholder="Password" required="required">
 </div>
-
+</div>
 <div class="form-group">
-<label for="passwordRepeat">Repeat Password</label>
-<input class="form-control" type="password" name="account[password_confirmation]" id="passwordRepeat" placeholder="********" required />
+<div class="input-group">
+<span class="input-group-addon">
+<i class="fa fa-lock"></i>
+<i class="fa fa-check"></i>
+</span>
+<input type="text" class="form-control" name="account[password_confirmation]" placeholder="Confirm Password" required="required">
 </div>
-
+</div>
 <div class="form-group">
-<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-<label for="agree-term" class="label-agree-term">I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
+<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+</div>
+<div class="form-group">
+<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
 </div>
 
-<div class="m-t-lg">
-<ul class="list-inline">
-<li>
-<%= f.submit class: "btn btn--form" %>
-</li>
-<% end %>
-
-<li>
-<a class="signup__link" href="/login">I am already a member</a>
-</li>
-
-<div class="col-md-12">
-<br>
 <div class="row">
 <i class="g-signin2" data-onsuccess="OnSignIn"></i>
 </div>
+
+</form>
+<div class="text-center">Already have an account? <a href="/login">Login here</a></div>
 </div>
 
-</ul>
-</div>
-</form>
-</div>
-</div>
+</body>
 </html>
 
