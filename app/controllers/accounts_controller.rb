@@ -16,8 +16,6 @@ class AccountsController < ApplicationController
         @profile = Profile.new(profileparams)        
         
         if (@account.save and @profile.save)
-            log_in @account
-            welcome_email @account
             AccountMailer.registration_confirmation(@account).deliver
             flash[:notice] = "Sign up successful!"
             redirect_to @account
