@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   
   get '/settings', to: 'accounts#settings'
   
+  
+  resources:profiles
+  
+  
+  
   resources:accounts do
       member do
           get :confirm_email
