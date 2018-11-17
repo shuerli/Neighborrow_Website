@@ -123,7 +123,7 @@ class RequestController < ApplicationController
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
 					associated_borrowers = ActiveRecord::Base.connection.exec_query(associated_borrowers_query)
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
-					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :lenders => associated_lenders, :addresses => associated_addresses}
+					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_lenders, :addresses => associated_addresses}
 				else
 					search_query = "SELECT Requests.*, Items.id AS item_id, Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.item_id=Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
 					feedbacks_to_lender_query = "SELECT Requests.id AS request_id, Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Items WHERE Items.owner = 'geling.li@mail.utoronto.ca' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
@@ -135,7 +135,7 @@ class RequestController < ApplicationController
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
 					associated_borrowers = ActiveRecord::Base.connection.exec_query(associated_borrowers_query)
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
-					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :lenders => associated_lenders, :addresses => associated_addresses}
+					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_lenders, :addresses => associated_addresses}
 				end
 			end
 		else
@@ -157,10 +157,15 @@ class RequestController < ApplicationController
 			render :json => {:status => 200}
 		else
 			render :json => {:status => 500}
+		end
 	end
 
 	def update
 		case params[:type]
+		when 'accept'
+			entry = Request.find(params[:id])
+			entry.update( :status => 'accepted')
+			render :json => {:status => 200}
 		when 'cancel'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'cancelled')

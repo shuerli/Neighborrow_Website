@@ -579,5 +579,3 @@ $("#borrowed_searchbar").keyup(function(event) {
     }
   }
 });
-
-$("#");

@@ -3,8 +3,19 @@ class AccountsController < ApplicationController
     
     def create
         #render plain: params[:account].inspect
-        @account = Account.new(account_params)
-        if (@account.save)
+        @account = Account.new(account_params)    
+        
+        email = account_params[:email]
+        profileparams = Hash.new
+        profileparams[:email] = email
+        username = email.split('@')
+        profileparams[:display_name] = username[0]
+        profileparams[:language] = "english"
+        profileparams[:avatar_url] = "placeholder"  
+   
+        @profile = Profile.new(profileparams)        
+        
+        if (@account.save and @profile.save)
             log_in @account
             welcome_email @account
             AccountMailer.registration_confirmation(@account).deliver
