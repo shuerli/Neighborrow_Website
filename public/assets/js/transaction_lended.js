@@ -577,7 +577,7 @@ let accept_request = request_id => {
       type: "accept"
     }
   }).done(function(data) {
-    window.location = "/request_borrowed";
+    window.location = "/request_lended";
   });
 };
 
@@ -594,11 +594,12 @@ let reject_handler = request_id => {
   if ($("#reason_of_rejection_choice option:selected").text() !== "Others")
     reason = $("#reason_of_rejection_choice option:selected").text();
   else {
-    if ($("#rejection_reason_other").val() === "") {
-      $("#").addClass("is-invalid");
+    if ($("#other_rejection_reason").val() === "") {
+      $("#other_rejection_reason").addClass("is-invalid");
       $("#other_reason_empty").show();
-    } else reason = $("#rejection_reason_other").val();
-  }
+    } else reason = $("#other_rejection_reason").val();
+	}
+	
   $.ajax({
     url: "/request",
     method: "PUT",
@@ -609,6 +610,7 @@ let reject_handler = request_id => {
       reason: reason
     }
   }).done(function(data) {
-    window.location = "/request_borrowed";
-  });
+    window.location = "/request_lended";
+	});
+	
 };
