@@ -118,7 +118,8 @@ position: absolute;
 
 <body>
 <div class="signup-form">
-<form action="/examples/actions/confirmation.php" method="post">
+<%= form_for @account, url: accounts_path do |f| %>
+<form action="" method="post">
 <h2>Sign Up</h2>
 <p>Are you ready to join Neighborrow?</p>
 <hr>
@@ -153,7 +154,8 @@ position: absolute;
 <div class="row">
 <i class="g-signin2" data-onsuccess="OnSignIn"></i>
 </div>
-
+<%end%>
+</form>
 </form>
 <div class="text-center">Already have an account? <a href="/login">Login here</a></div>
 </div>
