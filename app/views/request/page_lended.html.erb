@@ -81,7 +81,7 @@
               <input
                 type="email"
                 class="form-control"
-                id="borrowed_searchbar"
+                id="lended_searchbar"
                 placeholder="Search by item's name or item id or request id, then press enter"
               />
             </div>
@@ -201,7 +201,10 @@
                     <label for="exampleFormControlInput1"
                       ><strong>Show requests created</strong></label
                     >
-                    <select class="form-control form-control-sm" id="range_filter">
+                    <select
+                      class="form-control form-control-sm"
+                      id="range_filter"
+                    >
                       <option value="all">since your account created</option>
                       <option value="1month">in last 1 month</option>
                       <option value="3month">in last 3 months</option>
@@ -285,6 +288,69 @@
       </div>
     </div>
 
+    <!-- Modal for Confirmation on Request Cancellation -->
+    <div class="modal" tabindex="-1" id="rejection_modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Reject This Request</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="rejection_reason_section">
+              <label>Please provide your reason of rejection.</label>
+              <select class="form-control" id="reason_of_rejection_choice">
+                <option
+                  >This item has just been reserved for another
+                  borrower.</option
+                >
+                <option>I want to remove this item from my stock list.</option>
+                <option>Your profile implies some potential risk.</option>
+                <option>Others</option>
+              </select>
+              <br />
+              <div class="form-group">
+                <label
+                  >If you choose 'Others', please state below.</label
+                >
+                <textarea
+                  class="form-control"
+                  id="rejection_reason_other"
+                  rows="3"
+                ></textarea>
+                <div class="invalid-feedback" id="other_reason_empty" style="display:none;">
+                  Please complete this section if you chose "others"
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              Return
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              id="rejection_confirmed"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Modal for Help Request to Admin -->
 
     <!-- Modal for Feedback Submission to Lender -->
@@ -310,7 +376,7 @@
             <hr />
             <div class="form-group">
               <label for="feedback_rate"
-                >Rate your lender from 0 to 5
+                >Rate your borrower from 0 to 5
                 <a class="text-danger">(Required)</a></label
               >
               <select class="form-control" id="feedback_rate">
