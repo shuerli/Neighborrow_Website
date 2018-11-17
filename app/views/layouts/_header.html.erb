@@ -8,7 +8,7 @@
 
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <% if logged_in? %>
-    <li><%= link_to "MyAccount", '#' %></li>
+    <li><%= link_to "MyAccount:#{@current_user.id}", '#' %></li>
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Account <b class="caret"></b>

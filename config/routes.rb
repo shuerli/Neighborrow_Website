@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   
   resources:categories
-  
+  resources:items
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
@@ -35,8 +35,10 @@ Rails.application.routes.draw do
 	get '/feedback' => 'feedback#show'
     
   # Routes related to items in user dashboard
-  get '/user_item' => 'user_items#show'
-	post '/user_item' => 'user_items#create'
+
+  get '/user_item' => 'user_items#index'
+  get '/user_item/:id' => 'user_items#show' 
+  post '/user_item' => 'user_items#create'
   put '/user_item/:id' => 'user_items#update'
 
 	get '/404' => 'application#page_not_found'
