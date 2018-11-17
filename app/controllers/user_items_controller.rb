@@ -1,5 +1,7 @@
 class UserItemsController < ApplicationController
-    def index
+    def show_all
+    end
+    def get_data_all
         user_email = 'raymondfzy@gmail.com'
         case params[:type]
         when 'lent'
@@ -14,7 +16,10 @@ class UserItemsController < ApplicationController
         end
     end
   
+
     def show
+    end
+    def get_data
         @user_item = Item.find(params[:id])
         if not @user_item.status == 'disabled'
             render :json => {:status => 200, :result => @user_item}
@@ -22,6 +27,7 @@ class UserItemsController < ApplicationController
             render :json => {:status => 404}
         end
     end
+
 
     def new
     end

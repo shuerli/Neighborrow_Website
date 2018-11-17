@@ -35,8 +35,17 @@ Rails.application.routes.draw do
 	get '/feedback' => 'feedback#show'
     
   # Routes related to items in user dashboard
-  get '/user_item' => 'user_items#index'
+  get '/user_item' => 'user_items#show_all'
+  get '/user_item_all' => 'user_items#get_data_all'
+
   get '/user_item/:id' => 'user_items#show' 
+  get '/user_item/info/:id' => 'user_items#get_data'
+
+
+  get '/user_item/new' => 'user_items#new'
+
+
+
 	post '/user_item' => 'user_items#create'
   put '/user_item/:id' => 'user_items#update'
 
