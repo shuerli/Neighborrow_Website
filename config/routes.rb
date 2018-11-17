@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
   
   resources:categories
-  
+  resources:items
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
