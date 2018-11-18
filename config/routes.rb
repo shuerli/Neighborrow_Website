@@ -15,11 +15,6 @@ Rails.application.routes.draw do
   
   get '/settings', to: 'accounts#settings'
   
-  
-  resources:profiles
-  
-  
-  
   resources:accounts do
       member do
           get :confirm_email
@@ -48,7 +43,7 @@ Rails.application.routes.draw do
   get '/user_item/:id' => 'user_items#show' 
   get '/user_item/info/:id' => 'user_items#get_data'
 
-
+  get '/user_item/edit/:id' => 'user_items#edit'
   get '/user_item/new' => 'user_items#new'
 
 

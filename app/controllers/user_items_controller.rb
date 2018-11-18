@@ -28,5 +28,8 @@ class UserItemsController < ApplicationController
         end
     end
 
+    
+    def edit
+    end
 
 end
