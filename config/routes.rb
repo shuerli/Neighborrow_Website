@@ -54,6 +54,11 @@ Rails.application.routes.draw do
 	post '/user_item' => 'user_items#create'
   put '/user_item/:id' => 'user_items#update'
 
+	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
+
+	# Routes for searching (public access granted)
+	get '/search/keyword_prompt' => 'items#keyword_prompt'
+	#get '/search/geo/:lon/:lat'
     
 end

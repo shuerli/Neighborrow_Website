@@ -1,23 +1,84 @@
-<button class="navbar-toggler sidebar-toggler d-lg-none d-md-none mr-auto" type="button" data-toggle="sidebar-show">
-	<span class="navbar-toggler-icon"></span>
+<link
+  rel="stylesheet"
+  href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+/>
+<style>
+  .ui-autocomplete {
+    position: absolute;
+    z-index: 1030 !important;
+  }
+</style>
+
+<button
+  class="navbar-toggler sidebar-toggler d-lg-none d-md-none mr-auto"
+  type="button"
+  data-toggle="sidebar-show"
+>
+  <span class="navbar-toggler-icon"></span>
 </button>
 <a class="navbar-brand" href="#">
-	<img class="navbar-brand-full" src="img/brand/logo.svg" width="89" height="25" alt="Logo">
-	<img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
+  <img
+    class="navbar-brand-full"
+    src="img/brand/logo.svg"
+    width="89"
+    height="25"
+    alt="Logo"
+  />
+  <img
+    class="navbar-brand-minimized"
+    src="img/brand/sygnet.svg"
+    width="30"
+    height="30"
+    alt="CoreUI Logo"
+  />
 </a>
 <div class="row d-md-down-none" style="padding-left:15%;width:80%">
-	<input type="text" style="width:90%" class="form-control" placeholder="Search for items which you're looking for"
-	 name="srch-term" id="srch-term">
-	<button class="btn btn-primary" style="margin-left:-40px"><i class="fa fa-search"></i></button>
+  <input
+    type="text"
+    style="width:90%"
+    class="form-control"
+    placeholder="Search for items which you're looking for"
+    id="item-searchbar-main"
+    onkeypress="searchbarAjax_trigger(this)"
+  />
+  <button class="btn btn-primary" style="margin-left:-40px">
+    <i class="fa fa-search"></i>
+  </button>
 </div>
 <ul class="nav navbar-nav ml-auto">
-	<li class="nav-item dropdown">
-		<a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-			<span class="navbar-toggler-icon"></span>
-		</a>
-		<div class="dropdown-menu dropdown-menu-right">
-			<a class="dropdown-item" href="#">
-				<i class="fa fa-sign-out"></i> Sign out</a>
-		</div>
-	</li>
+  <li class="nav-item dropdown">
+    <a
+      class="nav-link"
+      data-toggle="dropdown"
+      href="#"
+      role="button"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item" href="/logout">
+        <i class="fa fa-sign-out"></i> Sign out</a
+      >
+    </div>
+  </li>
 </ul>
+
+<script>
+  let keywordList_cache = new Array();
+  $("#item-searchbar-main").autocomplete({ source: keywordList_cache });
+  let searchbarAjax_trigger = ptr => {
+	$('#item-searchbar-sub').val(ptr.value);
+    if (ptr.value.length > 2) {
+      $.get("/search/keyword_prompt?input=" + ptr.value, function(data) {
+        if (data.result.length > 0) {
+          keywordList_cache = data.result.map(x => x.name);
+          $("#item-searchbar-main").autocomplete("option", {
+            source: keywordList_cache
+          });
+        }
+      });
+    }
+  };
+</script>
