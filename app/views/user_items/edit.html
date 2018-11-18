@@ -35,7 +35,6 @@
 	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
 	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
 	<link href="/assets/css/roboto.css" rel="stylesheet" type="text/css" />
-	
 	<!-- Calendar related -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
@@ -58,32 +57,43 @@
 				<!-- Main section - Codes for main functionalities in this block -->
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><img class="img-fluid img-thumbnail"  id="item-img"></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><img class="img-fluid img-thumbnail" src="/assets/img/imgplaceholder.gif" id="item-img"></div>
 				</div>
 
 				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Item name</div>
-					<div class="col-9 text-field" style="background:white; font-size:18px; padding-right:100px; padding-top:30px;" id='item-name-field'></div>
+					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-name'>Item name</div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;" ><input type="text" id='item-name-input'></div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Brand</div>
-					<div class="col-9 text-field" style="background:white; font-size:18px; padding-right:100px; padding-top:30px;" id='brand-field'></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text"></div>
 				</div>
 				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Condition</div>
-					<div class="col-9 text-field" style="background:white; font-size:18px; padding-right:100px; padding-top:30px;" id='condition-field'></div>
+					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-condition'>Condition</div>
+					<div class="col-9" style="font-size:18px; background:white;padding-right:100px; padding-top:30px;">
+							<form>
+								<input type="radio" name="condition" value="Brand New" checked>brand new<br>
+								<input type="radio" name="condition" value="Like New">like new<br>
+								<input type="radio" name="condition" value="Very Good">very good<br>
+								<input type="radio" name="condition" value="Good">good<br>
+								<input type="radio" name="condition" value="Adequate">adequate<br>
+								<input type="radio" name="condition" value="Defective">defective
+							</form>
+					</div>
 				</div>
 				<div class="row" >
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Available dates</div>
-					<div class="col-9 text-field" style="background:white; font-size:18px; padding-right:100px; padding-top:30px;" id='date-field'>
+					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
+							<input type="text" name="daterange" style="font-size:15px"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Description</div>
-					<div class="col-9 text-field" style="background:white; font-size:18px; padding-right:100px; padding-top:30px;" id='description-field'></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
+						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;"></textarea></div>
 				</div>
 				<br><br>
-				 <div class="col-4" style="text-align:right;"><input type="submit" value="Edit Item">
+				 <div class="col-4" style="text-align:right;"><input type="submit" value="Add item">
 				 </div>
 			</div>
 		</main>
@@ -98,16 +108,22 @@
 	<script src="/vendors/pace-progress/js/pace.min.js"></script>
 	<script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
 	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
-	
 	<!-- Calendar related -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 	<!-- Customized Javascript file goes here -->
-	<script src="/assets/js/dashboard-init.js"></script>
-	<script src="/assets/js/user_item_show.js"></script>
+	<script src="/assets/js/dashboard-init.js?version=1"></script>
 	
-
+	<script>
+		$(function() {
+			$('input[name="daterange"]').daterangepicker({
+			opens: 'left'
+			}, function(start, end, label) {
+			console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+			});
+		});
+	</script>
 </body>
 </html>
