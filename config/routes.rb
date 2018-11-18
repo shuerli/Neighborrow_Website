@@ -5,18 +5,15 @@ Rails.application.routes.draw do
   root  'pages#main', as: 'home'
   get '/index', to: 'pages#main'
   get   '/login',   to: 'sessions#login', as: 'login'
+  get 'auth/:provider/callback', to: 'sessions#create_auth'
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
+  get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
   
   get '/borrow',    to: 'item#borrow'
   
   get '/settings', to: 'accounts#settings'
-  
-  
-  resources:profiles
-  
-  
   
   resources:accounts do
       member do
@@ -46,7 +43,7 @@ Rails.application.routes.draw do
   get '/user_item/:id' => 'user_items#show' 
   get '/user_item/info/:id' => 'user_items#get_data'
 
-
+  get '/user_item/edit/:id' => 'user_items#edit'
   get '/user_item/new' => 'user_items#new'
 
 
@@ -54,6 +51,11 @@ Rails.application.routes.draw do
 	post '/user_item' => 'user_items#create'
   put '/user_item/:id' => 'user_items#update'
 
+	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
+
+	# Routes for searching (public access granted)
+	get '/search/keyword_prompt' => 'items#keyword_prompt'
+	#get '/search/geo/:lon/:lat'
     
 end

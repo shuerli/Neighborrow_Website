@@ -297,14 +297,14 @@ let appendSection = info => {
           request.id +
           ')"> Accept This Request </button>';
         reject_button =
-          '<button class="btn btn-outline-danger" style="width:65%;margin-bottom: 15px;" onclick="reject_request(' +
+          '<button class="btn btn-outline-danger" style="width:65%;" onclick="reject_request(' +
           request.id +
           ')"> Reject This Request </button>';
         contact_button =
           '<a href="mailto:' +
           info.borrowers.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-        button_section = accept_button + reject_button + contact_button;
+        button_section = accept_button + reject_button + '<hr>' +contact_button;
         break;
       case "accepted":
         if (!request.returned)
