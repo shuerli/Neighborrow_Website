@@ -10,11 +10,10 @@ class Account < ApplicationRecord
     validates :password, presence: true, confirmation:true, length: { minimum: 5 }
     
     has_many :addresses
-
-    before_save :encrypt_password
+    before_create :encrypt_password
+    before_create :confirmation_token
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
-    before_create :confirmation_token
 
     
     ###################### USED FOR SIGN IN ######################
@@ -35,12 +34,6 @@ class Account < ApplicationRecord
     #Upon creation, all accounts default to have "status = created"
     def assign_status
         self.status = "created"
-    end
-    
-    def email_activate
-        self.email_confirmed = true
-        self.confirm_token = nil
-        save!(:validate => false)
     end
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
