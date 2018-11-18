@@ -9,11 +9,13 @@
 <html lang="en">
 
 <head>
+
+<!-- Meta information used for SEO -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-<title>Bootstrap Sign up Form with Icons</title>
+<title>Neighborrow Sign Up Page</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -23,9 +25,13 @@
 <%= csrf_meta_tags %>
 
 <!-- Google sign in script-->
-<meta name="google-signin-client_id" content="744444716406-i96vaelj3bln6r24i9evqs339osuhpmc.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+<!-- CSS files for third-party icons-->
+<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
 <style type="text/css">
 body {
@@ -79,6 +85,9 @@ text-align: center;
 margin-top: 2px;
 }
 .signup-form .btn{
+}
+
+#signupbtn{
 font-size: 16px;
 font-weight: bold;
 background: #19aa8d;
@@ -116,6 +125,7 @@ top: 18px;
 font-size: 7px;
 position: absolute;
 }
+
 </style>
 </head>
 
@@ -150,22 +160,21 @@ position: absolute;
 <div class="form-group">
 <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 </div>
+
+
 <div class="form-group">
-<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+<button type="submit" class="btn btn-primary btn-lg" id='signupbtn'>Sign Up</button>
 </div>
 
 
-
 <div>
-<%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-</div>
-<div>
+<%= link_to image_tag("google.jpg",width:160, height: 30), "/auth/google_oauth2" %>
 <%= yield %>
 </div>
 
 
-
 <%end%>
+
 </form>
 </form>
 <div class="text-center">Already have an account? <a href="/login">Login here</a></div>
