@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
 
 <!-- Google sign in script-->
 <meta name="google-signin-client_id" content="744444716406-i96vaelj3bln6r24i9evqs339osuhpmc.apps.googleusercontent.com">
@@ -151,9 +154,17 @@ position: absolute;
 <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
 </div>
 
-<div class="row">
-<i class="g-signin2" data-onsuccess="OnSignIn"></i>
+
+
+<div>
+<%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
 </div>
+<div>
+<%= yield %>
+</div>
+
+
+
 <%end%>
 </form>
 </form>

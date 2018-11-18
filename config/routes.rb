@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   root  'pages#main', as: 'home'
   get '/index', to: 'pages#main'
   get   '/login',   to: 'sessions#login', as: 'login'
+  get 'auth/:provider/callback', to: 'sessions#create_auth'
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
+  get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
   
   get '/borrow',    to: 'item#borrow'
