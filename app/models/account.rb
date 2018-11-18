@@ -10,11 +10,10 @@ class Account < ApplicationRecord
     validates :password, presence: true, confirmation:true, length: { minimum: 5 }
     
     has_many :addresses
-
-    before_save :encrypt_password
+    before_create :encrypt_password
+    before_create :confirmation_token
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
-    before_create :confirmation_token
 
     
     ###################### USED FOR SIGN IN ######################
@@ -22,7 +21,10 @@ class Account < ApplicationRecord
     def encrypt_password
         if password.present?
             self.salt = BCrypt::Engine.generate_salt
+            Rails.logger.debug("!!!!!!password before encryption: #{self.password.inspect}")
+            Rails.logger.debug("!!!!!!salt before encryption: #{self.salt.inspect}")
             self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
+            Rails.logger.debug("!!!!!!password after encryption: #{self.password.inspect}")
         end
     end
 
@@ -37,14 +39,11 @@ class Account < ApplicationRecord
         self.status = "created"
     end
     
-    def email_activate
-        self.email_confirmed = true
-        self.confirm_token = nil
-        save!(:validate => false)
-    end
-    
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")
+        Rails.logger.debug("!!!!!!password in database: #{password.inspect}")
+        Rails.logger.debug("!!!!!!salt in database: #{salt.inspect}")
+        Rails.logger.debug("!!!!!!encryption through sign in#{BCrypt::Engine.hash_secret(login_password, salt).inspect}")
         password == BCrypt::Engine.hash_secret(login_password, salt)
     end
     
