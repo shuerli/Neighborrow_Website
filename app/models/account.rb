@@ -23,6 +23,8 @@ class Account < ApplicationRecord
             account.provider = auth.provider
             account.uid = auth.uid
             account.name = auth.info.name
+            account.email = auth.info.email
+            account.password = 'tempPasswordForNow'
             account.oauth_token = auth.credentials.token
             account.oauth_expires_at = Time.at(auth.credentials.expires_at)
             account.save!
