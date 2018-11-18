@@ -21,10 +21,7 @@ class Account < ApplicationRecord
     def encrypt_password
         if password.present?
             self.salt = BCrypt::Engine.generate_salt
-            Rails.logger.debug("!!!!!!password before encryption: #{self.password.inspect}")
-            Rails.logger.debug("!!!!!!salt before encryption: #{self.salt.inspect}")
             self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
-            Rails.logger.debug("!!!!!!password after encryption: #{self.password.inspect}")
         end
     end
 
@@ -41,9 +38,6 @@ class Account < ApplicationRecord
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")
-        Rails.logger.debug("!!!!!!password in database: #{password.inspect}")
-        Rails.logger.debug("!!!!!!salt in database: #{salt.inspect}")
-        Rails.logger.debug("!!!!!!encryption through sign in#{BCrypt::Engine.hash_secret(login_password, salt).inspect}")
         password == BCrypt::Engine.hash_secret(login_password, salt)
     end
     
