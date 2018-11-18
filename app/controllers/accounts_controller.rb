@@ -16,8 +16,6 @@ class AccountsController < ApplicationController
         @profile = Profile.new(profileparams)        
         
         if (@account.save and @profile.save)
-            log_in @account
-            welcome_email @account
             AccountMailer.registration_confirmation(@account).deliver
             flash[:notice] = "Sign up successful!"
             redirect_to @account
@@ -78,5 +76,12 @@ class AccountsController < ApplicationController
     
     def settings
         @account = Account.find_by(id: 1)
+    end
+    
+    protect_from_forgery with: :exception
+    helper_method :current_user
+    
+    def current_user
+        @current_user ||= Account.find(session[:user_id]) if session[:user_id]
     end
 end
