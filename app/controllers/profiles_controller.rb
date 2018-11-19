@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
   
   private def profile_params
       params.require(:profile).permit(:email, :first_name, :middle_name, :last_name,:display_name, 
-      :phone_number, :gender, :language, :country, :facebook, :gmail, :twitter, :avatar_url, :interest)
+      :phone_number, :gender, :language, :country, :facebook, :gmail, :twitter, :avatar_url,:interest => [])
   end
   
 end
