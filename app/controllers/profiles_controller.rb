@@ -20,25 +20,23 @@ class ProfilesController < ApplicationController
   end
     
   def update
-    puts "@@@@@@@@@@@@@@@@@@@@I am in UPDATE @@@@@@@@@@@@@@@@@@@@@@@@@@"
-    puts "***************profile_params[:email]*****************", profile_params[:email]
     @account = Account.find(params[:id])
-    puts "****************@account[:email]****************", @account[:email]
-    @profile = Profile.find_by_email(@account[:email])
-    puts "*****************@profile[:email]***************", @profile.email
-    puts  @profile.created_at
-    puts  @profile.display_name
-      
-    if @profile.update(email: '123@gmail.com')
-      puts "*****************GOOD***************"
-      redirect_to @profile
+    @profile = Profile.find_by_email(@account.email)
+    
+    success = true
+    profile_params.each do |key, val|
+        if !Profile.where(:email => @profile.email).update_all(key => val)
+          success = false
+        end 
+    end
+    
+    if success
+      redirect_to profile_path
     else
-      puts "*****************BAD***************"
       render 'edit'
     end
+    
   end
-  
- 
   
   private def profile_params
       params.require(:profile).permit(:email, :first_name, :middle_name, :last_name,:display_name, 

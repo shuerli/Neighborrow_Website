@@ -57,37 +57,81 @@
 				<h2>Settings</h2>
 				<hr>
 					
-				<div class="row">
+			<div class="row">
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
                     <i class="fa fa-edit"></i>Profile</div>
                   <div class="card-body">
-	                    
-                  <%= form_for @profile, url:profile_path do |f| %>
-                  	<p>
-						Email:<br><%= f.text_field :email %><br>
-					</p>
-                  	<%= f.submit class: "btn btn--form" %>
-                  <% end %>
-                  
-                  
-                    <form method="put" class="form-horizontal">
-						<div class="progress-group">
-							<div class="progress-group-header">
-								<i class="cui-user progress-group-icon"></i>
-								<div>Male</div>
-								<div class="ml-auto font-weight-bold">43%</div>
-							</div>
-							<div class="progress-group-bars">
-								<div class="progress progress-xs">
-									<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
-									 aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
+					<div class="progress-group">
+						<div class="progress-group-header">
+							<i class="cui-user progress-group-icon"></i>
+							<div>Male</div>
+							<div class="ml-auto font-weight-bold">43%</div>
+						</div>
+						<div class="progress-group-bars">
+							<div class="progress progress-xs">
+								<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
+								 aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
 						</div>
-						<br>
+					</div>
+					<br>
+	                    
+                  <%= form_for @profile, url:profile_path do |f| %>
+                  	<div class="form-group">
+                      <label>User Name</label>
+                      <%= f.text_field :display_name, class: 'form-control' %>
+	                </div>
+                  	<!-- <div class="form-group">
+                      <label>Email Address</label>
+                      <%= f.text_field :email, class: 'form-control' %>
+	                </div> -->
+	                <div class="row">
+	                  	<div class="form-group col-sm-4">
+	                      <label>First Name</label>
+	                      <%= f.text_field :first_name, class: 'form-control' %>
+		                </div>
+	                  	<div class="form-group col-sm-4">
+	                      <label>Middle Name</label>
+	                      <%= f.text_field :middle_name, class: 'form-control' %>
+		                </div>
+	                  	<div class="form-group col-sm-4">
+	                      <label>Last Name</label>
+	                      <%= f.text_field :last_name, class: 'form-control' %>
+		                </div>
+	                </div>
+                  	<div class="form-group">
+                      <label>Phone Number</label>
+                      <%= f.text_field :phone_number, class: 'form-control' %>
+	                </div>	                
+                  	<div class="form-group">
+                      <label>Gender</label>
+                      <%= f.text_field :gender, class: 'form-control' %>
+	                </div>                
+                  	<div class="form-group">
+                      <label>Country</label>
+                      <%= f.text_field :country, class: 'form-control' %>
+	                </div>      
+	                
+                  	<%= f.submit class: "btn btn--form" %>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+            <!-- /.row-->	
+            
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <i class="fa fa-edit"></i>Profile</div>
+                  <div class="card-body">
                   
+						
+                  	<form method="put" class="form-horizontal">
                     	<div class="form-group">
 	                      <label for="username">User Name</label>
 	                      <input class="form-control" name="profile[display_name]" id="username" type="text" value=<%= @profile.display_name %>>
@@ -118,10 +162,6 @@
 	                      <label for="country">Country</label>
 	                      <input class="form-control" id="country" type="text" placeholder="Country name">
 	                    </div>
-	                    
-	                    
-	                  
-	                    
 	                    
                     	<div class="form-group">
                     		<label class="col-form-label" for="file-input">Interested Categories</label>
@@ -397,17 +437,19 @@
 
 
 
-	<!-- CoreUI and other third-party plugins (js files) -->
-	<script src="/vendors/jquery/js/jquery.min.js"></script>
-	<script src="/vendors/popper.js/js/popper.min.js"></script>
-	<script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/vendors/pace-progress/js/pace.min.js"></script>
-	<script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
-	<script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+<!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+		<script src="/vendors/momentjs/moment.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-	<!-- Customized Javascript file goes here -->
-	<script src="/assets/js/dashboard-init.js"></script>
-	<script src="/assets/js/transaction_borrowed.js"></script>
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/transaction_borrowed.js?version=1"></script>
 
 </body>
 
