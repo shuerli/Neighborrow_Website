@@ -7,4 +7,7 @@ class PagesController < ApplicationController
     def temp
     end
     
+    def termsOfService
+    end
+    
 end

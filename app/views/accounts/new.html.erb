@@ -24,9 +24,6 @@
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 
-<!-- Google sign in script-->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-
 <!-- CSS files for third-party icons-->
 <link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
 <link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
@@ -158,7 +155,7 @@ position: absolute;
 </div>
 </div>
 <div class="form-group">
-<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="/termsOfService" target="_blank">Terms of Service</a> &amp; <a href="#">Privacy Policy</a></label>
 </div>
 
 
