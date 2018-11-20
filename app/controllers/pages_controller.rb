@@ -10,4 +10,7 @@ class PagesController < ApplicationController
     def termsOfService
     end
     
+    def privacy
+    end
+    
 end

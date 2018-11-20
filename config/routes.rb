@@ -68,4 +68,6 @@ Rails.application.routes.draw do
     
     #Routes for testing purposes
       get   '/temp',     to: 'pages#temp'
+      get   '/termsOfService', to:'pages#termsOfService'
+      get   '/privacyPolicy', to:'pages#privacy'
 end
