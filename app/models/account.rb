@@ -10,15 +10,28 @@ class Account < ApplicationRecord
     validates :password, presence: true, confirmation:true, length: { minimum: 5 }
     
     has_many :addresses
-
-    before_save :encrypt_password
+    before_create :encrypt_password
+    before_create :confirmation_token
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
-    before_create :confirmation_token
 
     
     ###################### USED FOR SIGN IN ######################
     
+    def self.from_omniauth(auth)
+        where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |account|
+            account.provider = auth.provider
+            account.uid = auth.uid
+            account.name = auth.info.name
+            account.email = auth.info.email
+            account.password = 'tempPasswordForNow'
+            account.oauth_token = auth.credentials.token
+            account.oauth_expires_at = Time.at(auth.credentials.expires_at)
+            account.save!
+        end
+    end
+
+
     def encrypt_password
         if password.present?
             self.salt = 1
@@ -36,7 +49,6 @@ class Account < ApplicationRecord
     def assign_status
         self.status = "created"
     end
-    
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")

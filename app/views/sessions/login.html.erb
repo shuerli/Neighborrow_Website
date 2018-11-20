@@ -9,6 +9,9 @@
 <% end %>
 
 <%= form_for :session, url: login_path do |f| %>
+<% flash.each do |key, value| %>
+<%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 <p>
 Email:</br><%= f.text_field :email %><br>
 </p>
