@@ -65,7 +65,7 @@ class AccountsController < ApplicationController
         end
     end
     
-    def settings
-        @account = Account.find_by(id: 1)
-    end
+    #def settings
+    # @account = Account.find_by(id: 1)
+    #end
 end

@@ -4,14 +4,16 @@ Rails.application.routes.draw do
   
   root  'pages#main', as: 'home'
   get '/index', to: 'pages#main'
+  
+  #routes related to login and sign up
   get   '/login',   to: 'sessions#login', as: 'login'
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
-  get   '/temp',     to: 'pages#temp'
+
   
   get '/borrow',    to: 'item#borrow'
-  
   get '/settings', to: 'accounts#settings'
+  
   
   resources:accounts do
       member do
@@ -43,4 +45,9 @@ Rails.application.routes.draw do
 
 	get '/404' => 'application#page_not_found'
     
+    #routes related to public item show page
+    get '/search_show', to: 'item#search_show', as: 'search_show'
+    
+    #Routes for testing purposes
+      get   '/temp',     to: 'pages#temp'
 end

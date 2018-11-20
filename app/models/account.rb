@@ -21,8 +21,8 @@ class Account < ApplicationRecord
     
     def encrypt_password
         if password.present?
-            self.salt = BCrypt::Engine.generate_salt
-            self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
+            self.salt = 1
+            
         end
     end
 
@@ -37,15 +37,10 @@ class Account < ApplicationRecord
         self.status = "created"
     end
     
-    def email_activate
-        self.email_confirmed = true
-        self.confirm_token = nil
-        save!(:validate => false)
-    end
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")
-        password == BCrypt::Engine.hash_secret(login_password, salt)
+        password == login_password
     end
     
     def authenticate(email = "", login_password = "")
