@@ -69,3 +69,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'popper_js'
+
+# Third-party dependency for auto correction
+# Method and Resource: https://github.com/subosito/gingerice
+gem 'gingerice'
+
