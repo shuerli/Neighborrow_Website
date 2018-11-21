@@ -23,6 +23,8 @@ class Account < ApplicationRecord
             account.provider = auth.provider
             account.uid = auth.uid
             account.name = auth.info.name
+            account.email = auth.info.email
+            account.password = 'tempPasswordForNow'
             account.oauth_token = auth.credentials.token
             account.oauth_expires_at = Time.at(auth.credentials.expires_at)
             account.save!
@@ -32,8 +34,8 @@ class Account < ApplicationRecord
 
     def encrypt_password
         if password.present?
-            self.salt = BCrypt::Engine.generate_salt
-            self.password = BCrypt::Engine.hash_secret(self.password, self.salt)
+            self.salt = 1
+            
         end
     end
 
@@ -50,7 +52,7 @@ class Account < ApplicationRecord
     
     ###################### USED FOR LOGIN(AUTHENTICATION)######################
     def match_password(login_password = "")
-        password == BCrypt::Engine.hash_secret(login_password, salt)
+        password == login_password
     end
     
     def authenticate(email = "", login_password = "")

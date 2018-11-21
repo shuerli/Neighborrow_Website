@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-      user = Account.find_by(email: params[:session][:email])
+      user = Account.find_by_email(params[:session][:email])
       if user && user.authenticate(params[:session][:email], params[:session][:password])
           if user.email_confirmed
               log_in user
