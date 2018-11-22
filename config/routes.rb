@@ -70,4 +70,5 @@ Rails.application.routes.draw do
       get   '/temp',     to: 'pages#temp'
       get   '/termsOfService', to:'pages#termsOfService'
       get   '/privacyPolicy', to:'pages#privacy'
+      get   '/aboutUs',  to:'pages#about'
 end
