@@ -90,4 +90,8 @@ class AccountsController < ApplicationController
 		render :json => {:status => 200, :display_name => display_name[0]["display_name"], :borrower_rate => borrower_rate[0]["borrower_avg"], :borrower_credit => borrower_credit[0]["borrower_sum"], :lender_rate => lender_rate[0]["lender_avg"], :lender_credit => lender_credit[0]["lender_sum"]}
 	end
     
+    def resendConfirmation
+        @account = Account.find(params[:id])
+        AccountMailer.registration_confirmation(@account).deliver
+    end
 end
