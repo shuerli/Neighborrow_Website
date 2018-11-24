@@ -123,28 +123,60 @@ font-size: 7px;
 position: absolute;
 }
 
+/*Styling in case no errors on form*/
+.form_success span {
+width: 80%;
+height: 35px;
+margin: 3px 10%;
+font-size: 1.1em;
+color: green;
+}
+.form_success input {
+border: 1px solid green;
+}
+#error_msg {
+color: red;
+text-align: center;
+margin: 10px auto;
+}
+
 </style>
 </head>
 
 <body>
 <div class="signup-form">
 <%= form_for @account, url: accounts_path do |f| %>
+
 <form action="" method="post">
 <h2>Sign Up</h2>
 <p>Are you ready to join Neighborrow?</p>
+<% if @account.errors.any? %>
+<div id="error_explanation">
+<div class="alert alert-danger">
+<ul>
+<% @account.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+</div>
+<% end %>
 <hr>
+
 <div class="form-group">
 <div class="input-group">
 <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
 <input type="email" class="form-control" name="account[email]" placeholder="Email Address" required="required">
 </div>
 </div>
+
 <div class="form-group">
 <div class="input-group">
 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-<input type="password" class="form-control" name="account[password]" placeholder="Password" required="required">
+<input type="password" class="form-control" name="account[password]" placeholder="Password (Minimum 8 characters)" required="required" pattern=".{8,}">
 </div>
 </div>
+
 <div class="form-group">
 <div class="input-group">
 <span class="input-group-addon">
@@ -154,6 +186,8 @@ position: absolute;
 <input type="password" class="form-control" name="account[password_confirmation]" placeholder="Confirm Password" required="required">
 </div>
 </div>
+
+
 <div class="form-group">
 <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="/termsOfService" target="_blank">Terms of Service</a> &amp; <a href="/privacyPolicy" target="_blank">Privacy Policy</a></label>
 </div>
