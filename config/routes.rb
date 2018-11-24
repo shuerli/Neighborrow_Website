@@ -73,4 +73,5 @@ Rails.application.routes.draw do
       get   '/contactUs', to:'pages#contactus'
       get   '/aboutUs',  to:'pages#about'
       get   '/FAQ',  to:'pages#FAQ'
+      get   '/team',  to:'pages#team'
 end

@@ -22,4 +22,8 @@ class PagesController < ApplicationController
     
     def main
     end
+    
+    def team
+    end
+    
 end
