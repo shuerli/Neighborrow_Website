@@ -20,7 +20,7 @@ class UserItemsController < ApplicationController
     def show
     end
     def get_data
-        @user_item = Item.find(params[:id])
+        @user_item = Item.find( params[:id])
         if not @user_item.status == 'disabled'
             render :json => {:status => 200, :result => @user_item}
         else
@@ -30,6 +30,20 @@ class UserItemsController < ApplicationController
 
     
     def edit
+    end
+
+    def destroy
+        @user_item = Item.find(params[:id])
+        if not @user_item.status == 'lent'
+            @user_item.status = 'disabled'
+            if @user_item.save
+                render :json => {:status => 200}
+            else
+                render :json => {:status => 404}
+            end
+        else
+            render :json => {:status => 404}
+        end
     end
 
 end
