@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/borrow',    to: 'item#borrow'
   get '/settings', to: 'accounts#settings'
   
+	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 
   resources:profiles
 
