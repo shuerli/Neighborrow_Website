@@ -76,7 +76,19 @@ class AccountsController < ApplicationController
     
     def settings
         @account = Account.find_by(id: 1)
-    end
+	end
+	
+	def userSidebar_Info
+		if !current_user
+			render :json => {:status => 403}
+		end
+		display_name = ActiveRecord::Base.connection.exec_query("SELECT display_name FROM Profiles WHERE email = '"+current_user.email+"';")
+		borrower_rate = ActiveRecord::Base.connection.exec_query("SELECT AVG(Feedback_to_borrowers.rate) AS borrower_avg FROM Requests,Feedback_to_borrowers WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id;")
+		borrower_credit = ActiveRecord::Base.connection.exec_query("SELECT SUM(Feedback_to_borrowers.credit) AS borrower_sum FROM Requests,Feedback_to_borrowers WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id;")
+		lender_rate = ActiveRecord::Base.connection.exec_query("SELECT AVG(Feedback_to_lenders.rate) AS lender_avg FROM Requests, Items, Feedback_to_lenders WHERE Items.owner = '"+current_user.email+"' AND Items.id = Requests.item_id AND Requests.id = Feedback_to_lenders.request_id;")
+		lender_credit = ActiveRecord::Base.connection.exec_query("SELECT SUM(Feedback_to_lenders.credit) AS lender_sum FROM Requests, Items, Feedback_to_lenders WHERE Items.owner = '"+current_user.email+"' AND Items.id = Requests.item_id AND Requests.id = Feedback_to_lenders.request_id;")
+		render :json => {:status => 200, :display_name => display_name[0]["display_name"], :borrower_rate => borrower_rate[0]["borrower_avg"], :borrower_credit => borrower_credit[0]["borrower_sum"], :lender_rate => lender_rate[0]["lender_avg"], :lender_credit => lender_credit[0]["lender_sum"]}
+	end
     
     def resendConfirmation
         @account = Account.find(params[:id])

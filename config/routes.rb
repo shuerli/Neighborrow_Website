@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/borrow',    to: 'item#borrow'
   get '/settings', to: 'accounts#settings'
   
+	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 
   resources:profiles
 
@@ -50,13 +51,13 @@ Rails.application.routes.draw do
   get '/user_item/:id' => 'user_items#show' 
   get '/user_item/info/:id' => 'user_items#get_data'
 
+  put '/user_item' => 'user_items#destroy'
+
   get '/user_item/edit/:id' => 'user_items#edit'
   get '/user_item/new' => 'user_items#new'
 
-
-
 	post '/user_item' => 'user_items#create'
-  put '/user_item/:id' => 'user_items#update'
+  
 
 	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
