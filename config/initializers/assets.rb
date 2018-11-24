@@ -12,6 +12,7 @@ Rails.application.config.assets.precompile += %w( carousel.css )
 Rails.application.config.assets.precompile += %w( album.css )
 Rails.application.config.assets.precompile += %w( agency.min.css )
 Rails.application.config.assets.precompile += %w( navbar.css )
+Rails.application.config.assets.precompile += %w( search_form.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
