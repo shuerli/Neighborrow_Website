@@ -16,6 +16,8 @@
 <html lang="en">
 
 <head>
+	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
+	javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<!-- Meta information used for SEO -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,6 +87,7 @@
 				<br><br>
 				 <div class="col-4" style="text-align:right;"><input type="submit" value="Edit Item">
 				 </div>
+				 <br><br>
 			</div>
 		</main>
 	</div>

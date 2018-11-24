@@ -3,18 +3,23 @@
 };
 
  function btnItemDelete(itemId){
-  
-  // $.ajax({
-  //   method: "PUT",
-  //   url: '/user_item/'+itemId,
-  //   data: { 
-  //         status: "disabled", 
-  //         authenticity_token: window._token}
-  // }).done(function( msg ) {
-  //     alert( "Item removed: " + msg );
-  //   });
-    alert('delete' + itemId);
-   };
+
+  $.ajax({
+     url: "/user_item",
+     method: "PUT",
+     data: { 
+          authenticity_token: window._token,
+          id: itemId
+        }
+  }).done(function(data) {
+      location.reload();
+    }).fail(function(data) {
+      alert( "Item remove failed");
+    });
+
+}
+
+
 function btnItemAdd(){
     // $.ajax({
   //   method: "POST",
@@ -47,7 +52,7 @@ $(document).ready(function () {
     for (var i = 0; i < data.result.length; i++) {
       var divImage = document.createElement('div');
       divImage.className = "img-wrap col-2"
-      divImage.innerHTML = '<span class="close" onclick="btnItemDelete(' + i +')" >&times;</span>\
+      divImage.innerHTML = '<span class="close" onclick="btnItemDelete(' + data.result[i].id +')" >&times;</span>\
                           <h2><img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="item image" class="img-fluid img-thumbnail" onclick="btnItemDetail('+ data.result[i].id +')"></h2>\
                             <p>' + data.result[i].name + '</p>';
       document.getElementById("registered-items").appendChild(divImage);
