@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources:profiles
 
   
+  get '/resendConfirmation', to:'accounts#resendConfirmation'
   resources:accounts do
+      post :resendConfirmation, :on => :collection
       member do
           get :confirm_email
       end

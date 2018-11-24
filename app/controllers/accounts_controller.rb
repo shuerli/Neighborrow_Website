@@ -78,4 +78,8 @@ class AccountsController < ApplicationController
         @account = Account.find_by(id: 1)
     end
     
+    def resendConfirmation
+        @account = Account.find(params[:id])
+        AccountMailer.registration_confirmation(@account).deliver
+    end
 end
