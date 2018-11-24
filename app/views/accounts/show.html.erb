@@ -38,12 +38,18 @@
 <!-- Customized stylesheet goes here-->
 </head>
 
-<body>
+
+<body class="app header-fixed">
+<div class="app-body flex-row align-items-center">
 <main class="main">
-<h1>Welcome!</h1>
-<h1>Congratulations!</h1>
+<h1 class="text-center text-uppercase font-weight-bold">Congratulations!</h1>
+<h4 class="text-center font-weight-bold">Just one more step to become a Neighborrow Insider!</h4>
+<div class = "col-md-6 offset-md-3">
 </p>To activate your account, please verify your email address by following the instructions in the verification email that we have just sent.<p>
-<p>If the confirmation email doesn't arrive within the next 5 minutes. Please try to sign up again or contact our technical support at sixneighborrow@gmail.com.</p>
+<p></p>
+<p>If the confirmation email doesn't arrive within the next 5 minutes, please click <%= link_to "here", resendConfirmation_path(:id => @account.id)%> to resend the email or contact our technical support at <a href="mailto:sixneighborrow@gmail.com">sixneighborrow@gmail.com </a>.</p>
+</div>
 </main>
+</div>
 </body>
 </html>

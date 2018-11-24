@@ -80,25 +80,16 @@
             
             <%= render 'layouts/search_bar' %>
             
-            <!-- Marketing messaging and featurettes
-             ================================================== -->
-            <!-- Wrap the rest of the page in another container to center all the content. -->
+            <br></br>
             
+            <%= render 'layouts/categories_list' %>
             <div class="container marketing">
                 
                 <!-- Three columns of text below the carousel -->
-                <div class="row">
-                    <% categories.each do |cat| %>
-                        <div class="col-lg-3">
-                        <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="120" height="120">
-                                <h5><%= cat.name %></h5>
-
-                                <%= link_to "view", category_path(cat), :class => "btn btn-secondary" %>
-                        </div><!-- /.col-lg-4 -->
-                    <% end %>
-                </div><!-- /.row -->
-                
-                
+               
+            <!-- Marketing messaging and featurettes
+             ================================================== -->
+            <!-- Wrap the rest of the page in another container to center all the content. -->
                 <!-- START THE FEATURETTES -->
                 
                 <hr class="featurette-divider">
