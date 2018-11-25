@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_232429) do
+ActiveRecord::Schema.define(version: 2018_11_18_070340) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
     t.text "email", null: false
@@ -22,6 +25,11 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
     t.datetime "updated_at", null: false
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   create_table "addresses", force: :cascade do |t|
@@ -57,7 +65,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
   create_table "feedback_to_borrowers", force: :cascade do |t|
     t.integer "request_id", null: false
     t.integer "rate", null: false
-    t.text "tag"
+    t.text "tag", array: true
     t.integer "credit", null: false
     t.text "comment"
     t.datetime "created_at", null: false
@@ -67,7 +75,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
   create_table "feedback_to_lenders", force: :cascade do |t|
     t.integer "request_id", null: false
     t.integer "rate", null: false
-    t.text "tag"
+    t.text "tag", array: true
     t.integer "credit", null: false
     t.text "comment"
     t.datetime "created_at", null: false
@@ -75,8 +83,9 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "category_id"
     t.text "owner", null: false
+    t.text "status", default: "registered", null: false
+    t.bigint "category_id"
     t.text "condition", null: false
     t.text "rate_level"
     t.datetime "time_start", null: false
@@ -85,11 +94,10 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
     t.text "photo_url"
     t.text "description", null: false
     t.text "brand"
-    t.text "feature"
+    t.text "feature", array: true
     t.text "amazon_id"
     t.text "walmart_id"
     t.text "isbn"
-    t.text "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -103,14 +111,14 @@ ActiveRecord::Schema.define(version: 2018_11_10_232429) do
     t.text "display_name", null: false
     t.text "phone_number"
     t.text "gender"
-    t.text "language", null: false
+    t.text "language", null: false, array: true
     t.text "country", default: "Canada"
     t.text "facebook"
     t.text "google"
     t.text "wechat"
     t.text "twitter"
     t.text "avatar_url", null: false
-    t.text "interest"
+    t.text "interest", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
