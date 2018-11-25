@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 
+	# handlers related to search-result page
+	get '/result' => 'items#showResult'
+	get '/result_api' => 'items#generateResult'	
+
   resources:profiles
 
   

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+                            
+        <title>Carousel Template for Bootstrap</title>
+        
+        <!-- Custom styles for this template -->
+        <%= stylesheet_link_tag 'carousel.css' %>
+        
+
+
+        
+    <body>
+        
+        
+        <main role="main">
+
+			<p1>hahahahahah</p1>
+        </main>
+        
+        <!-- Bootstrap core JavaScript
+         ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<style>
+		  .ui-autocomplete {
+			z-index: 1030 !important;
+		  }
+		</style>
+	  <script>
+	  $(document).ready(function(){
+		  let keywordList_cache = new Array();
+		$("#general_searchbar").autocomplete({ source: keywordList_cache });
+	  })
+	  let searchbarAjax_trigger = ptr => {
+		  if (ptr.value.length > 2) {
+			$.get("/search/keyword_prompt?input=" + ptr.value, function(data) {
+				console.log(data);
+			  if (data.result.length > 0) {
+				keywordList_cache = data.result.map(x => x.name);
+				$("#general_searchbar").autocomplete("option", {
+				  source: keywordList_cache
+				});
+			  }
+			});
+		  }
+		};
+	  </script>
+    </body>
+</html>
