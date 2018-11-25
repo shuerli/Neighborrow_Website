@@ -33,6 +33,7 @@
 
 <!-- Base stylesheets & third-party stylesheets-->
 <link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+<!--<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">-->
 
 <!-- Customized stylesheet goes here-->
 </head>
@@ -41,12 +42,9 @@
 <body class="app header-fixed">
 <div class="app-body flex-row align-items-center">
 <main class="main">
-<h1 class="text-center text-uppercase font-weight-bold">Congratulations!</h1>
-<h4 class="text-center font-weight-bold">Just one more step to become a Neighborrow Insider!</h4>
+<h1 class="text-center text-uppercase font-weight-bold">Another email has been sent!</h1>
 <div class = "col-md-6 offset-md-3">
-</p>To activate your account, please verify your email address by following the instructions in the verification email that we have just sent.<p>
-<p></p>
-<p>If the confirmation email doesn't arrive within the next 5 minutes, please click <%= link_to "here", resendConfirmation_path(:id => @account.id), :onclick=>"window.open(this.href,'resendConfirmation', 'height=600, width=600');return false;" %> to resend the email or contact our technical support at <a href="mailto:sixneighborrow@gmail.com">sixneighborrow@gmail.com </a>.</p>
+<p>Please check your junk mailbox as well. If you still don't receive an email, please contact our technical support at <a href="mailto:sixneighborrow@gmail.com">sixneighborrow@gmail.com </a>.</p>
 </div>
 </main>
 </div>
