@@ -1,7 +1,7 @@
 <!--
-* This modified template file is referenced to codelab,
+* This modified template file is referenced to bootsnipp,
 * along with other third-party stylesheets and javascript files.
-* Source Repository: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=sign-up-form-with-icons
+* Source Repository: https://bootsnipp.com/snippets/z8699
 -->
 
 
@@ -10,147 +10,58 @@
 
 <head>
 
-<!-- Meta information used for SEO -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-<title>Neighborrow Sign Up Page</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
-
-<!-- CSS files for third-party icons-->
-<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
-<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
-<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
+<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 <style type="text/css">
-body {
-color: #fff;
-background: #19aa8d;
-font-family: 'Roboto', sans-serif;
-}
-.form-control, .form-control:focus, .input-group-addon {
-border-color: #e1e1e1;
-}
-.form-control, .btn {
-border-radius: 3px;
-}
-.signup-form {
-width: 390px;
-margin: 0 auto;
-padding: 30px 0;
-}
-.signup-form form {
-color: #999;
-border-radius: 3px;
+.divider-text {
+position: relative;
+text-align: center;
+margin-top: 15px;
 margin-bottom: 15px;
-background: #fff;
-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-padding: 30px;
 }
-.signup-form h2 {
-color: #333;
-font-weight: bold;
-margin-top: 0;
+.divider-text span {
+padding: 7px;
+font-size: 12px;
+position: relative;
+z-index: 2;
 }
-.signup-form hr {
-margin: 0 -30px 20px;
-}
-.signup-form .form-group {
-margin-bottom: 20px;
-}
-.signup-form label {
-font-weight: normal;
-font-size: 13px;
-}
-.signup-form .form-control {
-min-height: 38px;
-box-shadow: none !important;
-}
-.signup-form .input-group-addon {
-max-width: 42px;
-text-align: center;
-}
-.signup-form input[type="checkbox"] {
-margin-top: 2px;
-}
-.signup-form .btn{
-}
-
-#signupbtn{
-font-size: 16px;
-font-weight: bold;
-background: #19aa8d;
-border: none;
-min-width: 140px;
-}
-.signup-form .btn:hover, .signup-form .btn:focus {
-background: #179b81;
-outline: none;
-}
-.signup-form a {
-color: #fff;
-text-decoration: underline;
-}
-.signup-form a:hover {
-text-decoration: none;
-}
-.signup-form form a {
-color: #19aa8d;
-text-decoration: none;
-}
-.signup-form form a:hover {
-text-decoration: underline;
-}
-.signup-form .fa {
-font-size: 21px;
-}
-.signup-form .fa-paper-plane {
-font-size: 18px;
-}
-.signup-form .fa-check {
-color: #fff;
-left: 17px;
-top: 18px;
-font-size: 7px;
+.divider-text:after {
+content: "";
 position: absolute;
+width: 100%;
+border-bottom: 1px solid #ddd;
+top: 55%;
+left: 0;
+z-index: 1;
 }
 
-/*Styling in case no errors on form*/
-.form_success span {
-width: 80%;
-height: 35px;
-margin: 3px 10%;
-font-size: 1.1em;
-color: green;
+.btn-facebook {
+background-color: #405D9D;
+color: #fff;
 }
-.form_success input {
-border: 1px solid green;
+.btn-google{
+background-color: #DD4B39;
+color: #fff;
 }
-#error_msg {
-color: red;
-text-align: center;
-margin: 10px auto;
-}
-
 </style>
 </head>
 
-<body>
-<div class="signup-form">
+<body class="app header-fixed">
+<div class="app-body flex-row align-items-center">
+<main class="main">
+
+<hr>
+
+
+<div class="card bg-light align-items-center">
+<article class="card-body mx-auto " style="max-width: 400px;">
 <%= form_for @account, url: accounts_path do |f| %>
 
 <form action="" method="post">
-<h2>Sign Up</h2>
-<p>Are you ready to join Neighborrow?</p>
 <% if @account.errors.any? %>
 <div id="error_explanation">
 <div class="alert alert-danger">
@@ -162,60 +73,65 @@ margin: 10px auto;
 </div>
 </div>
 <% end %>
-<hr>
+<h4 class="card-title mt-3 text-center">Sign Up</h4>
+<p class="text-center">Are you ready to join Neighborrow?</p>
+<p>
+<a href="/auth/google_oauth2" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Sign Up via Google</a>
+<a href="/auth/facebook" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Sign Up via Facebook</a>
+</p>
+<p class="divider-text">
+<span class="bg-light">OR</span>
+</p>
 
-<div class="form-group">
-<div class="input-group">
-<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-<input type="email" class="form-control" name="account[email]" placeholder="Email Address" required="required">
-</div>
-</div>
+<form>
 
-<div class="form-group">
-<div class="input-group">
-<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-<input type="password" class="form-control" name="account[password]" placeholder="Password (Minimum 8 characters)" required="required" pattern=".{8,}">
+<!-- form-group// -->
+<div class="form-group input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 </div>
-</div>
-
-<div class="form-group">
-<div class="input-group">
-<span class="input-group-addon">
-<i class="fa fa-lock"></i>
-<i class="fa fa-check"></i>
-</span>
-<input type="password" class="form-control" name="account[password_confirmation]" placeholder="Confirm Password" required="required">
-</div>
+<input class="form-control" placeholder="Email address" type="email" name="account[email]" required="required">
 </div>
 
+<!-- form-group// -->
+<div class="form-group input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+</div>
+<input class="form-control" type="password" name="account[password]" placeholder="Password (Minimum 8 characters)" required="required" pattern=".{8,}">
+</div>
 
+<!-- form-group// -->
+<div class="form-group input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+</div>
+<input class="form-control" type="password" name="account[password_confirmation]" placeholder="Confirm Password" required="required">
+</div>
+
+<!-- form-group// -->
 <div class="form-group">
 <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="/termsOfService" target="_blank">Terms of Service</a> &amp; <a href="/privacyPolicy" target="_blank">Privacy Policy</a></label>
 </div>
 
-
+<!-- form-group// -->
 <div class="form-group">
-<button type="submit" class="btn btn-primary btn-lg" id='signupbtn'>Sign Up</button>
+<button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
 </div>
-
-
-<div>
-<%= link_to image_tag("google3.jpg",width:162, height: 32), "/auth/google_oauth2" %>
-<%= yield %>
-
-
-
-<%= link_to image_tag("facebook3.jpg",width:162, height: 32), "/auth/facebook" %>
-<%= yield %>
-
-</div>
-
 <%end%>
 
+<!-- form-group// -->
+<p class="text-center">Have an account? <a href="">Log In</a> </p>
+
+
 </form>
-</form>
-<div class="text-center">Already have an account? <a href="/login">Login here</a></div>
+</article>
+</div> <!-- card.// -->
+
+</main>
 </div>
+<!--container end.//-->
+
 
 </body>
 </html>

@@ -33,6 +33,7 @@ class AccountsController < ApplicationController
     
     def new
         @account = Account.new
+        #render layout: false
     end
     
     private def account_params
