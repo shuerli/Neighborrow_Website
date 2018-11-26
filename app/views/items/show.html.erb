@@ -30,7 +30,7 @@
             <div class="product_details_inner left_sidebar ptb-110">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-8 col-12">
+                        <div class="col-lg-3 col-md-7 col-12">
                             <div class="shop_sidebar">
                                 
                                 <div class="sidebar_widget mb-50">
@@ -40,7 +40,7 @@
                                     <div class="widget_categories">
                                         <ul>
                                             <% categories.each do |cat| %>
-                                                <li><a href="#"> <%= cat.name %> <span class="caet_count">(6)</span></a></li>
+                                                <li><a href="#"> <%= link_to cat.name, category_path(cat) %></a></li>
                                             <% end %>
                                             
                                         </ul>
@@ -88,7 +88,7 @@
                                         <div class="product-details-tab">
                                             <div id="img-1" class="zoomWrapper single-zoom">
                                                 <a href="#">
-                                                    <%= image_tag("#{@item.id}.jpg",width: 300, height: 300) %>
+                                                    <%= image_tag("#{@item.id}.jpg",width: 400, height: 400) %>
                                                 </a>
                                             </div>
                                             <!--div class="single-zoom-thumb mt-20">
@@ -147,6 +147,7 @@
                                             <span class="current_price"><%= "Condition: #{@item.condition}" %></span>
                                             <span class="discount_price">Hot</span>
                                         </div>
+                                        <br></br>
                                         <p><%= @item.description %></p>
                                         <div class="product_variant_select">
                                             <div class="select-option-part">
@@ -159,27 +160,19 @@
                                                     <option value="">sl</option>
                                                 </select>
                                             </div>
-                                            <div class="select-option-part">
-                                                <label>Color*</label>
-                                                <select class="nice-select">
-                                                    <option value="">- Please Select -</option>
-                                                    <option value="">orange</option>
-                                                    <option value="">pink</option>
-                                                    <option value="">yellow</option>
-                                                </select>
-                                            </div>
                                         </div>
                                         <div class="single_product_action d-flex align-items-center">
                                             <div class="cart-plus-minus">
                                                 <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
                                                     </div>
                                             <div class="add_to_cart_btn">
-                                                <a href="#">add to cart</a>
+                                                <a href="/borrow">Borrow</a>
                                             </div>
-                                            <div class="wishlist">
+                                            <div class="waitlist">
                                                 <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                             </div>
                                         </div>
+                                        <br></br>
                                         <div class="product-share">
                                             <div class="share_label">
                                                 <span>Share :</span>
@@ -223,7 +216,7 @@
                                             <!-- Product Thumbnail Tab Content Start -->
                                             <div class="tab-content thumb-content mt-30">
                                                 <div id="dtail" class="tab-pane fade show active">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut praesentium quibusdam voluptates eaque odio porro velit consequuntur repudiandae neque voluptatibus numquam pariatur autem omnis iure fugit commodi, voluptas sapiente ipsum, iusto, architecto totam libero eligendi incidunt. Maiores quasi aperiam culpa quibusdam ducimus, nemo placeat nihil suscipit dolorum commodi inventore soluta incidunt sint.</p>
+                                                    <p><%= @item.description %></p>
                                                 </div>
                                                 <div id="review" class="tab-pane fade">
                                                     <!-- Reviews Start -->
@@ -315,99 +308,16 @@
                                     <!-- Row End -->
                                 </div>
                             </div>
-                         
+                            
+            <!--Google API section Start -->
             <div class="newsletter_section ptb-80">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 col-md-12">
-                            <div class="newsletter_text">
-                                <h2>Get All Updates</h2>
-                                <p>Sign up our newsleter today. Also get allert for new product.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-12">
-                            <div class="newsletter_form">
-                                <form action="#">
-                                    <input type="email" placeholder="Type your email">
-                                        <button type="submit">Sign up now to borrow this item for free</button>
-                                        </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnpp7FDgcbpfqNskhkAR_Y2E_uMitVXd0
+                    &q=place_id:ChIJ-bt_oLg0K4gRNNZIQRz78JA" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen>
+                </iframe>
             </div>
             <!--Newsletter section end -->
             
-            <!--Footer start-->
-            <footer class="footer_area">
-                <div class="footer_top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="our_help_services ptb-80">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="help_service d-flex">
-                                                <div class="h_ser_icon">
-                                                    <i class="zmdi zmdi-boat"></i>
-                                                </div>
-                                                <div class="h_ser_text">
-                                                    <h3>Borrowing free of charge</h3>
-                                                    <p>Want to be a lender?</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="help_service d-flex justify-content-center">
-                                                <div class="h_ser_icon">
-                                                    <i class="zmdi zmdi-shield-security"></i>
-                                                </div>
-                                                <div class="h_ser_text">
-                                                    <h3>Quality Guarentee</h3>
-                                                    <p>yes</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="help_service d-flex justify-content-end">
-                                                <div class="h_ser_icon">
-                                                    <i class="zmdi zmdi-phone-setting"></i>
-                                                </div>
-                                                <div class="h_ser_text">
-                                                    <h3>Online Support</h3>
-                                                    <p>our admin will reply within 24 hours</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer_bottom ptb-80">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6">
-                                    <div class="social__icon">
-                                        <ul>
-                                            <li>
-                                                <a class="facebook" href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="google-plus" href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a class="twitter" href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a class="linkedin" href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+ 
 
                 <div class="copyright">
                     <div class="container">

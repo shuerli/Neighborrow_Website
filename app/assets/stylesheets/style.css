@@ -611,7 +611,7 @@ header {
 .price_amount span {
     color: #151320;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 300;
 }
 .price_amount span.discount_price {
     background: #fa0f07 none repeat scroll 0 0;
@@ -1784,7 +1784,7 @@ input.cart-plus-minus-box {
 .product_desc_tab.nav > li a {
     color: #39393c;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 400;
     opacity: 0.6;
 }
 .product_desc_tab.nav > li {
