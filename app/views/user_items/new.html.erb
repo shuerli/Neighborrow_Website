@@ -38,6 +38,8 @@
 	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
 	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
 	<link href="/assets/css/roboto.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/dropzone.css" rel="stylesheet" type="text/css" />
+	
 	<!-- Calendar related -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
@@ -60,16 +62,16 @@
 				<!-- Main section - Codes for main functionalities in this block -->
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><button class="btn btn-secondary" id="add-img"><i class="fa fa-plus fa-5x"></i> </button></div>
+					<div class="col-3" style="background:white;padding-right:100px; padding-top:30px;"><form action="/file-upload" class="dropzone" id="photo-dropzone"></form></div>
 				</div>
 
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-name'>Item name</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text"></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text" id='item-name-input'></div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Brand</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text"></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text" id='brand-input'></div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-condition'>Condition</div>
@@ -87,17 +89,18 @@
 				<div class="row" >
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
 					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-							<input type="text" name="daterange" style="font-size:15px"/>
+							<input type="text" name="daterange" style="font-size:15px" id='date-input'/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Description</div>
 					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;"></textarea></div>
+						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;" id='description-input'></textarea></div>
 				</div>
 				<br><br>
-				 <div class="col-4" style="text-align:right;"><input type="submit" value="Add item">
+				 <div class="col-4" style="text-align:right;"><input type="submit" value="Add item" id='submit-button' onclick='btnSubmit()'>
 				 </div>
+				 <br><br>
 			</div>
 		</main>
 	</div>
@@ -118,7 +121,9 @@
 
 	<!-- Customized Javascript file goes here -->
 	<script src="/assets/js/dashboard-init.js"></script>
-	<script src="/assets/js/user_items_new.js"></script>
+	<script src="/assets/js/user_items_new.js?version=1"></script>
+	<script src="/assets/js/dropzone.js?version=1"></script>
+
 	
 	<script>
 		$(function() {
