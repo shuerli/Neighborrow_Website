@@ -3,6 +3,6 @@ class Profile < ApplicationRecord
     has_one_attached :avatar
     
     # validates doesn't work right now:
-    validates :avatar, presence: true, blob: { content_type: :image } # supported options: :image, :audio, :video, :text
+    validates :avatar, blob: { content_type: :image } # supported options: :image, :audio, :video, :text
    
 end
