@@ -8,9 +8,20 @@ $(document).ready(function () {
         itemInfo = data.result;
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').innerText = itemInfo.name;
-        document.getElementById('brand-field').innerText = itemInfo.brand;
+        if(itemInfo.brand == null){
+            document.getElementById('brand-field').innerText = ' - '
+        }
+        else{
+            document.getElementById('brand-field').innerText = itemInfo.brand;
+        }
         document.getElementById('condition-field').innerText = itemInfo.condition;
         document.getElementById('date-field').innerText =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
-        document.getElementById('description-field').innerText = itemInfo.description;
+        if(itemInfo.brand == null){
+            document.getElementById('description-field').innerText = ' - '
+        }
+        else{
+            document.getElementById('description-field').innerText = itemInfo.description;
+        }
+        
     });
 });    
