@@ -1,16 +1,9 @@
 <!--
-* This modified template file is referenced to coreui.io,
+* This modified template file is referenced to bootsnip
 * along with other third-party stylesheets and javascript files.
-* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+* Source Repository: https://bootsnipp.com/snippets/bxQ0d
 -->
 
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.7
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,24 +30,17 @@ body{
 font-family: 'Cairo', sans-serif;
 }
 
-h1 {
-color: #00a899;
-font-weight: 600;
-font-size: 20px;
-margin-bottom: 30px;
-}
-
 .contact p {
 padding: 30px 0px;
 }
 
-.submit{
-background:#00a899;
-color:#FFF;
-border:none;
-border-radius:0;
+.contactButton{
+font-size: 16px;
+font-weight: bold;
+background: #19aa8d;
+border: none;
+min-width: 140px;
 }
-
 </script>
 </head>
 
@@ -68,71 +54,34 @@ border-radius:0;
 
 <main class="main">
 
-<div class="container-fluid">
 
+<div class="row align-items-center">
+<div class="container mt-5" >
 
-<div id="contact" class="map">
+<div class="row" style="height:550px;">
+<div class="col-md-6 maps" >
 <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnpp7FDgcbpfqNskhkAR_Y2E_uMitVXd0
-&q=place_id:ChIJ-bt_oLg0K4gRNNZIQRz78JA" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>
+&q=place_id:ChIJ-bt_oLg0K4gRNNZIQRz78JA" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen>
 </iframe>
 </div>
 
-<div class="contact">
-<div class="container">
-
-<h1 class="text-center">SEND MESSAGE</h1>
-
-<div class="col-6 col-sm-12">
-
-<form>
-<p class="form-group">
-<label for="name">Name:</label>
-<input type="name" class="form-control" id="name">
 </p>
 
-<p class="form-group">
-<label for="surname">Surname:</label>
-<input type="surname" class="form-control" id="surname" required>
-</p>
 
-<p class="form-group">
-<label for="email">E-Mail:</label>
-<input type="email" class="form-control" id="email" required>
-</p>
-
-<p class="form-group">
-<label for="message">Message:</label>
-<textarea id="message" class="form-control" rows="7" required></textarea>
-</p>
-
-<button type="submit" class="btn btn-default submit">Submit</button>
-</form>
-
-</div>
-
-<div class="col-6 col-sm-12 text-center">
-<div class="contact-information">
-
-<i class="fa fa-envelope"></i><p>E-mail: sixneighborrow@gmail.com</p>
-<i class="fa fa-phone"></i><p>Phone: +123 456 789</p>
+<div class="contact col-md-6 col-sm-12 text-center align-self-center">
+<h4> Contact us here</h4></p>
+<i class="fa fa-envelope"></i>
+<p><a href="mailto:sixneighborrow@gmail.com">sixneighborrow@gmail.com</a></p>
+<i class="fa fa-phone"></i><p><a href="tel:1234567890">(+1)123-456-7890</a></p>
 <i class="fa fa-home"></i><p>
 35 St George St, Toronto, Ontario, Canada M5S 1A4
 </div>
 </div>
-
 </div>
 </div>
-</div>
 
-
-
-
-</div>
 </main>
 </div>
-
-
-
 
 
 
