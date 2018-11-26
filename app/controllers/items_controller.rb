@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
     def update
     end
     
+    def show
+        @item = Item.find(params[:id])
+    end
+    
     def destroy
         @item = Items.find(params[])
         @item.update(params.require(:item).permit(:status))
