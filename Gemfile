@@ -74,3 +74,5 @@ gem 'popper_js'
 # Method and Resource: https://github.com/subosito/gingerice
 gem 'gingerice'
 
+# For ActiveStorage Validation 
+gem 'activestorage-validator'
