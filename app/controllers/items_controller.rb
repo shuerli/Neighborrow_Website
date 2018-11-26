@@ -35,14 +35,30 @@ class ItemsController < ApplicationController
 		#result = parser.parse text
 		#puts result["result"]
 
-		# Items Check
-		# Situation 1: ISBN
-		# Situation 2: Id
-		# Situation 3: Name & Brand
-
-		# User Check
+		############################ User Check ##################################
 		# Situation 1: Email
 		# Situation 2: Display_name
+		parameters = "display_name = '"+keyword+"' "
+		email_check = (keyword =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/)
+		if(email_check == 0)
+			parameters = parameters + "OR email = '"+keyword+"';"
+		end
+		search_forUser = ActiveRecord::Base.connection.exec_query("SELECT email, display_name, gender, language, country, avatar_url FROM Profiles WHERE "+parameters)
 
+		############################ Items Check ##################################
+		# Situation 1: ISBN
+		if(keyword.to_i.to_s == keyword && (keyword.length==13 || keyword.length==10))
+			search_byISBN = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE isbn = '"+keyword.to_i+"'';")
+		end
+
+		# Situation 2: Id
+		if(keyword.to_i.to_s == keyword)
+			search_byItemID = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE id = "+keyword.to_i+";")
+		end
+
+		# Situation 3: Name & Brand
+		search_byItemNameAndBrand = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE name LIKE '%"+keyword+"%' OR brand = '%"+keyword+"%';")
+		
+		render :json => {:status => 200, :result_user => search_forUser, :result_itemISBN => search_byISBN, :result_itemID => search_byItemID, :result_itemNameBrand => search_byItemNameAndBrand}
 	end
 end
