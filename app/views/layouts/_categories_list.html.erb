@@ -1,9 +1,9 @@
 
 <div class="row">
     <% categories.each do |cat| %>
-    <div class="col-lg-3">
+    <div class="col-lg-2">
         <% if cat.id == 1%>
-        <img class="rounded-circle" src="/assets/img/cat1.jpg" alt="hello world" width="200" height="200" style="
+        <img class="rounded-circle" src="/assets/img/cat1.jpg" alt="hello world" width="120" height="120" style="
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -11,7 +11,7 @@
         <% end %>
         
         <% if cat.id == 2%>
-        <img class="rounded-circle" src="/assets/img/cat2.jpg" alt="hello world" width="200" height="200" style="
+        <img class="rounded-circle" src="/assets/img/cat2.jpg" alt="hello world" width="120" height="120" style="
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -19,7 +19,7 @@
             <% end %>
             
         <% if cat.id == 3%>
-            <img class="rounded-circle" src="/assets/img/cat3.jpg" alt="hello world" width="200" height="200" style="
+            <img class="rounded-circle" src="/assets/img/cat3.jpg" alt="hello world" width="120" height="120" style="
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
@@ -27,12 +27,30 @@
         <% end %>
                 
         <% if cat.id == 4%>
-                <img class="rounded-circle" src="/assets/img/cat4.jpg" alt="hello world" width="200" height="200" style="
+                <img class="rounded-circle" src="/assets/img/cat4.jpg" alt="hello world" width="120" height="120" style="
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
                     ">
         <% end %>
+        
+        <% if cat.id == 5%>
+        <img class="rounded-circle" src="/assets/img/cat5.jpg" alt="hello world" width="120" height="120" style="
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            ">
+        <% end %>
+        
+        <% if cat.id == 6%>
+        <img class="rounded-circle" src="/assets/img/cat6.jpg" alt="hello world" width="120" height="120" style="
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            ">
+        <% end %>
+            
+        
                     
                     
             <%= link_to "#{cat.name}", category_path(cat), :class => "btn btn-secondary" %>

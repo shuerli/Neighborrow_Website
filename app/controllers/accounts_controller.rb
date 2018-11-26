@@ -91,6 +91,7 @@ class AccountsController < ApplicationController
 	end
     
     def resendConfirmation
+        render layout: false
         @account = Account.find(params[:id])
         AccountMailer.registration_confirmation(@account).deliver
     end

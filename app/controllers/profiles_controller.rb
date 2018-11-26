@@ -23,11 +23,30 @@ class ProfilesController < ApplicationController
     @account = Account.find(params[:id])
     @profile = Profile.find_by_email(@account.email)
     
+#    puts "profile_params[:avatar_url]"
+#      
+#    uploaded_io = profile_params[:avatar_url]
+#    File.open(Rails.root.join("storage", uploaded_io.original_filename), 'wb') do |file|
+#        file.write(uploaded_io.read)
+#    end
+      
     success = true
     profile_params.each do |key, val|
         if !Profile.where(:email => @profile.email).update_all(key => val)
           success = false
         end 
+    end
+    
+    is_image = false
+    if  profile_params[:avatar_url].content_type.in?(['image/png', 'image/jpg', 'image/jpeg'])
+        is_image = true
+        success = false
+    else
+        flash[:error] = "You profile picture needs to be an image!"
+    end
+    
+    if profile_params[:avatar_url] and is_image
+        @profile.avatar.attach(profile_params[:avatar_url])
     end
     
     if success
