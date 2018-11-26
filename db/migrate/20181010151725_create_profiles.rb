@@ -1,6 +1,6 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
-		create_table :profiles, :id => false, :primary_key => :email do |t|
+		create_table :profiles do |t| 
 			t.text :email, null: false
 			t.text :first_name
 			t.text :middle_name
