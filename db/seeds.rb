@@ -15,24 +15,24 @@
 # status: account status, including the determination of the condition before activation and after suspension 
 
 
-	accounts = Account.create([
-				#create users with different status
-                {id:1, email:'createduser@gmail.com', role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
-				{id:2, email:'activeuser@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-				{id:3, email:'suspendeduser@gmail.com', role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
-				{id:4, email:'banneduser@gmail.com', role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
-				
-				#create a testing user
-				#{id:5, email:'raymondfzy@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-
-				#create admins with different status
-				{id:6, email:'zeyu.feng@mail.utoronto.ca', role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
-                {id:7, email:'geling.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
-                {id:8, email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
-				{id:9, email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
-                {id:10, email:'shuer.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
-				{id:11, email:'qingqing.zhuo@mail.utoronto.ca', role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
-			])
+accounts = Account.create([
+                          #create users with different status
+                          {id:1, email:'createduser@gmail.com', role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
+                          {id:2, email:'activeuser@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+                          {id:3, email:'suspendeduser@gmail.com', role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
+                          {id:4, email:'banneduser@gmail.com', role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
+                          
+                          #create a testing user
+                          #{id:5, email:'raymondfzy@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+                          
+                          #create admins with different status
+                          {id:6, email:'zeyu.feng@mail.utoronto.ca', role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
+                          {id:7, email:'geling.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
+                          {id:8, email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
+                          {id:9, email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
+                          {id:10, email:'shuer.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
+                          {id:11, email:'qingqing.zhuo@mail.utoronto.ca', role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
+                          ])
 
 
 # Creating data for 'Profile' table, definition as follows
@@ -92,11 +92,12 @@
 # category_id: identifier for each category entry
 # department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
 # name: name of this category, referencing to Walmart/Amazon/Ebay
-category1 = Category.create!(department:'Books', name:'Textbooks')
-category2 = Category.create!(department:'Books', name:'Novels')
-category3 = Category.create!(department:'Video Games', name: 'PC Gaming')
-category4 = Category.create!(department:'Electronics', name:'Tv & Video')
-
+category1 = Category.create!(department:'Clothes', name:'Fashion')
+category2 = Category.create!(department:'hw', name:'Hardware')
+category3 = Category.create!(department:'Video Games', name: 'Electronics')
+category4 = Category.create!(department:'Electronics', name:'Toys')
+category5 = Category.create!(department:'Electronics', name:'Books')
+category6 = Category.create!(department:'Electronics', name:'Sports')
 
 # Creating data for 'Item' table, definition as follows
 # owner: email of the user owning this item
