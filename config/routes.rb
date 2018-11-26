@@ -18,12 +18,15 @@ Rails.application.routes.draw do
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 
-	# handlers related to search-result page
+	# Routes to handlers related to search-result page
 	get '/result' => 'items#showResult'
 	get '/result_api' => 'items#generateResult'	
 
   resources:profiles
 
+	# Routes to dashboards
+	get '/user' => 'dashboards#user'
+	get '/admin' => 'dashboards#admin'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
   resources:accounts do
