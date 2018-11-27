@@ -165,8 +165,38 @@
                                             <div class="cart-plus-minus">
                                                 <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
                                                     </div>
-                                            <div class="add_to_cart_btn">
-                                                <a href="/borrow">Borrow</a>
+                                            <!-- Button to Open the Modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                                Borrow
+                                            </button>
+                                            
+                                            <!-- The Modal -->
+                                            <div class="modal" id="myModal">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Want to borrow?</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        
+                                                        <!-- Modal body -->
+                                                        <div class="modal-body">
+                                                            <% if not logged_in? %>
+                                                            <%= link_to "Sign Up/Login", login_url %>
+                                                            <% else %>
+                                                            <%= link_to "Borrow this item for free?", login_url%>
+                                                            <% end %>
+                                                        </div>
+                                                        
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="waitlist">
                                                 <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
