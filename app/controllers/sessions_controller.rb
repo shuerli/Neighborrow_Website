@@ -25,6 +25,17 @@ class SessionsController < ApplicationController
   
   def create_auth
       user = Account.from_omniauth(request.env["omniauth.auth"])
+      
+      email = user.email
+      profileparams = Hash.new
+      profileparams[:email] = email
+      username = email.split('@')
+      profileparams[:display_name] = username[0]
+      profileparams[:language] = "english"
+      profileparams[:avatar_url] = "placeholder"  
+      @profile = Profile.new(profileparams)        
+      @profile.save
+        
       log_in user
       redirect_to user
   end
