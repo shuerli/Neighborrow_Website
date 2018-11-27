@@ -70,7 +70,8 @@ class UserItemsController < ApplicationController
 		# 	render :json => {:status => 403}
         # end
 
-        @user_item = category1.Item.new
+        @user_item = Item.new
+
         # # @user_item.owner = current_user.email
         @user_item.owner = "raymondfzy@gmail.com"
         @user_item.status = 'registered'
@@ -81,11 +82,11 @@ class UserItemsController < ApplicationController
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
 
-        @user_item.save
-        #     render :json => {:status => 200}
-        # else 
-        #     render :json => {:status => 404}
-        # end
+        if @user_item.save
+             render :json => {:status => 200}
+        else 
+             render :json => {:status => 404}
+        end
     end
 
     def edit
