@@ -162,14 +162,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        
-                                        <div class="row" >
-                                            <div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
-                                            <div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-                                                <input type="text" name="daterange" style="font-size:15px" id='date-input'/>
-                                            </div>
-                                        </div>
-                                        
+
                                         
                                         <div class="single_product_action d-flex align-items-center">
                                             <div class="cart-plus-minus">
@@ -196,14 +189,20 @@
                                                             <% if not logged_in? %>
                                                             <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
-                                                        
-                                                            <%= link_to "Borrow this item for free?", {:controller => "request", :action => "create", :item_id => @item.id, :address => "1121 Bay street", :rejected_reason => "rejected haha", :time_start => "2018-11-27 01:07:52.597279", :time_end => "2018-11-27 01:07:52.597279"} , :method=>:post  %>
-                                                           
-
-                                                            <!-->
-                                                                method: :post,{:address => "1121 Bay street", :rejected_reason => "rejected haha", :time_start => "now", :time_end => "never"}, method: :post<-->
-                                                        
                                                             
+                                                            <%= form_for :request, url: {controller: "request", action: "create"} do |f| %>
+                                                            <p>
+                                                            Time start(yyyy/mm/dd):</br><%= f.text_field :time_start %><br>
+                                                            </p>
+                                                            <p>
+                                                            Time end(yyyy/mm/dd):</br><%= f.text_field :time_end %>
+                                                            </p>
+                                                            <p>
+                                                            <%= hidden_field_tag(:item_id, @item.id) %>
+                                                            
+                                                            <%= f.submit "Request to borrow now!", class: "btn btn-primary"%>
+                                                            </p>
+                                                            <% end %>
                                                             <% end %>
                                                         </div>
                                                         
