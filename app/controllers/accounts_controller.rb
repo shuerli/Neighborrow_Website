@@ -6,13 +6,13 @@ class AccountsController < ApplicationController
         @account = Account.new(account_params)    
         
         email = account_params[:email]
+          
         profileparams = Hash.new
         profileparams[:email] = email
         username = email.split('@')
         profileparams[:display_name] = username[0]
         profileparams[:language] = "english"
         profileparams[:avatar_url] = "placeholder"  
-   
         @profile = Profile.new(profileparams)        
         
         if (@account.save and @profile.save)
@@ -27,6 +27,34 @@ class AccountsController < ApplicationController
     def show
         @account = Account.find(params[:id])
     end
+    
+    def edit
+      @account = Account.find(params[:id])
+    end
+    
+    def update
+      @account = Account.find(params[:id])
+      if @account && @account.authenticate(@account.email, account_update_params[:old_password])
+          if @account.update(account_params)
+              flash[:success] = 'Password Updated!'
+              redirect_to edit_account_path(@account.id)
+          else
+              flash[:danger] = 'Failed to Update Password!'
+              render 'edit'
+          end
+      else
+          flash[:danger] = 'Wrong Original Password!'
+          render 'edit'
+      end
+        
+        
+        
+    end
+    
+    private def account_update_params
+        params.require(:account).permit(:old_password, :password, :password_confirmation)
+    end
+    
     
     def index
     end
