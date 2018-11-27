@@ -12,11 +12,17 @@ class RequestController < ApplicationController
 			redirect_to "/login"
 		end
 	end
-
+    
+    def complete
+        @request = Request.find(params[:id])
+        @item = Item.find(@request.item_id)
+    end
+    
 	def show
-		if !current_user
-			render :json => {:status => 403}
-		end
+        if !current_user
+            render :json => {:status => 403}
+        end
+        
 
 		case params[:type]
 		when 'borrowed'
@@ -151,23 +157,29 @@ class RequestController < ApplicationController
 	end
 
 	def create
-		if !current_user
-			render :json => {:status => 403}
-		end
-
-		request = Request.new
-		request.item_id = params[:item_id]
-		request.borrower = params[current_user.email]
-		request.address = params[:address]
-		request.rejected_reason = params[:rejected_reason]
-		request.time_start = params[:time_start]
-		request.time_end = params[:time_end]
-		if(request.save)
-			render :json => {:status => 200}
+		
+        #Already checked inside the modal
+        #if !current_user
+        #	render :json => {:status => 403}
+        #end
+        puts params.inspect
+		@request = Request.new()
+		@request.item_id = params[:item_id]
+		@request.borrower = current_user.email
+		@request.address = params[:address]
+		@request.rejected_reason = params[:rejected_reason]
+		@request.time_start = params[:time_start]
+		@request.time_end = params[:time_end]
+		if(@request.save)
+            redirect_to :action => "complete", :id => @request.id
 		else
 			render :json => {:status => 500}
 		end
 	end
+    
+    private def request_params
+        params.require(:request).permit(:item_id, :address, :rejected_reason)
+    end
 
 	def update
 		if !current_user
