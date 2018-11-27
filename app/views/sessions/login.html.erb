@@ -1,18 +1,125 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
+<!--
+* This modified template file is referenced to bootsnipp,
+* along with other third-party stylesheets and javascript files.
+* Source Repository: https://bootsnipp.com/snippets/z8699
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+<style type="text/css">
+.divider-text {
+position: relative;
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+.divider-text span {
+padding: 7px;
+font-size: 12px;
+position: relative;
+z-index: 2;
+}
+.divider-text:after {
+content: "";
+position: absolute;
+width: 100%;
+border-bottom: 1px solid #ddd;
+top: 55%;
+left: 0;
+z-index: 1;
+}
+.btn-facebook {
+background-color: #405D9D;
+color: #fff;
+}
+.btn-google{
+background-color: #DD4B39;
+color: #fff;
+}
+</style>
+</head>
+
+<body class="app header-fixed">
+<div class="app-body flex-row align-items-center">
+<main class="main">
+
+
+
+<div class="align-items-center">
+<article class="mx-auto" style="max-width: 400px;">
 
 <%= form_for :session, url: login_path do |f| %>
-<p>
-Email:</br><%= f.text_field :email %><br>
-</p>
-<p>
-Password:</br><%= f.password_field :password %>
-</p>
-<p>
-<%= f.submit "Log in", class: "btn btn-primary"%>
-</p>
+<form action="" method="post">
+
+<% flash.each do |key, value| %>
+<div id="error_explanation">
+<div class="alert alert-danger">
+<ul>
+<li><%= content_tag :div, value, class: "flash #{key}" %></li>
+</ul>
+</div>
+</div>
 <% end %>
+
+
+<h4 class="mt-3 text-center">Log In</h4>
+<p class="text-center">Welcome back! We missed you :)</p>
+<p>
+<a href="/auth/google_oauth2" class="btn btn-block btn-google"> <i class="fab fa-google"></i>   Log In via Google</a>
+<a href="/auth/facebook" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Log In via Facebook</a>
+</p>
+<p class="divider-text">
+<span class="bg-light">OR</span>
+</p>
+
+<form>
+
+<!-- form-group// -->
+<div class="form-group input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 </div>
+<input class="form-control" placeholder="Email address" type="email" name="session[:email]" required="required">
 </div>
+
+<!-- form-group// -->
+<div class="form-group input-group">
+<div class="input-group-prepend">
+<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+</div>
+<input class="form-control" placeholder="Password" type="password" name="session[:password]" required="required">
+</div>
+
+
+<!-- form-group// -->
+<div class="form-group">
+<button type="submit" class="btn btn-primary btn-block"> Log In  </button>
+</div>
+<%end%>
+
+<!-- form-group// -->
+<p class="text-center">Forgot Your Password? <a href="/acounts/new"> Reset Your Password</a> </p>
+
+
+</form>
+</article>
+</div> <!-- card.// -->
+
+</main>
+</div>
+<!--container end.//-->
+
+
+</body>
+</html>
+
