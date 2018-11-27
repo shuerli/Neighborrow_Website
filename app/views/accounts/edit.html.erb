@@ -1,0 +1,166 @@
+<!-- 
+	* This modified template file is referenced to coreui.io, 
+	* along with other third-party stylesheets and javascript files.
+	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.7
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta information used for SEO -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
+	<meta name="author" content="Neighborrow">
+	<meta name="keyword" content="Borrow, Lend, CSC444">
+	<%= csrf_meta_tags %>
+	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<title>Neighborrow - Blank</title>
+
+	<!-- CSS files for third-party icons-->
+	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+	<!-- Base stylesheets & third-party stylesheets-->
+	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+	<!-- Customized stylesheet goes here-->
+
+</head>
+
+<% if logged_in_as_user? (@account.id) %>
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
+	<!-- <header class="app-header navbar" style="width:100%" id="headerModule">
+
+	</header> -->
+	
+	
+	<div class="app-body">
+		<div class="sidebar" id="menuModule"></div>
+
+		<main class="main">
+			<span id="subHeaderModule"></span>
+
+			<div class="container-fluid">
+				<!-- Main section - Codes for main functionalities in this block -->
+				
+				<% if flash[:success]%>
+					<%= content_tag :div, flash[:success], class:"alert alert-primary" %>
+					<% flash.discard %>
+				<% end %>
+				<% if flash[:danger]%>
+					<%= content_tag :div, flash[:danger], class:"alert alert-danger"  %>
+					<% flash.discard %>
+				<% end %>
+				
+				<h2>Password Change</h2>
+				<hr>
+					
+	            <div class="row">
+	              <div class="col-lg-12">
+	                <div class="card">
+	                  <div class="card-header">
+	                    <i class="fa fa-edit text-muted"></i>
+	                    <strong class="text-muted">Password</strong>
+	                  </div>
+	                  <div class="card-body">
+		                  <%= form_for @account, url:account_path do |f| %>
+		                  	<!-- form-group// -->
+	                        <div class="form-group">
+		                        <label for="password">Original Password</label>
+								<div class="form-group input-group">
+		                            <div class="input-group-prepend">
+		                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		                            </div>
+		                            <input class="form-control" type="password" name="account[old_password]" placeholder="Your Original Password" required="required" pattern=".{8,}">
+		                        </div>
+	                        </div>	                        
+		                  	<!-- form-group// -->
+		                  	<div class="form-group">
+		                        <label for="password">New Password</label>
+		                        <div class="form-group input-group">
+		                            <div class="input-group-prepend">
+		                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		                            </div>
+		                            <input class="form-control" type="password" name="account[password]" placeholder="Password (Minimum 8 characters)" required="required" pattern=".{8,}">
+		                        </div>
+	                        </div>	                        
+	                        <!-- form-group// -->
+		                  	<div class="form-group">
+		                        <label for="password">Repeat New Password</label>
+		                        <div class="form-group input-group">
+		                            <div class="input-group-prepend">
+		                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		                            </div>
+		                            <input class="form-control" type="password" name="account[password_confirmation]" placeholder="Confirm Password" required="required">
+		                        </div>
+			                </div>
+							<%= f.submit class: "btn btn--form", class: "btn btn-primary pull-right", value: "Change Password"%>
+		                  <% end %>
+	                  </div>
+	                </div>
+	              </div>
+	              <!-- /.col-->
+	            </div>
+	            <!-- /.row-->	
+			</div>
+		</main>
+	</div>
+	
+<% else %>
+	<div class = "app flex-row align-items-center">
+		<div class="container">
+	      <div class="row justify-content-center">
+	        <div class="col-md-6">
+	          <div class="clearfix">
+	            <h1 class="float-left display-3 mr-4">403</h1>
+	            <h4 class="pt-3">Oops! Forbidden Page</h4>
+	            <p class="text-muted">
+		            Looks like you don't have permission to access this page.
+		            You might be accessing an account that's not yours
+	            </p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+<% end %>
+
+
+	<footer class="app-footer" id="footerModule"></footer>
+	
+
+
+
+<!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+		<script src="/vendors/momentjs/moment.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/transaction_borrowed.js?version=1"></script>
+
+</body>
+
+</html>
+
+

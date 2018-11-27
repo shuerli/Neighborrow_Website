@@ -17,6 +17,8 @@
                             <%= stylesheet_link_tag 'responsive.css' %>
 
                             <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+                            <!-- Calendar related -->
+                            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
     
     <body>
@@ -25,12 +27,11 @@
         <div class="exporso_wrapper">
            
             <!--Breadcrumb section end-->
-            
             <!--product Details Inner-->
-            <div class="product_details_inner left_sidebar ptb-110">
+            <div class="product_details_inner left_sidebar ptb-110 border-bottom border-top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-7 col-12">
+                        <div class="col-lg-2 col-md-7 col-12">
                             <div class="shop_sidebar">
                                 
                                 <div class="sidebar_widget mb-50">
@@ -83,7 +84,7 @@
                         <div class="col-lg-9 col-md-12 col-12">
                             <div class="row">
                                 <!--Product Tab Style start-->
-                                <div class="col-md-12 col-lg-5 col-12">
+                                <div class="col-md-12 col-lg-7 col-12">
                                     <div class="product-details-img-content">
                                         <div class="product-details-tab">
                                             <div id="img-1" class="zoomWrapper single-zoom">
@@ -128,7 +129,7 @@
                                     </div>
                                 </div>
                                 <!--Product Tab Style End-->
-                                <div class="col-md-12 col-lg-7 col-12">
+                                <div class="col-md-12 col-lg-5 col-12">
                                     <div class="product-details-content">
                                         <h3><%= @item.name %></h3>
                                         <div class="rating-number">
@@ -161,6 +162,15 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        
+                                        <div class="row" >
+                                            <div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
+                                            <div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
+                                                <input type="text" name="daterange" style="font-size:15px" id='date-input'/>
+                                            </div>
+                                        </div>
+                                        
+                                        
                                         <div class="single_product_action d-flex align-items-center">
                                             <div class="cart-plus-minus">
                                                 <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
@@ -186,7 +196,14 @@
                                                             <% if not logged_in? %>
                                                             <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
-                                                            <%= link_to "Borrow this item for free?", login_url%>
+                                                        
+                                                            <%= link_to "Borrow this item for free?", {:controller => "request", :action => "create", :item_id => @item.id, :address => "1121 Bay street", :rejected_reason => "rejected haha", :time_start => "2018-11-27 01:07:52.597279", :time_end => "2018-11-27 01:07:52.597279"} , :method=>:post  %>
+                                                           
+
+                                                            <!-->
+                                                                method: :post,{:address => "1121 Bay street", :rejected_reason => "rejected haha", :time_start => "now", :time_end => "never"}, method: :post<-->
+                                                        
+                                                            
                                                             <% end %>
                                                         </div>
                                                         
@@ -347,19 +364,6 @@
             </div>
             <!--Newsletter section end -->
             
- 
-
-                <div class="copyright">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="copyright_inner text-center">
-                                    <p>Copyright © All Right Reserved </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </footer>
             <!--Footer end-->
             
@@ -375,6 +379,12 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
+        
+        <!-- Calendar related -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        
     </body>
 </html>
 
