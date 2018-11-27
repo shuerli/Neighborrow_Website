@@ -42,7 +42,8 @@ Rails.application.routes.draw do
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
 	get '/request_lended' => 'request#page_lended'
-	get '/request' => 'request#show'
+    get '/request/:id' => 'request#show'
+    get '/request/new/:id' => 'request#complete'
 	post '/request' => 'request#create'
 	put '/request' => 'request#update'
 
