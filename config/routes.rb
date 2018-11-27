@@ -61,7 +61,10 @@ Rails.application.routes.draw do
   put '/user_item' => 'user_items#destroy'
 
   get '/user_items/new' => 'user_items#new'
+  # route for creating new item
 	post '/user_item' => 'user_items#create'
+
+
 
   get '/user_item/edit/:id' => 'user_items#edit'
   

@@ -6,6 +6,9 @@ class UserItemsController < ApplicationController
         # if !current_user
 		# 	render :json => {:status => 403}
         # end
+       
+       
+       # REMOVE TESTING USER
         user = 'raymondfzy@gmail.com'
 
         case params[:type]     
@@ -66,20 +69,25 @@ class UserItemsController < ApplicationController
         # if !current_user
 		# 	render :json => {:status => 403}
         # end
-        
-        # how to pass in user id to user_item_params?
-        @user_item = Item.new(user_item_params)
-        if @user_item.save
-            render :json => {:status => 200}
-        else 
-            render :json => {:status => 404}
-        end
+
+        @user_item = category1.Item.new
+        # # @user_item.owner = current_user.email
+        @user_item.owner = "raymondfzy@gmail.com"
+        @user_item.status = 'registered'
+        @user_item.condition = params[:condition]
+        @user_item.time_start = params[:time_start]
+        @user_item.time_end = params[:time_end]
+        @user_item.name = params[:name]
+        @user_item.description = params[:description]
+        @user_item.brand = params[:brand]
+
+        @user_item.save
+        #     render :json => {:status => 200}
+        # else 
+        #     render :json => {:status => 404}
+        # end
     end
 
     def edit
-    end
-
-    private def user_item_params
-        params.require(:item).permit(:owner, :status, :category_id, :condition, :time_start, :time_end, :name, :photo_url, :description, :brand)
     end
 end
