@@ -31,6 +31,8 @@ $(document).ready(function () {
         else{
             document.getElementById('description-input').value = itemInfo.description;
         }
+        document.getElementById('department-input').value = itemInfo.department;
+        document.getElementById('category-input').value = itemInfo.category;
         
     });
 });    
@@ -70,7 +72,9 @@ $(document).ready(function () {
              //photo_url: img_url,
              name: document.getElementById('item-name-input').value,
              description: document.getElementById('description-input').value,
-             brand: document.getElementById('brand-input').value
+             brand: document.getElementById('brand-input').value,
+             department: document.getElementById('department-input').value,
+             category: document.getElementById('category-input').value
            }
      }).done(function(data) {
         window.location = "http://localhost:3000/user_item/" + itemId;
