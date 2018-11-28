@@ -10,17 +10,17 @@ class ProfilesController < ApplicationController
   end  
  
   def show
-    @account = Account.find(params[:id])
+    @account = Account.find(current_user.id)
     @profile = Profile.find_by_email(@account[:email])
   end  
     
   def edit
-    @account = Account.find(params[:id])
+    @account = Account.find(current_user.id)
     @profile = Profile.find_by_email(@account[:email])
   end
     
   def update
-    @account = Account.find(params[:id])
+    @account = Account.find(current_user.id)
     @profile = Profile.find_by_email(@account.email)
     
 #    puts "profile_params[:avatar_url]"

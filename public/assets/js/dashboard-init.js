@@ -9,7 +9,8 @@ $(function() {
     if (data.status === 404) window.location("/404");
 	else if (data.status === 403) window.location("/login");
 
-	console.log(data.display_photo)
+	$("#menu_profile_href").attr("href","/profiles/"+data.id)
+
 	$("#user_image_display").attr("src",data.display_photo);
 	
 	$("#name_display_section").text(data.display_name);
