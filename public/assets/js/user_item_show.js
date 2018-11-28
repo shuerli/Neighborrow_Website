@@ -16,7 +16,7 @@ $(document).ready(function () {
         }
         document.getElementById('condition-field').innerText = itemInfo.condition;
         document.getElementById('date-field').innerText =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
-        if(itemInfo.brand == null){
+        if(itemInfo.description == null){
             document.getElementById('description-field').innerText = ' - '
         }
         else{
@@ -25,3 +25,9 @@ $(document).ready(function () {
         
     });
 });    
+
+
+
+function btnEdit(){
+    window.location = "http://localhost:3000/user_item/edit/" + itemId;
+ };
