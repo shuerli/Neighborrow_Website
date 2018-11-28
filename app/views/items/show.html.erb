@@ -145,17 +145,18 @@
                                                                 <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
                                                             
-                                                            <div>
-                                                                <input type="text" name="daterange" style="font-size:15px"/>
+                                                            <div class="row" >
+                                                                <div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
+                                                                <div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
+                                                                    <input type="text" name="daterange" style="font-size:15px" id='date-input'/>
+                                                                </div>
                                                             </div>
                                                             
                                                             <div>
-                                                            
-                                                                <input type="submit" value="Request to borrow now!" id='submit-button' onclick='btnRequest()'>
+                                                                <input type="submit" value="Request to borrow now!" onclick='btnRequest()'/>
                                                             </div>
-                                                            
                                                             <% end %>
-                                                            <% end %>
+    
                                                         </div>
                                                         
                                                         <!-- Modal footer -->
@@ -325,18 +326,13 @@
         
         
         <!-- all js here -->
-        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
-        <script src="assets/js/popper.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
         
         <!-- Calendar related -->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-        <script src="assets/js/item_show.js"></script>
+        <script src="/assets/js/item_show.js"></script>
         
         <script>
             $(function() {
