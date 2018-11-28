@@ -20,18 +20,56 @@
                             <!-- Calendar related -->
                             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
+    <style type="text/css">
+        .column-text-light{
+            font-size: 14px !important;
+            color: #f4f4f4 !important;
+            font-weight: 100 !important;
+        }
+        .column-text-dark{
+            font-size: 14px !important;
+            font-weight: 100 !important;
+            margin-left:3em !important;
+        }
     
+    </style>
     <body>
         <!-- Add your site or application content here -->
-        
         <div class="exporso_wrapper">
-           
-            <!--Breadcrumb section end-->
+            
             <!--product Details Inner-->
-            <div class="product_details_inner left_sidebar ptb-110 border-bottom border-top">
-                <div class="container">
+            <div class="product_details_inner left_sidebar ptb-60 border-top">
+                <div class="row border-top border-bottom justify-content-center ptb-10" style="
+                    background: rgba(46, 49, 49, 0.87);">
+                    <!--Breadcrumb section end-->
+                            <% categories.each do |cat| %>
+                            <div class = "col text-center"><%= link_to cat.name, category_path(cat),{ :class=>"column-text-light" }  %></div>
+                            <% end %>
+                </div>
+                <div class="row border-bottom justify-content-center ptb-10">
+                    <!--Breadcrumb section end-->
+                    <div class = "col "><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
+                    <%= link_to "Categories", home_url,{ :class=>"column-text-dark" }  %>
+                    <%= link_to "Item", home_url,{ :class=>"column-text-dark" }  %>
+                    </div>
+                    
+                </div>
+                
+                <div class="container border-bottom">
+                    <% flash.each do |key, value| %>
+                    <div id="error_explanation">
+                        
+                        <div class="alert alert-danger">
+                            <ul>
+                                <li><%= content_tag :div, value, class: "flash #{key}" %></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <% end %>
+                    <!--
                     <div class="row">
-                        <div class="col-lg-2 col-md-7 col-12">
+                        <div class="col-lg-2 col-md-7 col-12 border-right">
                             <div class="shop_sidebar">
                                 
                                 <div class="sidebar_widget mb-50">
@@ -81,10 +119,11 @@
                                 
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-12 col-12">
+                     <-->
+                        <div class="container ptb-20">
                             <div class="row">
                                 <!--Product Tab Style start-->
-                                <div class="col-md-12 col-lg-7 col-12">
+                                <div class="col">
                                     <div class="product-details-img-content">
                                         <div class="product-details-tab">
                                             <div id="img-1" class="zoomWrapper single-zoom">
@@ -129,7 +168,7 @@
                                     </div>
                                 </div>
                                 <!--Product Tab Style End-->
-                                <div class="col-md-12 col-lg-5 col-12">
+                                <div class="col">
                                     <div class="product-details-content">
                                         <h3><%= @item.name %></h3>
                                         <div class="rating-number">
@@ -187,10 +226,12 @@
                                                         <!-- Modal body -->
                                                         <div class="modal-body">
                                                             <% if not logged_in? %>
-                                                            <%= link_to "Sign Up/Login", login_url %>
+                                                                <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
                                                             
                                                             <%= form_for :request, url: {controller: "request", action: "create"} do |f| %>
+                                                            
+                                                            
                                                             <p>
                                                             Time start(yyyy/mm/dd):</br><%= f.text_field :time_start %><br>
                                                             </p>
