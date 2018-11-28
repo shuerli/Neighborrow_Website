@@ -84,7 +84,7 @@ var img_id;
  };
 
  function btnExit(){
-  var result = confirm("Unsaved item info will be lost. Return to item page?");
+  var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
   if (result) {
       window.location = "http://localhost:3000/user_item";
   }

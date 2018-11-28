@@ -35,11 +35,9 @@ $(document).ready(function () {
     });
 });    
 
-function btnBack(){
-    curLoc = window.location.href.split("/");
-    itemId = curLoc[curLoc.length - 1];
-    window.location = "http://localhost:3000/user_item/" + itemId;
- };
+
+
+
 
  function btnSave(){
     curLoc = window.location.href.split("/");
@@ -80,4 +78,16 @@ function btnBack(){
          alert( "Item editing failed");
        });
 
+ };
+
+
+
+ function btnBack(){
+    curLoc = window.location.href.split("/");
+    itemId = curLoc[curLoc.length - 1];
+
+    var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
+    if (result) {
+        window.location = "http://localhost:3000/user_item/" + itemId;
+    }
  };
