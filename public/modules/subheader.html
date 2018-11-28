@@ -17,7 +17,7 @@
       class="form-control"
       placeholder="Looking for something?"
 	  id="item-searchbar-sub"
-	  onkeypress="searchbarAjax_trigger_sub(this)"
+	  onkeyup="searchbarAjax_trigger_sub(this)"
     />
     <button class="btn btn-primary" style="margin-left:-30px">
       <i class="fa fa-search"></i>
@@ -32,7 +32,10 @@
 
 <script>
 	
-  $("#item-searchbar-sub").autocomplete({ source: keywordList_cache });
+	$("#item-searchbar-sub").autocomplete({ source: keywordList_cache });
+	$("#item-searchbar-sub").on("keyup paste", function() {
+    $("#item-searchbar-main").val($(this).val());
+	});
   let searchbarAjax_trigger_sub = ptr => {
 	$('#item-searchbar-main').val(ptr.value);
     if (ptr.value.length > 2) {
@@ -46,5 +49,13 @@
         }
       });
     }
-  };
+	};
+	document
+    .getElementById("item-searchbar-sub")
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        window.location = "/result?keyword="+$("#item-searchbar-sub").val()+"&location=Toronto"
+      }
+    });
 </script>
