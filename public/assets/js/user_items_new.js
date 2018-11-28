@@ -80,3 +80,7 @@ var img_id;
 
    // alert("everything after sending post request")
  };
+
+ function btnExit(){
+  window.location = "http://localhost:3000/user_item";
+};
