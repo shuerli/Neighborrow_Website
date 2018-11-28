@@ -43,7 +43,7 @@
                     background: rgba(46, 49, 49, 0.87);">
                     <!--Breadcrumb section end-->
                             <% categories.each do |cat| %>
-                            <div class = "col text-center"><%= link_to cat.name, category_path(cat),{ :class=>"column-text-light" }  %></div>
+                            <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name },{ :class=>"column-text-light" }  %></div>
                             <% end %>
                 </div>
                 <div class="row border-bottom justify-content-center ptb-10">
@@ -67,59 +67,7 @@
                         
                     </div>
                     <% end %>
-                    <!--
-                    <div class="row">
-                        <div class="col-lg-2 col-md-7 col-12 border-right">
-                            <div class="shop_sidebar">
-                                
-                                <div class="sidebar_widget mb-50">
-                                    <div class="widget_title">
-                                        <h3>Categories</h3>
-                                    </div>
-                                    <div class="widget_categories">
-                                        <ul>
-                                            <% categories.each do |cat| %>
-                                                <li><a href="#"> <%= link_to cat.name, category_path(cat) %></a></li>
-                                            <% end %>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                                <div class="sidebar_widget mb-50">
-                                    <div class="widget_title">
-                                        <h3>Price</h3>
-                                    </div>
-                                    <div class="widget_price">
-                                        <div class="sidebar-price">
-                                            <div id="price-range"></div>
-                                            <input type="text" id="price-amount" readonly>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="sidebar_widget mb-50">
-                                    <div class="widget_title">
-                                        <h3>Color</h3>
-                                    </div>
-                                    <div class="widget_colord">
-                                        <ul>
-                                            <li><a href="#">Black</a></li>
-                                            <li><a href="#">white</a></li>
-                                            <li><a href="#">red</a></li>
-                                            <li><a href="#">Yellow</a></li>
-                                            <li><a href="#">Blue</a></li>
-                                            <li><a href="#">Orion Silver</a></li>
-                                            <li><a href="#">Gray</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
 
-                                
-                            </div>
-                        </div>
-                     <-->
                         <div class="container ptb-20">
                             <div class="row">
                                 <!--Product Tab Style start-->
@@ -131,39 +79,7 @@
                                                     <%= image_tag("#{@item.id}.jpg",width: 400, height: 400) %>
                                                 </a>
                                             </div>
-                                            <!--div class="single-zoom-thumb mt-20">
-                                                <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                                                    <li>
-                                                        <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/pro_details/big-2.jpg" data-zoom-image="assets/img/product/pro_details/z-1.jpg">
-                                                            <%= image_tag("#{@item.id}.jpg",width: 77, height: 77) %>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/pro_details/big-2.jpg" data-zoom-image="assets/img/product/pro_details/z-1.jpg">
-                                                            <%= image_tag("#{@item.id}.jpg",width: 77, height: 77) %>
-                                                        </a>
-                                                        
-                                                    </li>
-                                                    <li >
-                                                        <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/pro_details/big-3.jpg" data-zoom-image="assets/img/product/pro_details/z-1.jpg">
-                                                            <%= image_tag("#{@item.id}.jpg",width: 77, height: 77) %>
-                                                        </a>
-                                                        
-                                                    </li>
-                                                    <li >
-                                                        <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/pro_details/big-4.jpg" data-zoom-image="assets/img/product/pro_details/z-1.jpg">
-                                                            <img src="assets/img/product/pro_details/pro_sm_4.jpg" alt="zo-th-1"/>
-                                                        </a>
-                                                        
-                                                    </li>
-                                                    <li >
-                                                        <a href="#" class="elevatezoom-gallery active" data-update="" data-image="assets/img/product/pro_details/big-4.jpg" data-zoom-image="assets/img/product/pro_details/z-1.jpg">
-                                                            <img src="assets/img/product/pro_details/pro_sm_4.jpg" alt="zo-th-1"/>
-                                                        </a>
-                                                        
-                                                    </li>
-                                                </ul>
-                                            </div-->
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -229,20 +145,15 @@
                                                                 <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
                                                             
-                                                            <%= form_for :request, url: {controller: "request", action: "create"} do |f| %>
+                                                            <div>
+                                                                <input type="text" name="daterange" style="font-size:15px"/>
+                                                            </div>
                                                             
+                                                            <div>
                                                             
-                                                            <p>
-                                                            Time start(yyyy/mm/dd):</br><%= f.text_field :time_start %><br>
-                                                            </p>
-                                                            <p>
-                                                            Time end(yyyy/mm/dd):</br><%= f.text_field :time_end %>
-                                                            </p>
-                                                            <p>
-                                                            <%= hidden_field_tag(:item_id, @item.id) %>
+                                                                <input type="submit" value="Request to borrow now!" id='submit-button' onclick='btnRequest()'>
+                                                            </div>
                                                             
-                                                            <%= f.submit "Request to borrow now!", class: "btn btn-primary"%>
-                                                            </p>
                                                             <% end %>
                                                             <% end %>
                                                         </div>
@@ -424,6 +335,18 @@
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+        <script src="assets/js/item_show.js"></script>
+        
+        <script>
+            $(function() {
+              $('input[name="daterange"]').daterangepicker({
+                                                           opens: 'left'
+                                                           }, function(start, end, label) {
+                                                           console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                                           });
+              });
+            </script>
         
     </body>
 </html>

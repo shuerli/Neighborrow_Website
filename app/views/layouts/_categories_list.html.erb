@@ -53,7 +53,7 @@
         
                     
                     
-            <%= link_to "#{cat.name}", category_path(cat), :class => "list-unstyled text-small" %>
+            <%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name }%>
             </div><!-- /.col-lg-4 -->
     <% end %>
     </div><!-- /.row -->

@@ -12,6 +12,10 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
     end
     
+    def index
+        @items = Item.where(:category => params[:category])
+    end
+    
     def destroy
         @item = Items.find(params[])
         @item.update(params.require(:item).permit(:status))

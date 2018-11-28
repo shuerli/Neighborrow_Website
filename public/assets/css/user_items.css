@@ -1,5 +1,5 @@
 /* Add asterisk sign before required fields */
-#item-name:before,#item-condition:before,#date-start:before,#date-end:before{
+#item-name:before,#item-condition:before,#date-start:before,#date-end:before,#item-department:before,#item-category:before{
     content:"*";
     font-weight:bold;
     color:red;
