@@ -88,4 +88,16 @@ Rails.application.routes.draw do
       get   '/aboutUs',  to:'pages#about'
       get   '/FAQ',  to:'pages#FAQ'
       get   '/team',  to:'pages#team'
+  
+  
+      # For file transfer
+  resources :media_contents, only: [:create]
+
+
+
+
+
+
 end
+
+  
