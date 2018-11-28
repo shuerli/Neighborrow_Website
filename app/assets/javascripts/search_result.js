@@ -77,7 +77,7 @@ let condition_pill = {
 			  document.getElementById("itemISBN_section").innerHTML += '<div class="col-md-3 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/'+itemList.result_itemISBN[i].itemID+'\'"><img class="card-img-top" style="width:100%;" src="'+itemList.result_itemISBN[i].itemPhoto+'" alt="Card image cap"/>'+
 			  condition_pill[itemList.result_itemISBN[i].itemCondition]+'<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-secondary">'+
 			  itemList.result_itemISBN[i].name+'</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">'+
-			  '<span><img class="img-thumbnail" style="width:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_itemISBN[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_itemISBN[i].ownerName+'</label>'+
+			  '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_itemISBN[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_itemISBN[i].ownerName+'</label>'+
 				  '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>'
 			  totalCount++;
 		  }
@@ -91,7 +91,7 @@ let condition_pill = {
 			  document.getElementById("itemNameBrand_section").innerHTML += '<div class="col-md-3 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/'+itemList.result_itemNameBrand[i].itemID+'\'"><img class="card-img-top" style="width:100%;" src="'+itemList.result_itemNameBrand[i].itemPhoto+'" alt="Card image cap"/>'+
 			  condition_pill[itemList.result_itemNameBrand[i].itemCondition]+'<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-secondary">'+
 			  itemList.result_itemNameBrand[i].name+'</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">'+
-			  '<span><img class="img-thumbnail" style="width:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_itemNameBrand[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_itemNameBrand[i].ownerName+'</label>'+
+			  '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_itemNameBrand[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_itemNameBrand[i].ownerName+'</label>'+
 				  '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>'
 			  totalCount++;
 		  }
@@ -106,7 +106,7 @@ let condition_pill = {
 				  document.getElementById("itemNameBrand_section").innerHTML += '<div class="col-md-3 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/'+itemList.result_correctedKeyword[i].itemID+'\'"><img class="card-img-top" style="width:100%;" src="'+itemList.result_correctedKeyword[i].itemPhoto+'" alt="Card image cap"/>'+
 				  condition_pill[itemList.result_correctedKeyword[i].itemCondition]+'<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-secondary">'+
 				  itemList.result_correctedKeyword[i].name+'</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">'+
-				  '<span><img class="img-thumbnail" style="width:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_correctedKeyword[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_correctedKeyword[i].ownerName+'</label>'+
+				  '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="'+itemList.result_correctedKeyword[i].ownerPhoto+'"/>&nbsp; <label class="text-muted">'+itemList.result_correctedKeyword[i].ownerName+'</label>'+
 					  '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>'
 				  totalCount++;
 			  }
