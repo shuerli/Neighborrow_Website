@@ -18,9 +18,11 @@ var img_id;
           for(var index = 0; index < acceptedFiles.length; index++) {
             var file = acceptedFiles[index];
             var response = JSON.parse(file.xhr.response);
-
+            
             img_url = response.file_name.url;
             img_id = response.id;
+            alert(img_url)
+            alert(img_id)
           }
   
           if(acceptedFiles.length != 0) {
@@ -40,7 +42,7 @@ var img_id;
 
   function btnSubmit(){
     
-    //alert("image url respond from server is " + img_url);
+    alert("image url respond from server is " + img_url);
 
 
     var radio_button = document.forms[1];
@@ -82,5 +84,9 @@ var img_id;
  };
 
  function btnExit(){
-  window.location = "http://localhost:3000/user_item";
+  var result = confirm("Unsaved item info will be lost. Return to item page?");
+  if (result) {
+      window.location = "http://localhost:3000/user_item";
+  }
+  
 };
