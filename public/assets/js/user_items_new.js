@@ -40,7 +40,7 @@ var img_id;
 
   function btnSubmit(){
     
-    alert("image url respond from server is " + img_url);
+    //alert("image url respond from server is " + img_url);
 
 
     var radio_button = document.forms[1];
@@ -66,7 +66,7 @@ var img_id;
              condition: item_condition,
              time_start: sdate,
              time_end: edate,
-             photo_url: img_url,
+             //photo_url: img_url,
              name: document.getElementById('item-name-input').value,
              description: document.getElementById('description-input').value,
              brand: document.getElementById('brand-input').value

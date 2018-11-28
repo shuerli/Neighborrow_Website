@@ -40,3 +40,44 @@ function btnBack(){
     itemId = curLoc[curLoc.length - 1];
     window.location = "http://localhost:3000/user_item/" + itemId;
  };
+
+ function btnSave(){
+    curLoc = window.location.href.split("/");
+    itemId = curLoc[curLoc.length - 1];
+
+
+    var radio_button = document.forms[0];
+    var i;
+    var item_condition;
+    for(i = 0; i < radio_button.length; i++){
+        if(radio_button[i].checked){
+            item_condition = radio_button[i].value;
+        }
+    }
+    var sdate = moment(document.getElementById('date-input').value.substring(0,10) , 'MM/DD/YYYY');
+    sdate = moment(sdate).format('YYYY-MM-DD') + " 00:00:00"
+    var edate = moment(document.getElementById('date-input').value.substring(13,23) , 'MM/DD/YYYY');
+    edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
+
+    $.ajax({
+        url: "/user_item/edit",
+        method: "PUT",
+        data: { 
+             authenticity_token: window._token,
+             id: itemId,
+             //category_id:
+             condition: item_condition,
+             time_start: sdate,
+             time_end: edate,
+             //photo_url: img_url,
+             name: document.getElementById('item-name-input').value,
+             description: document.getElementById('description-input').value,
+             brand: document.getElementById('brand-input').value
+           }
+     }).done(function(data) {
+        window.location = "http://localhost:3000/user_item/" + itemId;
+       }).fail(function(data) {
+         alert( "Item editing failed");
+       });
+
+ };

@@ -66,7 +66,7 @@ Rails.application.routes.draw do
 	post '/user_item' => 'user_items#create'
 
   get '/user_item/edit/:id' => 'user_items#edit'
-  put '/user_item/edit/:id' => 'user_items#update'
+  put '/user_item/edit' => 'user_items#update'
   
 
 	# Routes for redirecting to system pages (error handler)
