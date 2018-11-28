@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Exporso - Product Details Sidebar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- all css here -->
+    <%= stylesheet_link_tag 'plugin.css' %>
+    <%= stylesheet_link_tag 'bundle.css' %>
+    <%= stylesheet_link_tag 'style.css' %>
+    <%= stylesheet_link_tag 'responsive.css' %>
+
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<!-- all custom css here -->
+<style type="text/css">
+    .column-text-light{
+    font-size: 14px !important;
+    color: #f4f4f4 !important;
+    font-weight: 100 !important;
+    }
+    .column-text-dark{
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    margin-left:3em !important;
+    }
+
+</style>
+
+<body>
+    <!-- Add your site or application content here -->
+    <div class="exporso_wrapper">
+        
+        <!--product Details Inner-->
+        <div class="product_details_inner left_sidebar ptb-60 border-top">
+            
+            <!--category header section start-->
+            <div class="row border-top border-bottom justify-content-center ptb-10" style="
+                background: rgba(46, 49, 49, 0.87);">
+                <% categories.each do |cat| %>
+                <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name },{ :class=>"column-text-light" }  %></div>
+                <% end %>
+            </div>
+            <!--category header section end-->
+            
+            <div class="row border-bottom justify-content-center ptb-10">
+                <div class = "col "><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
+                    <%= link_to "Categories", home_url,{ :class=>"column-text-dark" }  %>
+                    <%= link_to "Item", home_url,{ :class=>"column-text-dark" }  %>
+                </div>
+                
+            </div>
+            
+            <!--error section start-->
+            <div class="container border-bottom">
+                <% flash.each do |key, value| %>
+                    <div id="error_explanation">
+                        <div class="alert alert-danger">
+                            <ul><li><%= content_tag :div, value, class: "flash #{key}" %></li> </ul>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <!--error section end-->
+            
+            <!--item listing section start-->
+            <div class="container ptb-20">
+                <div class="row">
+                <% @items.each do |item| %>
+                
+                        <div class="col-lg-4 ptb-20">
+                            <div class="card-deck mt-3">
+                                <div class="card">
+                                    <%= link_to image_tag("#{item.id}.jpg",width: 356, height: 280), item_path(item) ,{ :class=>"center_image" }%>
+                                    <p class="card-text-center" style="text-align: center;"><%= item.name %></p>
+                                </div>
+                            </div>
+                        </div>
+                <% end %>
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
