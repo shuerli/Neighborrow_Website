@@ -1,4 +1,50 @@
-function btnSubmit(){
+
+var img_url;
+var img_id;
+
+
+ $(function() {
+     alert("function is being invoked")
+    var mediaDropzone = new Dropzone("#media-dropzone");
+    Dropzone.options.mediaDropzone = false;
+    mediaDropzone.options.acceptedFiles = ".jpeg,.jpg,.png,.gif";
+    mediaDropzone.on("complete", function(files) {
+      var _this = this;
+      if (_this.getUploadingFiles().length === 0 && _this.getQueuedFiles().length === 0) {
+        setTimeout(function(){
+          var acceptedFiles = _this.getAcceptedFiles();
+          var rejectedFiles = _this.getRejectedFiles();
+  
+          for(var index = 0; index < acceptedFiles.length; index++) {
+            var file = acceptedFiles[index];
+            var response = JSON.parse(file.xhr.response);
+            
+            img_url = response.file_name.url;
+            img_id = response.id;
+            alert(img_url)
+            alert(img_id)
+          }
+  
+          if(acceptedFiles.length != 0) {
+            alertify.success('Uploaded ' + acceptedFiles.length + ' files successfully.');
+          }
+          if(rejectedFiles.length != 0) {
+            alertify.error('Error uploading ' + rejectedFiles.length + ' files. Only image files are accepted.');
+          }
+  
+          _this.removeAllFiles();
+  
+        }, 2000);
+      }
+    });
+  });
+  
+
+  function btnSubmit(){
+    
+    alert("image url respond from server is " + img_url);
+
+
     var radio_button = document.forms[1];
     var i;
     var item_condition;
@@ -12,9 +58,6 @@ function btnSubmit(){
     var edate = moment(document.getElementById('date-input').value.substring(13,23) , 'MM/DD/YYYY');
     edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
-
-
-
     $.ajax({
         url: "/user_item",
         method: "POST",
@@ -25,11 +68,8 @@ function btnSubmit(){
              condition: item_condition,
              time_start: sdate,
              time_end: edate,
+             //photo_url: img_url,
              name: document.getElementById('item-name-input').value,
-
-             //Need add photo url
-            // photo_url: '/assets/img/imgplaceholder.gif',
-            
              description: document.getElementById('description-input').value,
              brand: document.getElementById('brand-input').value
            }
@@ -42,3 +82,11 @@ function btnSubmit(){
 
    // alert("everything after sending post request")
  };
+
+ function btnExit(){
+  var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
+  if (result) {
+      window.location = "http://localhost:3000/user_item";
+  }
+  
+};
