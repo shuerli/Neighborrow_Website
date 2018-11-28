@@ -3,18 +3,24 @@
 };
 
  function btnItemDelete(itemId){
-  $.ajax({
-     url: "/user_item",
-     method: "PUT",
-     data: { 
-          authenticity_token: window._token,
-          id: itemId
-        }
-  }).done(function(data) {
-      location.reload();
-    }).fail(function(data) {
-      alert( "Item remove failed");
-    });
+
+
+  var result = confirm("Remove this item?");
+  if (result) {
+    $.ajax({
+      url: "/user_item",
+      method: "PUT",
+      data: { 
+           authenticity_token: window._token,
+           id: itemId
+         }
+   }).done(function(data) {
+       location.reload();
+     }).fail(function(data) {
+       alert( "Item remove failed");
+     });
+  }
+  
 }
 
 

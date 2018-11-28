@@ -60,7 +60,7 @@
 				<!-- Main section - Codes for main functionalities in this block -->
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><img class="img-fluid img-thumbnail" src="/assets/img/imgplaceholder.gif" id="item-img"></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><img class="img-fluid img-thumbnail" id="item-img"></div>
 				</div>
 
 				<div class="row">
@@ -69,13 +69,13 @@
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Brand</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text"></div>
+					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text" id="brand-input"></div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-condition'>Condition</div>
 					<div class="col-9" style="font-size:18px; background:white;padding-right:100px; padding-top:30px;">
 							<form>
-								<input type="radio" name="condition" value="Brand New" checked>brand new<br>
+								<input type="radio" name="condition" value="Brand New">brand new<br>
 								<input type="radio" name="condition" value="Like New">like new<br>
 								<input type="radio" name="condition" value="Very Good">very good<br>
 								<input type="radio" name="condition" value="Good">good<br>
@@ -87,17 +87,22 @@
 				<div class="row" >
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
 					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-							<input type="text" name="daterange" style="font-size:15px"/>
+							<input type="text" name="daterange" id="date-input" style="font-size:15px"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Description</div>
 					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;"></textarea></div>
+						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;" id="description-input"></textarea></div>
 				</div>
 				<br><br>
-				 <div class="col-4" style="text-align:right;"><input type="submit" value="Add item">
+				<div class="row">
+				 <div class="col-4" style="text-align:right;"><input type="submit" value="Save" onclick="btnSave()">
+					 </div>
+				<div class="col-1" style="text-align:left;"><input type="submit" value="Back" onclick="btnBack()">
+					 </div>
 				 </div>
+				 <br><br>
 			</div>
 		</main>
 	</div>
@@ -118,6 +123,7 @@
 
 	<!-- Customized Javascript file goes here -->
 	<script src="/assets/js/dashboard-init.js?version=1"></script>
+	<script src="/assets/js/user_item_edit.js?version=1"></script>
 	
 	<script>
 		$(function() {

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   get 'sessions/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -36,6 +38,8 @@ Rails.application.routes.draw do
       end
   end
   
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  
   resources:categories
   resources:items
   
@@ -65,9 +69,8 @@ Rails.application.routes.draw do
   # route for creating new item
 	post '/user_item' => 'user_items#create'
 
-
-
   get '/user_item/edit/:id' => 'user_items#edit'
+  put '/user_item/edit' => 'user_items#update'
   
 
 	# Routes for redirecting to system pages (error handler)
@@ -100,4 +103,3 @@ Rails.application.routes.draw do
 
 end
 
-  
