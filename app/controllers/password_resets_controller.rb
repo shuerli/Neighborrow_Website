@@ -23,8 +23,8 @@ class PasswordResetsController < ApplicationController
       if @account
           @account.create_reset_digest
           @account.send_password_reset_email
-          flash[:info] = "Email sent with password reset instructions"
-          redirect_to home_url
+          flash.now[:info] = "An email has been sent with password reset instructions"
+          render 'new'
           else
           flash.now[:danger] = "Email address not found"
           render 'new'
@@ -39,9 +39,8 @@ class PasswordResetsController < ApplicationController
           @account.errors.add(:password, "can't be empty")
           render 'edit'
       elsif @account.update_attributes(account_params)
-          log_in @account
-          flash[:success] = "Password has been reset."
-          redirect_to home_url
+          flash[:success] = "Your password has been reset. Please enter your email and password to log in now!"
+          redirect_to '/login'
       else
           render 'edit'
       end
