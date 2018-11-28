@@ -14,6 +14,7 @@ class Account < ApplicationRecord
     before_create :confirmation_token
     before_validation :assign_role, on: :create
     before_validation :assign_status, on: :create
+    attr_accessor :reset_token
 
     
     ###################### USED FOR SIGN IN ######################
@@ -65,7 +66,36 @@ class Account < ApplicationRecord
             return nil
         end
     end
-    
+
+
+# Sets the password reset attributes.
+    def create_reset_digest
+        self.reset_token = Account.new_token
+        update_attribute(:reset_digest,  Account.digest(reset_token))
+        update_attribute(:reset_sent_at, Time.zone.now)
+    end
+
+    #generate a random token
+    def Account.new_token
+        SecureRandom.urlsafe_base64
+    end
+
+    def Account.digest(string)
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+        BCrypt::Engine.cost
+        BCrypt::Password.create(string, cost: cost)
+    end
+
+    def send_password_reset_email
+        AccountMailer.password_reset(self).deliver_now
+    end
+
+    def authenticated?(attribute, token)
+        digest = send("#{attribute}_digest")
+        return false if digest.nil?
+        BCrypt::Password.new(digest).is_password?(token)
+    end
+
     #used for email verification#
     
     def email_activate
@@ -73,7 +103,8 @@ class Account < ApplicationRecord
         self.confirm_token = nil
         save!(:validate => false)
     end
-    
+
+
     private
     def confirmation_token
         if self.confirm_token.blank?
