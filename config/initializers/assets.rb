@@ -17,6 +17,7 @@ Rails.application.config.assets.precompile += %w( plugin.css )
 Rails.application.config.assets.precompile += %w( bundle.css )
 Rails.application.config.assets.precompile += %w( style.css )
 Rails.application.config.assets.precompile += %w( responsive.css )
+Rails.application.config.assets.precompile += %w( search_result.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
