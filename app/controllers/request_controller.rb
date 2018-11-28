@@ -170,10 +170,15 @@ class RequestController < ApplicationController
 		@request.rejected_reason = params[:rejected_reason]
         @request.time_start = params[:request][:time_start]
         @request.time_end = params[:request][:time_end]
-		if(@request.save)
+        
+        if (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
+            flash[:error] = "Cannot submit multiple requests for an item!"
+            redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
+		elsif(@request.save!)
             redirect_to :action => "complete", :id => @request.id
 		else
-			render :json => {:status => 500}
+        #render :json => {:status => 500}
+            redirect_to home_path
 		end
 	end
     

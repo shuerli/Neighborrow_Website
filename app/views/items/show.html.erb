@@ -23,6 +23,7 @@
     
     <body>
         <!-- Add your site or application content here -->
+
         
         <div class="exporso_wrapper">
            
@@ -30,6 +31,19 @@
             <!--product Details Inner-->
             <div class="product_details_inner left_sidebar ptb-110 border-bottom border-top">
                 <div class="container">
+                    
+                    <% flash.each do |key, value| %>
+                    <div id="error_explanation">
+                        
+                        <div class="alert alert-danger">
+                            <ul>
+                                <li><%= content_tag :div, value, class: "flash #{key}" %></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <% end %>
+                    
                     <div class="row">
                         <div class="col-lg-2 col-md-7 col-12">
                             <div class="shop_sidebar">
@@ -187,10 +201,12 @@
                                                         <!-- Modal body -->
                                                         <div class="modal-body">
                                                             <% if not logged_in? %>
-                                                            <%= link_to "Sign Up/Login", login_url %>
+                                                                <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
                                                             
                                                             <%= form_for :request, url: {controller: "request", action: "create"} do |f| %>
+                                                            
+                                                            
                                                             <p>
                                                             Time start(yyyy/mm/dd):</br><%= f.text_field :time_start %><br>
                                                             </p>
