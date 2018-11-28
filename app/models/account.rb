@@ -68,7 +68,7 @@ class Account < ApplicationRecord
     end
 
 
-# Sets the password reset attributes.
+    ###########################RESET PASSWORDS####################################
     def create_reset_digest
         self.reset_token = Account.new_token
         update_attribute(:reset_digest,  Account.digest(reset_token))
@@ -94,6 +94,10 @@ class Account < ApplicationRecord
         digest = send("#{attribute}_digest")
         return false if digest.nil?
         BCrypt::Password.new(digest).is_password?(token)
+    end
+
+    def password_reset_expired?
+       reset_sent_at < 2.hours.ago
     end
 
     #used for email verification#
