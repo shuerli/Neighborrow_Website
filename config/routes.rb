@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 	get '/result_api' => 'items#generateResult'	
 
   resources:profiles
+  resources:public_profiles
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
