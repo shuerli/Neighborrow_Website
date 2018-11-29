@@ -68,6 +68,11 @@ $('#department-input').change(function () {
             department: selectedDepartment
         },
         success: function (data) {
+            var category_menu = document.getElementById('category-input');
+            while (category_menu.firstChild){
+                category_menu.removeChild(category_menu.firstChild);
+            }
+            
             allCategories = data.result;
             var i;
             for(i = 0; i < allCategories.length; i++){
