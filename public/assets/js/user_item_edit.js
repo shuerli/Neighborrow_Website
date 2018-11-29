@@ -123,28 +123,34 @@ $('#department-input').change(function () {
     edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
     $.ajax({
-        url: "/user_item/edit",
-        method: "PUT",
-        data: { 
-             authenticity_token: window._token,
-             id: itemId,
-             //category_id:
-             condition: item_condition,
-             time_start: sdate,
-             time_end: edate,
-             //photo_url: img_url,
-             name: document.getElementById('item-name-input').value,
-             description: document.getElementById('description-input').value,
-             brand: document.getElementById('brand-input').value,
-             department: document.getElementById('department-input').value,
-             category: document.getElementById('category-input').value
-           }
-     }).done(function(data) {
-        window.location = "http://localhost:3000/user_item/" + itemId;
-       }).fail(function(data) {
-         alert( "Item editing failed");
-       });
-
+        url: "/category/id",
+        method: "GET",
+        data:{
+            department: $('#department-input option:selected').val(),
+            category: $('#category-input option:selected').val()
+        }
+      }).done(function(data){
+        $.ajax({
+          url: "/user_item/edit",
+          method: "PUT",
+          data: { 
+                authenticity_token: window._token,
+                id: itemId,
+                category_id: data.result[0].id,
+                condition: item_condition,
+                time_start: sdate,
+                time_end: edate,
+                //photo_url: img_url,
+                name: document.getElementById('item-name-input').value,
+                description: document.getElementById('description-input').value,
+                brand: document.getElementById('brand-input').value
+              }
+        }).done(function(data){
+            window.location = "http://localhost:3000/user_item/" + itemId;
+          }).fail(function(data){
+            alert( "Item editing failed");
+          });
+      });
  };
 
 

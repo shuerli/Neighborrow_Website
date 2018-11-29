@@ -86,9 +86,6 @@ $('#department-input').change(function () {
 
 
 function btnSubmit(){
-  // alert($('#department-input option:selected').val())
-  // alert($('#category-input option:selected').val())
-  
   var radio_button = document.forms[1];
   var i;
   var item_condition;

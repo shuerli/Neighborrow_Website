@@ -101,16 +101,13 @@ class UserItemsController < ApplicationController
 
         @user_item = Item.find(params[:id])
 
-        # # @user_item.owner = current_user.email
         @user_item.condition = params[:condition]
         @user_item.time_start = params[:time_start]
         @user_item.time_end = params[:time_end]
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
-        
-        # @user_item.department = params[:department]
-        # @user_item.category = params[:category]
+        @user_item.category_id = params[:category_id]
 
         if @user_item.save
              render :json => {:status => 200}

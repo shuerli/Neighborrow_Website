@@ -24,8 +24,8 @@ class CategoriesController < ApplicationController
     end
 
     def find_id
-        inputDepartment = 'Books' #params[:department]
-        inputCategory = 'Novel' #params[:category]
+        inputDepartment = params[:department]
+        inputCategory = params[:category]
         category_id = ActiveRecord::Base.connection.exec_query("SELECT id FROM Categories WHERE department =\'#{inputDepartment}\' AND name = \'#{inputCategory}\'")
         render :json => {:status => 200, :result => category_id} 
     end
