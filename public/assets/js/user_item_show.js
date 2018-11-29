@@ -8,6 +8,9 @@ $(document).ready(function () {
         itemInfo = data.result;
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').innerText = itemInfo.name;
+        document.getElementById('department-field').innerText = itemInfo.department;
+        document.getElementById('category-field').innerText = itemInfo.category;
+        
         if(itemInfo.brand == null){
             document.getElementById('brand-field').innerText = ' - '
         }
@@ -26,6 +29,7 @@ $(document).ready(function () {
         if(itemInfo.status == 'lent'){
             document.getElementById("btn-edit").style.visibility = "hidden";
         }
+        
     });
 });    
 

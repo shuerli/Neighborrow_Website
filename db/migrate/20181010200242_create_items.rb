@@ -3,7 +3,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
 			t.text :owner, null: false
 			t.text :status, null: false, default:'registered'
-			t.text :category
+			t.text :department, null: false
+			t.text :category, null: false
 			t.text :condition, null: false
 			t.text :rate_level
 			#t.text :address_option, array: true, null: false
@@ -14,6 +15,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 			t.text :photo_url
 			t.text :description, null: false
 			t.text :brand
+			t.text :department
 			t.text :feature, array: true
 			t.text :amazon_id
 			t.text :walmart_id

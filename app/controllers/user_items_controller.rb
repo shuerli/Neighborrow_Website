@@ -81,6 +81,8 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
+        @user_item.department = params[:department]
+        @user_item.category = params[:category]
 
         if @user_item.save
              render :json => {:status => 200}
@@ -106,6 +108,8 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
+        @user_item.department = params[:department]
+        @user_item.category = params[:category]
 
         if @user_item.save
              render :json => {:status => 200}
