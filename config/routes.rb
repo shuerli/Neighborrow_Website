@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   resources:categories
   get '/category/departments' => 'categories#departments'
   get '/category/department/category_names' => 'categories#by_department'
+  get '/category/id' => 'categories#find_id'
   resources:items
   
 	# Routes related to request manipulation, request history and relevant api
