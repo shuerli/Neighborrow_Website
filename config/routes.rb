@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources:categories
+  get '/category/departments' => 'categories#departments'
   resources:items
   
 	# Routes related to request manipulation, request history and relevant api

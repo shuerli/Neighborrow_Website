@@ -14,11 +14,11 @@ class UserItemsController < ApplicationController
         case params[:type]     
         when 'lent'
             #! CHANGE CURRENT_USER TO CURRENT_USER.EMAIL
-            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.time_start;")
+            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.created_at;")
             render :json => {:status => 200, :result => lent_items}
 
         when 'registered'
-            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'registered' ORDER BY Items.time_start;")
+            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'registered' ORDER BY Items.created_at;")
             render :json => {:status => 200, :result => registered_items}
         else
             render :json => {:status => 404}
@@ -81,8 +81,11 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
-        @user_item.department = params[:department]
-        @user_item.category = params[:category]
+
+        # @user_item.department = params[:department]
+        # @user_item.category = params[:category]
+        
+        # params will send a pair of department and category strings, find the id in category table accordingly and save the category id here.
 
         if @user_item.save
              render :json => {:status => 200}
@@ -108,8 +111,9 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
-        @user_item.department = params[:department]
-        @user_item.category = params[:category]
+        
+        # @user_item.department = params[:department]
+        # @user_item.category = params[:category]
 
         if @user_item.save
              render :json => {:status => 200}
