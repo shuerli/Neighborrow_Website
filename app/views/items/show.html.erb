@@ -15,7 +15,9 @@
                             <%= stylesheet_link_tag 'bundle.css' %>
                             <%= stylesheet_link_tag 'style.css' %>
                             <%= stylesheet_link_tag 'responsive.css' %>
-
+                            
+                            <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
+                                javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
                             <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
                             <!-- Calendar related -->
                             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -48,7 +50,7 @@
                 </div>
                 <div class="row border-bottom justify-content-center ptb-10">
                     <!--Breadcrumb section end-->
-                    <div class = "col "><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
+                    <div class = "col"><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
                     <%= link_to "Categories", home_url,{ :class=>"column-text-dark" }  %>
                     <%= link_to "Item", home_url,{ :class=>"column-text-dark" }  %>
                     </div>

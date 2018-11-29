@@ -93,12 +93,12 @@ accounts = Account.create([
 # department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
 # name: name of this category, referencing to Walmart/Amazon/Ebay
 
-# category1 = Category.create!(department:'Clothes', name:'Fashion')
-# category2 = Category.create!(department:'hw', name:'Hardware')
-# category3 = Category.create!(department:'Video Games', name: 'Electronics')
-# category4 = Category.create!(department:'Electronics', name:'Toys')
-# category5 = Category.create!(department:'Electronics', name:'Books')
-# category6 = Category.create!(department:'Electronics', name:'Sports')
+ category1 = Category.create!(department:'Clothes', name:'Fashion')
+ category2 = Category.create!(department:'hw', name:'Hardware')
+ category3 = Category.create!(department:'Video Games', name: 'Electronics')
+ category4 = Category.create!(department:'Electronics', name:'Toys')
+ category5 = Category.create!(department:'Electronics', name:'Books')
+ category6 = Category.create!(department:'Electronics', name:'Sports')
 
 # Creating data for 'Item' table, definition as follows
 # owner: email of the user owning this item
