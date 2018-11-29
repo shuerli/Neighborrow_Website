@@ -67,7 +67,6 @@
 										<div class="col-12 text-center">
 											<%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
 										</div>
-								
 										<div class="col-12 text-center" style="padding-top:10px;margin-bottom:-10px">
 											<strong style="font-size: 18px"><%= @profile.display_name %></strong>
 										</div>
@@ -112,31 +111,29 @@
 							
 							<div class="card-body">
 								<div class="row">
-									<div id="page-content-wrapper">
-							            <div class="container-fluid">
-							                <div class="album text-muted">
-							                <div class = "col-lg-12">
-							                    <div class="card-deck" >
-							                        <div class="row">
-							                            <% @items.each do |item| %>
-							                				<div class = "clearfix col-lg-4">
-									                            <div class="card ">
-									                            	<div class = "text-center " style="padding-top:10px">
-									                                	<%= link_to image_tag("#{item.id}.jpg",style: "height:100px;width:auto;max-width:90%"), item_path(item) %>
-									                                	<h6 class="card-title" style="padding-top:1px" ><%= item.name %></h6>
-									                                	<p class="card-text"style="padding-bottom:10px"><%= item.description %></p>
-									                                </div>
+									<div class = "col-lg-12">
+										<div id="page-content-wrapper">
+								            <div class="container-fluid">
+								                <div class="album text-muted">
+								                    <div class="container" >
+								                        <div class="row">
+								                            <% @items.each do |item| %>
+								                				<div class = "col-lg-3">
+										                            <div class="card ">
+										                            	<div class = "text-center " style="padding-top:10px">
+										                                	<%= link_to image_tag("#{item.id}.jpg",style: "height:100px;width:auto;max-width:90%"), item_path(item) %>
+										                                	<h6 class="card-title" style="padding-top:1px" ><%= item.name %></h6>
+										                                	<p class="card-text"style="padding-bottom:10px"><%= item.description %></p>
+										                                </div>
+										                            </div>
 									                            </div>
-								                            </div>
-							                            <% end %>
-							                        </div>
-							                    </div>
-							                    
-						                    </div>
+								                            <% end %>
+								                        </div>
+								                    </div>
+						                    	</div>
 							                </div>
 							            </div>
 							        </div>		
-								
 								</div>
 							</div>
 						</div>
