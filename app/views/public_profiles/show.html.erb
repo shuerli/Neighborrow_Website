@@ -1,0 +1,142 @@
+<!-- 
+	* This modified template file is referenced to coreui.io, 
+	* along with other third-party stylesheets and javascript files.
+	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.7
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta information used for SEO -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
+	<meta name="author" content="Neighborrow">
+	<meta name="keyword" content="Borrow, Lend, CSC444">
+	<%= csrf_meta_tags %>
+	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<title>Neighborrow - Blank</title>
+
+	<!-- CSS files for third-party icons-->
+	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+	<!-- Base stylesheets & third-party stylesheets-->
+	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+	<!-- Customized stylesheet goes here-->
+
+</head>
+
+<body class="app header-fixed ">
+	<!-- <header class="app-header navbar" style="width:100%" id="headerModule">
+
+	</header> -->
+	
+	
+	<div class="app-body">
+		<main class="main">
+			<div class="container-fluid">
+				<!-- Main section - Codes for main functionalities in this block -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="row">
+									<div class="col-lg-4 col-sm-6 col-xs-6">
+										<strong class="text-muted">User Profile</strong><br>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+							<div class="card-body">
+								<div class="text-center col-lg-3">
+									<div class="row">
+										<div class="col-12 text-center">
+											<%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
+										</div>
+								
+										<div class="col-12 text-center" style="padding-top:10px;margin-bottom:-10px">
+											<strong style="font-size: 18px"><%= @profile.display_name %></strong>
+										</div>
+										<div class="col-12 text-center" style="padding-top:10px">
+											<small class="text-warning">Borrow Rate</small><br>
+											<span class="text-warning">
+												<strong><i class="fa fa-star"></i>
+													&nbsp;
+													<%if@borrower_rate[0]["borrower_avg"] %>
+														<a><%= @borrower_rate[0]["borrower_avg"] %></a>
+													<%else%>
+														<a>-</a>
+													<%end%>
+												</strong>
+												
+											</span>
+										</div>
+										
+										<div class="col-lg-12" style="padding-top:20px">
+											<i class="fa fa-envelope"></i> <a><%= @profile.email %></a>
+										</div>
+										<div class="col-lg-12" style="padding-top:5px">
+											<%if@profile.phone_number%>
+												<i class="fa fa-phone"></i> <a><%= @profile.phone_number %></a>
+											<%end%>
+										</div>
+										
+										
+										
+								
+									</div>
+								</div>
+							
+								<div class="col-lg-9 text-center" >
+										
+										
+										
+										
+								</div>
+								
+							</div>
+						</div>
+				</div>
+			</div>
+		</main>
+	</div>
+<!-- 	<footer class="app-footer" id="footerModule"></footer> -->
+
+<!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+		<script src="/vendors/momentjs/moment.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/transaction_borrowed.js?version=1"></script>
+
+</body>
+
+</html>
+
+
