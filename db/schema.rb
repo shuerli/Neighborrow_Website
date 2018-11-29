@@ -108,8 +108,7 @@ ActiveRecord::Schema.define(version: 2018_11_28_060144) do
   create_table "items", force: :cascade do |t|
     t.text "owner", null: false
     t.text "status", default: "registered", null: false
-    t.text "department"
-    t.text "category", null: false
+    t.text "category_id", null: false
     t.text "condition", null: false
     t.text "rate_level"
     t.datetime "time_start", null: false

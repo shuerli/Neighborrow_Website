@@ -8,14 +8,21 @@ $(document).ready(function () {
         itemInfo = data.result;
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-input').value = itemInfo.name;
+        $.ajax({
+            type: "get",
+            url: "/categories/"+itemInfo.category_id,
+            success: function (data) {
+                categoryInfo = data.result;
+                //select the categories here
+            }
+        });
+
         if(itemInfo.brand == null){
-            
         }
         else{
             document.getElementById('brand-input').value= itemInfo.brand;
         }
         //traverse radio button and modify check value
-        //document.getElementById('condition-field').innerText = itemInfo.condition;
         var radio_button = document.forms[0];
         var i;
         var item_condition;
@@ -31,11 +38,48 @@ $(document).ready(function () {
         else{
             document.getElementById('description-input').value = itemInfo.description;
         }
-        document.getElementById('department-input').value = itemInfo.department;
-        document.getElementById('category-input').value = itemInfo.category;
-        
+    });
+    $.ajax({
+        type: "get",
+        url: "/category/departments",
+        success: function (data) {
+            allDepartments = data.result;
+            var i;
+            for(i = 0; i < allDepartments.length; i++){
+                var opt = document.createElement("option");
+                opt.setAttribute("value", allDepartments[i].department);
+                opt.innerText = ''+allDepartments[i].department;
+                document.getElementById('department-input').appendChild(opt);
+            }
+        }
     });
 });    
+
+
+
+$('#department-input').change(function () {
+    var selectedDepartment = $(this).find("option:selected").text();
+    //alert(selectedDepartment)
+
+    $.ajax({
+        type: "get",
+        url: "/category/department/category_names",
+        data: {
+            department: selectedDepartment
+        },
+        success: function (data) {
+            allCategories = data.result;
+            var i;
+            for(i = 0; i < allCategories.length; i++){
+                var opt = document.createElement("option");
+                opt.setAttribute("value", allCategories[i].name);
+                opt.innerText = ''+allCategories[i].name;
+                document.getElementById('category-input').appendChild(opt);
+            }
+        }
+    });
+});
+
 
 
 
