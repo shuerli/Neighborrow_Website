@@ -52,22 +52,17 @@
 			<div class="container-fluid">
 				<!-- Main section - Codes for main functionalities in this block -->
 				<div class="row">
-					<div class="col-lg-12">
+					<div class= "col-lg-3">
 						<div class="card">
 							<div class="card-header">
 								<div class="row">
-									<div class="col-lg-4 col-sm-6 col-xs-6">
+									<div class="col-lg-6 col-sm-8 col-xs-8">
 										<strong class="text-muted">User Profile</strong><br>
 									</div>
 								</div>
 							</div>
-							
-							
-							
-							
-							
 							<div class="card-body">
-								<div class="text-center col-lg-3">
+								<div class="text-center">
 									<div class="row">
 										<div class="col-12 text-center">
 											<%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
@@ -99,20 +94,50 @@
 												<i class="fa fa-phone"></i> <a><%= @profile.phone_number %></a>
 											<%end%>
 										</div>
-										
-										
-										
-								
 									</div>
 								</div>
-							
-								<div class="col-lg-9 text-center" >
-										
-										
-										
-										
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-9">
+						<div class="card">
+							<div class="card-header">
+								<div class="row">
+									<div class="col-lg-6 col-sm-8 col-xs-8">
+										<strong class="text-muted">Listed Items</strong><br>
+									</div>
 								</div>
+							</div>
+							
+							<div class="card-body">
+								<div class="row">
+									<div id="page-content-wrapper">
+							            <div class="container-fluid">
+							                <div class="album text-muted">
+							                <div class = "col-lg-12">
+							                    <div class="card-deck" >
+							                        <div class="row">
+							                            <% @items.each do |item| %>
+							                				<div class = "clearfix col-lg-4">
+									                            <div class="card ">
+									                            	<div class = "text-center " style="padding-top:10px">
+									                                	<%= link_to image_tag("#{item.id}.jpg",style: "height:100px;width:auto;max-width:90%"), item_path(item) %>
+									                                	<h6 class="card-title" style="padding-top:1px" ><%= item.name %></h6>
+									                                	<p class="card-text"style="padding-bottom:10px"><%= item.description %></p>
+									                                </div>
+									                            </div>
+								                            </div>
+							                            <% end %>
+							                        </div>
+							                    </div>
+							                    
+						                    </div>
+							                </div>
+							            </div>
+							        </div>		
 								
+								</div>
 							</div>
 						</div>
 				</div>
