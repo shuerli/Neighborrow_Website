@@ -99,7 +99,7 @@ accounts = Account.create([
 # category4 = Category.create!(department:'Electronics', name:'Toys')
 # category5 = Category.create!(department:'Electronics', name:'Books')
 # category6 = Category.create!(department:'Electronics', name:'Sports')
-	categories = Category.create([
+	categories = Category.create([	{department:'Other',  name: 'Other'},
 									{department:'Electronics', name: 'Video Game'},
 									{department:'Books', name: 'Novel'},
 									{department:'Books', name: 'Textbook'}

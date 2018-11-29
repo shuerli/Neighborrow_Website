@@ -50,11 +50,16 @@ $(document).ready(function(){
             opt.innerText = '' +allDepartments[i].department;
             document.getElementById('department-input').appendChild(opt);
         }
-
+        var opt = document.createElement("option");
+        opt.setAttribute("value", 'Other');
+        opt.innerText = 'Other';
+        document.getElementById('category-input').appendChild(opt);
     }
   });
 
 });
+
+
 // Change options for the second dropdown menu when the first one is selected
 $('#department-input').change(function () {
   var selectedDepartment = $(this).find("option:selected").text();
