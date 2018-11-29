@@ -81,11 +81,8 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
-
-        # @user_item.department = params[:department]
-        # @user_item.category = params[:category]
+        @user_item.category_id = params[:category_id]
         
-        # params will send a pair of department and category strings, find the id in category table accordingly and save the category id here.
 
         if @user_item.save
              render :json => {:status => 200}

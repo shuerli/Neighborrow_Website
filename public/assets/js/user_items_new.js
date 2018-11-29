@@ -53,6 +53,7 @@ $(document).ready(function(){
 
     }
   });
+
 });
 // Change options for the second dropdown menu when the first one is selected
 $('#department-input').change(function () {
@@ -85,7 +86,9 @@ $('#department-input').change(function () {
 
 
 function btnSubmit(){
-  //alert("image url respond from server is " + img_url);
+  // alert($('#department-input option:selected').val())
+  // alert($('#category-input option:selected').val())
+  
   var radio_button = document.forms[1];
   var i;
   var item_condition;
@@ -99,27 +102,37 @@ function btnSubmit(){
   var edate = moment(document.getElementById('date-input').value.substring(13,23) , 'MM/DD/YYYY');
   edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
-  $.ajax({
-      url: "/user_item",
-      method: "POST",
-      data: { 
-            authenticity_token: window._token,
 
-            //category_id:
-            condition: item_condition,
-            time_start: sdate,
-            time_end: edate,
-            //photo_url: img_url,
-            name: document.getElementById('item-name-input').value,
-            description: document.getElementById('description-input').value,
-            brand: document.getElementById('brand-input').value
-          }
-    }).done(function(data) {
-      window.location = "http://localhost:3000/user_item";
-      }).fail(function(data) {
-        alert( "Item adding failed");
-      });
-  // alert("everything after sending post request")
+  $.ajax({
+      url: "/category/id",
+      method: "GET",
+      data:{
+          department: $('#department-input option:selected').val(),
+          category: $('#category-input option:selected').val()
+      }
+    }).done(function(data){
+      $.ajax({
+        url: "/user_item",
+        method: "POST",
+        data: { 
+              authenticity_token: window._token,
+
+              category_id: data.result[0].id,
+              condition: item_condition,
+              time_start: sdate,
+              time_end: edate,
+              //photo_url: img_url,
+              name: document.getElementById('item-name-input').value,
+              description: document.getElementById('description-input').value,
+              brand: document.getElementById('brand-input').value
+            }
+      }).done(function(data){
+        window.location = "http://localhost:3000/user_item";
+        }).fail(function(data){
+          alert( "Item adding failed");
+        });
+    });
+
 };
 
 function btnExit(){
