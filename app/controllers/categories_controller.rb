@@ -16,4 +16,10 @@ class CategoriesController < ApplicationController
         departments = ActiveRecord::Base.connection.exec_query("SELECT DISTINCT department FROM Categories")
         render :json => {:status => 200, :result => departments} 
     end
+    
+    def by_department
+        selectedDepartment = params[:department]
+        category_names = ActiveRecord::Base.connection.exec_query("SELECT name FROM Categories where department =\'#{selectedDepartment}\'")
+        render :json => {:status => 200, :result => category_names} 
+    end
 end

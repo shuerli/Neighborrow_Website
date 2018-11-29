@@ -53,12 +53,33 @@ $(document).ready(function () {
             }
         }
     });
-    
-
-
-
-
 });    
+
+
+
+$('#department-input').change(function () {
+    var selectedDepartment = $(this).find("option:selected").text();
+    //alert(selectedDepartment)
+
+    $.ajax({
+        type: "get",
+        url: "/category/department/category_names",
+        data: {
+            department: selectedDepartment
+        },
+        success: function (data) {
+            allCategories = data.result;
+            var i;
+            for(i = 0; i < allCategories.length; i++){
+                var opt = document.createElement("option");
+                opt.setAttribute("value", allCategories[i].name);
+                opt.innerText = ''+allCategories[i].name;
+                document.getElementById('category-input').appendChild(opt);
+            }
+        }
+    });
+});
+
 
 
 
