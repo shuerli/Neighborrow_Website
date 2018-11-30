@@ -82,7 +82,7 @@ class UserItemsController < ApplicationController
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
-        
+        @user_item.photo_url = params[:photo_url]
 
         if @user_item.save
              render :json => {:status => 200}
@@ -108,6 +108,7 @@ class UserItemsController < ApplicationController
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
+        @user_item.photo_url = params[:photo_url]
 
         if @user_item.save
              render :json => {:status => 200}

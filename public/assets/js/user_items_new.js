@@ -1,41 +1,4 @@
 
-//  $(function() {
-//     var mediaDropzone = new Dropzone("#media-dropzone");
-//     Dropzone.options.mediaDropzone = false;
-//     mediaDropzone.options.acceptedFiles = ".jpeg,.jpg,.png,.gif";
-//     mediaDropzone.on("complete", function(files) {
-//       var _this = this;
-//       if (_this.getUploadingFiles().length === 0 && _this.getQueuedFiles().length === 0) {
-//         setTimeout(function(){
-//           var acceptedFiles = _this.getAcceptedFiles();
-//           var rejectedFiles = _this.getRejectedFiles();
-  
-//           for(var index = 0; index < acceptedFiles.length; index++) {
-//             var file = acceptedFiles[index];
-//             var response = JSON.parse(file.xhr.response);
-            
-//             img_url = response.file_name.url;
-//             img_id = response.id;
-//             alert(img_url)
-//             alert(img_id)
-//           }
-  
-//           if(acceptedFiles.length != 0) {
-//             alertify.success('Uploaded ' + acceptedFiles.length + ' files successfully.');
-//           }
-//           if(rejectedFiles.length != 0) {
-//             alertify.error('Error uploading ' + rejectedFiles.length + ' files. Only image files are accepted.');
-//           }
-  
-//           _this.removeAllFiles();
-  
-//         }, 2000);
-//       }
-//     });
-//   });
-  
-
-
 $(document).ready(function(){
   // Prepare the first dropdown menu for department selection with preload value
   $.ajax({
@@ -113,26 +76,35 @@ function btnSubmit(){
           category: $('#category-input option:selected').val()
       }
     }).done(function(data){
-      $.ajax({
-        url: "/user_item",
-        method: "POST",
-        data: { 
-              authenticity_token: window._token,
-
-              category_id: data.result[0].id,
-              condition: item_condition,
-              time_start: sdate,
-              time_end: edate,
-              //photo_url: img_url,
-              name: document.getElementById('item-name-input').value,
-              description: document.getElementById('description-input').value,
-              brand: document.getElementById('brand-input').value
-            }
-      }).done(function(data){
-        window.location = "http://localhost:3000/user_item";
-        }).fail(function(data){
-          alert( "Item adding failed");
+        var category_id = data.result[0].id;
+        $.ajax({
+            url: '/media_contents',
+            method: "GET",
+        }).done(function(data){
+            photo_url = data.substr(data.indexOf('/uploads'));
+            alert(photo_url)
+            
+            $.ajax({
+                url: "/user_item",
+                method: "POST",
+                data: { 
+                    authenticity_token: window._token,
+                    category_id: category_id,
+                    condition: item_condition,
+                    time_start: sdate,
+                    time_end: edate,
+                    photo_url: photo_url,
+                    name: document.getElementById('item-name-input').value,
+                    description: document.getElementById('description-input').value,
+                    brand: document.getElementById('brand-input').value
+                    }
+            }).done(function(data){
+                window.location = "http://localhost:3000/user_item";
+                }).fail(function(data){
+                alert( "Item adding failed");
+                });
         });
+        
     });
 
 };

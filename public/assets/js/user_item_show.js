@@ -6,6 +6,10 @@ $(document).ready(function () {
     // Pull data from database for this item
     $.get("/user_item/info/" + itemId, function (data) {
         itemInfo = data.result;
+
+        alert(itemInfo.photo_url)
+
+        
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').innerText = itemInfo.name;
 

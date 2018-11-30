@@ -98,8 +98,8 @@ Rails.application.routes.draw do
   
   
       # For file transfer
-  resources :media_contents, only: [:create]
-
+  post '/media_contents' => 'media_contents#create'
+  get '/media_contents' => 'media_contents#find_url'
 
 
 
