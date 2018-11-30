@@ -112,7 +112,7 @@ $('#department-input').change(function () {
     var radio_button = document.forms[0];
     var i;
     var item_condition;
-    for(i = 0; i < radio_button.length; i++){
+    for(i = 0; i < radio_button.length; i++) {
         if(radio_button[i].checked){
             item_condition = radio_button[i].value;
         }
@@ -164,3 +164,12 @@ $('#department-input').change(function () {
         window.location = "http://localhost:3000/user_item/" + itemId;
     }
  };
+
+ function btnImageDelete(){
+    var result = confirm("Remove image?");
+    if (result) {
+        $('#img-area').remove();
+        document.getElementById('upload-area').style.visibility = 'visible';
+    }
+
+ }
