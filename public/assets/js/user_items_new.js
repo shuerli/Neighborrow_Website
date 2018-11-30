@@ -82,8 +82,7 @@ function btnSubmit(){
             method: "GET",
         }).done(function(data){
             photo_url = data.substr(data.indexOf('/uploads'));
-            alert(photo_url)
-            
+
             $.ajax({
                 url: "/user_item",
                 method: "POST",
