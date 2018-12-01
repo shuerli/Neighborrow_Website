@@ -5,4 +5,7 @@ class DashboardsController < ApplicationController
 
 	def user
 	end
+
+	def show_report
+	end
 end

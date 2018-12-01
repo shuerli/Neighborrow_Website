@@ -45,5 +45,10 @@ RailsAdmin.config do |config|
     unless current_user.role == 'admin'
       redirect_to "/404"
     end
-  end
+	end
+
+	# Link for handling the reports (backup page for the database manipulation)
+	#config.navigation_static_links = {
+  #	'Report List' => '/admin_reports'
+	#}
 end

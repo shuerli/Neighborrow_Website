@@ -31,7 +31,9 @@ Rails.application.routes.draw do
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
-	get '/admin' => 'dashboards#admin'
+	#get '/admin' => 'dashboards#admin'
+
+	get '/admin_reports' => 'dashboard#show_report'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
   resources:accounts do
