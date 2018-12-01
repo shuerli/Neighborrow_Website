@@ -92,15 +92,16 @@
 
     <div class="portfolio-grid">
         <div class="row">
-            <% categories.each do |cat| %>
+            <% departments = Department.all() %>
+            <% departments.each do |dep| %>
             <div class="col-lg-3 col-sm-6 col-xs-12">
                 <div class="card card-block">
-                    <%= link_to image_tag("cat#{cat.id}.jpg"), :action => 'index',
-                        :controller => 'items',:category => cat.name, :class => 'cover' %>
+                    <%= link_to image_tag("cat#{dep.id}.jpg"), :class => 'cover' %>
                         <div class="portfolio-over">
                             <div>
                                 <h2 class="card-title" style:"color:#004E64;">
-                                    <%= link_to "#{cat.name}", :controller => "items", :action => :index, :cat_id => "#{cat.id}" %>
+                                    <%= link_to "#{dep.name}", :action => 'index',
+                                        :controller => 'items',:department => dep.name %>
                                 </h2>
                             </div>
                         </div></a>
