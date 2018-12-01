@@ -115,6 +115,9 @@
 										<div id="page-content-wrapper">
 								            <div class="container-fluid">
 								                <div class="album text-muted">
+													<%if @items.empty? %>
+														<p>This user hasn't listed any items yet.</p>
+													<%end%>
 													
 								                    <div class="container" >
 								                    	<div class = "card-group">
