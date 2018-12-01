@@ -7,13 +7,24 @@
     position: absolute;
     z-index: 1030 !important;
   }
+
+
 </style>
 
 <ol class="breadcrumb d-xl-none d-lg-none">
-  <div class="row text-center" style="width:100%">
+	<div class="row text-center" style="width:100%">
+		
+		<input
+			type="text"
+			style="width:15%;margin-left:12.5%"
+			class="form-control"
+			placeholder="City"
+			id="item-searchbar-sub-location"
+		/>
+
     <input
       type="text"
-      style="width:80%;margin-left:10%"
+      style="width:60%;margin-left:2%"
       class="form-control"
       placeholder="Looking for something?"
 	  id="item-searchbar-sub"
@@ -24,11 +35,6 @@
     </button>
   </div>
 </ol>
-<ol class="breadcrumb d-md-down-none">
-  <li class="breadcrumb-item"><a href="#">Step 1</a></li>
-  <li class="breadcrumb-item"><a href="#">Step 2</a></li>
-  <li class="breadcrumb-item active">Step 3</li>
-</ol>
 
 <script>
 	
@@ -36,6 +42,11 @@
 	$("#item-searchbar-sub").on("keyup paste", function() {
     $("#item-searchbar-main").val($(this).val());
 	});
+
+	$("#item-searchbar-sub-location").on("keyup paste", function() {
+    $("#item-searchbar-main-location").val($(this).val());
+	});
+
   let searchbarAjax_trigger_sub = ptr => {
 	$('#item-searchbar-main').val(ptr.value);
     if (ptr.value.length > 2) {
@@ -55,7 +66,8 @@
     .addEventListener("keyup", function(event) {
       event.preventDefault();
       if (event.keyCode === 13) {
-        window.location = "/result?keyword="+$("#item-searchbar-sub").val()+"&location=Toronto"
+				let geo_sub = $("#item-searchbar-main-location").val().split(", ")		
+        window.location = "/result?keyword="+$("#item-searchbar-sub").val()+"&city="+geo_sub[0]+"&province="+geo_sub[1]+"&country="+geo_sub[2]
       }
     });
 </script>
