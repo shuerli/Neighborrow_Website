@@ -11,7 +11,7 @@ $(document).ready(function() {
       data.lender_credit = 0;
     }
     $("#main_credit").text(data.borrower_credit + data.lender_credit);
-
+		$("#dashboard-username").text(data.display_name)
     if (data.borrower_rate === null || data.borrower_rate === undefined)
       $("#main_rateBorrow").text("-");
     else $("#main_rateBorrow").text(Number(data.borrower_rate).toFixed(2));
