@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/settings', to: 'accounts#settings'
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
+	get '/userdashboard_initialize' => 'accounts#userDashboard_Info'
 
 	# Routes to handlers related to search-result page
 	get '/result' => 'items#showResult'
