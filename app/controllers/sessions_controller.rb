@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
               log_in user
               redirect_to home_url
           else
-              flash.now[:error] = 'Please activate your account by following the instructions in the account confirmation email you received to proceed'
+              flash.now[:danger] = 'Please activate your account by following the instructions in the account confirmation email you received to proceed'
               render 'login'
           end
       else
