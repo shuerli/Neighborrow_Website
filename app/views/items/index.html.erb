@@ -45,7 +45,7 @@
             <div class="row border-top border-bottom justify-content-center ptb-10" style="
                 background: rgba(46, 49, 49, 0.87);">
                 <% categories.each do |cat| %>
-                <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name },{ :class=>"column-text-light" }  %></div>
+                <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :cat_id => cat.id },{ :class=>"column-text-light" }  %></div>
                 <% end %>
             </div>
             <!--category header section end-->
