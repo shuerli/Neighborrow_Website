@@ -3,41 +3,106 @@ $(document).ready(function () {
     curLoc = window.location.href.split("/");
     itemId = curLoc[curLoc.length - 1];
 
-    // Pull data from database for this item
+    // Pull data from database for this item and prepare input fields
     $.get("/user_item/info/" + itemId, function (data) {
         itemInfo = data.result;
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-input').value = itemInfo.name;
-        if(itemInfo.brand == null){
-            
-        }
-        else{
+        if(itemInfo.brand != null){
             document.getElementById('brand-input').value= itemInfo.brand;
         }
         //traverse radio button and modify check value
-        //document.getElementById('condition-field').innerText = itemInfo.condition;
         var radio_button = document.forms[0];
         var i;
-        var item_condition;
         for(i = 0; i < radio_button.length; i++){
             if(radio_button[i].value == itemInfo.condition){
                 radio_button[i].checked = true;
             }
         }
         document.getElementById('date-input').value =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
-        if(itemInfo.description == null){
-
-        }
-        else{
+        if(itemInfo.description != null){
             document.getElementById('description-input').value = itemInfo.description;
         }
-        
+        // Get category info from DB
+        $.ajax({
+            type: "get",
+            url: "/categories/"+itemInfo.category_id,
+            success: function (data) {
+                categoryInfo = data.result;
+
+                // Prepare the first dropdown menu for department selection with preload value
+                $.ajax({
+                    type: "get",
+                    url: "/category/departments",
+                    success: function (data) {
+                        allDepartments = data.result;
+                        var i;
+                        for(i = 0; i < allDepartments.length; i++){
+                            var opt = document.createElement("option");
+                            opt.setAttribute("value", allDepartments[i].department);
+                            if(allDepartments[i].department == categoryInfo.department){
+                                opt.setAttribute("selected", "selected");
+                            }
+                            opt.innerText = '' +allDepartments[i].department;
+                            document.getElementById('department-input').appendChild(opt);
+                        }
+
+                        $.ajax({
+                            type: "get",
+                            url: "/category/department/category_names",
+                            data: {
+                                department: categoryInfo.department
+                            },
+                            success: function (data) {
+
+                                allCategories = data.result;
+                                var i;
+                                for(i = 0; i < allCategories.length; i++){
+                                    var opt = document.createElement("option");
+                                    opt.setAttribute("value", allCategories[i].name);
+                                    if(allCategories[i].name == categoryInfo.name){
+                                        opt.setAttribute("selected", "selected");
+                                    }
+                                    opt.innerText = ''+allCategories[i].name;
+                                    document.getElementById('category-input').appendChild(opt);
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
     });
 });    
 
 
+// Change options for the second dropdown menu when the first one is selected
+$('#department-input').change(function () {
+    var selectedDepartment = $(this).find("option:selected").text();
 
+    $.ajax({
+        type: "get",
+        url: "/category/department/category_names",
+        data: {
+            department: selectedDepartment
+        },
+        success: function (data) {
+            var category_menu = document.getElementById('category-input');
+            while (category_menu.firstChild){
+                category_menu.removeChild(category_menu.firstChild);
+            }
 
+            allCategories = data.result;
+            var i;
+            for(i = 0; i < allCategories.length; i++){
+                var opt = document.createElement("option");
+                opt.setAttribute("value", allCategories[i].name);
+                opt.innerText = ''+allCategories[i].name;
+                document.getElementById('category-input').appendChild(opt);
+            }
+        }
+    });
+});
 
  function btnSave(){
     curLoc = window.location.href.split("/");
@@ -47,7 +112,7 @@ $(document).ready(function () {
     var radio_button = document.forms[0];
     var i;
     var item_condition;
-    for(i = 0; i < radio_button.length; i++){
+    for(i = 0; i < radio_button.length; i++) {
         if(radio_button[i].checked){
             item_condition = radio_button[i].value;
         }
@@ -58,26 +123,34 @@ $(document).ready(function () {
     edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
     $.ajax({
-        url: "/user_item/edit",
-        method: "PUT",
-        data: { 
-             authenticity_token: window._token,
-             id: itemId,
-             //category_id:
-             condition: item_condition,
-             time_start: sdate,
-             time_end: edate,
-             //photo_url: img_url,
-             name: document.getElementById('item-name-input').value,
-             description: document.getElementById('description-input').value,
-             brand: document.getElementById('brand-input').value
-           }
-     }).done(function(data) {
-        window.location = "http://localhost:3000/user_item/" + itemId;
-       }).fail(function(data) {
-         alert( "Item editing failed");
-       });
-
+        url: "/category/id",
+        method: "GET",
+        data:{
+            department: $('#department-input option:selected').val(),
+            category: $('#category-input option:selected').val()
+        }
+      }).done(function(data){
+        $.ajax({
+          url: "/user_item/edit",
+          method: "PUT",
+          data: { 
+                authenticity_token: window._token,
+                id: itemId,
+                category_id: data.result[0].id,
+                condition: item_condition,
+                time_start: sdate,
+                time_end: edate,
+                //photo_url: img_url,
+                name: document.getElementById('item-name-input').value,
+                description: document.getElementById('description-input').value,
+                brand: document.getElementById('brand-input').value
+              }
+        }).done(function(data){
+            window.location = "http://localhost:3000/user_item/" + itemId;
+          }).fail(function(data){
+            alert( "Item editing failed");
+          });
+      });
  };
 
 
@@ -91,3 +164,12 @@ $(document).ready(function () {
         window.location = "http://localhost:3000/user_item/" + itemId;
     }
  };
+
+ function btnImageDelete(){
+    var result = confirm("Remove image?");
+    if (result) {
+        $('#img-area').remove();
+        document.getElementById('upload-area').style.visibility = 'visible';
+    }
+
+ }

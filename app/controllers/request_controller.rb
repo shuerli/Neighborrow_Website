@@ -168,8 +168,8 @@ class RequestController < ApplicationController
 		@request.borrower = current_user.email
 		@request.address = params[:address]
 		@request.rejected_reason = params[:rejected_reason]
-        @request.time_start = params[:request][:time_start]
-        @request.time_end = params[:request][:time_end]
+        @request.time_start = params[:time_start]
+        @request.time_end = params[:time_end]
         
         if (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
             flash[:error] = "Cannot submit multiple requests for an item!"

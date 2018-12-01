@@ -2,12 +2,26 @@ $(document).ready(function () {
     // Extract item id from current url
     curLoc = window.location.href.split("/");
     itemId = curLoc[curLoc.length - 1];
-
+    var category_id;
     // Pull data from database for this item
     $.get("/user_item/info/" + itemId, function (data) {
         itemInfo = data.result;
+
+        
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').innerText = itemInfo.name;
+
+        
+        $.ajax({
+            type: "get",
+            url: "/categories/"+itemInfo.category_id,
+            success: function (data) {
+                categoryInfo = data.result;
+                document.getElementById('department-field').innerText = categoryInfo.department;
+                document.getElementById('category-field').innerText = categoryInfo.name;
+            }
+        });
+
         if(itemInfo.brand == null){
             document.getElementById('brand-field').innerText = ' - '
         }
@@ -26,7 +40,11 @@ $(document).ready(function () {
         if(itemInfo.status == 'lent'){
             document.getElementById("btn-edit").style.visibility = "hidden";
         }
+
+        
     });
+
+    
 });    
 
 

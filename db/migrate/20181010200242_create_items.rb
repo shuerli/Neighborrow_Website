@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
 			t.text :owner, null: false
 			t.text :status, null: false, default:'registered'
-			t.text :category
+			t.text :category_id, null: false
 			t.text :condition, null: false
 			t.text :rate_level
 			#t.text :address_option, array: true, null: false

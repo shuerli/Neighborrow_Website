@@ -14,11 +14,11 @@ class UserItemsController < ApplicationController
         case params[:type]     
         when 'lent'
             #! CHANGE CURRENT_USER TO CURRENT_USER.EMAIL
-            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.time_start;")
+            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.created_at;")
             render :json => {:status => 200, :result => lent_items}
 
         when 'registered'
-            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'registered' ORDER BY Items.time_start;")
+            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'registered' ORDER BY Items.created_at;")
             render :json => {:status => 200, :result => registered_items}
         else
             render :json => {:status => 404}
@@ -81,6 +81,8 @@ class UserItemsController < ApplicationController
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
+        @user_item.category_id = params[:category_id]
+        @user_item.photo_url = params[:photo_url]
 
         if @user_item.save
              render :json => {:status => 200}
@@ -99,13 +101,14 @@ class UserItemsController < ApplicationController
 
         @user_item = Item.find(params[:id])
 
-        # # @user_item.owner = current_user.email
         @user_item.condition = params[:condition]
         @user_item.time_start = params[:time_start]
         @user_item.time_end = params[:time_end]
         @user_item.name = params[:name]
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
+        @user_item.category_id = params[:category_id]
+        @user_item.photo_url = params[:photo_url]
 
         if @user_item.save
              render :json => {:status => 200}

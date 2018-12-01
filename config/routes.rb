@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 	get '/result_api' => 'items#generateResult'	
 
   resources:profiles
+  resources:public_profiles
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
@@ -42,6 +43,9 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources:categories
+  get '/category/departments' => 'categories#departments'
+  get '/category/department/category_names' => 'categories#by_department'
+  get '/category/id' => 'categories#find_id'
   resources:items
   
 	# Routes related to request manipulation, request history and relevant api
@@ -95,8 +99,8 @@ Rails.application.routes.draw do
   
   
       # For file transfer
-  resources :media_contents, only: [:create]
-
+  post '/media_contents' => 'media_contents#create'
+  get '/media_contents' => 'media_contents#find_url'
 
 
 

@@ -1,59 +1,112 @@
+<style>
+    /* ==================================================
+     Portfolio Styling
+     ================================================== */
+.portfolio {
+    background-color: #E59500;
+    padding-bottom: 0;
+}
 
-<div class="row">
-    <% categories.each do |cat| %>
-    <div class="col-lg-2">
-        <% if cat.id == 1%>
-        <img class="rounded-circle" src="/assets/img/cat1.jpg" alt="hello world" width="120" height="120" style="
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            ">
-        <% end %>
-        
-        <% if cat.id == 2%>
-        <img class="rounded-circle" src="/assets/img/cat2.jpg" alt="hello world" width="120" height="120" style="
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            ">
+.portfolio h2 {
+    color: #199EB8;
+    margin-bottom: 25px;
+}
+
+.portfolio-grid {
+    margin-top: 65px;
+}
+
+.portfolio-grid .row {
+    margin: 0;
+}
+
+.portfolio-grid .row > div {
+    padding: 0;
+}
+
+.portfolio-grid .row > div .card img {
+    width: 100%;
+    height: 100%
+}
+
+.portfolio-grid .row > div .card .portfolio-over {
+    position: absolute;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.portfolio-grid .row > div .card .portfolio-over > div {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.portfolio-grid .row > div .card .portfolio-over .card-title {
+    color: #fff;
+    font-size: 30px;
+}
+
+.portfolio-grid .row > div .card .portfolio-over .card-text {
+    color: #fff;
+    opacity: .75;
+    padding: 0 45px;
+}
+
+.portfolio-grid .row > div .card:hover .portfolio-over {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cover {
+    object-fit: cover;
+    width: 50px;
+    height: 100px;
+}
+
+</style>
+
+
+<section id="categories" class="section-bg" style="background:#fff !important;">
+    <div class="section-header">
+        <h3 class="section-title">Browse Categories</h3>
+        <span class="section-divider"></span>
+        <p class="section-description">
+            Lend Items from your Neighbor
+        </p>
+    </div>
+</div>
+
+    <div class="portfolio-grid">
+        <div class="row">
+            <% categories.each do |cat| %>
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <div class="card card-block">
+                    <%= link_to image_tag("cat#{cat.id}.jpg"), :action => 'index',
+                        :controller => 'items',:category => cat.name, :class => 'cover' %>
+                        <div class="portfolio-over">
+                            <div>
+                                <h2 class="card-title" style:"color:#004E64;">
+                                    <%= cat.name %>
+                                </h2>
+                            </div>
+                        </div></a>
+                </div>
+            </div>
             <% end %>
-            
-        <% if cat.id == 3%>
-            <img class="rounded-circle" src="/assets/img/cat3.jpg" alt="hello world" width="120" height="120" style="
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                ">
-        <% end %>
-                
-        <% if cat.id == 4%>
-                <img class="rounded-circle" src="/assets/img/cat4.jpg" alt="hello world" width="120" height="120" style="
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    ">
-        <% end %>
-        
-        <% if cat.id == 5%>
-        <img class="rounded-circle" src="/assets/img/cat5.jpg" alt="hello world" width="120" height="120" style="
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            ">
-        <% end %>
-        
-        <% if cat.id == 6%>
-        <img class="rounded-circle" src="/assets/img/cat6.jpg" alt="hello world" width="120" height="120" style="
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            ">
-        <% end %>
-            
-        
-                    
-                    
-            <%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name }%>
-            </div><!-- /.col-lg-4 -->
-    <% end %>
     </div><!-- /.row -->
+</div>
+</section>
