@@ -57,7 +57,7 @@ accounts = Account.create([
 			{email:'createduser@gmail.com', display_name: 'created1', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'activeuser@gmail.com', first_name: 'Jiro', last_name: 'Active', display_name: 'active2', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'suspendeduser@gmail.com', first_name: 'Saburo', last_name: 'Suspended', display_name: 'suspended3', language: 'English', country:'England', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'activeuser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+			{email:'banneduser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'raymondfzy@gmail.com', first_name:'Yu', middle_name:'Ze', last_name:'Feng', display_name:'Yu F',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', facebook:'https://www.facebook.com/profile.php?id=100007708830271', google:'raymondfzy@gmail.com', avatar_url:'https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929', interest:'Games'},
 			#create a profile for admin
 			{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'}

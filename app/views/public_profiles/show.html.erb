@@ -120,22 +120,20 @@
 													<%end%>
 													
 								                    <div class="container" >
-								                    	<div class = "card-group">
-									                        <div class="row">
-									                            <% @items.each do |item| %>
-									                				<div class = "col-lg-3" style="padding-bottom:20px">
-											                            <div class="card h-100">
-											                            	<div class = "text-center " style="padding-top:10px">
-											                                	<%= link_to image_tag("#{item.id}.jpg",style: "height:100px;width:auto;max-width:90%"), item_path(item) %>
-											                                	 <div class="card-body">
-												                                	 <h6 class="card-title" style="padding-top:1px" ><%= item.name %></h6>
-												                                	 <p class="card-text"style="padding-bottom:10px"><%= item.description %></p>
-											                                	 </div>
-											                                </div>
-											                            </div>
+								                        <div class="row">
+								                            <% @items.each do |item| %>
+								                				<div class = "col-lg-3" style="padding-bottom:20px">
+										                            <div class="card h-100">
+										                            	<div class = "text-center " style="padding-top:10px">
+										                                	<%= link_to image_tag("#{item.id}.jpg",style: "height:100px;width:auto;max-width:90%"), item_path(item) %>
+										                                	 <div class="card-body">
+											                                	 <h6 class="card-title" style="padding-top:1px" ><%= item.name %></h6>
+											                                	 <p class="card-text"style="padding-bottom:10px"><%= item.description %></p>
+										                                	 </div>
+										                                </div>
 										                            </div>
-									                            <% end %>
-									                        </div>
+									                            </div>
+								                            <% end %>
 								                        </div>
 								                    </div>
 						                    	</div>
