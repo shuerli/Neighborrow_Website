@@ -100,7 +100,7 @@
                         <div class="portfolio-over">
                             <div>
                                 <h2 class="card-title" style:"color:#004E64;">
-                                    <%= cat.name %>
+                                    <%= link_to "#{cat.name}", :controller => "items", :action => "index", :cat_id => "#{cat.id}" %>
                                 </h2>
                             </div>
                         </div></a>
