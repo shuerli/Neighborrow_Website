@@ -80,3 +80,5 @@ gem 'activestorage-validator'
 # For Dropzone & Carrierwave file transfer
 gem 'dropzonejs-rails'
 gem 'carrierwave'
+
+gem 'rails_admin', '~> 1.3'
