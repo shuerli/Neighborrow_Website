@@ -22,9 +22,10 @@
             
         <!-- Logged in content in header -->
         <% if logged_in? %>
-	        <div class="dropdown">
+	        <div class="dropdown" style="padding-left:20px">
+	          <%= image_tag Profile.find_by_email(current_user.email).avatar, :size => "25x25" %>
 			  <a class="btn dropdown-toggle" style = "background-color: Transparent;border: none;" href="#" data-toggle="dropdown">
-			    Account <b class="caret"></b>
+			    <%=Profile.find_by_email(current_user.email).display_name%> <b class="caret"></b>
 			  </a>
 		        <ul class="dropdown-menu">
 		            <li class="dropdown-item"><%= link_to "Profile", controller: "profiles", action: "update", id:current_user.id %></li>
