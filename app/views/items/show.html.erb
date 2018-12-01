@@ -11,10 +11,10 @@
                         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
                             
                             <!-- all css here -->
-                            <%= stylesheet_link_tag 'plugin.css' %>
+                            
                             <%= stylesheet_link_tag 'bundle.css' %>
                             <%= stylesheet_link_tag 'style.css' %>
-                            <%= stylesheet_link_tag 'responsive.css' %>
+                           
                             
                             <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
                                 javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -33,7 +33,15 @@
             font-weight: 100 !important;
             margin-left:3em !important;
         }
-    
+        .modal-header {
+            background-color: rgba(128, 198, 185, 0.89);
+            color: white;
+        }
+        .modal-title {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-weight: 200
+        }
+
     </style>
     <body>
         <!-- Add your site or application content here -->
@@ -45,7 +53,7 @@
                     background: rgba(46, 49, 49, 0.87);">
                     <!--Breadcrumb section end-->
                             <% categories.each do |cat| %>
-                            <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :category => cat.name },{ :class=>"column-text-light" }  %></div>
+                            <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :cat_id => cat.id },{ :class=>"column-text-light" }  %></div>
                             <% end %>
                 </div>
                 <div class="row border-bottom justify-content-center ptb-10">
@@ -105,7 +113,15 @@
                                             <span class="current_price"><%= "Condition: #{@item.condition}" %></span>
                                             <span class="discount_price">Hot</span>
                                         </div>
+                                        
+                                        <div class="price_amount">
+                                            <span class="current_price"><%= "Available Times:" %></span><br>
+                                                <span class="current_price"> <%= "#{@item.time_start} - #{@item.time_end}" %></span>
+                                            
+                                        </div>
+                                        
                                         <br></br>
+                                        
                                         <p><%= @item.description %></p>
 
                                         
@@ -130,8 +146,12 @@
                                                         <!-- Modal body -->
                                                         <div class="modal-body">
                                                             <% if not logged_in? %>
-                                                                <h1> Join us today to become a Neighborrow insider ! </h1>
-                                                                <%= link_to "Sign Up/Login", login_url %>
+                                                                <p><h6> Are you new to our community? Join us today to become a Neighborrow insider ! </h6>
+                                                                <%= link_to "Click here to Sign Up", login_url %></p>
+                                                                
+                                                                <p><h6> Already have an account? </h6>
+                                                                <%= link_to "Click here to Login", login_url %></p>
+
                                                             <% else %>
                                                             
                                                             <div class="row" >
@@ -154,9 +174,6 @@
                                                         
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="waitlist">
-                                                <a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                             </div>
                                         </div>
                                         <br></br>
