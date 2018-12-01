@@ -37,5 +37,13 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+	end
+	
+	config.parent_controller = '::ApplicationController'
+
+	config.authorize_with do |controller|
+    unless current_user.role == 'admin'
+      redirect_to "/404"
+    end
   end
 end
