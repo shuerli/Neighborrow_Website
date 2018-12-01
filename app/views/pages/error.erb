@@ -1,0 +1,74 @@
+<!--
+* This modified template file is referenced to coreui.io,
+* along with other third-party stylesheets and javascript files.
+* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.7
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Meta information used for SEO -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
+<meta name="author" content="Neighborrow">
+<meta name="keyword" content="Borrow, Lend, CSC444">
+
+
+<!-- Base stylesheets & third-party stylesheets-->
+<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+
+<!-- Customized stylesheet goes here-->
+
+</head>
+
+<body class="app header-fixed">
+<div class="app-body flex-row align-items-center">
+<main class="main">
+
+<%if logged_in? %>
+    <div class="sidebar" id="menuModule"></div>
+<%end%>
+
+
+<div class="container-fluid">
+
+<h1 class="text-center font-weight-bold">Something Went Wrong</h1>
+
+<div class = "col-md-6 offset-md-3">
+<% flash.each do |key, value| %>
+<div id="error_explanation">
+<div class="alert alert-<%= key %>">
+<ul>
+<li><%= content_tag :div, value, class: "flash #{key}" %></li>
+</ul>
+</div>
+</div>
+</div>
+<% end %>
+
+
+</div>
+</main>
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

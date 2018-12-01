@@ -14,7 +14,8 @@ class PasswordResetsController < ApplicationController
   def valid_user
       unless (@account && @account.email_confirmed? &&
               @account.authenticated?(:reset, params[:id]))
-              redirect_to home_url
+              redirect_to '/Error'
+              flash[:danger] = "Please check if you have activated your account before trying to reset your password"
       end
   end
   

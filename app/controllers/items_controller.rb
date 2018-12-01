@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     end
     
     def index
-        @items = Item.where(:category => params[:category])
+        @items = Item.where(:category_id => params[:cat_id])
     end
     
     def destroy

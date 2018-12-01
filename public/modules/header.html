@@ -46,50 +46,55 @@
   </button>
 </div>
 <ul class="nav navbar-nav ml-auto">
-  <li class="nav-item dropdown">
-    <a
-      class="nav-link"
-      data-toggle="dropdown"
-      href="#"
-      role="button"
-      aria-haspopup="true"
-      aria-expanded="false"
+  <li class="nav-item" style="padding-right:10px;">
+    <button
+      class="btn btn-outline-dark btn-sm"
+      style="cursor:pointer"
+      onclick="logout_user()"
     >
-      <span class="navbar-toggler-icon"></span>
-    </a>
-    <div class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="/logout">
-        <i class="fa fa-sign-out"></i> Sign out</a
-      >
-    </div>
+      <i class="fa fa-sign-out"></i> Sign out
+    </button>
   </li>
 </ul>
 
 <script>
-  let keywordList_cache = new Array();
-  $("#item-searchbar-main").autocomplete({ source: keywordList_cache });
-  $("#item-searchbar-main").on("keyup paste", function() {
-    $("#item-searchbar-sub").val($(this).val());
-  });
-  let searchbarAjax_trigger = ptr => {
-    $("#item-searchbar-sub").val(ptr.value);
-    if (ptr.value.length > 2) {
-      $.get("/search/keyword_prompt?input=" + ptr.value, function(data) {
-        if (data.result.length > 0) {
-          keywordList_cache = data.result.map(x => x.name);
-          $("#item-searchbar-main").autocomplete("option", {
-            source: keywordList_cache
-          });
-        }
-      });
-    }
-  };
-  document
-    .getElementById("item-searchbar-main")
-    .addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode === 13) {
-        window.location = "/result?keyword="+$("#item-searchbar-main").val()+"&location=Toronto"
-      }
-    });
+
+  let logout_user = ()=>{
+  	$.ajax({
+  	url: '/logout',
+		type: 'DELETE',
+		data:{
+			authenticity_token: window._token,
+		},
+  	success: function(result) {
+  			window.location = "/"
+  	}})
+  }
+
+   let keywordList_cache = new Array();
+   $("#item-searchbar-main").autocomplete({ source: keywordList_cache });
+   $("#item-searchbar-main").on("keyup paste", function() {
+     $("#item-searchbar-sub").val($(this).val());
+   });
+   let searchbarAjax_trigger = ptr => {
+     $("#item-searchbar-sub").val(ptr.value);
+     if (ptr.value.length > 2) {
+       $.get("/search/keyword_prompt?input=" + ptr.value, function(data) {
+         if (data.result.length > 0) {
+           keywordList_cache = data.result.map(x => x.name);
+           $("#item-searchbar-main").autocomplete("option", {
+             source: keywordList_cache
+           });
+         }
+       });
+     }
+   };
+   document
+     .getElementById("item-searchbar-main")
+     .addEventListener("keyup", function(event) {
+       event.preventDefault();
+       if (event.keyCode === 13) {
+         window.location = "/result?keyword="+$("#item-searchbar-main").val()+"&location=Toronto"
+       }
+     });
 </script>
