@@ -20,12 +20,12 @@ $(function() {
 	if(data.lender_credit===null){
 		data.lender_credit = 0;
 	}
-	if(data.borrower_rate===null){
-		data.borrower_rate = "-";
-	}
 
-	
+	if(data.borrower_rate===null||data.borrower_rate===undefined)
+			$("#rate_display_section").text("-");
+		else
+			$("#rate_display_section").text(Number(data.borrower_rate).toFixed(1));
+			
 	$("#credit_display_section").text(data.borrower_credit+data.lender_credit);
-	$("#rate_display_section").text(data.borrower_rate);
   });
 });

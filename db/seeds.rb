@@ -17,21 +17,21 @@
 
 accounts = Account.create([
                           #create users with different status
-                          {id:1, email:'createduser@gmail.com', role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
-                          {id:2, email:'activeuser@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-                          {id:3, email:'suspendeduser@gmail.com', role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
-                          {id:4, email:'banneduser@gmail.com', role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
+                          {id:1, email:'createduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
+                          {id:2, email:'activeuser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+                          {id:3, email:'suspendeduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
+                          {id:4, email:'banneduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
                           
                           #create a testing user
-                          {id:5, email:'raymondfzy@gmail.com', role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+                          {id:5, email:'raymondfzy@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
                           
                           #create admins with different status
-                          {id:6, email:'zeyu.feng@mail.utoronto.ca', role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
-                          {id:7, email:'geling.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
-                          {id:8, email:'zikevin.wang@mail.utoronto.ca', role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
-                          {id:9, email:'da.fu@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
-                          {id:10, email:'shuer.li@mail.utoronto.ca', role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
-                          {id:11, email:'qingqing.zhuo@mail.utoronto.ca', role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
+                          {id:6, email:'zeyu.feng@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
+                          {id:7, email:'geling.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
+                          {id:8, email:'zikevin.wang@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
+                          {id:9, email:'da.fu@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
+                          {id:10, email:'shuer.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
+                          {id:11, email:'qingqing.zhuo@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
                           ])
 
 
@@ -59,9 +59,13 @@ accounts = Account.create([
 			{email:'suspendeduser@gmail.com', first_name: 'Saburo', last_name: 'Suspended', display_name: 'suspended3', language: 'English', country:'England', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'activeuser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'raymondfzy@gmail.com', first_name:'Yu', middle_name:'Ze', last_name:'Feng', display_name:'Yu F',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', facebook:'https://www.facebook.com/profile.php?id=100007708830271', google:'raymondfzy@gmail.com', avatar_url:'https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929', interest:'Games'},
-			
 			#create a profile for admin
 			{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'}
+      {email:'geling.li@mail.utoronto.ca', display_name: 'geling', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+      {email:'zikevin.wang@mail.utoronto.ca', display_name: 'zikevin', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+      {email:'da.fu@mail.utoronto.ca', display_name: 'da', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+      {email:'shuer.li@mail.utoronto.ca', display_name:'shuer',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+      {email:'qingqing.zhuo@mail.utoronto.ca', display_name:'qingqing', phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 	])
 
 

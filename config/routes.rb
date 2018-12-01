@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get '/settings', to: 'accounts#settings'
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
+	get '/userdashboard_initialize' => 'accounts#userDashboard_Info'
 
 	# Routes to handlers related to search-result page
 	get '/result' => 'items#showResult'
@@ -29,7 +31,9 @@ Rails.application.routes.draw do
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
-	get '/admin' => 'dashboards#admin'
+	#get '/admin' => 'dashboards#admin'
+
+	get '/admin_reports' => 'dashboard#show_report'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
   resources:accounts do
