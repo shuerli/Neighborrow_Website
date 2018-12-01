@@ -68,16 +68,111 @@
     ></header>
     <div class="app-body">
       <div class="sidebar" id="menuModule"></div>
-
       <main class="main">
-		
-		
+        <div class="container-fluid">
+          <div class="row" style="margin-top:30px">
+            <div class="col-12">
+              <h4>Welcome back, <a id="dashboard-username">alpha</a>!</h4>
+              <hr />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <span class="h1 text-muted text-right  pull-right">
+                    <i class="fa fa-star-o"></i>
+                  </span>
+                  <div class="text-value" id="main_rateBorrow">-</div>
+                  <div>Rate of Borrowing</div>
+                  <div class="progress progress-xs my-2">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <span class="h1 text-muted text-right  pull-right">
+                    <i class="fa fa-star"></i>
+                  </span>
+                  <div class="text-value" id="main_rateLend">-</div>
+                  <div>Rate of Lending</div>
+                  <div class="progress progress-xs my-2">
+                    <div
+                      class="progress-bar bg-info"
+                      role="progressbar"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <span class="h1 text-muted text-right  pull-right">
+                    <i class="fa fa-money"></i>
+                  </span>
+                  <div class="text-value" id="main_credit">-</div>
+                  <div>Credit</div>
+                  <div class="progress progress-xs my-2">
+                    <div
+                      class="progress-bar bg-warning"
+                      role="progressbar"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <i class="fa fa-list-ul"></i> Pending Requests
+                </div>
+                <div class="card-body">
+                  <div class="row" id="pending_requests_section">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <i class="fa fa-send-o"></i> Lended Items
+                </div>
+                <div class="card-body">
+                  <div class="row" id="lended_items_section"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <i class="fa fa-inbox"></i> Borrowed Items
+                </div>
+                <div class="card-body">
+                  <div class="row" id="borrowed_items_section"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
 
     <footer class="app-footer" id="footerModule"></footer>
-
-    
 
     <!-- CoreUI and other third-party plugins (js files) -->
     <script src="/vendors/jquery/js/jquery.min.js"></script>
@@ -86,10 +181,11 @@
     <script src="/vendors/pace-progress/js/pace.min.js"></script>
     <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
     <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
-		<script src="/vendors/momentjs/moment.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/vendors/momentjs/moment.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Customized Javascript file goes here -->
     <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/user_dashboard.js?version=1"></script>
   </body>
 </html>
