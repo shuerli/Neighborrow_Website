@@ -1,0 +1,18 @@
+
+<div class="row border-top border-bottom justify-content-center ptb-10" style="
+background: rgba(46, 49, 49, 0.87);">
+<!--Breadcrumb section end-->
+<% departments = Department.all() %>
+<% departments.each do |dep| %>
+<div class = "col text-center"><%= link_to "#{dep.name}", {:controller => "items", :action => "index", :department => dep.name },{ :class=>"column-text-light" }  %></div>
+<% end %>
+</div>
+
+<div class="row border-bottom justify-content-center ptb-10">
+<!--Breadcrumb section end-->
+<div class = "col"><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
+<%= link_to "Categories", home_url,{ :class=>"column-text-dark" }  %>
+<%= link_to "Item", home_url,{ :class=>"column-text-dark" }  %>
+</div>
+
+</div>

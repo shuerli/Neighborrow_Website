@@ -49,21 +49,7 @@
             
             <!--product Details Inner-->
             <div class="product_details_inner left_sidebar ptb-60 border-top">
-                <div class="row border-top border-bottom justify-content-center ptb-10" style="
-                    background: rgba(46, 49, 49, 0.87);">
-                    <!--Breadcrumb section end-->
-                            <% categories.each do |cat| %>
-                            <div class = "col text-center"><%= link_to "#{cat.name}", {:controller => "items", :action => "index", :cat_id => cat.id },{ :class=>"column-text-light" }  %></div>
-                            <% end %>
-                </div>
-                <div class="row border-bottom justify-content-center ptb-10">
-                    <!--Breadcrumb section end-->
-                    <div class = "col"><%= link_to "Home", home_url,{ :class=>"column-text-dark" }  %>
-                    <%= link_to "Categories", home_url,{ :class=>"column-text-dark" }  %>
-                    <%= link_to "Item", home_url,{ :class=>"column-text-dark" }  %>
-                    </div>
-                    
-                </div>
+                <%= render 'layouts/department_list' %>
                 
                 <div class="container border-bottom">
                     <% flash.each do |key, value| %>
