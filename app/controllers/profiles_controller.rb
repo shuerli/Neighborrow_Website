@@ -37,18 +37,15 @@ class ProfilesController < ApplicationController
         end 
     end
     
-    is_image = false
-    if  profile_params[:avatar_url].content_type.in?(['image/png', 'image/jpg', 'image/jpeg'])
-        is_image = true
-        success = false
-    else
-        flash[:error] = "You profile picture needs to be an image!"
+    if profile_params[:avatar_url]
+      if  profile_params[:avatar_url].content_type.in?(['image/png', 'image/jpg', 'image/jpeg'])
+          @profile.avatar.attach(profile_params[:avatar_url])
+      else
+          flash[:error] = "You profile picture needs to be an image!"
+          success = false
+      end
     end
-    
-    if profile_params[:avatar_url] and is_image
-        @profile.avatar.attach(profile_params[:avatar_url])
-    end
-    
+        
     if success
       redirect_to profile_path
     else

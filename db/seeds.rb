@@ -57,10 +57,10 @@ accounts = Account.create([
 			{email:'createduser@gmail.com', display_name: 'created1', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'activeuser@gmail.com', first_name: 'Jiro', last_name: 'Active', display_name: 'active2', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'suspendeduser@gmail.com', first_name: 'Saburo', last_name: 'Suspended', display_name: 'suspended3', language: 'English', country:'England', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'activeuser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+			{email:'banneduser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 			{email:'raymondfzy@gmail.com', first_name:'Yu', middle_name:'Ze', last_name:'Feng', display_name:'Yu F',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', facebook:'https://www.facebook.com/profile.php?id=100007708830271', google:'raymondfzy@gmail.com', avatar_url:'https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929', interest:'Games'},
 			#create a profile for admin
-			{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'}
+			{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
       {email:'geling.li@mail.utoronto.ca', display_name: 'geling', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
       {email:'zikevin.wang@mail.utoronto.ca', display_name: 'zikevin', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
       {email:'da.fu@mail.utoronto.ca', display_name: 'da', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
@@ -97,16 +97,34 @@ accounts = Account.create([
 # department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
 # name: name of this category, referencing to Walmart/Amazon/Ebay
 
+departments = Department.create(
+                                [
+                                {name:'Home, Garden, Pets & Tools'},
+                                {name:'Books & Audible'},
+                                {name:'Electronics, Computers & Office'},
+                                {name:'Automotive & Industrial'},
+                                {name:'Toys, Kids, Baby & STEM'},
+                                {name:'Clothing, Shoes & Jewelry'},
+                                {name:'Sports & Outdoors'},
+                                {name:'Music, Movies & TV Shows'},
+                                ]
+                                )
 # category1 = Category.create!(department:'Clothes', name:'Fashion')
 # category2 = Category.create!(department:'hw', name:'Hardware')
 # category3 = Category.create!(department:'Video Games', name: 'Electronics')
 # category4 = Category.create!(department:'Electronics', name:'Toys')
 # category5 = Category.create!(department:'Electronics', name:'Books')
 # category6 = Category.create!(department:'Electronics', name:'Sports')
-	categories = Category.create([	{department:'Other',  name: 'Other'},
-									{department:'Electronics', name: 'Video Game'},
-									{department:'Books', name: 'Novel'},
-									{department:'Books', name: 'Textbook'}
+	categories = Category.create([	{department:'Home, Garden, Pets & Tools',  name: 'Home'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Garden'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Pets'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Tools'},
+									{department:'Books & Audible', name: 'Books'},
+                                    {department:'Books & Audible', name: 'Audible'},
+									{department:'Electronics, Computers & Office', name: 'Electronics'},
+                                    {department:'Electronics, Computers & Office', name: 'Computers'},
+                                    {department:'Electronics, Computers & Office', name: 'Office'},
+									{department:'Automotive & Industrial', name: 'Textbook'}
 								])
 
 # Creating data for 'Item' table, definition as follows
