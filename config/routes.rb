@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create_auth'
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
+  
+  get    '/signup',  to: 'accounts#new'
 
   get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
@@ -31,7 +33,9 @@ Rails.application.routes.draw do
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
-	get '/admin' => 'dashboards#admin'
+	#get '/admin' => 'dashboards#admin'
+
+	get '/admin_reports' => 'dashboard#show_report'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
   resources:accounts do
@@ -81,7 +85,7 @@ Rails.application.routes.draw do
 
 	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
-
+    
 	# Routes for searching (public access granted)
 	get '/search/keyword_prompt' => 'items#keyword_prompt'
 	#get '/search/geo/:lon/:lat'
@@ -97,6 +101,7 @@ Rails.application.routes.draw do
       get   '/aboutUs',  to:'pages#about'
       get   '/FAQ',  to:'pages#FAQ'
       get   '/team',  to:'pages#team'
+      get '/Error' => 'pages#error'
   
   
       # For file transfer
