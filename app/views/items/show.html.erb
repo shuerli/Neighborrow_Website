@@ -107,27 +107,13 @@
                                         </div>
                                         <br></br>
                                         <p><%= @item.description %></p>
-                                        <div class="product_variant_select">
-                                            <div class="select-option-part">
-                                                <label>Size*</label>
-                                                <select class="nice-select">
-                                                    <option value="">- Please Select -</option>
-                                                    <option value="">xl</option>
-                                                    <option value="">ml</option>
-                                                    <option value="">m</option>
-                                                    <option value="">sl</option>
-                                                </select>
-                                            </div>
-                                        </div>
 
                                         
                                         <div class="single_product_action d-flex align-items-center">
-                                            <div class="cart-plus-minus">
-                                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                    </div>
+                                            
                                             <!-- Button to Open the Modal -->
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                                Borrow
+                                                Borrow this now!
                                             </button>
                                             
                                             <!-- The Modal -->
@@ -137,18 +123,18 @@
                                                         
                                                         <!-- Modal Header -->
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Want to borrow?</h4>
+                                                            <h4 class="modal-title">Want to borrow this now?</h4>
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                         
                                                         <!-- Modal body -->
                                                         <div class="modal-body">
                                                             <% if not logged_in? %>
+                                                                <h1> Join us today to become a Neighborrow insider ! </h1>
                                                                 <%= link_to "Sign Up/Login", login_url %>
                                                             <% else %>
                                                             
                                                             <div class="row" >
-                                                                <div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
                                                                 <div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
                                                                     <input type="text" name="daterange" style="font-size:15px" id='date-input'/>
                                                                 </div>
