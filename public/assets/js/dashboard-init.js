@@ -1,7 +1,7 @@
 $(function() {
+	$("#subHeaderModule").load("../../modules/subheader.html");
   $("#headerModule").load("../../modules/header.html");
   $("#menuModule").load("../../modules/menu.html");
-  $("#subHeaderModule").load("../../modules/subheader.html");
   $("#footerModule").load("../../modules/footer.html");
 
   //Initialize the user info in the side bar
