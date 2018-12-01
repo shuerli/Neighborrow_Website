@@ -5,6 +5,12 @@
     color:red;
 }
 
+#btn-add-item{
+    background: rgba(79, 166, 211,0.3);
+}
+#btn-add-item:hover{
+    background: rgba(79, 166, 211,0.6);
+}
 /* Style for image adding button when registering a new item */
 #add-img {
     height: 150px;

@@ -97,16 +97,34 @@ accounts = Account.create([
 # department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
 # name: name of this category, referencing to Walmart/Amazon/Ebay
 
+departments = Department.create(
+                                [
+                                {name:'Home, Garden, Pets & Tools'},
+                                {name:'Books & Audible'},
+                                {name:'Electronics, Computers & Office'},
+                                {name:'Automotive & Industrial'},
+                                {name:'Toys, Kids, Baby & STEM'},
+                                {name:'Clothing, Shoes & Jewelry'},
+                                {name:'Sports & Outdoors'},
+                                {name:'Music, Movies & TV Shows'},
+                                ]
+                                )
 # category1 = Category.create!(department:'Clothes', name:'Fashion')
 # category2 = Category.create!(department:'hw', name:'Hardware')
 # category3 = Category.create!(department:'Video Games', name: 'Electronics')
 # category4 = Category.create!(department:'Electronics', name:'Toys')
 # category5 = Category.create!(department:'Electronics', name:'Books')
 # category6 = Category.create!(department:'Electronics', name:'Sports')
-	categories = Category.create([	{department:'Other',  name: 'Other'},
-									{department:'Electronics', name: 'Video Game'},
-									{department:'Books', name: 'Novel'},
-									{department:'Books', name: 'Textbook'}
+	categories = Category.create([	{department:'Home, Garden, Pets & Tools',  name: 'Home'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Garden'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Pets'},
+                                    {department:'Home, Garden, Pets & Tools',  name: 'Tools'},
+									{department:'Books & Audible', name: 'Books'},
+                                    {department:'Books & Audible', name: 'Audible'},
+									{department:'Electronics, Computers & Office', name: 'Electronics'},
+                                    {department:'Electronics, Computers & Office', name: 'Computers'},
+                                    {department:'Electronics, Computers & Office', name: 'Office'},
+									{department:'Automotive & Industrial', name: 'Textbook'}
 								])
 
 # Creating data for 'Item' table, definition as follows

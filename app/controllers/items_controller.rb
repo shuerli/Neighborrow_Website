@@ -13,7 +13,15 @@ class ItemsController < ApplicationController
     end
     
     def index
-        @items = Item.where(:category_id => params[:cat_id])
+        item_ids = []
+        @categories = Category.where(:department => params[:department])
+        @categories.each do |cat|
+            puts cat.id
+            item_ids << Item.where(:category_id => cat.id).map(&:id)
+        end
+        puts item_ids[1]
+        @items = Item.where(id: item_ids)
+
     end
     
     def destroy
