@@ -2,7 +2,6 @@ require 'digest/sha1'
 
 class Account < ApplicationRecord
     ROLE_OPTIONS = %w(user admin)
-    STATUS_OPTIONS = %w(created active suspended banned)
     
     validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :role, presence: true, :inclusion => {:in => ROLE_OPTIONS}

@@ -16,6 +16,9 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
 			t.text :twitter
 			t.text :avatar_url, null: false
 			t.text :interest, array: true
+            t.integer :add_credit
+            t.integer :credit
+            t.integer :withdraw_credit
       t.timestamps
     end
   end
