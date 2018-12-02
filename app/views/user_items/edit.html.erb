@@ -59,6 +59,72 @@
 			
 			<div class="container-fluid">
 				<!-- Main section - Codes for main functionalities in this block -->
+			
+				<h2>Item Details</h2>
+				<hr>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<strong class="text-muted"> Item </strong>
+								<a class="pull-right" id='item-status'></a>
+							</div>
+							<div class="card-body">
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label> Item Image</label>
+										<br>
+										<div class = "img-wrap" id='existing-img'>
+												<span class="close" onclick="btnImageDelete()" >&times;</span>
+												<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
+										</div>
+									</div>
+									<div class="form-group">
+										<label> Item name </label>
+										<input class="form-control" id='item-name-input' type="text">
+									</div>
+									<div class="form-group">
+										<label> Brand </label>
+										<input class="form-control" id='brand-input' type="text">
+									</div>
+									<div class="form-group">
+										<label> Condition </label>
+										<input class="form-control" id='condition-input' type="text">
+									</div>
+									<div class="form-group">
+										<label> Available Dates </label>
+										<input class="form-control" type="text" name="daterange" id="date-input"/>
+									</div>
+									<div class="form-group">
+										<label> Description </label>
+										<input class="form-control" id='description-field' placeholder="Add a short description about this item..." type="textarea">
+									</div>
+									<div class="row">
+										<div class="form-group col-lg-6">
+												<label> Department </label>
+												<select class="form-control" id='department-input'>
+												</select>
+										</div>
+										<div class="form-group col-lg-6">
+												<label> Category </label>
+												<select class="form-control" id='category-input'>
+												</select>
+										</div>
+									</div>
+								</div>
+								<div class="pull-right">
+									<button class="btn btn-primary" id='btn-edit' onclick="btnEdit()">
+										<a style="color:white"> Edit Item </a>	
+									</button>
+									<button class="btn btn-outline-secondary" id='btn-exit' onclick="btnExit()">
+											<a> Back </a>	
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
 					<div class="col-3" id='img-area' style="background:white;padding-right:100px; padding-top:30px;">
@@ -135,6 +201,9 @@
 				 </div>
 				 <br><br>
 			</div>
+
+
+			-->
 		</main>
 	</div>
 	<footer class="app-footer" id="footerModule"></footer>

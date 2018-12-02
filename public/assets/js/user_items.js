@@ -92,10 +92,6 @@ $(document).ready(function () {
                                               <small>\
                                               <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
                                               </small>\
-                                                |  \
-                                              <small>\
-                                              <a href="https://www.google.ca"> Borrower Profile</a>\
-                                              </small>\
                                             </div>\
                                           </div>\
                                       </div>\
