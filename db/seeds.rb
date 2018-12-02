@@ -150,7 +150,8 @@ items = Item.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
-					brand:'Ubisoft'},
+					brand:'Ubisoft'
+					},
 
 					{category_id:'2',
 					address:3,
@@ -162,7 +163,8 @@ items = Item.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Civilizaion 6 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.', 
-					brand:'2K Games'},
+					brand:'2K Games',
+					},
 
 					{category_id:'2',
 					address:1,
@@ -344,6 +346,7 @@ items = Item.create!([
 					},
 
 					{category_id:'6',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/green.jpeg', 
 					condition:'Good', 
@@ -355,6 +358,7 @@ items = Item.create!([
 					},
 
 					{category_id:'6',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/green2.jpeg', 
 					condition:'Good', 
@@ -365,6 +369,7 @@ items = Item.create!([
 					},
 
 					{category_id:'6',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/snow.jpeg', 
 					condition:'Adequate', 
@@ -376,6 +381,7 @@ items = Item.create!([
 					},
 
 					{category_id:'6',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/doraeng.jpeg', 
 					condition:'Very Good', 
@@ -388,6 +394,7 @@ items = Item.create!([
 					
 
 					{category_id:'8',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/dorajap.jpeg', 
 					condition:'Very Good', 
@@ -399,6 +406,7 @@ items = Item.create!([
 					},
 
 					{category_id:'8',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/narutostick.jpeg', 
 					condition:'Good', 
@@ -410,6 +418,7 @@ items = Item.create!([
 					},
 
 					{category_id:'8',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/narutofull.jpeg', 
 					condition:'Very Good', 
@@ -421,6 +430,7 @@ items = Item.create!([
 					},
 
 					{category_id:'8',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/dragon.jpeg', 
 					condition:'Good', 
@@ -432,6 +442,7 @@ items = Item.create!([
 					},
 
 					{category_id:'9',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/viet.jpeg', 
 					condition:'Good', 
@@ -443,6 +454,7 @@ items = Item.create!([
 					},
 
 					{category_id:'10',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/atlan.jpeg', 
 					condition:'Good', 
@@ -455,6 +467,7 @@ items = Item.create!([
 					},
 
 					{category_id:'10',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/captain.jpeg', 
 					condition:'Very Good', 
@@ -467,6 +480,7 @@ items = Item.create!([
 					},
 
 					{category_id:'10',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/jonah.jpeg', 
 					condition:'Good', 
@@ -476,6 +490,59 @@ items = Item.create!([
 					name:'Jonah movie', 
 					description:'A very old movie, comes in blu-ray.',
 					},
+
+					{category_id:'11',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/MusicMovie/12strong.jpeg', 
+					condition:'Brand New', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-01-05 00:00:00', 
+					name:'12 Strong movie digital', 
+					description:'Recently released movie, action war drama. It is in my USB, you will need to pick it up.',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/printer.jpeg', 
+					condition:'Like New', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-01-01 00:00:00', 
+					name:'Canon printer',
+					brand:'Canon' ,
+					description:'A Canon printer I recently bought. I will not hand it to you, but if you are in my neighborhood and want to print something, I can do it for you with this.',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/pprinter.jpeg', 
+					condition:'Like New', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-06-01 00:00:00', 
+					name:'Epson portable printer', 
+					brand:'Epson',
+					description:'It is a portable printer, easy to carry around. It is taking too much space of my table, lending it out till I move',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/scanner.jpeg', 
+					condition:'Brand New', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-06-01 00:00:00', 
+					name:'FastFoto FF640 scanner', 
+					brand:'Epson',
+					description:'Scanner in my room, come and use it if you want.',
+					},
+
+					
 				])
                     #    {category_id:'4',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Like New', rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
                     #    {category_id:'4',owner:'createduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New',time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
