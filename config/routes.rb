@@ -103,6 +103,8 @@ Rails.application.routes.draw do
       get   '/FAQ',  to:'pages#FAQ'
       get   '/team',  to:'pages#team'
       get '/Error' => 'pages#error'
+
+      get '/sitemap' => 'pages#sitemap'
   
   
       # For file transfer
