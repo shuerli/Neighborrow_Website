@@ -60,6 +60,85 @@
 			
 			<div class="container-fluid">
 				<!-- Main section - Codes for main functionalities in this block -->
+				<h2>Add Item</h2>
+				<hr>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<strong class="text-muted"> Register Your Item </strong>
+								<a class="pull-right" id='item-status'></a>
+							</div>
+							<div class="card-body">
+								<div class="form-horizontal">
+									<div class="form-group">
+										<label> Item Image</label>
+										<br>
+										<div class = "img-wrap" id='existing-img'>
+												<span class="close" onclick="btnImageDelete()" >&times;</span>
+												<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-lg-6">
+											<label> Item name </label>
+											<input class="form-control" id='item-name-input' type="text">
+										</div>
+										<div class="form-group col-lg-6">
+											<label> Brand </label>
+											<input class="form-control" id='brand-input' type="text">
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-lg-6">
+											<label> Condition </label>
+											<select class="form-control" id='condition-input'>
+												<option value="Brand New"> brand new </option>
+												<option value="Like New"> like new </option>
+												<option value="Very Good"> very good </option>
+												<option value="Good"> good </option>
+												<option value="Adequate"> adequate </option>
+												<option value="Defective"> defective </option>
+											</select>
+										</div>
+										<div class="form-group col-lg-6">
+											<label> Available Dates </label>
+											<input class="form-control" type="text" name="daterange" id="date-input"/>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="form-group col-lg-6">
+												<label> Department </label>
+												<select class="form-control" id='department-input'>
+												</select>
+										</div>
+										<div class="form-group col-lg-6">
+												<label> Category </label>
+												<select class="form-control" id='category-input'>
+												</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label> Description </label>
+										<input class="form-control" id='description-input' placeholder="Add a short description about this item..." type="textarea">
+									</div>
+								</div>
+								<div class="pull-right">
+									<button class="btn btn-success" id='btn-submit' onclick="btnSubmit()">
+										<a style="color:white"> Save </a>	
+									</button>
+									<button class="btn btn-outline-secondary" id='btn-exit' onclick="btnExit()">
+											<a> Back </a>	
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--
 				<div class="row">
 					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
 					<div class="col-3" style="background:white;padding-right:100px; padding-top:30px;">		
@@ -129,13 +208,10 @@
 				<div class="col-1" style="text-align:left;"><input type="submit" value="Return to item page" onclick="btnExit()">
 				</div>
 			 	</div>
-				
-
-
-
 
 				 <br><br>
 			</div>
+		-->
 		</main>
 	</div>
 	<footer class="app-footer" id="footerModule"></footer>

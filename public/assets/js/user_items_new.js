@@ -6,16 +6,17 @@ $(document).ready(function(){
     url: "/category/departments",
     success: function (data) {
         allDepartments = data.result;
-        var i;
-        for(i = 0; i < allDepartments.length; i++){
+        var departmentList = document.getElementById('department-input');
+        for(var i = 0; i < allDepartments.length; i++){
             var opt = document.createElement("option");
             opt.setAttribute("value", allDepartments[i].department);
             opt.innerText = '' +allDepartments[i].department;
-            document.getElementById('department-input').appendChild(opt);
+            departmentList.appendChild(opt);
         }
+        departmentList.value = 'Miscellaneous';
         var opt = document.createElement("option");
-        opt.setAttribute("value", 'Other');
-        opt.innerText = 'Other';
+        opt.setAttribute("value", 'Miscellaneous');
+        opt.innerText = 'Miscellaneous';
         document.getElementById('category-input').appendChild(opt);
     }
   });
@@ -54,20 +55,16 @@ $('#department-input').change(function () {
 
 
 function btnSubmit(){
-  var radio_button = document.forms[1];
-  var i;
-  var item_condition;
-  for(i = 0; i < radio_button.length; i++){
-      if(radio_button[i].checked){
-          item_condition = radio_button[i].value;
-      }
-  }
+ 
+    var conditionList = document.getElementById('condition-input');
+    var item_condition = conditionList.options[conditionList.selectedIndex].value;
+
   var sdate = moment(document.getElementById('date-input').value.substring(0,10) , 'MM/DD/YYYY');
   sdate = moment(sdate).format('YYYY-MM-DD') + " 00:00:00"
   var edate = moment(document.getElementById('date-input').value.substring(13,23) , 'MM/DD/YYYY');
   edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
-
+    alert("submit pressed")
   $.ajax({
       url: "/category/id",
       method: "GET",
@@ -76,12 +73,14 @@ function btnSubmit(){
           category: $('#category-input option:selected').val()
       }
     }).done(function(data){
+
         var category_id = data.result[0].id;
         $.ajax({
             url: '/media_contents',
             method: "GET",
         }).done(function(data){
-            photo_url = data.substr(data.indexOf('/uploads'));
+
+            //photo_url = data.substr(data.indexOf('/uploads'));
 
             $.ajax({
                 url: "/user_item",
@@ -92,7 +91,7 @@ function btnSubmit(){
                     condition: item_condition,
                     time_start: sdate,
                     time_end: edate,
-                    photo_url: photo_url,
+                    //hoto_url: photo_url,
                     name: document.getElementById('item-name-input').value,
                     description: document.getElementById('description-input').value,
                     brand: document.getElementById('brand-input').value

@@ -115,7 +115,9 @@ departments = Department.create(
 # category4 = Category.create!(department:'Electronics', name:'Toys')
 # category5 = Category.create!(department:'Electronics', name:'Books')
 # category6 = Category.create!(department:'Electronics', name:'Sports')
-	categories = Category.create([	{department:'Home, Garden, Pets & Tools',  name: 'Home'},
+	categories = Category.create([	
+									{department:'Miscellaneous', name:'Miscellaneous'},
+									{department:'Home, Garden, Pets & Tools',  name: 'Home'},
                                     {department:'Home, Garden, Pets & Tools',  name: 'Garden'},
                                     {department:'Home, Garden, Pets & Tools',  name: 'Pets'},
                                     {department:'Home, Garden, Pets & Tools',  name: 'Tools'},
