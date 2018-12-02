@@ -184,6 +184,9 @@ let item_render = itemList => {
 				if(temp.length>0)
 				history_count = temp[0]["count"]
 			}
+			let lenderRate = 0;
+			if(itemList.search_byISBN_lenderRate!==null)
+				lenderRate = itemList.search_byISBN_lenderRate[itemList.result_itemISBN[i].ownerID]
       document.getElementById("itemISBN_section").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemISBN[i].itemID +
@@ -193,13 +196,13 @@ let item_render = itemList => {
         condition_pill[itemList.result_itemISBN[i].itemCondition] +
         '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
         itemList.result_itemISBN[i].name +
-        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" onclick="location.href = \'/public_profiles/'+itemList.result_itemISBN[i].ownerID+'\';" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
-        itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_itemISBN[i].ownerID] +
+        itemList.search_byISBN_lenderPhoto[itemList.result_itemISBN[i].ownerID] +
         '"/>&nbsp; <label class="text-muted">' +
         itemList.result_itemISBN[i].ownerName +
         "</label>" +
-        '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>';
+        '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> '+lenderRate.toFixed(1)+'</label></span></div></div></div>';
       totalCount++;
     }
     totalCount++;
@@ -222,6 +225,9 @@ let item_render = itemList => {
 				if(temp.length>0)
 				history_count = temp[0]["count"]
 			}
+			let lenderRate = 0;
+				if(itemList.search_byItemNameAndBrand_lenderRate!==null)
+					lenderRate = itemList.search_byItemNameAndBrand_lenderRate[itemList.result_itemNameBrand[i].ownerID]
       document.getElementById("itemNameBrand_section").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemNameBrand[i].itemID +
@@ -231,13 +237,13 @@ let item_render = itemList => {
         condition_pill[itemList.result_itemNameBrand[i].itemCondition] +
         '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
         itemList.result_itemNameBrand[i].name +
-        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" onclick="location.href = \'/public_profiles/'+itemList.result_itemNameBrand[i].ownerID+'\';" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
         itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_itemNameBrand[i].ownerID] +
         '"/>&nbsp; <label class="text-muted">' +
         itemList.result_itemNameBrand[i].ownerName +
         "</label>" +
-        '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>';
+        '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> '+lenderRate.toFixed(1)+'</label></span></div></div></div>';
       totalCount++;
     }
     document.getElementById("itemNameBrand_section").style.display = "";
@@ -262,6 +268,9 @@ let item_render = itemList => {
 					if(temp.length>0)
 					history_count = temp[0]["count"]
 				}
+				let lenderRate = 0;
+				if(itemList.search_byCorrection_lenderRate!==null)
+					lenderRate = itemList.search_byCorrection_lenderRate[itemList.result_correctedKeyword[i].ownerID]
         document.getElementById("itemNameBrand_section").innerHTML +=
           '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
           itemList.result_correctedKeyword[i].itemID +
@@ -271,13 +280,13 @@ let item_render = itemList => {
           condition_pill[itemList.result_correctedKeyword[i].itemCondition] +
           '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
           itemList.result_correctedKeyword[i].name +
-          '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+          '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" onclick="location.href = \'/public_profiles/'+itemList.result_correctedKeyword[i].ownerID+'\';" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
           '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
-          itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_correctedKeyword[i].ownerID] +
+          itemList.search_byCorrection_lenderPhoto[itemList.result_correctedKeyword[i].ownerID] +
           '"/>&nbsp; <label class="text-muted">' +
           itemList.result_correctedKeyword[i].ownerName +
           "</label>" +
-          '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> x</label></span></div></div></div>';
+          '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> '+lenderRate.toFixed(1)+'</label></span></div></div></div>';
         totalCount++;
       }
       document.getElementById("corrected_results_section").style.display = "";

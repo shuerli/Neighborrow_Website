@@ -75,8 +75,11 @@ class ItemsController < ApplicationController
 			search_byISBN_history = ActiveRecord::Base.connection.exec_query("SELECT Items.id AS itemID, COUNT(*) AS count FROM Requests, Items, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Requests.item_id = Items.id AND Items.isbn = '"+keyword.to_i+"' GROUP BY Items.id;")
 			search_byISBN_lenderEmail = ActiveRecord::Base.connection.exec_query("SELECT Profiles.email, Accounts.id FROM Items, Profiles, Accounts, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Items.owner = Profiles.email AND Items.isbn = '"+keyword.to_i+"';")
 			search_byISBN_lenderAvatar = Hash.new
+			search_byISBN_lenderAVG = Hash.new
 			search_byISBN_lenderEmail.each { |x|
 				search_byISBN_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
+				temp = ActiveRecord::Base.connection.exec_query("SELECT Items.owner, AVG(Feedback_to_lenders.rate) AS average FROM Feedback_to_lenders, Requests, Items WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Items.id AND Items.owner = '"+x["email"]+"';")
+				search_byISBN_lenderAVG[x["id"]] = temp[0]["average"]
 			}
 		end
 
@@ -90,10 +93,13 @@ class ItemsController < ApplicationController
 		search_byItemNameAndBrand_history = ActiveRecord::Base.connection.exec_query("SELECT Items.id AS itemID, COUNT(*) AS count FROM Requests, Items, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Requests.item_id = Items.id AND (LOWER(Items.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Items.brand) = LOWER('%"+keyword+"%')) GROUP BY Items.id;")
 		search_byItemNameAndBrand_lenderEmail = ActiveRecord::Base.connection.exec_query("SELECT Profiles.email, Accounts.id FROM Items, Profiles, Accounts, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Items.owner = Profiles.email AND (LOWER(Items.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Items.brand) = LOWER('%"+keyword+"%'));")
 		search_byItemNameAndBrand_lenderAvatar = Hash.new
+		search_byItemNameAndBrand_lenderAVG = Hash.new
 		search_byItemNameAndBrand_lenderEmail.each { |x|
 			search_byItemNameAndBrand_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
+			temp = ActiveRecord::Base.connection.exec_query("SELECT Items.owner, AVG(Feedback_to_lenders.rate) AS average FROM Feedback_to_lenders, Requests, Items WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Items.id AND Items.owner = '"+x["email"]+"';")
+			search_byItemNameAndBrand_lenderAVG[x["id"]] = temp[0]["average"]
 		}
-		puts search_byItemNameAndBrand_lenderAvatar
+		
 		if(:search_byItemNameAndBrand.size==0)
 			require 'gingerice'
 			parser = Gingerice::Parser.new
@@ -103,11 +109,14 @@ class ItemsController < ApplicationController
 			search_byCorrection_history = ActiveRecord::Base.connection.exec_query("SELECT Items.id AS itemID, COUNT(*) AS count FROM Requests, Items, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Requests.item_id = Items.id AND (LOWER(Items.name) LIKE LOWER('%"+correction_result+"%') OR LOWER(Items.brand) = LOWER('%"+correction_result+"%')) GROUP BY Items.id;")
 			search_byCorrection_lenderEmail = ActiveRecord::Base.connection.exec_query("SELECT Profiles.email, Accounts.id FROM Items, Profiles, Accounts, Addresses WHERE Items.address = Addresses.id AND Addresses.city = '"+city+"' AND Addresses.province = '"+province+"' AND Addresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Items.owner = Profiles.email AND (LOWER(Items.name) LIKE LOWER('%"+correction_result+"%') OR LOWER(Items.brand) = LOWER('%"+correction_result+"%'));")
 			search_byCorrection_lenderAvatar = Hash.new
+			search_byCorrection_lenderAVG = Hash.new
 			search_byCorrection_lenderEmail.each { |x|
 				search_byCorrection_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
+				temp = ActiveRecord::Base.connection.exec_query("SELECT Items.owner, AVG(Feedback_to_lenders.rate) AS average FROM Feedback_to_lenders, Requests, Items WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Items.id AND Items.owner = '"+x["email"]+"';")
+				search_byCorrection_lenderAVG[x["id"]] = temp[0]["average"]
 			}
 		end
 		
-		render :json => {:status => 200, :given_city => city, :given_province => province, :given_country => country, :search_keyword => keyword, :result_userEmail => {display_photo: user_avatar, result: search_byUserEmail, borrowRate: search_byUserEmail_borrowRate, lendRate: search_byUserEmail_lendRate}, :result_itemISBN => search_byISBN, :result_itemNameBrand => search_byItemNameAndBrand, :corrected_keyword => correction_result, :result_correctedKeyword => search_byCorrection, :search_byISBN_requestsCount => search_byISBN_history, :search_byNameBrand_requestsCount => search_byItemNameAndBrand_history, :search_byCorrection_requestsCount => search_byCorrection_history, :search_byISBN_lenderPhoto => search_byISBN_lenderAvatar, :search_byItemNameAndBrand_lenderPhoto => search_byItemNameAndBrand_lenderAvatar, :search_byCorrection_lenderPhoto => search_byCorrection_lenderAvatar}
+		render :json => {:status => 200, :given_city => city, :given_province => province, :given_country => country, :search_keyword => keyword, :result_userEmail => {display_photo: user_avatar, result: search_byUserEmail, borrowRate: search_byUserEmail_borrowRate, lendRate: search_byUserEmail_lendRate}, :result_itemISBN => search_byISBN, :result_itemNameBrand => search_byItemNameAndBrand, :corrected_keyword => correction_result, :result_correctedKeyword => search_byCorrection, :search_byISBN_requestsCount => search_byISBN_history, :search_byNameBrand_requestsCount => search_byItemNameAndBrand_history, :search_byCorrection_requestsCount => search_byCorrection_history, :search_byISBN_lenderPhoto => search_byISBN_lenderAvatar, :search_byItemNameAndBrand_lenderPhoto => search_byItemNameAndBrand_lenderAvatar, :search_byCorrection_lenderPhoto => search_byCorrection_lenderAvatar, :search_byItemNameAndBrand_lenderRate => search_byItemNameAndBrand_lenderAVG, :search_byISBN_lenderRate => search_byISBN_lenderAVG, :search_byCorrection_lenderRate => search_byCorrection_lenderAVG}
 	end
 end
