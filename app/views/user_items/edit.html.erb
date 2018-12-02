@@ -79,26 +79,34 @@
 												<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
 										</div>
 									</div>
-									<div class="form-group">
-										<label> Item name </label>
-										<input class="form-control" id='item-name-input' type="text">
+									<div class="row">
+										<div class="form-group col-lg-6">
+											<label> Item name </label>
+											<input class="form-control" id='item-name-input' type="text">
+										</div>
+										<div class="form-group col-lg-6">
+											<label> Brand </label>
+											<input class="form-control" id='brand-input' type="text">
+										</div>
 									</div>
-									<div class="form-group">
-										<label> Brand </label>
-										<input class="form-control" id='brand-input' type="text">
+									<div class="row">
+										<div class="form-group col-lg-6">
+											<label> Condition </label>
+											<select class="form-control" id='condition-input'>
+												<option value="Brand New"> brand new </option>
+												<option value="Like New"> like new </option>
+												<option value="Very Good"> very good </option>
+												<option value="Good"> good </option>
+												<option value="Adequate"> adequate </option>
+												<option value="Defective"> defective </option>
+											</select>
+										</div>
+										<div class="form-group col-lg-6">
+											<label> Available Dates </label>
+											<input class="form-control" type="text" name="daterange" id="date-input"/>
+										</div>
 									</div>
-									<div class="form-group">
-										<label> Condition </label>
-										<input class="form-control" id='condition-input' type="text">
-									</div>
-									<div class="form-group">
-										<label> Available Dates </label>
-										<input class="form-control" type="text" name="daterange" id="date-input"/>
-									</div>
-									<div class="form-group">
-										<label> Description </label>
-										<input class="form-control" id='description-field' placeholder="Add a short description about this item..." type="textarea">
-									</div>
+									
 									<div class="row">
 										<div class="form-group col-lg-6">
 												<label> Department </label>
@@ -111,12 +119,17 @@
 												</select>
 										</div>
 									</div>
+
+									<div class="form-group">
+										<label> Description </label>
+										<input class="form-control" id='description-field' placeholder="Add a short description about this item..." type="textarea">
+									</div>
 								</div>
 								<div class="pull-right">
 									<button class="btn btn-primary" id='btn-edit' onclick="btnEdit()">
 										<a style="color:white"> Edit Item </a>	
 									</button>
-									<button class="btn btn-outline-secondary" id='btn-exit' onclick="btnExit()">
+									<button class="btn btn-outline-secondary" id='btn-exit' onclick="btnBack()">
 											<a> Back </a>	
 									</button>
 								</div>

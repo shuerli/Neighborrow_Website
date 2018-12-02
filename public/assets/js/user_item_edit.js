@@ -12,11 +12,10 @@ $(document).ready(function () {
             document.getElementById('brand-input').value= itemInfo.brand;
         }
         //traverse radio button and modify check value
-        var radio_button = document.forms[0];
-        var i;
-        for(i = 0; i < radio_button.length; i++){
-            if(radio_button[i].value == itemInfo.condition){
-                radio_button[i].checked = true;
+        var conditionList = document.getElementById('condition-input');
+        for(var i = 0; i < conditionList.length; i++){
+            if(conditionList[i].value == itemInfo.condition){
+                conditionList[i].selected = true;
             }
         }
         document.getElementById('date-input').value =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
