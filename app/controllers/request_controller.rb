@@ -92,7 +92,7 @@ class RequestController < ApplicationController
 		when'lended'
 			case params[:range]
 			when 'all'
-				user_email = Account.find_by(id: 1).email
+				#user_email = Account.find_by(id: 1).email
 				lended_requests_query = "SELECT Requests.*, Items.id AS item_id, Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id"
 				feedbacks_to_lender_query = "SELECT Requests.id AS request_id, Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Items, Feedback_to_lenders WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id AND Requests.id = Feedback_to_lenders.request_id"
 				feedbacks_to_borrower_query = "SELECT Requests.id AS request_id, feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Items, Requests, feedback_to_borrowers WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id"
@@ -175,6 +175,11 @@ class RequestController < ApplicationController
             flash[:error] = "Cannot submit multiple requests for an item!"
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
+			################################### send email to lender ###################################
+			lender_email = ActiveRecord::Base.connection.exec_query("SELECT Items.owner FROM Requests, Items WHERE Requests.id = "+params[:id]+" AND Requests.item_id = Items.id;")
+			@account = Account.find_by(email: lender_email[0]["owner"])
+			AccountMailer.status_update(@account).deliver
+			###################################       END    ###################################
             redirect_to :action => "complete", :id => @request.id
 		else
         #render :json => {:status => 500}
@@ -196,22 +201,10 @@ class RequestController < ApplicationController
 			entry = Request.find(params[:id])
 			entry.update( :status => 'accepted')
 			##### email sent to borrower for status update ######
-
-			#Reading the email body file as erb instead of plain text or html
-			email_body = ERB.new(File.read('./app/views/mail_texts/welcome_email.html.erb')).result(binding)
-        
-			#Compose welcome_email
-			mail = Mail.new do
-				from    'zeyu.feng@mail.utoronto.ca'
-				to      account.email
-				subject 'Welcome to Neighborrow!'
-				content_type 'text/html; charset=UTF-8'
-				body    email_body
-			end
-		   
-			mail.delivery_method :sendmail
-			#mail.delivery_method :logger
-			mail.deliver
+			##### need @account to be defined#####
+			borrower_email = Request.find(params[:id]).borrower
+			@account = Account.find_by(email: borrower_email)
+            AccountMailer.status_update(@account).deliver
 
 			##### end #####
 			render :json => {:status => 200}
@@ -219,11 +212,20 @@ class RequestController < ApplicationController
 			entry = Request.find(params[:id])
 			entry.update( :status => 'cancelled')
 			##### email sent to borrower for status update ######
+			borrower_email = Request.find(params[:id]).borrower
+			@account = Account.find_by(email: borrower_email)
+
+			#lender_email = ActiveRecord::Base.connection.exec_query("SELECT Items.owner FROM Requests, Items WHERE Requests.id = "+params[:id]+" AND Requests.item_id = Items.id;")
+			#@account = Account.find_by(email: lender_email[0]["owner"])
+			AccountMailer.status_update(@account).deliver
 			render :json => {:status => 200}
 		when 'reject'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'rejected', :rejected_reason => params[:reason])
 			##### email sent to borrower for status update ######
+			borrower_email = Request.find(params[:id]).borrower
+			@account = Account.find_by(email: borrower_email)
+            AccountMailer.status_update(@account).deliver
 			render :json => {:status => 200}
 		when 'complete'
 			entry = Request.find(params[:id])

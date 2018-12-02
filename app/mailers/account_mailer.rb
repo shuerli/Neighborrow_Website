@@ -3,11 +3,16 @@ class AccountMailer < ActionMailer::Base
     
     def registration_confirmation(account)
         @account = account
-        mail(to: "#{account.email} <#{account.email}>", subject:"Registration Confirmation")
+        mail(to: "#{account.email} <#{account.email}>", subject:"Neighborrow: Registration Confirmation")
     end
     
     def password_reset(account)
         @account = account
-          mail(to: "#{account.email} <#{account.email}>", subject:"Password Reset")
+          mail(to: "#{account.email} <#{account.email}>", subject:"Neighborrow: Password Reset")
+    end
+    
+    def status_update(account)
+        @account = account
+        mail(to: "#{account.email} <#{account.email}>", subject:"Neighborrow: Status Update")
     end
 end

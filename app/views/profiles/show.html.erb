@@ -60,387 +60,94 @@
 				<h2>Account Profiles</h2>
 				<hr>
             
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-header">
-                    <strong class="text-muted">Profile</strong>
-                    <%= link_to "Edit Profile", edit_profile_path, method: :get, class: "pull-right" %>
-                  </div>
-                    
-                  <div class="card-body">
-					<div class="progress-group">
-						<div class="progress-group-header">
-							<i class="cui-user progress-group-icon"></i>
-							<div><%= @profile.gender %></div>
-							<div class="ml-auto font-weight-bold">43%</div>
-						</div>
-						<div class="progress-group-bars">
-							<div class="progress progress-xs">
-								<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
-								 aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</div>
-					</div>
-					<br>
-                  
-						
-                  	<form method="put" class="form-horizontal">
-                  		<div class="form-group">
-	                      <label for="username">Profile Picture</label>
-	                      <br>
-	                      <% if @profile.avatar.attached? %>
-						   	<%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
-						  <% else %>
-							<%= image_tag ("/assets/avatar.jpg"), :size => "75x75" , :class => "img-thumbnail" %>
-						  <% end %>
-	                    </div>
-                    	<div class="form-group">
-	                      <label for="username">User Name</label>
-	                      <input class="form-control" name="profile[display_name]" id="username" readonly type="text" value=<%= @profile.display_name %>>
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="email">Email Address</label>
-	                      <input class="form-control" name="profile[email]" id="email" type="text" readonly value=<%= @profile.email %>>
-	                    </div>
-		                <div class="row">
-		                  	<div class="form-group col-lg-4">
-		                      <label>First Name</label>
-	                      		<input class="form-control" name="profile[first_name]" id="first_name" type="text" readonly value=<%= @profile.first_name %>>
-			                </div>
-		                  	<div class="form-group col-lg-4">
-		                      <label>Middle Name</label>
-	                      	  <input class="form-control" name="profile[middle_name]" id="middle_name" type="text" readonly value=<%= @profile.middle_name %>>
-			                </div>
-		                  	<div class="form-group col-lg-4">
-		                      <label>Last Name</label>
-	                      	  <input class="form-control" name="profile[last_name]" id="last_name" type="text" readonly value=<%= @profile.last_name %>>
-			                </div>
-		                </div>	
-	                    <div class="form-group">
-	                      <label for="phoneNumber">Phone Number</label>
-	                      <input class="form-control" name="profile[phone_number]" id="phone_number" type="text" readonly value=<%= @profile.phone_number %>>
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="gender">Gender</label>
-	                      <input class="form-control" name="profile[gender]" id="gender" type="text" readonly value=<%= @profile.gender %>>
-	                    </div>         
-		                <div class="row">  
-		                    <div class="form-group col-lg-6">
-		                      <label for="phoneNumber">Language</label>
-		                      <input class="form-control" name="profile[language]" id="language" type="text" readonly value=<%= @profile.language %>>
+	            <div class="row">
+	              <div class="col-lg-12">
+	                <div class="card">
+	                  <div class="card-header">
+	                    <strong class="text-muted">Profile</strong>
+	                    <%= link_to "Edit Profile", edit_profile_path, method: :get, class: "pull-right" %>
+	                  </div>
+	                    
+	                  <div class="card-body">
+	                  	<form method="put" class="form-horizontal">
+	                  		<div class="form-group">
+		                      <label for="username">Profile Picture</label>
+		                      <br>
+		                      <%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
 		                    </div>
-		                    <div class="form-group col-lg-6">
-		                      <label for="phoneNumber">Country</label>
-		                      <input class="form-control" name="profile[country]" id="country" type="text" readonly value=<%= @profile.country %>>
+	                    	<div class="form-group">
+		                      <label for="username">User Name</label>
+		                      <input class="form-control" name="profile[display_name]" id="username" readonly type="text" value=<%= @profile.display_name %>>
 		                    </div>
-		                </div> 
-		                
-	                    <div class="form-group">
-	                      <label>Interested Categories</label>
-	                      <br>
-	  						&nbsp
-	                      	<% interests = ['Toys','Garden','Home','Technology']%>
-	  						<% interests.each do |t|%>
-	  							<% isChecked = false %>
-	  							<% if @profile.interest and  t.in?( @profile.interest) %>
-	  								<% isChecked = true %>
-	  							<%end%>
-	  							
-                          		<div class="form-check form-check-inline mr-1">
-								    <input type="checkbox" disabled="" class="form-check-input" <%if isChecked%> checked= "checked"<%end%> >
-			  						<label><%= t%></label>
-			  					</div>
-		  					<%end%>
-	                    </div> 
-	                    	                    
-	                    <!-- <div class="form-group">
-	                      <label for="street">Street</label>
-	                      <input class="form-control" id="street" type="text" >
-	                    </div>
-	                    <div class="row">
-	                      <div class="form-group col-sm-8">
-	                        <label for="city">City</label>
-	                        <input class="form-control" id="city" type="text">
-	                      </div>
-	                      <div class="form-group col-sm-4">
-	                        <label for="postal-code">Postal Code</label>
-	                        <input class="form-control" id="postal-code" type="text" >
-	                      </div>
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="country">Country</label>
-	                      <input class="form-control" id="country" type="text" >
-	                    </div> -->
-	                    <!-- 
-                    	<div class="form-group">
-                    		<label class="col-form-label" for="file-input">Interested Categories</label>
-		                    <div class="btn-group-toggle" data-toggle="buttons">
-							  <label class="btn btn-info active">
-							    <input type="checkbox" checked="checked" class="form-check-input"> Toys
-							  </label>
-							  <label class="btn btn-info ">
-							    <input type="checkbox" checked autocomplete="off"> Fashion
-							  </label>
-							  <label class="btn btn-info active">
-							    <input type="checkbox" checked="checked" autocomplete="off"> Garden
-							  </label>
-							  <label class="btn btn-info active">
-							    <input type="checkbox"  autocomplete="off"> Pets
-							  </label>
-							  <label class="btn btn-info active">
-							    <input type="checkbox" checked="checked" autocomplete="off"> Technology
-							  </label>
-							  <label class="btn btn-info ">
-							    <input type="checkbox"  autocomplete="off"> Home
-							  </label>
-							  <label class="btn btn-info ">
-							    <input type="checkbox" checked="checked" hidden autocomplete="off"> Beauty
-							  </label>							  
-							</div>
-	                    </div>
-	                     -->
-						<!-- <div class="form-group">
-	                        <label class="col-form-label" for="file-input">Profile Picture</label>
-	                        <br>
-	                        <input id="file-input" name="profile[avatar_url]" type="file" name="file-input">
-	                    </div> -->
+		                    <div class="form-group">
+		                      <label for="email">Email Address</label>
+		                      <input class="form-control" name="profile[email]" id="email" type="text" readonly value=<%= @profile.email %>>
+		                    </div>
+			                <div class="row">
+			                  	<div class="form-group col-lg-4">
+			                      <label>First Name</label>
+		                      		<input class="form-control" name="profile[first_name]" id="first_name" type="text" readonly value=<%= @profile.first_name %>>
+				                </div>
+			                  	<div class="form-group col-lg-4">
+			                      <label>Middle Name</label>
+		                      	  <input class="form-control" name="profile[middle_name]" id="middle_name" type="text" readonly value=<%= @profile.middle_name %>>
+				                </div>
+			                  	<div class="form-group col-lg-4">
+			                      <label>Last Name</label>
+		                      	  <input class="form-control" name="profile[last_name]" id="last_name" type="text" readonly value=<%= @profile.last_name %>>
+				                </div>
+			                </div>	
+		                    <div class="form-group">
+		                      <label for="phoneNumber">Phone Number</label>
+		                      <input class="form-control" name="profile[phone_number]" id="phone_number" type="text" readonly value=<%= @profile.phone_number %>>
+		                    </div>
+		                    <div class="form-group">
+		                      <label for="gender">Gender</label>
+		                      <input class="form-control" name="profile[gender]" id="gender" type="text" readonly value=<%= @profile.gender %>>
+		                    </div>         
+			                <div class="row">  
+			                    <div class="form-group col-lg-6">
+			                      <label for="phoneNumber">Language</label>
+			                      <input class="form-control" name="profile[language]" id="language" type="text" readonly value=<%= @profile.language %>>
+			                    </div>
+			                    <div class="form-group col-lg-6">
+			                      <label for="phoneNumber">Country</label>
+			                      <input class="form-control" name="profile[country]" id="country" type="text" readonly value=<%= @profile.country %>>
+			                    </div>
+			                </div> 
+			                
+		                    <div class="form-group">
+		                      <label>Interested Categories</label>
+		                      <br>
+		                      	<% interests = ['Home, Garden, Pets & Tools','Books & Audible','Electronics, Computers & Office','Automotive & Industrial','Toys, Kids, Baby & STEM','Clothing, Shoes & Jewelry','Sports & Outdoors','Music, Movies & TV Shows']%>
+		  						<div class="row">
+			  						<% interests.each do |t|%>
+				  						<div class="col-md-3">
+				  							<% isChecked = false %>
+				  							<% if @profile.interest and  t.in?( @profile.interest) %>
+				  								<% isChecked = true %>
+				  							<%end%>
+			                          		<div class="form-check form-check-inline mr-1">
+											    <input type="checkbox" disabled="" class="form-check-input" <%if isChecked%> checked= "checked"<%end%> >
+						  						<label><%= t%></label>
+						  					</div>
+				  						</div>
+			  						<%end%>
+				  				</div>
+		                    </div> 
+	                    </form>
 	                    
 	                    
-                    </form>
-                    
-                    
-                    <button class="btn btn-primary pull-right"  ><%= link_to "Edit Profile", edit_profile_path, method: :get, style: "color: white" %></button>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->	
-            <!-- 
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-header">
-                    <i class="fa fa-edit"></i>Password</div>
-                  <div class="card-body">
-                    <form class="form-horizontal">
-                    	<div class="form-group">
-							<label for="password">Original Password</label>
-							<input class="form-control" type="password" name="account[oldpassword]" id="password" placeholder="********" required />
-						</div>
-                    	<div class="form-group">
-							<label for="password">New Password</label>
-							<input class="form-control" type="password" name="account[password]" id="password" placeholder="********" required />
-						</div>
-							
-						<div class="form-group">
-							<label for="passwordRepeat">Repeat New Password</label>
-							<input class="form-control" type="password" name="account[password_confirmation]" id="password" placeholder="********" required />
-						</div>
-                      <div class="form-actions">
-                        <button class="btn btn-primary pull-right" type="submit">Change Password</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+	                    <button class="btn btn-primary pull-right"  ><%= link_to "Edit Profile", edit_profile_path, method: :get, style: "color: white" %></button>
+	                    
+	                    
+	                  </div>
+	                </div>
+	              </div>
+	              <!-- /.col-->
+	            </div>
+	            <!-- /.row-->	
             
-            
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-header">
-                    <i class="fa fa-edit"></i>Security Options</div>
-                  <div class="card-body">
-                    <form class="form-horizontal">
-                    	<div class="form-group">
-                        <label class="col-form-label">Allow below groups to see your items</label>
-                        <div class="col-form-label">
-                          <div class="form-check checkbox">
-                            <input class="form-check-input" id="check1" type="checkbox" value=" " checked>
-                            <label class="form-check-label" for="check1">Friends</label>
-                          </div>
-                          <div class="form-check checkbox">
-                            <input class="form-check-input" id="check2" type="checkbox" value="" checked>
-                            <label class="form-check-label" for="check2">Registered Users</label>
-                          </div>
-                          <div class="form-check checkbox">
-                            <input class="form-check-input" id="check3" type="checkbox" value="">
-                            <label class="form-check-label" for="check3">Visitors</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-actions">
-                        <button class="btn btn-primary pull-right" type="submit">Save changes</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->	
-            
-            
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="card">
-							<div class="card-header">
-								<div class="row">
-									<div class="col-lg-4 col-sm-6 col-xs-6">
-										<strong class="text-muted">Profile</strong><br>
-									</div>
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="row">
-									<div class="col-lg-8">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="progress-group">
-													<div class="progress-group-header">
-														<i class="cui-user progress-group-icon"></i>
-														<div>Male</div>
-														<div class="ml-auto font-weight-bold">43%</div>
-													</div>
-													<div class="progress-group-bars">
-														<div class="progress progress-xs">
-															<div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43"
-															 aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-12">
-												<strong>User Name: </strong>
-												<a>John Doe</a>
-												<button type="button" class="btn btn-link">Edit</button>												
-											</div>
-											<br>
-											<div class="col-lg-12">
-												<strong>Email Address: </strong>
-												<a><%= @account.email %></a>
-												<button type="button" class="btn btn-link">Edit</button>												
-											</div>
-											<br>
-											<div class="col-lg-12">
-												<strong>Phone Number: </strong>
-												<a>+1 (647)123-45678</a>
-												<button type="button" class="btn btn-link">Edit</button>												
-											</div>
-											<br>
-											<div class="col-lg-12">
-												<strong>Password: </strong>
-												<a>********</a>
-												<button type="button" class="btn btn-link">Edit</button>												
-											</div>
-											<br>
-											<div class="col-lg-12">
-												<strong>Address: </strong>
-												<a>#1, 123 Avenue, Toronto, ON, Canada A1B 2C3</a>
-												<button type="button" class="btn btn-link">Edit</button>												
-											</div>
-											<br>
-											<div class="col-lg-12">
-												<strong>Interested Categories: </strong>
-												<br>
-												<div class="row">
-													<div class="col-lg-1"> </div>
-													<div class="col-lg-11">
-														<button type="button" class="btn btn-info"><span class="cui-contrast"></span> Toys</button>
-														<button type="button" class="btn btn-warning"><span class="cui-contrast"></span> Fashion</button>
-														<button type="button" class="btn btn-success"><span class="cui-contrast"></span> Garden</button>												
-														<button type="button" class="btn">
-													  		<i class="cui-plus">+</i>
-														</button>	
-													</div>
-												</div>							
-											</div>
-											<br>			
-											<div class="col-lg-12">
-												<strong>Third-Party Links: </strong>
-												<br>
-												<div class="row">
-													<div class="col-lg-1"> </div>
-													<div class="col-lg-11">
-														<button type="button" class="btn btn-brand btn-facebook">
-														  <i class="fa fa-facebook"></i>
-														</button>
-														<button type="button" class="btn btn-brand btn-twitter">
-														  <i class="fa fa-twitter"></i>
-														</button>
-														<button type="button" class="btn btn-brand btn-instagram">
-														  <i class="fa fa-instagram"></i>
-														</button>
-														<button type="button" class="btn btn-brand btn-google">
-														  <i class="fa fa-google"></i>
-														</button>
-														<button type="button" class="btn">
-														  <i class="cui-plus">+</i>
-														</button>								
-													</div>					
-												</div>
-											</div>		
-											<br>		
-										</div>
-										<hr>
-										<div class="row">
-											<div class="col-lg-12 ">
-												<strong>Security Options: </strong>
-											</div>
-										</div>
-										<br>
-										<div class="row">
-											<div class="col-lg-1"> </div>
-											<div class="col-lg-11">
-												<a>Allow below groups to see your items:</a> 				
-											</div>					
-										</div>
-										<br>
-										<div class="row">
-											<div class="col-lg-1"></div>		
-											<div class="col-lg-11">
-												<label  class="switch switch-sm switch-pill switch-info">
-												  <input type="checkbox" class="switch-input" checked>
-												  <span class="switch-slider"></span>
-												</label>	
-												<label>Friends</label>	
-												&nbsp&nbsp&nbsp
-												<label  class="switch switch-sm switch-pill switch-info">
-												  <input type="checkbox" class="switch-input" checked>
-												  <span class="switch-slider"></span>
-												</label>	
-												<label>Registered Users</label>	
-												&nbsp&nbsp&nbsp
-												<label  class="switch switch-sm switch-pill switch-info">
-												  <input type="checkbox" class="switch-input" checked>
-												  <span class="switch-slider"></span>
-												</label>	
-												<label>Visitors</label>	
-											</div>		
-										</div>
-									</div>
-									
-									<div class="col-lg-4 text-center" >
-										<div class="col-12 text-center">
-											<%= image_tag @profile.avatar, :size => "75x75" , :class => "img-thumbnail"%>
-											<br>
-											<button type="button" class="btn btn-link">Change Profile Picture</button>		
-											
-										</div>
-										
-									</div>
-									
-									
-								</div>
-							</div>
-						</div>
-				</div>
-				
 			</div>
 			
 		</main>
@@ -464,50 +171,8 @@
 				        </div>
 				      </div>
 				    </div>
-			      
-			    <!-- </div> -->
-				<!-- <div class="row"> -->
-				    <!-- <div class="container">
-				      <div class="row justify-content-center">
-				        <div class="col-md-6">
-				          <div class="clearfix">
-				            <span>
-			            	<h5 class="pt-3">To edit your own account's profile, click <%= link_to "HERE", url: edit_profile_path, id: @account.id %> </h5>
-			            </span>
-				          </div>
-				        </div>
-				      </div>
-				      
-				    </div> -->
-				    
-				<!-- </div> -->
 			</div>
-			<!-- <div class = "app flex-row align-items-center">
-				<div class="container">
-			      <div class="row justify-content-center">
-			        <div class="col-md-6">
-			          <div class="clearfix">
-			            <span>
-		            	<h5 class="pt-3">To edit your own accout's profile, click <%= link_to "HERE", url: edit_profile_path, id: @account.id %> </h5>
-		            </span>
-			          </div>
-			        </div>
-			      </div>
-			      
-			    </div>
-			</div> -->
-			<!-- <div class = "app flex-row align-items-center">
-				<div class="row justify-content-center">
-		            <span>
-		            	<h5 class="pt-3">To edit your own accout's profile, click <li><%= link_to "HERE", url: edit_profile_path, id: @account.id %></li> </h5>
-		            </span>
-			    </div>
-			</div> -->
-			
 		<% end %>
-	<footer class="app-footer" id="footerModule"></footer>
-	
-
 
 
 <!-- CoreUI and other third-party plugins (js files) -->
