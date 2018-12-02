@@ -117,6 +117,9 @@ $(document).ready(function() {
     })
     .then(data => {
 			console.log(data)
+			document.getElementById("current_city").innerText = data.given_city
+			document.getElementById("current_province").innerText = data.given_province
+			document.getElementById("current_country").innerText = data.given_country
       if (data.result_userEmail.result !== null) {
         if (data.result_userEmail.result.length !== 0) {
           user_render(data.result_userEmail);
@@ -192,7 +195,7 @@ let item_render = itemList => {
         itemList.result_itemISBN[i].name +
         '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
-        itemList.result_itemISBN[i].ownerPhoto +
+        itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_itemISBN[i].ownerID] +
         '"/>&nbsp; <label class="text-muted">' +
         itemList.result_itemISBN[i].ownerName +
         "</label>" +
@@ -230,7 +233,7 @@ let item_render = itemList => {
         itemList.result_itemNameBrand[i].name +
         '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
-        itemList.result_itemNameBrand[i].ownerPhoto +
+        itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_itemNameBrand[i].ownerID] +
         '"/>&nbsp; <label class="text-muted">' +
         itemList.result_itemNameBrand[i].ownerName +
         "</label>" +
@@ -270,7 +273,7 @@ let item_render = itemList => {
           itemList.result_correctedKeyword[i].name +
           '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
           '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
-          itemList.result_correctedKeyword[i].ownerPhoto +
+          itemList.search_byItemNameAndBrand_lenderPhoto[itemList.result_correctedKeyword[i].ownerID] +
           '"/>&nbsp; <label class="text-muted">' +
           itemList.result_correctedKeyword[i].ownerName +
           "</label>" +
