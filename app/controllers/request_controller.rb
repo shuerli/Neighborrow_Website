@@ -170,8 +170,22 @@ class RequestController < ApplicationController
 		@request.rejected_reason = params[:rejected_reason]
         @request.time_start = params[:time_start]
         @request.time_end = params[:time_end]
+        item = Item.find_by(id: params[:item_id])
         
-        if (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
+        #check if borrower rate is high enough
+        #borrower rate = all feedback_to_borrowers where the requests have (borrower = current user)
+
+        current_rating = ActiveRecord::Base.connection.exec_query("SELECT AVG(Feedback_to_borrowers.rate) AS rate FROM Feedback_to_borrowers, Requests, Accounts WHERE Accounts.id = #{current_user.id} AND Requests.borrower = Accounts.email AND Requests.id = Feedback_to_borrowers.request_id;");
+        
+        puts (current_rating[0]["rate"])
+        puts item.rate_level
+        puts "!!!!!!!!!"
+        
+        if (current_rating[0]["rate"]== nil or (current_rating[0]["rate"] < item.rate_level))
+            
+            flash[:error] = "Sorry... Your rating is not high enough for this item."
+            redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
+        elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
             flash[:error] = "Cannot submit multiple requests for an item!"
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)

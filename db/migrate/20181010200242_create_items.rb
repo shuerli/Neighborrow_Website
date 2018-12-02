@@ -12,7 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
             #t.timestamp :time_pickup, array: true, null: false
 			t.text :name, null: false
 			t.text :photo_url
-			t.text :description, null: false
+			t.text :description
 			t.text :brand
 			t.text :feature, array: true
 			t.text :amazon_id
