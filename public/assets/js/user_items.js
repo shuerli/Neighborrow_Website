@@ -47,7 +47,7 @@ $(document).ready(function () {
                                               <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px;">\
                                             </div>\
                                             <div class="col-md-8">\
-                                              <h4 id="item_name">' + data.result[i].name + ' </h4>\
+                                              <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
                                               <small>\
                                               <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
                                               </small>\
@@ -88,7 +88,7 @@ $(document).ready(function () {
                                               <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px;">\
                                             </div>\
                                             <div class="col-md-8">\
-                                              <h4 id="item_name">' + data.result[i].name + ' </h4>\
+                                              <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
                                               <small>\
                                               <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
                                               </small>\

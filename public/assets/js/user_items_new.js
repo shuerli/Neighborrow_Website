@@ -6,16 +6,17 @@ $(document).ready(function(){
     url: "/category/departments",
     success: function (data) {
         allDepartments = data.result;
-        var i;
-        for(i = 0; i < allDepartments.length; i++){
+        var departmentList = document.getElementById('department-input');
+        for(var i = 0; i < allDepartments.length; i++){
             var opt = document.createElement("option");
             opt.setAttribute("value", allDepartments[i].department);
             opt.innerText = '' +allDepartments[i].department;
-            document.getElementById('department-input').appendChild(opt);
+            departmentList.appendChild(opt);
         }
+        departmentList.value = 'Miscellaneous';
         var opt = document.createElement("option");
-        opt.setAttribute("value", 'Other');
-        opt.innerText = 'Other';
+        opt.setAttribute("value", 'Miscellaneous');
+        opt.innerText = 'Miscellaneous';
         document.getElementById('category-input').appendChild(opt);
     }
   });
