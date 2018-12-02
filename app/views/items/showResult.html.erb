@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-md-8">
-          <div class="card" style="cursor:pointer" id="user_card">
+          <div class="card" style="cursor:pointer" id="user_card" onclick="">
             <div class="card-body" style="padding:1%">
               <div class="row">
                 <div class="col-md-2">
@@ -54,22 +54,22 @@
                     class="img-thumbnail"
                     id="suggested_user_photo"
                     style="width:60px; margin-left:10px;"
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/fb/M%C3%BCnze_Niederl%C3%A4ndische_Ostindien_Companie.jpg"
+                    src="#"
                   />
                 </div>
                 <div class="col-md-8">
-                  <strong id="suggested_user_name">Kwanstyle</strong
+                  <strong id="suggested_user_name"></strong
                   >&nbsp;&nbsp;<a id="suggested_user_gender"
                     ><i class="fa fa-mars text-primary" aria-hidden="true"></i
                   ></a>
                   <br />
                   <span class="badge badge-info"
                     >Rate on Borrowing - <i class="fa fa-star"></i>
-                    <a id="suggest_user_borrow_rate">4.5</a></span
+                    <a id="suggest_user_borrow_rate"></a></span
                   >
                   &nbsp;&nbsp;<span class="badge badge-info"
                     >Rate on Lending - <i class="fa fa-star"></i>
-                    <a id="suggest_user_lend_rate">4.5</a></span
+                    <a id="suggest_user_lend_rate"></a></span
                   >
                 </div>
               </div>
@@ -211,7 +211,7 @@
         <div class="col-md-12">
           <hr />
           <span
-            >No results found for <a id="original_keyword">Haha</a>, but we
+            >No item named "<a id="original_keyword">Haha</a>" found, but we
             found <a id="corrected_keyword_results_count"></a> result(s) found for
             <ins id="corrected_keyword" class="text-warning">Haha</ins></span
           >
@@ -220,7 +220,7 @@
 			</div>
 			<div class="row" style="margin-top:20px; margin-bottom:20px" id="no_results_section">
 				<div class="col-12 text-center">
-						<h4 class="text-muted">No results found found for "<a id="keyword_no_results"></a>"</h4>
+						<h4 class="text-muted">No item named "<a id="keyword_no_results"></a>" found</h4>
 				</div>
 			</div>
       <hr />

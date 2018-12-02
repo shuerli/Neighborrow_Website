@@ -105,7 +105,7 @@ Rails.application.routes.draw do
       get   '/team',  to:'pages#team'
       get '/Error' => 'pages#error'
 
-      get '/sitemap' => 'pages#sitemap'
+      get '/sitemap' => 'sitemap#sitemap'
   
   
       # For file transfer
