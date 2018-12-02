@@ -142,7 +142,7 @@ categories = Category.create([
 items = Item.create!([
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/Assasin.jpeg', 
+					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
@@ -153,7 +153,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/civ6.jpeg', 
+					photo_url:'/assets/img/Video Games/civ6.jpeg', 
 					condition:'Like New', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
@@ -165,7 +165,7 @@ items = Item.create!([
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
 					status:'lent',
-					photo_url:'/assets/Video Games/GoW4.jpeg', 
+					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
 					condition:'Like New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
@@ -176,7 +176,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/GTA5.jpeg', 
+					photo_url:'/assets/img/Video Games/GTA5.jpeg', 
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
@@ -187,7 +187,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F1%2F1b%2FMonster_Hunter_World_cover_art.jpg%2F220px-Monster_Hunter_World_cover_art.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMonster_Hunter%3A_World&docid=gGLGA39-G7QjqM&tbnid=uOdx0fMPXSpmEM%3A&vet=10ahUKEwjJsp_xuYDfAhUlzIMKHSZNDz8QMwhXKAEwAQ..i&w=220&h=220&client=safari&bih=837&biw=1440&q=monsterhunter%20world&ved=0ahUKEwjJsp_xuYDfAhUlzIMKHSZNDz8QMwhXKAEwAQ&iact=mrc&uact=8', 
+					photo_url:'/assets/img/Video Games/MHWPC.jpeg', 
 					condition:'Brand New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
@@ -198,7 +198,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/PVZGW2PC.jpeg', 
+					photo_url:'/assets/img/Video Games/PVZGW2PC.jpeg', 
 					condition:'Very Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
