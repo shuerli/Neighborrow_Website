@@ -1,5 +1,75 @@
 <!-- Universal Header -->
+<style>
+		.ui-autocomplete {
+		  position: absolute;
+		  z-index: 1030 !important;
+		}
+	  
+		/***** Google Map Autocomplete****/
+		#item-searchbar-main-location,
+		#controls {
+		  position: relative;
+		  width: 480px;
+		  z-index: 1051 !important;
+		}
+		#autocomplete {
+		  position: absolute;
+		  top: 0px;
+		  left: 0px;
+		  width: 99%;
+		  z-index: 1051 !important;
+		}
+		.label {
+		  text-align: right;
+		  font-weight: bold;
+		  width: 100px;
+		  color: #303030;
+		  z-index: 1051 !important;
+		}
+		#address {
+		  border: 1px solid #000090;
+		  background-color: #f0f0ff;
+		  width: 480px;
+		  padding-right: 2px;
+		  z-index: 1051 !important;
+		}
+		#address td {
+		  font-size: 10pt;
+		  z-index: 1051 !important;
+		}
+		.field {
+		  width: 99%;
+		  z-index: 1051 !important;
+		}
+		.slimField {
+		  width: 80px;
+		  z-index: 1051 !important;
+		}
+		.wideField {
+		  width: 200px;
+		  z-index: 1051 !important;
+		}
+		#locationField {
+		  height: 20px;
+		  margin-bottom: 2px;
+		  z-index: 1051 !important;
+		}
+	  </style>
+	  <link
+      href="/vendors/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+	/>
+	<link
+	href="/vendors/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+/>
+	
 
+	
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 <div class="container">
     <a class="navbar-brand" href="/">LOGO</a>
@@ -10,13 +80,15 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             
-            <li class="nav-item">
+            <li class="nav-item" style="padding-left:-30px">
                 <div class="justify-content-md-center">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search" style="width: 600px;">
-                            
-                            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-                            </form>
+						<form class="form-inline my-2 my-lg-0">
+								<input class="form-control mr-sm-2" id="_header_location" type="text" placeholder="Location" aria-label="Search" style="width: 150px;">
+							
+								<input class="form-control mr-sm-2 " type="text" id="_header_searchbar" placeholder="Search for items which you're looking for" aria-label="Search" style="width: 600px;" onkeyup="searchbarAjax_trigger(this)">
+								
+								<button class="btn btn-info my-2 my-sm-0" type="submit" style="margin-left:-40px">Search</button>
+								</form>
                 </div>
             </li>
             
@@ -54,6 +126,15 @@
 </nav>
 
 <script>
+	  function initAutocomplete() {
+    var input = document.getElementById("_header_location");
+
+    var options = {
+      types: ["(cities)"]
+    };
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+
     function checkScroll(){
     var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
 
@@ -70,5 +151,54 @@
     $(window).on("scroll load resize", function(){
     checkScroll();
     });
+	}
+	
+
+
+	  let keywordList_cache = new Array();
+  $("#_header_searchbar").autocomplete({ source: keywordList_cache });
+
+  let searchbarAjax_trigger = ptr => {
+    if (ptr.value.length > 2) {
+	  fetch("/search/keyword_prompt?input=" + ptr.value).then(response => {
+		return response.json();
+	  }).then(
+		data => {
+			console.log(data)
+			if (data.result.length > 0) {
+          keywordList_cache = data.result.map(x => x.name);
+          $("#_header_searchbar").autocomplete("option", {
+            source: keywordList_cache
+          });
+        }
+		}
+	  )
+
     }
+  };
+  document
+    .getElementById("_header_searchbar")
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        let geo = $("#_header_location")
+          .val()
+          .split(", ");
+        window.location =
+          "/result?keyword=" +
+          $("#_header_searchbar").val() +
+          "&city=" +
+          geo[0] +
+          "&province=" +
+          geo[1] +
+          "&country=" +
+          geo[2];
+      }
+    });
 </script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnpp7FDgcbpfqNskhkAR_Y2E_uMitVXd0&libraries=places&callback=initAutocomplete"
+  async
+  defer
+></script>
