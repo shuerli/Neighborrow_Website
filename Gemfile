@@ -82,3 +82,5 @@ gem 'dropzonejs-rails'
 gem 'carrierwave'
 
 gem 'rails_admin', '~> 1.3'
+
+gem 'jquery-ui-rails'
