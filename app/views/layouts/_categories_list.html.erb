@@ -94,20 +94,21 @@
         <div class="row">
             <% departments = Department.all() %>
             <% departments.each do |dep| %>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <div class="card card-block">
-                    <%= link_to image_tag("cat#{dep.id}.jpg"), :class => 'cover' %>
+	            <div class="col-lg-3 col-sm-6 col-xs-12">
+	                <div class="card">
+	                    <%= link_to image_tag("cat#{dep.id}.jpg", style: "margin:0;height: 220px; width: 100%; max-width:100%"), :class => 'cover' %>
                         <div class="portfolio-over">
                             <div>
-                                <h2 class="card-title" style:"color:#004E64;">
+                                <h2  style:"color:black">
                                     <%= link_to "#{dep.name}", :action => 'index',
                                         :controller => 'items',:department => dep.name %>
                                 </h2>
                             </div>
-                        </div></a>
-                </div>
-            </div>
+                        </div>
+	                </div>
+	            </div>
             <% end %>
-    </div><!-- /.row -->
+	    </div><!-- /.row -->
+	</div>
 </div>
 </section>
