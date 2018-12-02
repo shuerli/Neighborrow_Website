@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
 			t.text :owner, null: false
 			t.text :status, null: false, default:'registered'
 			t.text :category_id, null: false
+			t.integer :address, null: false
 			t.text :condition, null: false
 			t.text :rate_level
 			#t.text :address_option, array: true, null: false
@@ -12,7 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
             #t.timestamp :time_pickup, array: true, null: false
 			t.text :name, null: false
 			t.text :photo_url
-			t.text :description, null: false
+			t.text :description
 			t.text :brand
 			t.text :feature, array: true
 			t.text :amazon_id

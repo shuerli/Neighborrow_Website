@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_12_01_204639) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "accounts", force: :cascade do |t|
     t.text "email", null: false
     t.text "role", null: false
@@ -115,13 +112,14 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
     t.text "owner", null: false
     t.text "status", default: "registered", null: false
     t.text "category_id", null: false
+    t.integer "address", null: false
     t.text "condition", null: false
     t.text "rate_level"
     t.datetime "time_start", null: false
     t.datetime "time_end", null: false
     t.text "name", null: false
     t.text "photo_url"
-    t.text "description", null: false
+    t.text "description"
     t.text "brand"
     t.text "feature"
     t.text "amazon_id"
@@ -153,6 +151,9 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
     t.text "twitter"
     t.text "avatar_url", null: false
     t.text "interest"
+    t.integer "add_credit"
+    t.integer "credit"
+    t.integer "withdraw_credit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -173,7 +174,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
   create_table "requests", force: :cascade do |t|
     t.integer "item_id", null: false
     t.text "borrower", null: false
-    t.integer "address"
     t.text "status", default: "pending"
     t.text "rejected_reason"
     t.datetime "time_start", null: false

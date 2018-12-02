@@ -230,9 +230,12 @@ class RequestController < ApplicationController
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
 
-			#lender_email = ActiveRecord::Base.connection.exec_query("SELECT Items.owner FROM Requests, Items WHERE Requests.id = "+params[:id]+" AND Requests.item_id = Items.id;")
-			#@account = Account.find_by(email: lender_email[0]["owner"])
+			query = "SELECT Items.owner FROM Requests, Items WHERE Requests.id = #{params[:id]} AND Requests.item_id = Items.id;"
+			lender_email = ActiveRecord::Base.connection.exec_query(query)
+			@account_sub = Account.find_by(email: lender_email[0]["owner"])
+
 			AccountMailer.status_update(@account).deliver
+			AccountMailer.status_update(@account_sub).deliver
 			render :json => {:status => 200}
 		when 'reject'
 			entry = Request.find(params[:id])
