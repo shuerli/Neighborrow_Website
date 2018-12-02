@@ -176,9 +176,9 @@ class RequestController < ApplicationController
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
 			################################### send email to lender ###################################
-			#lender_email = ActiveRecord::Base.connection.exec_query("SELECT Items.owner FROM Requests, Items WHERE Requests.id = "+params[:id]+" AND Requests.item_id = Items.id;")
-			#@account = Account.find_by(email: lender_email[0]["owner"])
-			#AccountMailer.status_update(@account).deliver
+			lender_email = ActiveRecord::Base.connection.exec_query("SELECT Items.owner FROM Requests, Items WHERE Requests.id = "+params[:id]+" AND Requests.item_id = Items.id;")
+			@account = Account.find_by(email: lender_email[0]["owner"])
+			AccountMailer.status_update(@account).deliver
 			###################################       END    ###################################
             redirect_to :action => "complete", :id => @request.id
 		else
