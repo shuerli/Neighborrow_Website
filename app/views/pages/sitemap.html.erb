@@ -143,20 +143,24 @@ nav ul {
 		            <ul class="third">
 		              <li><a href="/login">Log In</a></li>
 		              <li><a href="/signup">Sign Up</a></li>
-		              <li><a href="/user">User Dashboard</a></li>
-		              <li><a href="/profiles/<%=current_user.id%>">Profile</a></li>
-		              <li><a href="/profiles/<%=current_user.id%>/edit">Change Profile</a></li>
-		              <li><a href="/user">Password</a></li>
+		              <% if logged_in? %>
+			              <li><a href="/user">User Dashboard</a></li>
+			              <li><a href="/profiles/<%=current_user.id%>">Profile</a></li>
+			              <li><a href="/profiles/<%=current_user.id%>/edit">Change Profile</a></li>
+			              <li><a href="/user">Password</a></li>
+		              <%end%>
 		            </ul>
 		          </li>
-		          <li><a>User Items</a>
-		            <ul class="third">
-		              <li><a href="/user_item_all">User Items</a></li>
-		              <li><a href="/request_borrowed">Borrowed Items</a></li>
-		              <li><a href="/request_lended">Lended Items</a></li>
-		              <li><a href="/user_items/new">Add New Item</a></li>
-		            </ul>
-		          </li>
+		          <% if logged_in? %>
+			          <li><a>User Items</a>
+			            <ul class="third">
+			              <li><a href="/user_item">User Items</a></li>
+			              <li><a href="/request_borrowed">Borrowed Items</a></li>
+			              <li><a href="/request_lended">Lended Items</a></li>
+			              <li><a href="/user_items/new">Add New Item</a></li>
+			            </ul>
+			          </li>
+		          <%end%>
 		          
 		          
 		        </ul>
