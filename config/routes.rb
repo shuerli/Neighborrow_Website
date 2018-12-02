@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 	get '/result' => 'items#showResult'
 	get '/result_api' => 'items#generateResult'	
 
+  get '/profiles/:id/order' => 'profiles#order'
   resources:profiles
   resources:public_profiles
 
@@ -103,6 +104,8 @@ Rails.application.routes.draw do
       get   '/FAQ',  to:'pages#FAQ'
       get   '/team',  to:'pages#team'
       get '/Error' => 'pages#error'
+
+      get '/sitemap' => 'pages#sitemap'
   
   
       # For file transfer
