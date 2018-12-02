@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
         @account = Account.new(account_params)    
         
         email = account_params[:email]
-          
+        
         profileparams = Hash.new
         profileparams[:email] = email
         username = email.split('@')
