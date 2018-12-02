@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-validates :owner, :condition, :time_start, :time_end, :name, :description, :presence => true
+validates :owner, :condition, :time_start, :time_end, :name, :presence => true
 end

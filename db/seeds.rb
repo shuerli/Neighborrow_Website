@@ -148,7 +148,7 @@ items = Item.create!([
 					time_start:'2018-12-25 00:00:00', 
 					time_end: '2019-01-15 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
-					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.'
+					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
 					brand:'Ubisoft'},
 
 					{category_id:'2',
@@ -187,7 +187,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/MHWPC.jpeg', 
+					photo_url:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F1%2F1b%2FMonster_Hunter_World_cover_art.jpg%2F220px-Monster_Hunter_World_cover_art.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMonster_Hunter%3A_World&docid=gGLGA39-G7QjqM&tbnid=uOdx0fMPXSpmEM%3A&vet=10ahUKEwjJsp_xuYDfAhUlzIMKHSZNDz8QMwhXKAEwAQ..i&w=220&h=220&client=safari&bih=837&biw=1440&q=monsterhunter%20world&ved=0ahUKEwjJsp_xuYDfAhUlzIMKHSZNDz8QMwhXKAEwAQ&iact=mrc&uact=8', 
 					condition:'Brand New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
