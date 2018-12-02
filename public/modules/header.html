@@ -99,7 +99,7 @@
     id="item-searchbar-main"
     onkeyup="searchbarAjax_trigger(this)"
   />
-  <button class="btn btn-primary" style="margin-left:-40px">
+  <button class="btn btn-primary" style="margin-left:-40px" onclick="search_main()">
     <i class="fa fa-search"></i>
   </button>
 </div>
@@ -184,7 +184,22 @@
           "&country=" +
           geo[2];
       }
-    });
+		});
+		
+		let search_main = ()=>{
+			let geo = $("#item-searchbar-main-location")
+          .val()
+          .split(", ");
+        window.location =
+          "/result?keyword=" +
+          $("#item-searchbar-main").val() +
+          "&city=" +
+          geo[0] +
+          "&province=" +
+          geo[1] +
+          "&country=" +
+          geo[2];
+		}
 </script>
 
 <script

@@ -196,22 +196,9 @@ class RequestController < ApplicationController
 			entry = Request.find(params[:id])
 			entry.update( :status => 'accepted')
 			##### email sent to borrower for status update ######
-
-			#Reading the email body file as erb instead of plain text or html
-			email_body = ERB.new(File.read('./app/views/mail_texts/welcome_email.html.erb')).result(binding)
-        
-			#Compose welcome_email
-			mail = Mail.new do
-				from    'zeyu.feng@mail.utoronto.ca'
-				to      account.email
-				subject 'Welcome to Neighborrow!'
-				content_type 'text/html; charset=UTF-8'
-				body    email_body
-			end
-		   
-			mail.delivery_method :sendmail
-			#mail.delivery_method :logger
-			mail.deliver
+            ##### need @account to be defined#####
+            AccountMailer.status_update(@account).deliver
+    
 
 			##### end #####
 			render :json => {:status => 200}
@@ -219,11 +206,13 @@ class RequestController < ApplicationController
 			entry = Request.find(params[:id])
 			entry.update( :status => 'cancelled')
 			##### email sent to borrower for status update ######
+            AccountMailer.status_update(@account).deliver
 			render :json => {:status => 200}
 		when 'reject'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'rejected', :rejected_reason => params[:reason])
 			##### email sent to borrower for status update ######
+            AccountMailer.status_update(@account).deliver
 			render :json => {:status => 200}
 		when 'complete'
 			entry = Request.find(params[:id])

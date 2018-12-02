@@ -59,10 +59,6 @@
       href="/vendors/font-awesome/css/font-awesome.min.css"
       rel="stylesheet"
 	/>
-	<link
-	href="/vendors/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet"
-/>
 <link
   rel="stylesheet"
   href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -82,13 +78,13 @@
             
             <li class="nav-item" style="padding-left:-30px">
                 <div class="justify-content-md-center">
-						<form class="form-inline my-2 my-lg-0">
+						<div class="form-inline my-2 my-lg-0">
 								<input class="form-control mr-sm-2" id="_header_location" type="text" placeholder="Location" aria-label="Search" style="width: 150px;">
 							
 								<input class="form-control mr-sm-2 " type="text" id="_header_searchbar" placeholder="Search for items which you're looking for" aria-label="Search" style="width: 600px;" onkeyup="searchbarAjax_trigger(this)">
 								
-								<button class="btn btn-info my-2 my-sm-0" type="submit" style="margin-left:-40px">Search</button>
-								</form>
+								<button class="btn btn-info my-2 my-sm-0" id="_header_searchSubmit" onclick="submit_search()">Search</button>
+						</div>
                 </div>
             </li>
             
@@ -99,7 +95,8 @@
 			  <a class="btn dropdown-toggle" style = "background-color: Transparent;border: none;" href="#" data-toggle="dropdown">
 			    <%=Profile.find_by_email(current_user.email).display_name%> <b class="caret"></b>
 			  </a>
-		        <ul class="dropdown-menu">
+						<ul class="dropdown-menu">
+						<li class="dropdown-item"><a href="/user">Dashboard</a></li>
 		            <li class="dropdown-item"><%= link_to "Profile", controller: "profiles", action: "update", id:current_user.id %></li>
 		            <li class="dropdown-item"><%= link_to "Change Password", edit_account_path(current_user.id), method: :get, id:current_user.id %></li>
 		            <li class="dropdown-item"><%= link_to "Settings", '#' %></li>
@@ -164,12 +161,14 @@
 		return response.json();
 	  }).then(
 		data => {
-			console.log(data)
 			if (data.result.length > 0) {
-          keywordList_cache = data.result.map(x => x.name);
+          
+					(function(){
+						keywordList_cache = data.result.map(x => x.name);
           $("#_header_searchbar").autocomplete("option", {
             source: keywordList_cache
-          });
+					});
+})();
         }
 		}
 	  )
@@ -194,7 +193,22 @@
           "&country=" +
           geo[2];
       }
-    });
+		});
+		
+		let submit_search = ()=>{
+			let geo = $("#_header_location")
+          .val()
+          .split(", ");
+        window.location =
+          "/result?keyword=" +
+          $("#_header_searchbar").val() +
+          "&city=" +
+          geo[0] +
+          "&province=" +
+          geo[1] +
+          "&country=" +
+          geo[2];
+		}
 </script>
 
 <script
