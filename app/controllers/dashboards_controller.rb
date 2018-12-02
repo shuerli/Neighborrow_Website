@@ -4,6 +4,9 @@ class DashboardsController < ApplicationController
 	end
 
 	def user
+		if !current_user
+			redirect_to "/login"
+		end
 	end
 
 	def show_report
