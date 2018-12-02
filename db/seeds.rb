@@ -30,8 +30,9 @@ accounts = Account.create([
                           {id:7, email:'geling.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
                           {id:8, email:'zikevin.wang@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
                           {id:9, email:'da.fu@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
-                          {id:10, email:'shuer.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
+                          {id:10, email:'shuer.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345678', salt:'43jhisgdbn', status:'active'},
                           {id:11, email:'qingqing.zhuo@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
+                          
                           ])
 
 
@@ -187,7 +188,14 @@ items = Item.create!([
 		{item_id:9, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 		{item_id:7, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 		{item_id:8, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
+		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              
+                              {item_id:7, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              {item_id:8, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              {item_id:9, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              {item_id:7, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              {item_id:8, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+                              {item_id:9, borrower:'shuer.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
 	])
 
 
@@ -205,7 +213,12 @@ items = Item.create!([
 	feedbackToBorrowers = FeedbackToBorrower.create([
 		{request_id:1, rate:4, credit:4, comment:'good'},
 		{request_id:8, rate:4, credit:4, comment:'good 2'},
-		{request_id:12, rate:5, credit:4}
+		{request_id:12, rate:5, credit:4},
+        {request_id:17, rate:4, credit:4, comment:'good'},
+        {request_id:20, rate:4, credit:4, comment:'good'},
+        {request_id:21, rate:4, credit:4, comment:'good 2'},
+        {request_id:22, rate:5, credit:4},
+
 	])
 
 
