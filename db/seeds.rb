@@ -141,6 +141,7 @@ categories = Category.create([
 
 items = Item.create!([
 					{category_id:'2',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
 					condition:'Good', 
@@ -152,6 +153,7 @@ items = Item.create!([
 					brand:'Ubisoft'},
 
 					{category_id:'2',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/civ6.jpeg', 
 					condition:'Like New', 
@@ -163,6 +165,7 @@ items = Item.create!([
 					brand:'2K Games'},
 
 					{category_id:'2',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					status:'lent',
 					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
@@ -175,6 +178,7 @@ items = Item.create!([
 					brand:'Microsoft'},
 
 					{category_id:'2',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/GTA5.jpeg', 
 					condition:'Good', 
@@ -186,6 +190,7 @@ items = Item.create!([
 					brand:'Rock Star'},
 
 					{category_id:'2',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/MHWPC.jpeg', 
 					condition:'Brand New', 
@@ -197,6 +202,7 @@ items = Item.create!([
 					brand:'Capcom'},
 
 					{category_id:'2',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/PVZGW2PC.jpeg', 
 					condition:'Very Good', 
@@ -208,6 +214,7 @@ items = Item.create!([
 					
 
 					{category_id:'3',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/PVZGW2PS4.jpeg', 
 					condition:'Very Good', 
@@ -219,6 +226,7 @@ items = Item.create!([
 					brand:'EA'},
 
 					{category_id:'3',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/Tokiden2.jpeg', 
 					condition:'Good', 
@@ -230,6 +238,7 @@ items = Item.create!([
 					brand:'KoeiTecmo'},
 
 					{category_id:'3',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/gbasp3ds.jpeg', 
 					condition:'Good', 
@@ -241,6 +250,7 @@ items = Item.create!([
 					brand:'Nintendo'},
 
 					{category_id:'3',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/GBC.jpeg', 
 					condition:'Adequate', 
@@ -252,6 +262,7 @@ items = Item.create!([
 					brand:'Nintendo'},
 
 					{category_id:'4',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/Xbox360motion.jpeg', 
 					condition:'Very Good', 
@@ -263,6 +274,7 @@ items = Item.create!([
 					brand:'Microsoft'},
 
 					{category_id:'4',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/SwitchPro.jpeg', 
 					condition:'Good', 
@@ -273,6 +285,7 @@ items = Item.create!([
 					brand:'Nintendo'},
 					
 					{category_id:'4',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/PS4Controller.jpeg', 
 					condition:'Very Good', 
@@ -284,6 +297,7 @@ items = Item.create!([
 					brand:'Sony'},
 
 					{category_id:'5',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/1styear.jpeg', 
 					condition:'Defective', 
@@ -295,6 +309,7 @@ items = Item.create!([
 					},
 
 					{category_id:'5',
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/algo.jpeg', 
 					condition:'Like New', 
@@ -306,6 +321,7 @@ items = Item.create!([
 					},
 
 					{category_id:'5',
+					address:1,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/chinese.jpeg', 
 					condition:'Adequate', 
@@ -317,6 +333,7 @@ items = Item.create!([
 					},
 
 					{category_id:'5',
+					address:5,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/medphy.jpeg', 
 					condition:'Very Good', 
@@ -427,24 +444,24 @@ items = Item.create!([
                     
 
 requests = Request.create([
-		{item_id:1, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:4, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:5, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:6, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:1, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:4, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:5, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:6, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:1, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 		
-		{item_id:1, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 
-		{item_id:7, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:7, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
+		{item_id:7, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:7, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
 	])
 
 
