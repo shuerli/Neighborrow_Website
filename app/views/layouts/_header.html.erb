@@ -95,7 +95,8 @@
 			  <a class="btn dropdown-toggle" style = "background-color: Transparent;border: none;" href="#" data-toggle="dropdown">
 			    <%=Profile.find_by_email(current_user.email).display_name%> <b class="caret"></b>
 			  </a>
-		        <ul class="dropdown-menu">
+						<ul class="dropdown-menu">
+						<li class="dropdown-item"><a href="/user">Dashboard</a></li>
 		            <li class="dropdown-item"><%= link_to "Profile", controller: "profiles", action: "update", id:current_user.id %></li>
 		            <li class="dropdown-item"><%= link_to "Change Password", edit_account_path(current_user.id), method: :get, id:current_user.id %></li>
 		            <li class="dropdown-item"><%= link_to "Settings", '#' %></li>
