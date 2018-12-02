@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         
         document.getElementById('item-img').src = itemInfo.photo_url;
-        document.getElementById('item-name-field').innerText = itemInfo.name;
+        document.getElementById('item-name-field').value = itemInfo.name;
 
         
         $.ajax({
@@ -17,24 +17,24 @@ $(document).ready(function () {
             url: "/categories/"+itemInfo.category_id,
             success: function (data) {
                 categoryInfo = data.result;
-                document.getElementById('department-field').innerText = categoryInfo.department;
-                document.getElementById('category-field').innerText = categoryInfo.name;
+                document.getElementById('department-field').value = categoryInfo.department;
+                document.getElementById('category-field').value = categoryInfo.name;
             }
         });
 
         if(itemInfo.brand == null){
-            document.getElementById('brand-field').innerText = ' - '
+            document.getElementById('brand-field').value = ' - '
         }
         else{
-            document.getElementById('brand-field').innerText = itemInfo.brand;
+            document.getElementById('brand-field').value = itemInfo.brand;
         }
-        document.getElementById('condition-field').innerText = itemInfo.condition;
-        document.getElementById('date-field').innerText =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
+        document.getElementById('condition-field').value = itemInfo.condition;
+        document.getElementById('date-field').value =  moment(itemInfo.time_start).format('MM/DD/YYYY') + ' - ' + moment(itemInfo.time_end).format('MM/DD/YYYY');
         if(itemInfo.description == null){
-            document.getElementById('description-field').innerText = ' - '
+            document.getElementById('description-field').value = ' - '
         }
         else{
-            document.getElementById('description-field').innerText = itemInfo.description;
+            document.getElementById('description-field').value = itemInfo.description;
         }
         
         if(itemInfo.status == 'lent'){

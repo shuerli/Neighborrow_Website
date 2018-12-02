@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-    validates :department, :name, :presence => true
+    validates :department,  :presence => true
+    validates :name, :presence => true, :uniqueness => true
 end

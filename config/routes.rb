@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create_auth'
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
-  
-  get    '/signup',  to: 'accounts#new'
 
+  get    '/signup',  to: 'accounts#new'
+  post    '/signup',  to: 'accounts#create'
+  
   get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
   get '/borrow',    to: 'item#borrow'
