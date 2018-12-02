@@ -142,18 +142,18 @@ categories = Category.create([
 items = Item.create!([
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/Assasin.jpeg', 
+					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
 					time_end: '2019-01-15 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
-					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.'
+					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
 					brand:'Ubisoft'},
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/civ6.jpeg', 
+					photo_url:'/assets/img/Video Games/civ6.jpeg', 
 					condition:'Like New', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
@@ -165,7 +165,7 @@ items = Item.create!([
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
 					status:'lent',
-					photo_url:'/assets/Video Games/GoW4.jpeg', 
+					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
 					condition:'Like New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
@@ -176,7 +176,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/GTA5.jpeg', 
+					photo_url:'/assets/img/Video Games/GTA5.jpeg', 
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
@@ -187,7 +187,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/MHWPC.jpeg', 
+					photo_url:'/assets/img/Video Games/MHWPC.jpeg', 
 					condition:'Brand New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
@@ -198,7 +198,7 @@ items = Item.create!([
 
 					{category_id:'2',
 					owner:'raymondfzy@gmail.com', 
-					photo_url:'/assets/Video Games/PVZGW2PC.jpeg', 
+					photo_url:'/assets/img/Video Games/PVZGW2PC.jpeg', 
 					condition:'Very Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
