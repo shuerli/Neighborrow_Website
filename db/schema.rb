@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
   create_table "feedback_to_borrowers", force: :cascade do |t|
     t.integer "request_id", null: false
     t.integer "rate", null: false
-    t.text "tag", array: true
+    t.text "tag"
     t.integer "credit", null: false
     t.text "comment"
     t.datetime "created_at", null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
   create_table "feedback_to_lenders", force: :cascade do |t|
     t.integer "request_id", null: false
     t.integer "rate", null: false
-    t.text "tag", array: true
+    t.text "tag"
     t.integer "credit", null: false
     t.text "comment"
     t.datetime "created_at", null: false
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
     t.text "owner", null: false
     t.text "status", default: "registered", null: false
     t.text "category_id", null: false
+    t.integer "address", null: false
     t.text "condition", null: false
     t.text "rate_level"
     t.datetime "time_start", null: false
@@ -120,7 +121,7 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
     t.text "photo_url"
     t.text "description"
     t.text "brand"
-    t.text "feature", array: true
+    t.text "feature"
     t.text "amazon_id"
     t.text "walmart_id"
     t.text "isbn"
@@ -142,14 +143,17 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
     t.text "display_name", null: false
     t.text "phone_number"
     t.text "gender"
-    t.text "language", null: false, array: true
+    t.text "language", null: false
     t.text "country", default: "Canada"
     t.text "facebook"
     t.text "google"
     t.text "wechat"
     t.text "twitter"
     t.text "avatar_url", null: false
-    t.text "interest", array: true
+    t.text "interest"
+    t.integer "add_credit"
+    t.integer "credit"
+    t.integer "withdraw_credit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -170,7 +174,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_204639) do
   create_table "requests", force: :cascade do |t|
     t.integer "item_id", null: false
     t.text "borrower", null: false
-    t.integer "address"
     t.text "status", default: "pending"
     t.text "rejected_reason"
     t.datetime "time_start", null: false
