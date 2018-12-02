@@ -116,7 +116,7 @@ $(document).ready(function() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
+			console.log(data)
       if (data.result_userEmail.result !== null) {
         if (data.result_userEmail.result.length !== 0) {
           user_render(data.result_userEmail);
@@ -172,8 +172,15 @@ let item_render = itemList => {
   ) {
     document.getElementById("isbn_result_length").innerText =
       itemList.result_itemISBN.length;
-    document.getElementById("isbn_keyword").innerText = itemList.search_keyword;
+		document.getElementById("isbn_keyword").innerText = itemList.search_keyword;
     for (let i = 0; i < itemList.result_itemISBN.length; i++) {
+
+			let history_count = 0
+			if(itemList.search_byISBN_requestsCount!==null){
+				let temp = itemList.search_byISBN_requestsCount.filter(x=>x.itemID==itemList.result_itemISBN[i].itemID)
+				if(temp.length>0)
+				history_count = temp[0]["count"]
+			}
       document.getElementById("itemISBN_section").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemISBN[i].itemID +
@@ -183,7 +190,7 @@ let item_render = itemList => {
         condition_pill[itemList.result_itemISBN[i].itemCondition] +
         '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
         itemList.result_itemISBN[i].name +
-        '</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
         itemList.result_itemISBN[i].ownerPhoto +
         '"/>&nbsp; <label class="text-muted">' +
@@ -203,8 +210,15 @@ let item_render = itemList => {
     document.getElementById("namebrand_result_count").innerText =
       itemList.result_itemNameBrand.length;
     document.getElementById("namebrand_keyword").innerText =
-      itemList.search_keyword;
+			itemList.search_keyword;
+		
     for (let i = 0; i < itemList.result_itemNameBrand.length; i++) {
+			let history_count = 0
+			if(itemList.search_byNameBrand_requestsCount!==null){
+				let temp = itemList.search_byNameBrand_requestsCount.filter(x=>x.itemID==itemList.result_itemNameBrand[i].itemID)
+				if(temp.length>0)
+				history_count = temp[0]["count"]
+			}
       document.getElementById("itemNameBrand_section").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemNameBrand[i].itemID +
@@ -214,7 +228,7 @@ let item_render = itemList => {
         condition_pill[itemList.result_itemNameBrand[i].itemCondition] +
         '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
         itemList.result_itemNameBrand[i].name +
-        '</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+        '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
         '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
         itemList.result_itemNameBrand[i].ownerPhoto +
         '"/>&nbsp; <label class="text-muted">' +
@@ -239,6 +253,12 @@ let item_render = itemList => {
       document.getElementById("corrected_keyword").innerText =
         itemList.corrected_keyword;
       for (let i = 0; i < itemList.result_correctedKeyword.length; i++) {
+				let history_count = 0
+				if(itemList.search_byCorrection_requestsCount!==null){
+					let temp = itemList.search_byCorrection_requestsCount.filter(x=>x.itemID==itemList.result_correctedKeyword[i].itemID)
+					if(temp.length>0)
+					history_count = temp[0]["count"]
+				}
         document.getElementById("itemNameBrand_section").innerHTML +=
           '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
           itemList.result_correctedKeyword[i].itemID +
@@ -248,7 +268,7 @@ let item_render = itemList => {
           condition_pill[itemList.result_correctedKeyword[i].itemCondition] +
           '<div class="card-body" style="padding-left: 10px;padding-bottom: 10px;padding-top: 10px;"><div style="line-height: 1.5em; height: 3em;overflow: hidden;"><strong class="card-title text-dark">' +
           itemList.result_correctedKeyword[i].name +
-          '</strong></div><small class="text-dark"><u>Borrowed by x users</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
+          '</strong></div><small class="text-dark"><u>Borrowed by '+history_count+' user(s)</u></small></div><hr style="margin-top:0;margin-bottom:0;" /></span><div class="card-body user_detail_span" style="cursor: pointer;padding-left: 10px;padding-bottom: 2px;padding-top: 5px;">' +
           '<span><img class="img-thumbnail" style="width:30px; height:30px; border-radius: 50%; padding-top:0; padding-bottom:0; padding-left:0; padding-right:0;" src="' +
           itemList.result_correctedKeyword[i].ownerPhoto +
           '"/>&nbsp; <label class="text-muted">' +
