@@ -44,7 +44,7 @@ $(document).ready(function () {
                                       <div class="col-md-7">\
                                           <div class="row">\
                                             <div class="col-md-4 text-center">\
-                                              <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px;">\
+                                              <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px; height:80px;">\
                                             </div>\
                                             <div class="col-md-8">\
                                               <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
@@ -85,7 +85,7 @@ $(document).ready(function () {
                                       <div class="col-md-7">\
                                           <div class="row">\
                                             <div class="col-md-4 text-center">\
-                                              <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px;">\
+                                              <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px;height:80px;">\
                                             </div>\
                                             <div class="col-md-8">\
                                               <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
