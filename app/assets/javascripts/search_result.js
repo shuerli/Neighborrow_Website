@@ -4,13 +4,13 @@ const condition_pill = {
   "Like New":
     '<span class="badge badge-primary" style="position:absolute;z-index:100;right:10px;top:10px;">Like New</span>',
   "Very Good":
-    '<span class="badge badge-info" style="position:absolute;z-index:100;right:10px;top:10px;"></span>',
+    '<span class="badge badge-info" style="position:absolute;z-index:100;right:10px;top:10px;color: white;">Very Good</span>',
   Good:
-    '<span class="badge badge-warning" style="position:absolute;z-index:100;right:10px;top:10px;">Like New</span>',
+    '<span class="badge badge-warning" style="position:absolute;z-index:100;right:10px;top:10px;">Good</span>',
   Adequate:
-    '<span class="badge badge-light" style="position:absolute;z-index:100;right:10px;top:10px;">Like New</span>',
+    '<span class="badge badge-light" style="position:absolute;z-index:100;right:10px;top:10px;">Adequate</span>',
   Defective:
-    '<span class="badge badge-dark" style="position:absolute;z-index:100;right:10px;top:10px;">Like New</span>'
+    '<span class="badge badge-dark" style="position:absolute;z-index:100;right:10px;top:10px;">Defective</span>'
 };
 
 const state_lookup = {
@@ -300,7 +300,8 @@ let item_render = itemList => {
         lenderRate =
           itemList.search_byItemNameAndBrand_lenderRate[
             itemList.result_itemNameBrand[i].ownerID
-          ];
+					];
+			console.log(condition_pill[itemList.result_itemNameBrand[i].itemCondition])
       document.getElementById("itemNameBrand_section_content").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemNameBrand[i].itemID +
