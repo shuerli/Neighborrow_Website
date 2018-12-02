@@ -20,6 +20,7 @@
 
 <!-- Base stylesheets & third-party stylesheets-->
 <link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+<%= stylesheet_link_tag 'carousel.css' %>
 
 <!-- Customized stylesheet goes here-->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -44,7 +45,7 @@ min-width: 140px;
 </script>
 </head>
 
-<body class="app header-fixed">
+<body class="app">
 
 <div class="app-body">
 
@@ -69,7 +70,13 @@ min-width: 140px;
 
 
 <div class="contact col-md-6 col-sm-12 text-center align-self-center">
-<h4> Contact us here</h4></p>
+<div class="section-header">
+<h4 class="section-title text-uppercase font-weight-bold">Contact Us</h4>
+<span class="section-divider"></span>
+<p class="section-description">
+We would love to hear from you!
+</p>
+</div>
 <i class="fa fa-envelope"></i>
 <p><a href="mailto:sixneighborrow@gmail.com">sixneighborrow@gmail.com</a></p>
 <i class="fa fa-phone"></i><p><a href="tel:1234567890">(+1)123-456-7890</a></p>
