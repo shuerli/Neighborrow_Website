@@ -97,6 +97,9 @@ let filterOut_status = {
   Defective: false
 };
 
+let postcode_lock = false;
+let postcode_current = null;
+
 let cache = null;
 
 $(document).ready(function() {
@@ -138,11 +141,6 @@ $(document).ready(function() {
           user_render(data.result_userEmail);
         }
       } else document.getElementById("user_section").style.display = "none";
-
-      /*else if (data.result_userName !== null) {
-		  if (data.result_userName.length !== 0)
-			user_render(data.result_userName[0]);
-		}*/
 
       item_render(data);
     }).then(()=>{
@@ -233,6 +231,11 @@ let item_render = itemList => {
     for (let i = 0; i < itemList.result_itemISBN.length; i++) {
 			if(filterOut_status[itemList.result_itemISBN[i].itemCondition])
 			continue
+			if(postcode_lock&&postcode_current!==null){
+				if(itemList.result_itemISBN[i].postcode.toLowerCase().replace(" ","").indexOf(postcode_current)===-1){
+					continue
+				}
+			}
       let history_count = 0;
       if (itemList.search_byISBN_requestsCount !== null) {
         let temp = itemList.search_byISBN_requestsCount.filter(
@@ -288,6 +291,11 @@ let item_render = itemList => {
     for (let i = 0; i < itemList.result_itemNameBrand.length; i++) {
 			if(filterOut_status[itemList.result_itemNameBrand[i].itemCondition])
 				continue
+				if(postcode_lock&&postcode_current!==null){
+					if(itemList.result_itemNameBrand[i].postcode.toLowerCase().replace(" ","").indexOf(postcode_current)===-1){
+						continue
+					}
+				}
       let history_count = 0;
       if (itemList.search_byNameBrand_requestsCount !== null) {
         let temp = itemList.search_byNameBrand_requestsCount.filter(
@@ -346,6 +354,11 @@ let item_render = itemList => {
       for (let i = 0; i < itemList.result_correctedKeyword.length; i++) {
 				if(filterOut_status[itemList.result_correctedKeyword[i].itemCondition])
 				continue
+				if(postcode_lock&&postcode_current!==null){
+					if(itemList.result_correctedKeyword[i].postcode.toLowerCase().replace(" ","").indexOf(postcode_current)===-1){
+						continue
+					}
+				}
         let history_count = 0;
         if (itemList.search_byCorrection_requestsCount !== null) {
           let temp = itemList.search_byCorrection_requestsCount.filter(
@@ -393,3 +406,35 @@ let item_render = itemList => {
     }
   }
 };
+
+let postcode_filter = ptr =>{
+	if(ptr.value.length===0){
+		postcode_lock = false;
+		postcode_current = null;
+		item_render(cache);
+	}
+
+	if(document.getElementById("current_country").innerText==="Canada"){
+		if(ptr.value.length>=3&&ptr.value.length<6){
+			postcode_lock = true;
+			postcode_current = ptr.value.slice(0,3).toLowerCase();
+			item_render(cache);
+		}else if(ptr.value.length===6){
+			postcode_lock = true;
+			postcode_current = ptr.value.toLowerCase();
+			item_render(cache);
+		}else{
+			postcode_lock = false;
+			postcode_current = null;
+			item_render(cache);
+			return; 
+		}
+	}
+	else{
+		postcode_lock = true;
+		postcode_current = ptr.value.toLowerCase();
+		item_render(cache);
+	}
+	
+	
+}
