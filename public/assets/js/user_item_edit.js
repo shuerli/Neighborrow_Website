@@ -141,17 +141,23 @@ $('#department-input').change(function () {
             category: $('#category-input option:selected').val()
         }
       }).done(function(data){
+        var category_id = data.result[0].id;
         $.ajax({
-            url: "/address_new",
-            method: "POST",
-            data:{
-                authenticity_token: window._token,
-                address_line1: $('#street-input').val(),
-                city: $('#city-input').val(),
-                province: $('#province-input').val(),
-                country: $('#country-input').val(),
-                postal_code: $('#postalcode-input').val(),
-            }
+            url: '/media_contents',
+            method: "GET",
+        }).done(function(url){
+
+            $.ajax({
+                url: "/address_new",
+                method: "POST",
+                data:{
+                    authenticity_token: window._token,
+                    address_line1: $('#street-input').val(),
+                    city: $('#city-input').val(),
+                    province: $('#province-input').val(),
+                    country: $('#country-input').val(),
+                    postal_code: $('#postalcode-input').val(),
+                }
           }).done(function(addressInfo){
                             $.ajax({
                             url: "/user_item/edit",
@@ -159,11 +165,11 @@ $('#department-input').change(function () {
                             data: { 
                                     authenticity_token: window._token,
                                     id: itemId,
-                                    category_id: data.result[0].id,
+                                    category_id: category_id,
                                     condition: item_condition,
                                     time_start: sdate,
                                     time_end: edate,
-                                    //photo_url: img_url,
+                                    photo_url: url.substr(url.indexOf('/uploads')),
                                     name: document.getElementById('item-name-input').value,
                                     description: document.getElementById('description-input').value,
                                     brand: document.getElementById('brand-input').value,
@@ -176,6 +182,7 @@ $('#department-input').change(function () {
                             });
         });
       });
+    });
  };
 
 
@@ -193,8 +200,7 @@ $('#department-input').change(function () {
  function btnImageDelete(){
     var result = confirm("Remove image?");
     if (result) {
-        $('#img-area').remove();
-        document.getElementById('upload-area').style.visibility = 'visible';
+        $('#existing-img').remove();
+        document.getElementById('media-dropzone').style.visibility = 'visible';
     }
-
  }
