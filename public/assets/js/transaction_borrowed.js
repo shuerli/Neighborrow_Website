@@ -28,7 +28,6 @@ $("#filter_init").click(function() {
 
 $(document).ready(function() {
   $.get("/request?type=borrowed&range=all&sorted_by=update_time", data => {
-		console.log(data)
     cache = data;
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
@@ -37,6 +36,7 @@ $(document).ready(function() {
 });
 
 let appendSection = info => {
+	console.log(info)
   $("#list_section").empty();
   info.result.forEach(request => {
     // Cache every requests into a specific category based on their status
@@ -400,7 +400,7 @@ let appendSection = info => {
       request.name +
       '</h4> <h6 class="text-muted">Owned by <a id="user_name">' +
       info.lenders.filter(x => x.request_id === request.id)[0].display_name +
-      '</a></h6> <small ><a href="https://www.google.ca/" >View Item Detail</a ></small > | <small ><a href="https://www.google.ca/" >View Lender Profile</a ></small > </div> </div> ' +
+      '</a></h6> <small ><a href="/items/'+request.item_id+'" >View Item Detail</a ></small > | <small ><a href="/public_profiles/'+info.lenders.filter(x => x.request_id === request.id)[0].account_id+'" >View Lender Profile</a ></small > </div> </div> ' +
       "<hr />" +
       progressbar_section +
       '<div class="row" style="margin-top:15px;"> <div class="col-md-6"> <strong>Pick-up Location</strong><br /> <span id="pickup_location"></span> ' +
