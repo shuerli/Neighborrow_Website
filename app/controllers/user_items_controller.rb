@@ -110,6 +110,8 @@ class UserItemsController < ApplicationController
 			redirect_to "/login"
         end
 
+        
+
         @user_item = Item.find(params[:id])
 
         @user_item.condition = params[:condition]
@@ -119,10 +121,12 @@ class UserItemsController < ApplicationController
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
-        @user_item.photo_url = params[:photo_url]
-        
         @user_item.address = params[:address]
 
+        if params[:edit_photo] == 'true'    
+            @user_item.photo_url = params[:photo_url]
+        end
+        
         if @user_item.save
              render :json => {:status => 200}
         else 
