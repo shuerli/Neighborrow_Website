@@ -55,37 +55,6 @@ class ProfilesController < ApplicationController
   end
   
   
-  def order
-      @account = Account.find(current_user.id)
-      @profile = Profile.find_by_email(@account.email)
-      @payment = Payment.new({
-                             :intent =>  "sale",
-                             :payer =>  {
-                             :payment_method =>  "paypal" },
-                             :redirect_urls => {
-                             :return_url => "http://localhost:3000/payment/execute",
-                             :cancel_url => "http://localhost:3000/" },
-                             :transactions =>  [{
-                             :item_list => {
-                             :items => [{
-                             :name => "item",
-                             :sku => "item",
-                             :price => "5",
-                             :currency => "USD",
-                             :quantity => 1 }]},
-                             :amount =>  {
-                             :total =>  "5",
-                             :currency =>  "USD" },
-                             :description =>  "This is the payment transaction description." }]})
-                             
-                             if @payment.create
-                                 @payment.id     # Payment Id
-                             else
-                                 @payment.error  # Error Hash
-                             end
-  end
-  
-  
   private def profile_params
       params.require(:profile).permit(:email, :first_name, :middle_name, :last_name,:display_name, 
       :phone_number, :gender, :language, :country, :facebook, :gmail, :twitter, :avatar_url,:interest => [])
