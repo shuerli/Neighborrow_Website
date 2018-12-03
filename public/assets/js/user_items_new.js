@@ -64,7 +64,6 @@ function btnSubmit(){
   var edate = moment(document.getElementById('date-input').value.substring(13,23) , 'MM/DD/YYYY');
   edate = moment(edate).format('YYYY-MM-DD') + " 00:00:00"
 
-    alert("submit pressed")
   $.ajax({
       url: "/category/id",
       method: "GET",
@@ -112,25 +111,6 @@ function btnSubmit(){
                         });
             });
         
-                        // $.ajax({
-                        //     url: "/user_item",
-                        //     method: "POST",
-                        //     data: { 
-                        //         authenticity_token: window._token,
-                        //         category_id: category_id,
-                        //         condition: item_condition,
-                        //         time_start: sdate,
-                        //         time_end: edate,
-                        //         //hoto_url: photo_url,
-                        //         name: document.getElementById('item-name-input').value,
-                        //         description: document.getElementById('description-input').value,
-                        //         brand: document.getElementById('brand-input').value
-                        //         }
-                        // }).done(function(data){
-                        //     window.location = "http://localhost:3000/user_item";
-                        //     }).fail(function(data){
-                        //     alert( "Item adding failed");
-                        //     });
         });
         
     });
