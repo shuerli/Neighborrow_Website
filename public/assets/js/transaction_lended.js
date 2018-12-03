@@ -371,9 +371,9 @@ let appendSection = info => {
       address_section =
         "<a>" +
         address[0].address_line1 +
-        "</a><br /> <a>" +
-        address[0].address_line2 +
-        "</a><br /><a>" +
+        "</a><br /> " +
+        (address[0].address_line2 ? '<a>'+address[0].address_line2+'</a><br />' : "") +
+        "<a>" +
         address[0].city +
         ", " +
         address[0].province +
