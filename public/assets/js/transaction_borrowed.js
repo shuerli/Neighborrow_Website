@@ -28,6 +28,7 @@ $("#filter_init").click(function() {
 
 $(document).ready(function() {
   $.get("/request?type=borrowed&range=all&sorted_by=update_time", data => {
+		console.log(data)
     cache = data;
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
@@ -170,8 +171,8 @@ let appendSection = info => {
         break;
       case "accepted":
         if (
-          moment(time_start).isSameOrAfter(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format()) &&
+          //moment(request.time_start).isSameOrAfter(moment().format()) &&
+          //moment(request.time_end).isSameOrAfter(moment().format()) &&
           !request.received &&
           !request.returned
         ) {
@@ -185,8 +186,8 @@ let appendSection = info => {
             moment(request.time_start).format("MMMM Do, YYYY") +
             "</small >";
         } else if (
-          moment(time_start).isSameOrBefore(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format()) &&
+          //moment(request.time_start).isSameOrBefore(moment().format()) &&
+          //moment(request.time_end).isSameOrAfter(moment().format()) &&
           request.received &&
           !request.returned
         ) {
