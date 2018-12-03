@@ -86,6 +86,8 @@ Rails.application.routes.draw do
   put '/user_item/edit' => 'user_items#update'
   get '/address' => 'user_items#get_address'
   post '/address_new' => 'user_items#add_address'
+  get '/get_borrower' => 'user_items#find_borrower'
+
 	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
     

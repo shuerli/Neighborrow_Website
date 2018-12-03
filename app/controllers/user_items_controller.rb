@@ -141,4 +141,10 @@ class UserItemsController < ApplicationController
             render :json => {:status => 404}
        end
     end
+
+    def find_borrower
+        @borrower_id = ActiveRecord::Base.connection.exec_query("SELECT borrower FROM Requests WHERE item_id = \'#{params[:itemId]}\' AND received = \'true\' AND returned = \'false\'")
+        render :json => {:status => 200, :result => @borrower_id}
+     
+    end
 end
