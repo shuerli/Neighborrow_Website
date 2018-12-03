@@ -109,16 +109,35 @@ class UserItemsController < ApplicationController
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
         @user_item.photo_url = params[:photo_url]
+        
+        @user_item.address = params[:address]
 
         if @user_item.save
-             render :json => {:status => 200}
+             render :json => @user_item#{:status => 200}
         else 
              render :json => {:status => 404}
         end
     end
 
     def get_address
-        @address = Address.find(1)
+        @address = Address.find(params[:add])
         render :json => {:status => 200, :result => @address}
+    end
+
+    def add_address
+        @address = Address.new
+        @address.email = 'raymondfzy@gmail.com'
+
+        #@address.email = current_user.email
+        @address.address_line1 = params[:address_line1]
+        @address.city = params[:city]
+        @address.province = params[:province]
+        @address.country = params[:country]
+        @address.postal_code =  params[:postal_code]
+        if @address.save
+            render :json => @address
+       else 
+            render :json => {:status => 404}
+       end
     end
 end

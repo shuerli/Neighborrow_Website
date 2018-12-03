@@ -142,25 +142,39 @@ $('#department-input').change(function () {
         }
       }).done(function(data){
         $.ajax({
-          url: "/user_item/edit",
-          method: "PUT",
-          data: { 
+            url: "/address_new",
+            method: "POST",
+            data:{
                 authenticity_token: window._token,
-                id: itemId,
-                category_id: data.result[0].id,
-                condition: item_condition,
-                time_start: sdate,
-                time_end: edate,
-                //photo_url: img_url,
-                name: document.getElementById('item-name-input').value,
-                description: document.getElementById('description-input').value,
-                brand: document.getElementById('brand-input').value
-              }
-        }).done(function(data){
-            window.location = "http://localhost:3000/user_item/" + itemId;
-          }).fail(function(data){
-            alert( "Item editing failed");
-          });
+                address_line1: $('#street-input').val(),
+                city: $('#city-input').val(),
+                province: $('#province-input').val(),
+                country: $('#country-input').val(),
+                postal_code: $('#postalcode-input').val(),
+            }
+          }).done(function(addressInfo){
+                            $.ajax({
+                            url: "/user_item/edit",
+                            method: "PUT",
+                            data: { 
+                                    authenticity_token: window._token,
+                                    id: itemId,
+                                    category_id: data.result[0].id,
+                                    condition: item_condition,
+                                    time_start: sdate,
+                                    time_end: edate,
+                                    //photo_url: img_url,
+                                    name: document.getElementById('item-name-input').value,
+                                    description: document.getElementById('description-input').value,
+                                    brand: document.getElementById('brand-input').value,
+                                    address: addressInfo.id
+                                }
+                            }).done(function(data){
+                                window.location = "http://localhost:3000/user_item/" + itemId;
+                            }).fail(function(data){
+                                alert( "Item editing failed");
+                            });
+        });
       });
  };
 
