@@ -131,11 +131,6 @@ categories = Category.create([
 								{department:'Sports & Outdoors', name: 'Water Sports'},
 								#37
 								{department:'Sports & Outdoors', name: 'Winter Sports'},
-								
-								#38
-								{department:'Automotive', name: 'Maintenance & Care'},
-								#39
-								{department:'Automotive', name: 'All Automotive'}
 							])
 
 
@@ -736,18 +731,20 @@ items = Item.create!([
 					name:'Haloween deco', 
 					description:'My kids\' creation. Looks gross to me, just take it whoever please.',
 					},
+
+					# {category_id:'27',
+					# address:5,
+					# owner:'raymondfzy@gmail.com', 
+					# photo_url:'/assets/img/Kids/.jpeg', 
+					# condition:'Good', 
+					# rate_level: 3, 
+					# time_start:'2018-12-01 00:00:00', 
+					# time_end: '2020-01-01 00:00:00', 
+					# name:'', 
+					# description:'',
+					# },
 				])
-                    #    {category_id:'4',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Like New', rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
-                    #    {category_id:'4',owner:'createduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New',time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
-					#    {category_id:'3',owner:'geling.li@mail.utoronto.ca', photo_url:'/assets/img/imgplaceholder.gif', condition:'Like New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Learn C++ in 21 Days', description:'This dude is lazy and did not leave anything here', brand:'XinHua'},
-					#    {category_id:'3',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Very Good', rate_level: 3, time_start:'2018-11-16 00:00:00', time_end: '2018-12-23 13:23:04', name:'King Lear',description:'see the picture', brand:'brand3'},
-                    # {category_id:'3',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', status:'lent', condition:'Good', rate_level: 2, time_start:'2018-11-08 00:00:00', time_end: '2019-01-25 13:23:04', name:'Don Quixote', description:'This dude is lazy and did not leave anything here', brand:'brand4'},
-					# {category_id:'3',owner:'suspendeduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', status:'lent', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Frankenstein', description:'frank', brand:'brand3'},
-					# {category_id:'2',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif',status:'lent', condition:'Adequate', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Halo 7',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-                    # {category_id:'2',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Defective', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Resident Evil',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-                    # {category_id:'2',owner:'banneduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Monster Hunter', description:'3ds version', brand:'Kapkom'},
-                    # {category_id:'2',owner:'geling.li@mail.utoronto.ca', photo_url:'/assets/img/imgplaceholder.gif', condition:'Good', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Tomb Raider', description:'The best one of the series', brand:'3DM Private Games'}
-                    
+                   
 
 requests = Request.create([
 		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},

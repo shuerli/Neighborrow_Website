@@ -117,6 +117,8 @@ class UserItemsController < ApplicationController
         end
     end
 
-
-    
+    def get_address
+        @address = Address.find(1)
+        render :json => {:status => 200, :result => @address}
+    end
 end
