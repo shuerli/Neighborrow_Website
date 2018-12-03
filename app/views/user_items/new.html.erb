@@ -74,9 +74,13 @@
 									<div class="form-group">
 										<label> Item Image</label>
 										<br>
-										<div class = "img-wrap" id='existing-img'>
-												<span class="close" onclick="btnImageDelete()" >&times;</span>
-												<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
+										<div class="row" style="padding-left:30px;">
+											<form action="/media_contents" id="media-dropzone" class="dropzone" enctype="multipart/form-data">
+												<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+												<div class="fallback">
+												  <input name="media" type="file" multiple />
+												</div>
+											  </form>
 										</div>
 									</div>
 									<div class="row">
@@ -107,6 +111,9 @@
 										</div>
 									</div>
 									
+
+
+									
 									<div class="row">
 										<div class="form-group col-lg-6">
 												<label> Department </label>
@@ -120,11 +127,38 @@
 										</div>
 									</div>
 
+
+									<div class="row">
+									<div class="form-group col-lg-4">
+										<label> Pickup Address </label>
+										<input class="form-control" id='street-input' type="text">
+									</div>
+									<div class="form-group col-lg-2">
+										<label> City </label>
+										<input class="form-control" id='city-input' type="text">
+									</div>
+									<div class="form-group col-lg-2">
+										<label> Province </label>
+										<input class="form-control" id='province-input' type="text">
+									</div>
+									<div class="form-group col-lg-2">
+										<label> Country </label>
+										<input class="form-control" id='country-input' type="text">
+									</div>
+									<div class="form-group col-lg-2">
+										<label> Postal Code </label>
+										<input class="form-control" id='postalcode-input' type="text">
+									</div>
+									</div>
+
 									<div class="form-group">
 										<label> Description </label>
 										<textarea class="form-control" id='description-input' placeholder="Add a short description about this item..."></textarea>
 									</div>
 								</div>
+
+
+
 								<div class="pull-right">
 									<button class="btn btn-success" id='btn-submit' onclick="btnSubmit()">
 										<a style="color:white"> Save </a>	

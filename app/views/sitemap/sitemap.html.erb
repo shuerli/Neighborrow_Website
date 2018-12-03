@@ -1,3 +1,9 @@
+<!--
+ * This modified template file is referenced to bootsnipp,
+ * along with other third-party stylesheets and javascript files.
+ * Source Repository: https://bootsnipp.com/snippets/qrzkR
+ -->
+ 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -15,10 +21,12 @@
 h1 {
   font-weight: normal;
   line-height: 1.1;
-  font-family: 'Quicksand', sans-serif;
+  font-family: sans-serif;
   text-transform: uppercase;
-  font-size: 3em;
-  color: #fff;
+  font-size: 2em;
+  color: grey; 
+  text-align: center; 
+
 }
 
 
@@ -118,7 +126,8 @@ nav ul {
 	
 <body>
 	<div class="container">
-	  <h1>example site map</h1>
+	  <h1>neighborrow site map</h1>
+	  <hr>
 	  <div class="row">
 	  	<div class="col-lg-12">
 		  <nav class="sitemap">
@@ -154,7 +163,7 @@ nav ul {
 			              <li><a href="/user">User Dashboard</a></li>
 			              <li><a href="/profiles/<%=current_user.id%>">Profile</a></li>
 			              <li><a href="/profiles/<%=current_user.id%>/edit">Change Profile</a></li>
-			              <li><a href="/user">Password</a></li>
+			              <li><a href="/accounts/<%=current_user.id%>/edit">Password</a></li>
 		              <%end%>
 		            </ul>
 		          </li>

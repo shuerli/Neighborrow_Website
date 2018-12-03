@@ -3005,15 +3005,15 @@ p.checkout-coupon input[type="submit"] {
     color: #464646;
     font-size: 20px;
 }
-.payment-method {
+.pay-method {
     margin-top: 40px;
 }
-.payment-accordion h3 {
+.pay-accordion h3 {
     border-bottom: 0 none;
     margin-bottom: 10px;
     padding-bottom: 0;
 }
-.payment-accordion h3 a {
+.pay-accordion h3 a {
     color: #6f6f6f;
     font-size: 14px;
     padding-left: 25px;
@@ -3021,14 +3021,14 @@ p.checkout-coupon input[type="submit"] {
     text-transform: capitalize;
     text-decoration: none;
 }
-.payment-content p {
+.pay-content p {
     font-size: 13px;
 }
-.payment-accordion img {
+.pay-accordion img {
     height: 60px;
     margin-left: 15px;
 }
-.order-button-payment input {
+.order-button-pay input {
     background: #464646 none repeat scroll 0 0;
     border: medium none;
     color: #fff;
@@ -3044,7 +3044,7 @@ p.checkout-coupon input[type="submit"] {
     border: 1px solid transparent;
     cursor: pointer;
 }
-.order-button-payment input:hover {
+.order-button-pay input:hover {
     background: #050035;
     border: 1px solid #050035;
     color: #fff;

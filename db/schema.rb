@@ -138,11 +138,12 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "pays", force: :cascade do |t|
     t.text "email", null: false
-    t.text "add_credit"
-    t.text "withdraw_credit"
-    t.text "credit"
+    t.integer "add_credit"
+    t.integer "withdraw_credit"
+    t.integer "credit"
+    t.text "payid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

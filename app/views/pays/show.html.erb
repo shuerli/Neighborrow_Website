@@ -1,0 +1,149 @@
+<!-- 
+	* This modified template file is referenced to coreui.io, 
+	* along with other third-party stylesheets and javascript files.
+	* Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.7
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs 艁ukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta information used for SEO -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="description" content="Neighborrow - Your Platform to Borrow and Lend">
+	<meta name="author" content="Neighborrow">
+	<meta name="keyword" content="Borrow, Lend, CSC444">
+	<%= csrf_meta_tags %>
+	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<title>Neighborrow - Blank</title>
+
+	<!-- CSS files for third-party icons-->
+	<link href="/vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+	<link href="/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+	<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+	<!-- Base stylesheets & third-party stylesheets-->
+	<link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet">
+	<link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+
+	<!-- Customized stylesheet goes here-->
+
+</head>
+
+
+	<% if logged_in_as_user? (@account.id) %>
+<body class="app sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
+	<!-- <header class="app-header navbar" style="width:100%" id="headerModule">
+
+	</header> -->
+	
+	
+	<div class="app-body">
+		<div class="sidebar" id="menuModule"></div>
+
+		<main class="main">
+			<span id="subHeaderModule"></span>
+
+			<div class="container-fluid">
+				<!-- Main section - Codes for main functionalities in this block -->
+				<h2>Account Credit</h2>
+				<hr>
+            
+	            <div class="row">
+	              <div class="col-lg-12">
+	                <div class="card">
+	                  <div class="card-header">
+	                    <strong class="text-muted">Credit</strong>
+	                  </div>
+	                    
+	                  <div class="card-body">
+	                  	<form method="put" class="form-horizontal">
+<% flash.each do |key, value| %>
+<div id="error_explanation">
+<div class="alert alert-<%= key %>">
+<ul>
+<li><%= content_tag :div, value, class: "flash #{key}" %></li>
+</ul>
+</div>
+</div>
+<% end %>
+<div class="form-group text-center">
+<label>Your Current Credit:</label>
+<%= @pay.credit %>
+</div>
+
+
+	                    </form>
+	                    
+
+	                    <button class="btn btn-primary btn-block" ><%= link_to "Top Up Your Credit Now", edit_pay_path, method: :get, style: "color: white" %></button>
+
+
+
+                        <button class="btn btn-secondary btn-block"><%= link_to "Withdraw Your Credit Now", pay_editTwo_url, method: :get, style: "color: white" %></button>
+
+	                    
+	                  </div>
+	                </div>
+	              </div>
+	              <!-- /.col-->
+	            </div>
+	            <!-- /.row-->	
+            
+			</div>
+			
+		</main>
+		
+	</div>
+<% else %>
+			<div class = "app flex-row align-items-center">
+			
+				<!-- <div class="row"> -->
+					<div class="container">
+				      <div class="row justify-content-center">
+				        <div class="col-md-6">
+				          <div class="clearfix">
+				            <h1 class="float-left display-3 mr-4">403</h1>
+				            <h4 class="pt-3">Oops! Forbidden Page</h4>
+				            <p class="text-muted">
+					            Looks like you don't have permission to access this page.
+					            You might be accessing an account's profile that's not yours
+				            </p>
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+			</div>
+		<% end %>
+
+
+<!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+		<script src="/vendors/momentjs/moment.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script src="/assets/js/transaction_borrowed.js?version=1"></script>
+
+</body>
+
+</html>
+
+

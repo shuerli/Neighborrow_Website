@@ -43,7 +43,7 @@
 
 
 <% if logged_in_as_user? (@account.id) %>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
+<body class="app sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
 <!-- <header class="app-header navbar" style="width:100%" id="headerModule">
 
 </header> -->
@@ -68,16 +68,17 @@
 </div>
 <div class="card-body">
 
-<%= form_for @payment, url:payment_path do |f| %>
+<%= form_for @pay, url:pay_path do |f| %>
 
 <div class="form-group">
 <label>Your Current Credit:</label>
-<%= @payment.credit %>
+<%= @pay.credit %>
 </div>
 
+
 <div class="form-group">
-<label>Enter the amount of credits you want to top up below (1 dollar = 1 credit):</label>
-<%= f.text_field :add_credit, class: 'form-control' %>
+<label>Enter the amount of credits you want to withdraw below (1 dollar = 1 credit):</label>
+<%= f.text_field :withdraw_credit, class: 'form-control' %>
 </div>
 
 
@@ -122,7 +123,7 @@ You might be accessing an account that's not yours
 <div class="col-md-6">
 <div class="clearfix">
 <span>
-<h5 class="pt-3">To edit your own account's credit, click <%= link_to "HERE", url: edit_payment_path, id: @account.id %> </h5>
+<h5 class="pt-3">To edit your own account's credit, click <%= link_to "HERE", url: edit_pay_path, id: @account.id %> </h5>
 </span>
 </div>
 </div>
@@ -138,7 +139,7 @@ You might be accessing an account that's not yours
 <div class="col-md-6">
 <div class="clearfix">
 <span>
-<h5 class="pt-3">To edit your own accout's credit, click <%= link_to "HERE", url: edit_payment_path, id: @account.id %> </h5>
+<h5 class="pt-3">To edit your own accout's credit, click <%= link_to "HERE", url: edit_pay_path, id: @account.id %> </h5>
 </span>
 </div>
 </div>
@@ -149,7 +150,7 @@ You might be accessing an account that's not yours
 <!-- <div class = "app flex-row align-items-center">
 <div class="row justify-content-center">
 <span>
-<h5 class="pt-3">To edit your own accout's credit, click <li><%= link_to "HERE", url: edit_payment_path, id: @account.id %></li> </h5>
+<h5 class="pt-3">To edit your own accout's credit, click <li><%= link_to "HERE", url: edit_pay_path, id: @account.id %></li> </h5>
 </span>
 </div>
 </div> -->

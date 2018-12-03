@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
   get '/borrow',    to: 'item#borrow'
-  get '/settings', to: 'accounts#settings'
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 	get '/userdashboard_initialize' => 'accounts#userDashboard_Info'
@@ -31,8 +30,13 @@ Rails.application.routes.draw do
 
   resources:profiles
   resources:public_profiles
-  resources:payments
-
+  resources:pays
+  
+  get '/pays/:id/editTwo', to: 'pays#editTwo', as: :pay_editTwo
+  patch  '/pays/:id', to: 'pays#updateTwo', as: :pay_updateTwo
+  put    '/pays/:id',  to: 'pays#updateTwo'
+  
+  
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
 	#get '/admin' => 'dashboards#admin'
@@ -85,7 +89,9 @@ Rails.application.routes.draw do
   get '/user_item/edit/:id' => 'user_items#edit'
   put '/user_item/edit' => 'user_items#update'
   get '/address' => 'user_items#get_address'
- 
+  post '/address_new' => 'user_items#add_address'
+  get '/get_borrower' => 'user_items#find_borrower'
+
 	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
     

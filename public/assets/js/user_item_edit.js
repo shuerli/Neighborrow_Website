@@ -121,6 +121,8 @@ $('#department-input').change(function () {
 });
 
  function btnSave(){
+    
+
     curLoc = window.location.href.split("/");
     itemId = curLoc[curLoc.length - 1];
 
@@ -141,27 +143,49 @@ $('#department-input').change(function () {
             category: $('#category-input option:selected').val()
         }
       }).done(function(data){
+        var category_id = data.result[0].id;
         $.ajax({
-          url: "/user_item/edit",
-          method: "PUT",
-          data: { 
-                authenticity_token: window._token,
-                id: itemId,
-                category_id: data.result[0].id,
-                condition: item_condition,
-                time_start: sdate,
-                time_end: edate,
-                //photo_url: img_url,
-                name: document.getElementById('item-name-input').value,
-                description: document.getElementById('description-input').value,
-                brand: document.getElementById('brand-input').value
-              }
-        }).done(function(data){
-            window.location = "http://localhost:3000/user_item/" + itemId;
-          }).fail(function(data){
-            alert( "Item editing failed");
-          });
+            url: '/media_contents',
+            method: "GET",
+        }).done(function(url){
+
+            $.ajax({
+                url: "/address_new",
+                method: "POST",
+                data:{
+                    authenticity_token: window._token,
+                    address_line1: $('#street-input').val(),
+                    city: $('#city-input').val(),
+                    province: $('#province-input').val(),
+                    country: $('#country-input').val(),
+                    postal_code: $('#postalcode-input').val(),
+                }
+          }).done(function(addressInfo){
+                            $.ajax({
+                            url: "/user_item/edit",
+                            method: "PUT",
+                            data: { 
+                                    authenticity_token: window._token,
+                                    edit_photo: edit_photo,
+                                    id: itemId,
+                                    category_id: category_id,
+                                    condition: item_condition,
+                                    time_start: sdate,
+                                    time_end: edate,
+                                    photo_url: url.substr(url.indexOf('/uploads')),
+                                    name: document.getElementById('item-name-input').value,
+                                    description: document.getElementById('description-input').value,
+                                    brand: document.getElementById('brand-input').value,
+                                    address: addressInfo.id
+                                }
+                            }).done(function(data){
+                                window.location = "http://localhost:3000/user_item/" + itemId;
+                            }).fail(function(data){
+                                alert( "Please fill all the empty forms!");
+                            });
+        });
       });
+    });
  };
 
 
@@ -179,8 +203,9 @@ $('#department-input').change(function () {
  function btnImageDelete(){
     var result = confirm("Remove image?");
     if (result) {
-        $('#img-area').remove();
-        document.getElementById('upload-area').style.visibility = 'visible';
+        $('#existing-img').remove();
+        edit_photo = true;
+        document.getElementById('media-dropzone').style.visibility = 'visible';
     }
-
  }
+ var edit_photo = false;

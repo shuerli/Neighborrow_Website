@@ -137,7 +137,8 @@ categories = Category.create([
 items = Item.create!([
 					{category_id:'2',
 					address:1,
-					owner:'raymondfzy@gmail.com', 
+					owner:'raymondfzy@gmail.com',
+					status:'lent', 
 					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
 					condition:'Good', 
 					rate_level: 4, 
@@ -164,7 +165,6 @@ items = Item.create!([
 					{category_id:'2',
 					address:1,
 					owner:'raymondfzy@gmail.com', 
-					status:'lent',
 					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
 					condition:'Like New', 
 					rate_level: 5, 
@@ -747,24 +747,7 @@ items = Item.create!([
                    
 
 requests = Request.create([
-		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:4, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:5, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:6, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:1, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		
-		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-
-		{item_id:7, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:7, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
+		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00',status:'accepted'},
 	])
 
 

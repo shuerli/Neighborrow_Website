@@ -74,9 +74,20 @@
 									<div class="form-group">
 										<label> Item Image</label>
 										<br>
-										<div class = "img-wrap" id='existing-img'>
-												<span class="close" onclick="btnImageDelete()" >&times;</span>
-												<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
+										<div class="row" style="padding-left:30px;">
+											
+										
+											<div class = "img-wrap" id='existing-img'>
+													<span class="close" onclick="btnImageDelete()" >&times;</span>
+													<h2><img class="img-thumbnail" id="item-img" width="180vw" height="180vh"></h2>
+											</div>
+
+											<form action="/media_contents" id="media-dropzone" class="dropzone" enctype="multipart/form-data" style="visibility:hidden;">
+												<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+												<div class="fallback">
+												  <input name="media" type="file" multiple />
+												</div>
+											  </form>
 										</div>
 									</div>
 									<div class="row">
