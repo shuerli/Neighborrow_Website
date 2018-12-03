@@ -1,15 +1,16 @@
 class UserItemsController < ApplicationController
     layout false
     def show_all
+        if !current_user
+			redirect_to "/login"
+        end
     end
     def get_data_all
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
        
-       
-    #    # REMOVE TESTING USER
-    #     user = 'raymondfzy@gmail.com'
+    
         user = current_user.email
         case params[:type]     
         when 'lent'
@@ -28,12 +29,12 @@ class UserItemsController < ApplicationController
 
     def show
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
     end
     def get_data
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
 
         @user_item = Item.find( params[:id])
@@ -49,7 +50,7 @@ class UserItemsController < ApplicationController
 
     def destroy
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
 
         @user_item = Item.find(params[:id])
@@ -67,13 +68,13 @@ class UserItemsController < ApplicationController
 
     def new
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
     end
     
     def create
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
 
         @user_item = Item.new
@@ -100,13 +101,13 @@ class UserItemsController < ApplicationController
 
     def edit
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
     end
 
     def update
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
 
         @user_item = Item.find(params[:id])
@@ -136,7 +137,6 @@ class UserItemsController < ApplicationController
 
     def add_address
         @address = Address.new
-        # @address.email = 'raymondfzy@gmail.com'
 
         @address.email = current_user.email
         @address.address_line1 = params[:address_line1]
@@ -153,7 +153,7 @@ class UserItemsController < ApplicationController
 
     def find_borrower
         if !current_user
-			render :json => {:status => 403}
+			redirect_to "/login"
         end
 
         @borrower_email = ActiveRecord::Base.connection.exec_query("SELECT borrower FROM Requests WHERE item_id = \'#{params[:itemId]}\' AND status = \'accepted\'")
