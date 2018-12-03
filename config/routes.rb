@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   resources:public_profiles
   resources:pays
   
+  #  get '/pays/:id(.:format)/execute'  => 'pays#showPay'
+  
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
 	#get '/admin' => 'dashboards#admin'

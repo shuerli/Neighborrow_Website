@@ -69,15 +69,6 @@
 	                    
 	                  <div class="card-body">
 	                  	<form method="put" class="form-horizontal">
-<% flash.each do |key, value| %>
-<div id="error_explanation">
-<div class="alert alert-<%= key %>">
-<ul>
-<li><%= content_tag :div, value, class: "flash #{key}" %></li>
-</ul>
-</div>
-</div>
-<% end %>
 <div class="form-group text-center">
 <label>Your Current Credit:</label>
 <%= @pay.credit %>

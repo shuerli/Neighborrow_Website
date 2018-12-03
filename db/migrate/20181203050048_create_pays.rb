@@ -5,6 +5,7 @@ class CreatePays < ActiveRecord::Migration[5.2]
       t.integer :add_credit
       t.integer :withdraw_credit
       t.integer :credit
+      t.text :payid
       t.timestamps
     end
   end
