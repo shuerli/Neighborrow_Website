@@ -29,9 +29,9 @@ Rails.application.routes.draw do
 	get '/result' => 'items#showResult'
 	get '/result_api' => 'items#generateResult'	
 
-  get '/profiles/:id/order' => 'profiles#order'
   resources:profiles
   resources:public_profiles
+  resources:payments
 
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'

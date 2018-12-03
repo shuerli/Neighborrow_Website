@@ -19,9 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem "omniauth-facebook"
 
-#paypal
-gem 'paypal-sdk-rest'
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -87,3 +84,4 @@ gem 'carrierwave'
 gem 'rails_admin', '~> 1.3'
 
 gem 'jquery-ui-rails'
+gem 'rails-controller-testing'
