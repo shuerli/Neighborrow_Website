@@ -68,11 +68,11 @@
 </div>
 <div class="card-body">
 
-<%= form_for @payment, url:payment_path do |f| %>
+<%= form_for @pay, url:pay_path do |f| %>
 
 <div class="form-group">
 <label>Your Current Credit:</label>
-<%= @payment.credit %>
+<%= @pay.credit %>
 </div>
 
 <div class="form-group">
@@ -122,7 +122,7 @@ You might be accessing an account that's not yours
 <div class="col-md-6">
 <div class="clearfix">
 <span>
-<h5 class="pt-3">To edit your own account's credit, click <%= link_to "HERE", url: edit_payment_path, id: @account.id %> </h5>
+<h5 class="pt-3">To edit your own account's credit, click <%= link_to "HERE", url: edit_pay_path, id: @account.id %> </h5>
 </span>
 </div>
 </div>
@@ -138,7 +138,7 @@ You might be accessing an account that's not yours
 <div class="col-md-6">
 <div class="clearfix">
 <span>
-<h5 class="pt-3">To edit your own accout's credit, click <%= link_to "HERE", url: edit_payment_path, id: @account.id %> </h5>
+<h5 class="pt-3">To edit your own accout's credit, click <%= link_to "HERE", url: edit_pay_path, id: @account.id %> </h5>
 </span>
 </div>
 </div>
@@ -149,7 +149,7 @@ You might be accessing an account that's not yours
 <!-- <div class = "app flex-row align-items-center">
 <div class="row justify-content-center">
 <span>
-<h5 class="pt-3">To edit your own accout's credit, click <li><%= link_to "HERE", url: edit_payment_path, id: @account.id %></li> </h5>
+<h5 class="pt-3">To edit your own accout's credit, click <li><%= link_to "HERE", url: edit_pay_path, id: @account.id %></li> </h5>
 </span>
 </div>
 </div> -->

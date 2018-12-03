@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   resources:profiles
   resources:public_profiles
-  resources:payments
+  resources:pays
   
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'

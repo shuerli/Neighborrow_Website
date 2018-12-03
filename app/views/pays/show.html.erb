@@ -71,18 +71,18 @@
 	                  	<form method="put" class="form-horizontal">
 <div class="form-group text-center">
 <label>Your Current Credit:</label>
-<%= @payment.credit %>
+<%= @pay.credit %>
 </div>
 
 
 	                    </form>
 	                    
 
-	                    <button class="btn btn-primary btn-block"  ><%= link_to "Top Up Your Credit Now", edit_payment_path, method: :get, style: "color: white" %></button>
+	                    <button class="btn btn-primary btn-block"  ><%= link_to "Top Up Your Credit Now", edit_pay_path, method: :get, style: "color: white" %></button>
 
 
 
-                        <button class="btn btn-secondary btn-block"  ><%= link_to "Withdraw Your Credit Now", edit_payment_path, method: :get, style: "color: white" %></button>
+                        <button class="btn btn-secondary btn-block"  ><%= link_to "Withdraw Your Credit Now", edit_pay_path, method: :get, style: "color: white" %></button>
 
 
 	                    
