@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
   get '/borrow',    to: 'item#borrow'
-  get '/settings', to: 'accounts#settings'
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 	get '/userdashboard_initialize' => 'accounts#userDashboard_Info'
