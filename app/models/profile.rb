@@ -11,7 +11,8 @@ class Profile < ApplicationRecord
 #      errors.add(:avatar, 'needs to be an image')
 #      add_default_avatar_force
 #    end
-#    
+#
+
     private def add_default_avatar
       unless avatar.attached?
         self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "avatar.jpg")), filename: 'avatar.jpg' , content_type: "image/jpg")
