@@ -19,21 +19,24 @@ class PaysController < ApplicationController
         params.permit!
         paymentId = params[:paymentId]
         payerId =params[:PayerID]
-        if @pay.payid
-            # Get payment ID from query string following redirect
-            payment = Payment.find(paymentId)
-            # Execute payment with the payer ID from query string following redirect
-            if payment.execute(:payer_id => payerId)  #return true or false
-                flash.now[:success] = 'Credit Update Seccuessful'
-                logger.info "Payment[#{payment.id}] executed successfully"
-                params = Hash.new
-                params[:credit] = @pay.credit.to_i + @pay.add_credit.to_i
-                params[:add_credit] = nil
-                params[:payid] = nil
-                @pay.update(params)
-             else
-                logger.error payment.error.inspect
-           
+        
+        if @pay.add && paymentId
+            if @pay.payid
+                # Get payment ID from query string following redirect
+                payment = Payment.find(paymentId)
+                # Execute payment with the payer ID from query string following redirect
+                if payment.execute(:payer_id => payerId)  #return true or false
+                    flash.now[:success] = 'Credit Update Seccuessful'
+                    logger.info "Payment[#{payment.id}] executed successfully"
+                    params = Hash.new
+                    params[:credit] = @pay.credit.to_i + @pay.add_credit.to_i
+                    params[:add_credit] = nil
+                    params[:payid] = nil
+                    params[:add] = false
+                    @pay.update(params)
+                    else
+                    logger.error payment.error.inspect
+                end
             end
         end
         #params = Hash.new
@@ -57,6 +60,11 @@ class PaysController < ApplicationController
         #end
     
     def edit
+        @account = Account.find(current_user.id)
+        @pay = Pay.find_by_email(@account[:email])
+    end
+    
+    def editTwo
         @account = Account.find(current_user.id)
         @pay = Pay.find_by_email(@account[:email])
     end
@@ -99,14 +107,14 @@ class PaysController < ApplicationController
                                    :items => [{
                                    :name => "item",
                                    :sku => "item",
-                                   :price => "5",
+                                   :price => @pay.add_credit,
                                    :currency => "CAD",
                                    :quantity => 1 }]},
                                    
                                    # ###Amount
                                    # Let's you specify a payment amount.
                                    :amount =>  {
-                                   :total =>  "5",
+                                   :total => @pay.add_credit,
                                    :currency =>  "CAD" },
                                    :description =>  "This is the payment transaction description." }]})
                                    
@@ -116,9 +124,10 @@ class PaysController < ApplicationController
                                        @redirect_url = @payment.links.find{|v| v.rel == "approval_url" }.href
                                        params = Hash.new
                                        params[:payid] = @payment.id
+                                       params[:add] = true
                                        @pay.update(params)
                                        redirect_to @redirect_url
-                                       else
+                                   else
                                        logger.error @payment.error.inspect
                                    end
         else
@@ -127,17 +136,16 @@ class PaysController < ApplicationController
         
     end
     
-    def execute
-        # ID of the payment. This ID is provided when creating payment.
-        payment_id = ENV["PAYMENT_ID"] || "PAY-83Y70608H1071210EKES5UNA"
-        @payment = Payment.find(payment_id)
-        
-        # PayerID is required to approve the payment.
-        if @payment.execute( :payer_id => ENV["PAYER_ID"] || "DUFRQ8GWYMJXC" )  # return true or false
-            logger.info "Payment[#{@payment.id}] execute successfully"
-            else
-            logger.error @payment.error.inspect
+    def updateTwo
+        @account = Account.find(current_user.id)
+        @pay = Pay.find_by_email(@account.email)
+
+        if @pay.update(pay_params)
+            
+        else
+            render 'editTwo'
         end
+        
     end
     
     private def pay_params

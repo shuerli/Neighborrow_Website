@@ -32,7 +32,10 @@ Rails.application.routes.draw do
   resources:public_profiles
   resources:pays
   
-  #  get '/pays/:id(.:format)/execute'  => 'pays#showPay'
+  get '/pays/:id/editTwo', to: 'pays#editTwo', as: :pay_editTwo
+  patch  '/pays/:id', to: 'pays#updateTwo', as: :pay_updateTwo
+  put    '/pays/:id',  to: 'pays#updateTwo'
+  
   
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
