@@ -108,10 +108,6 @@ class AccountsController < ApplicationController
         end
     end
     
-    def settings
-        @account = Account.find_by(id: 1)
-	end
-	
 	def userSidebar_Info
 		if !current_user
 			render :json => {:status => 403}

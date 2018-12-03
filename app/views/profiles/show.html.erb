@@ -43,7 +43,7 @@
 
 
 	<% if logged_in_as_user? (@account.id) %>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
+<body class="app sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
 	<!-- <header class="app-header navbar" style="width:100%" id="headerModule">
 
 	</header> -->
@@ -154,25 +154,23 @@
 		
 	</div>
 <% else %>
-			<div class = "app flex-row align-items-center">
-			
-				<!-- <div class="row"> -->
-					<div class="container">
-				      <div class="row justify-content-center">
-				        <div class="col-md-6">
-				          <div class="clearfix">
-				            <h1 class="float-left display-3 mr-4">403</h1>
-				            <h4 class="pt-3">Oops! Forbidden Page</h4>
-				            <p class="text-muted">
-					            Looks like you don't have permission to access this page.
-					            You might be accessing an account's profile that's not yours
-				            </p>
-				          </div>
-				        </div>
-				      </div>
-				    </div>
-			</div>
-		<% end %>
+	<div class = "app flex-row align-items-center">
+			<div class="container">
+		      <div class="row justify-content-center">
+		        <div class="col-md-6">
+		          <div class="clearfix">
+		            <h1 class="float-left display-3 mr-4">403</h1>
+		            <h4 class="pt-3">Oops! Forbidden Page</h4>
+		            <p class="text-muted">
+			            Looks like you don't have permission to access this page.
+			            You might be accessing an account's profile that's not yours
+		            </p>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+	</div>
+<% end %>
 
 
 <!-- CoreUI and other third-party plugins (js files) -->

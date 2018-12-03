@@ -3,17 +3,17 @@ class UserItemsController < ApplicationController
     def show_all
     end
     def get_data_all
-        # if !current_user
-		# 	render :json => {:status => 403}
-        # end
+        if !current_user
+			render :json => {:status => 403}
+        end
        
        
-       # REMOVE TESTING USER
-        user = 'raymondfzy@gmail.com'
-
+    #    # REMOVE TESTING USER
+    #     user = 'raymondfzy@gmail.com'
+        user = current_user.email
         case params[:type]     
         when 'lent'
-            #! CHANGE CURRENT_USER TO CURRENT_USER.EMAIL
+           
             lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.created_at;")
             render :json => {:status => 200, :result => lent_items}
 
@@ -27,11 +27,14 @@ class UserItemsController < ApplicationController
   
 
     def show
+        if !current_user
+			render :json => {:status => 403}
+        end
     end
     def get_data
-        # if !current_user
-		# 	render :json => {:status => 403}
-        # end
+        if !current_user
+			render :json => {:status => 403}
+        end
 
         @user_item = Item.find( params[:id])
         if not @user_item.status == 'disabled'
@@ -45,9 +48,9 @@ class UserItemsController < ApplicationController
     
 
     def destroy
-        # if !current_user
-		# 	render :json => {:status => 403}
-        # end
+        if !current_user
+			render :json => {:status => 403}
+        end
 
         @user_item = Item.find(params[:id])
         if not @user_item.status == 'lent'
@@ -63,17 +66,20 @@ class UserItemsController < ApplicationController
     end
 
     def new
+        if !current_user
+			render :json => {:status => 403}
+        end
     end
     
     def create
-        # if !current_user
-		# 	render :json => {:status => 403}
-        # end
+        if !current_user
+			render :json => {:status => 403}
+        end
 
         @user_item = Item.new
 
-        # # @user_item.owner = current_user.email
-        @user_item.owner = "raymondfzy@gmail.com"
+        @user_item.owner = current_user.email
+        # @user_item.owner = "raymondfzy@gmail.com"
         @user_item.status = 'registered'
         @user_item.condition = params[:condition]
         @user_item.time_start = params[:time_start]
@@ -93,12 +99,15 @@ class UserItemsController < ApplicationController
     end
 
     def edit
+        if !current_user
+			render :json => {:status => 403}
+        end
     end
 
     def update
-        # if !current_user
-		# 	render :json => {:status => 403}
-        # end
+        if !current_user
+			render :json => {:status => 403}
+        end
 
         @user_item = Item.find(params[:id])
 
@@ -127,9 +136,9 @@ class UserItemsController < ApplicationController
 
     def add_address
         @address = Address.new
-        @address.email = 'raymondfzy@gmail.com'
+        # @address.email = 'raymondfzy@gmail.com'
 
-        #@address.email = current_user.email
+        @address.email = current_user.email
         @address.address_line1 = params[:address_line1]
         @address.city = params[:city]
         @address.province = params[:province]
@@ -143,10 +152,12 @@ class UserItemsController < ApplicationController
     end
 
     def find_borrower
-        @input = 1
+        if !current_user
+			render :json => {:status => 403}
+        end
+
         @borrower_email = ActiveRecord::Base.connection.exec_query("SELECT borrower FROM Requests WHERE item_id = \'#{params[:itemId]}\' AND status = \'accepted\'")
         @borrower = @borrower_email[0]
-        # @borrower_id = ActiveRecord::Base.connection.exec_query("SELECT id FROM Accounts WHERE email = \'#{@borrower_email}\'")
         render :json => @borrower
     end
 end
