@@ -15,7 +15,12 @@ class AccountsController < ApplicationController
         profileparams[:avatar_url] = "placeholder"  
         @profile = Profile.new(profileparams)        
         
-        if (@account.save and @profile.save)
+        paymentparams = Hash.new
+        paymentparams[:email] = email
+        paymentparams[:credit] = '5'
+        @payment = Payment.new(paymentparams)
+        
+        if (@account.save and @profile.save and @payment.save)
             AccountMailer.registration_confirmation(@account).deliver
             flash[:notice] = "Sign up successful!"
             redirect_to @account

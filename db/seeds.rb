@@ -7,98 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Creating data for 'Account' table, definition as follows
-# email: user's email
-# role: account type differentiating normal user or administrator
-# password: encrypted password stored after hashed and salted
-# salt: random string used for encryption
-# status: account status, including the determination of the condition before activation and after suspension 
-
-
 accounts = Account.create([
-                          #create users with different status
-                          {id:1, email:'createduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'fngwizodkw', status:'created'},
-                          {id:2, email:'activeuser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-                          {id:3, email:'suspendeduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'23#*$@skdbf', status:'suspended'},
-                          {id:4, email:'banneduser@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'weng234bsdf38sdf', status:'banned'},
-                          
-                          #create a testing user
-                          {id:5, email:'raymondfzy@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
-                          
-                          #create admins with different status
-                          {id:6, email:'zeyu.feng@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
-                          {id:7, email:'geling.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
-                          {id:8, email:'zikevin.wang@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
-                          {id:9, email:'da.fu@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'banned'},
-                          {id:10, email:'shuer.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
-                          {id:11, email:'qingqing.zhuo@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
-                          ])
+                          {email:'raymondfzy@gmail.com', email_confirmed:true, role:'user', password:'12345', salt:'asdnbkwekd', status:'active'},
+                          {email:'zeyu.feng@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sfnweuigg', status:'created'},
+                          {email:'geling.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'sadfrgmis', status:'active'},
+                          {email:'zikevin.wang@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'238syiladfn', status:'suspended'},
+                          {email:'shuer.li@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'43jhisgdbn', status:'active'},
+                          {email:'qingqing.zhuo@mail.utoronto.ca', email_confirmed:true, role:'admin', password:'12345', salt:'gweknz238hsdf', status:'active'},
+						  ])
+						  
+profiles = Profile.create([
+							#create profiles for each user
+							{email:'raymondfzy@gmail.com', first_name:'Yu', middle_name:'Ze', last_name:'Feng', display_name:'Yu F',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', facebook:'https://www.facebook.com/profile.php?id=100007708830271', google:'raymondfzy@gmail.com', avatar_url:'https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929', interest:'Games'},
+							{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+							{email:'geling.li@mail.utoronto.ca', display_name: 'geling', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+							{email:'zikevin.wang@mail.utoronto.ca', display_name: 'zikevin', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+							{email:'shuer.li@mail.utoronto.ca', display_name:'shuer',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+							{email:'qingqing.zhuo@mail.utoronto.ca', display_name:'qingqing', phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
+							])
 
 
-# Creating data for 'Profile' table, definition as follows
-# email: user's email
-# first_name: user's first name
-# middle_name: user's middle name
-# last_name: user's last name
-# display_name: user's nickname or other name showed to public 
-# phone_number: user's phone number
-# gender: user's gender
-# languages: user's preferred languages for communicating
-# country: user's residence country
-# facebook: user's facebook link
-# gmail: user's gmail link
-# twitter: user's twitter link
-# avatar_url: url targeting to user's profile picture file
-# interest: user's personal hobbies
+addresses = Address.create!([
+							#create three different addresses for an active user
+							{email:'raymondfzy@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
+							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '601-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
+							{email:'raymondfzy@gmail.com', address_line1: '907-222 Elm Street', city:'Toronto', province:'Ontario', country: 'Canada', postal_code:'M5T 1K5'},
+							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '510-200 Elm Street', city:'Toronto', province:'Ontario', country: 'Canada', postal_code:'M5T 1K4'},
+							{email:'raymondfzy@gmail.com', address_line1: '2058 Ellesmere Rd', city:'Scarborough', province:'Ontario', country: 'Canada', postal_code:'M1H 2V6'},
+							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '2055 Ellesmere Rd', city:'Scarborough', province:'Ontario', country: 'Canada', postal_code:'M1H 2V6'}
+							])
 
-
-	profiles = Profile.create([
-			#create profiles for each user
-			{email:'createduser@gmail.com', display_name: 'created1', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'activeuser@gmail.com', first_name: 'Jiro', last_name: 'Active', display_name: 'active2', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'suspendeduser@gmail.com', first_name: 'Saburo', last_name: 'Suspended', display_name: 'suspended3', language: 'English', country:'England', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'banneduser@gmail.com', first_name: 'Shiro', last_name: 'Banned', display_name: 'banned4', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-			{email:'raymondfzy@gmail.com', first_name:'Yu', middle_name:'Ze', last_name:'Feng', display_name:'Yu F',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', facebook:'https://www.facebook.com/profile.php?id=100007708830271', google:'raymondfzy@gmail.com', avatar_url:'https://vignette.wikia.nocookie.net/bhlx/images/2/20/Tirpitz.jpg/revision/latest?cb=20170824110929', interest:'Games'},
-			#create a profile for admin
-			{email:'zeyu.feng@mail.utoronto.ca', display_name:'admZY',language:'Chinese', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-      {email:'geling.li@mail.utoronto.ca', display_name: 'geling', language: 'English', country:'USA', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-      {email:'zikevin.wang@mail.utoronto.ca', display_name: 'zikevin', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-      {email:'da.fu@mail.utoronto.ca', display_name: 'da', language: 'English', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-      {email:'shuer.li@mail.utoronto.ca', display_name:'shuer',phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-      {email:'qingqing.zhuo@mail.utoronto.ca', display_name:'qingqing', phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
-	])
-
-
-
-# Creating data for 'Address' table, definition as follows
-# address_id: identifier for each address entry
-# email: user's email
-# address_line1: Street and street number
-# address_line2: Apartment, suite, unit, building, etc.
-# city: city
-# province: province/states
-# country: country
-# postal_code: postal code
-	addresses = Address.create!([
-			#create three different addresses for an active user
-			{email:'raymondfzy@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-			{email:'raymondfzy@gmail.com', address_line1: '212-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-			{email:'raymondfzy@gmail.com', address_line1: '213-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-			
-			#create addresses for users with other status
-			{email:'createduser@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-			{email:'suspendeduser@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-			{email:'banneduser@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
-	])
-
-
-# Creating data for 'Category' table, definition as follows
-# category_id: identifier for each category entry
-# department: name of department which this category belongs to, referencing to Walmart/Amazon/Ebay
-# name: name of this category, referencing to Walmart/Amazon/Ebay
-
-departments = Department.create(
-                                [
+departments = Department.create([
                                 {name:'Home, Garden, Pets & Tools'},
                                 {name:'Books & Audible'},
                                 {name:'Electronics, Computers & Office'},
@@ -107,133 +46,743 @@ departments = Department.create(
                                 {name:'Clothing, Shoes & Jewelry'},
                                 {name:'Sports & Outdoors'},
                                 {name:'Music, Movies & TV Shows'},
-                                ]
-                                )
-# category1 = Category.create!(department:'Clothes', name:'Fashion')
-# category2 = Category.create!(department:'hw', name:'Hardware')
-# category3 = Category.create!(department:'Video Games', name: 'Electronics')
-# category4 = Category.create!(department:'Electronics', name:'Toys')
-# category5 = Category.create!(department:'Electronics', name:'Books')
-# category6 = Category.create!(department:'Electronics', name:'Sports')
-	categories = Category.create([	
-									{department:'Miscellaneous', name:'Miscellaneous'},
-									{department:'Home, Garden, Pets & Tools',  name: 'Home'},
-                                    {department:'Home, Garden, Pets & Tools',  name: 'Garden'},
-                                    {department:'Home, Garden, Pets & Tools',  name: 'Pets'},
-                                    {department:'Home, Garden, Pets & Tools',  name: 'Tools'},
-									{department:'Books & Audible', name: 'Books'},
-                                    {department:'Books & Audible', name: 'Audible'},
-									{department:'Electronics, Computers & Office', name: 'Electronics'},
-                                    {department:'Electronics, Computers & Office', name: 'Computers'},
-                                    {department:'Electronics, Computers & Office', name: 'Office'},
-									{department:'Automotive & Industrial', name: 'Textbook'}
 								])
+								
+categories = Category.create([	
+								#1
+								{department:'Miscellaneous', name:'Miscellaneous'},
+								
+								#2
+								{department:'Video Games', name:'PC Games'}, 
+								#3
+								{department:'Video Games', name:'Console Games'},
+								#4
+								{department:'Video Games', name:'Controller & Devices'},
 
-# Creating data for 'Item' table, definition as follows
-# owner: email of the user owning this item
-# condition: item condition, referenced to the standard on Ebay
-# category: category_id with corresponding item category
-# rating_level: minimum credit requirement on borrowers
-# address_option: available pick-up locations
-# time_start: the first day that the item is available for borrowing
-# time_end: the last day that the item is available for borrowing
-# time_pickup: available pick-up time
+								#5
+								{department:'Books & Audible', name:'Textbooks'},
+								#6
+								{department:'Books & Audible', name:'Children\'s Books'},
+								#7
+								{department:'Books & Audible', name:'Novels'},
+								#8
+								{department:'Books & Audible', name:'Comics & Manga'},
+								#9
+								{department:'Books & Audible', name:'Food & Travel'},
+
+								#10
+								{department:'Music, Movies & TV Shows', name:'Blu-ray'},
+								#11
+								{department:'Music, Movies & TV Shows', name:'New Releases'},
+								#12
+								{department:'Music, Movies & TV Shows', name:'All Music'},
+
+								#13
+								{department:'Electronics, Computers & Office', name:'Printers & Ink'},
+								#14
+								{department:'Electronics, Computers & Office', name:'PC Components'},
+								#15
+								{department:'Electronics, Computers & Office', name:'Computer Accessories'},
+								#16
+								{department:'Electronics, Computers & Office', name:'Camera, Photo & Video'},
+								#17
+								{department:'Electronics, Computers & Office', name:'Monitors & Speakers'},
+								#18
+								{department:'Electronics, Computers & Office', name:'Software'},
+
+								#19
+								{department:'Home, Garden, Pets & Tools',  name: 'Storage & Organization'},
+								#20
+								{department:'Home, Garden, Pets & Tools',  name: 'All Kitchen'},
+								#21
+								{department:'Home, Garden, Pets & Tools',  name: 'Household Supplies'},
+								#22
+								{department:'Home, Garden, Pets & Tools',  name: 'Garden'},
+								#23
+								{department:'Home, Garden, Pets & Tools',  name: 'All Pets'},
+								#24
+								{department:'Home, Garden, Pets & Tools',  name: 'Home Decor'},
+								#25
+								{department:'Home, Garden, Pets & Tools',  name: 'All Tools'},
+
+								#26
+								{department:'Toys, Kids & Baby',  name: 'Outdoor Play'},
+								#27
+								{department:'Toys, Kids & Baby',  name: 'Toys'},
+								#28
+								{department:'Toys, Kids & Baby',  name: 'All Baby'},
+
+								#29
+								{department:'Clothing & Jewelry',  name: 'Boys'},
+								#30
+								{department:'Clothing & Jewelry',  name: 'Girls'},
+								#31
+								{department:'Clothing & Jewelry',  name: 'Accessories'},
+
+								#32
+								{department:'Sports & Outdoors', name: 'Fishing'},
+								#33
+								{department:'Sports & Outdoors', name: 'Golf'},
+								#34
+								{department:'Sports & Outdoors', name: 'Camping & Hiking'},
+								#35
+								{department:'Sports & Outdoors', name: 'Cycling'},
+								#36
+								{department:'Sports & Outdoors', name: 'Water Sports'},
+								#37
+								{department:'Sports & Outdoors', name: 'Winter Sports'},
+							])
+
 
 items = Item.create!([
-					{category_id:'4',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New', rate_level: 4, time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Introduction to Database', description:'A brand new textbook, whoever uses it will likely get 4.0 gpa on that course', brand:'brand1'},
-                       {category_id:'4',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Like New', rate_level: 5, time_start:'2018-12-12 00:00:00', time_end: '2018-12-26 13:23:04', name:'Introduction to algorithm', description:'used textbook', brand:'brand2'},
-                       {category_id:'4',owner:'createduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New',time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Quantum Mechanics', description:'slaknfw93*(&%^&@#)(Unkasbfjweo',brand:'Sciencene'},
-					   {category_id:'3',owner:'geling.li@mail.utoronto.ca', photo_url:'/assets/img/imgplaceholder.gif', condition:'Like New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Learn C++ in 21 Days', description:'This dude is lazy and did not leave anything here', brand:'XinHua'},
-					   {category_id:'3',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Very Good', rate_level: 3, time_start:'2018-11-16 00:00:00', time_end: '2018-12-23 13:23:04', name:'King Lear',description:'see the picture', brand:'brand3'},
-                    {category_id:'3',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', status:'lent', condition:'Good', rate_level: 2, time_start:'2018-11-08 00:00:00', time_end: '2019-01-25 13:23:04', name:'Don Quixote', description:'This dude is lazy and did not leave anything here', brand:'brand4'},
-					{category_id:'3',owner:'suspendeduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', status:'lent', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Frankenstein', description:'frank', brand:'brand3'},
-					{category_id:'2',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif',status:'lent', condition:'Adequate', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Halo 7',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-                    {category_id:'2',owner:'raymondfzy@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Defective', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Resident Evil',description:'This dude is lazy and did not leave anything here',brand:'brand1'},
-                    {category_id:'2',owner:'banneduser@gmail.com', photo_url:'/assets/img/imgplaceholder.gif', condition:'Brand New', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Monster Hunter', description:'3ds version', brand:'Kapkom'},
-                    {category_id:'2',owner:'geling.li@mail.utoronto.ca', photo_url:'/assets/img/imgplaceholder.gif', condition:'Good', time_start:'2018-11-12 00:00:00', time_end: '2018-12-25 13:23:04', name:'Tomb Raider', description:'The best one of the series', brand:'3DM Private Games'}
-                    ])
+					{category_id:'2',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
+					condition:'Good', 
+					rate_level: 4, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Assassin\'s Creed 4 CD', 
+					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
+					brand:'Ubisoft'
+					},
+
+					{category_id:'2',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/civ6.jpeg', 
+					condition:'Like New', 
+					rate_level: 4, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Civilizaion 6 CD', 
+					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.', 
+					brand:'2K Games',
+					},
+
+					{category_id:'2',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					status:'lent',
+					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
+					condition:'Like New', 
+					rate_level: 5, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Gears of War 4 digital version', 
+					description:'Sharing my games while I\'m away during Christmas. This game is in my account, so you can enjoy the game on my account and earn me some battle points. Please request it if you play A LOT.', 
+					brand:'Microsoft'},
+
+					{category_id:'2',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/GTA5.jpeg', 
+					condition:'Good', 
+					rate_level: 4, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'GTA 5', 
+					description:'Sharing my games during Christmas. Just remember don\'t start a new game cuz it will overwrite my saved game.', 
+					brand:'Rock Star'},
+
+					{category_id:'2',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/MHWPC.jpeg', 
+					condition:'Brand New', 
+					rate_level: 5, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Monster Hunter World in steam account', 
+					description:'Sharing my games while I\'m away during Christmas. This game is in my steam account, I will share my password once I accept your request, if you are able to clear stage 5 for me.', 
+					brand:'Capcom'},
+
+					{category_id:'2',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/PVZGW2PC.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Plants VS Zombies GW2 PC', 
+					brand:'EA'},
+					
+
+					{category_id:'3',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/PVZGW2PS4.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2019-01-15 00:00:00', 
+					name:'Plants VS Zombies GW2 on ps4', 
+					description:'You can play local games with your friend(split screen mode), but online play will require your own psn subscription.',
+					brand:'EA'},
+
+					{category_id:'3',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/Tokiden2.jpeg', 
+					condition:'Good', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2099-01-01 00:00:00', 
+					name:'Tokiden 2 ps4 disk', 
+					description:'The game is just too hard. I actually won\'t be playing it anymore, you can keep it as long as you want.',
+					brand:'KoeiTecmo'},
+
+					{category_id:'3',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/gbasp3ds.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-01 00:00:00', 
+					name:'GBA SP and 3DS consoles', 
+					description:'I only have the two consoles, you need to get games by yourself. I will be moving in summer 2019 so please give it back by then.',
+					brand:'Nintendo'},
+
+					{category_id:'3',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/GBC.jpeg', 
+					condition:'Adequate', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-01 00:00:00', 
+					name:'Gameboy Color console and Pokemon Gen 1', 
+					description:'You will need to by batteries for it. It comes with a game so don\'t worry about getting games, I will be moving in summer 2019 so please give it back by then.',
+					brand:'Nintendo'},
+
+					{category_id:'4',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/Xbox360motion.jpeg', 
+					condition:'Very Good', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-01 00:00:00', 
+					name:'Xbox Kinect', 
+					description:'Kinect controller, I play the games myself but I \'m tired of motion controller, so no games or console with it. I will be moving in summer 2019 so please give it back by then.',
+					brand:'Microsoft'},
+
+					{category_id:'4',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/SwitchPro.jpeg', 
+					condition:'Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-01-01 00:00:00', 
+					name:'Switch Pro controller', 
+					brand:'Nintendo'},
+					
+					{category_id:'4',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Video Games/PS4Controller.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-03-12 00:00:00', 
+					name:'duel shock 4 ps4 controller', 
+					description:'A spare one. Anyone can borrow it if your friend comes over, but must return it by the next day of borrow',
+					brand:'Sony'},
+
+					{category_id:'5',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/1styear.jpeg', 
+					condition:'Defective', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-12-01 00:00:00', 
+					name:'First year university math books', 
+					description:'Some math textbooks I used in first year, it is helpful in general but you may or may not need all the topics in it. Some pages are stained but most of the content is readable.',
+					},
+
+					{category_id:'5',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/algo.jpeg', 
+					condition:'Like New', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-05-01 00:00:00', 
+					name:'Introduction to Algorithms', 
+					description:'It is THE bible of algorithms, no need to say more.',
+					},
+
+					{category_id:'5',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/chinese.jpeg', 
+					condition:'Adequate', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-03-12 00:00:00', 
+					name:'Chinese language learning textbooks', 
+					description:'There is couple of them, you can take them all.',
+					},
+
+					{category_id:'5',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/medphy.jpeg', 
+					condition:'Very Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-03-12 00:00:00', 
+					name:'Medical Physiology', 
+					},
+
+					{category_id:'6',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/green.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-05-12 00:00:00', 
+					name:'The Green Fairy Book', 
+					description:'It comes in two parts. Very good for kids to read.',
+					},
+
+					{category_id:'6',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/green2.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-03-12 00:00:00', 
+					name:'The Green Fairy Book by Andrew Lang', 
+					},
+
+					{category_id:'6',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/snow.jpeg', 
+					condition:'Adequate', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
+					name:'Snow white book',
+					description:'My favorite story, a great book for kids.' ,
+					},
+
+					{category_id:'6',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/doraeng.jpeg', 
+					condition:'Very Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-03-18 00:00:00', 
+					name:'Collection of Doraemon', 
+					description:'a full set of doraemon in english, heart-warming sweet Japanese science fiction stories, really nice for children to read.',
+					},
+					
+
+					{category_id:'8',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/dorajap.jpeg', 
+					condition:'Very Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-05-22 00:00:00', 
+					name:'Doraemon original Japanese copies', 
+					description:'The book is in Japanese, but you are welcome to borrow it even if you don\'t understand',
+					},
+
+					{category_id:'8',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/narutostick.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-05-22 00:00:00', 
+					name:'Naruto Sticker book', 
+					description:'It is a collection book, I have all the stickers on it, please do not remove any.',
+					},
+
+					{category_id:'8',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/narutofull.jpeg', 
+					condition:'Very Good', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-05-22 00:00:00', 
+					name:'Doraemon original Japanese copies', 
+					description:'Complete collection of Naruto, only for those who are true fans.',
+					},
+
+					{category_id:'8',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/dragon.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-04-12 00:00:00', 
+					name:'Dragon Ball series', 
+					description:'Full set of dragonball comics.',
+					},
+
+					{category_id:'9',
+					address:3,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Books/viet.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-30 00:00:00', 
+					name:'Vietnamese recipe book', 
+					description:'It has all your favorite Vietnamese dishes inside, pho, barbeque pork rice...anything you name it.',
+					},
+
+					{category_id:'10',
+					address:1,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/MusicMovie/atlan.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-30 00:00:00', 
+					name:'Atlantis blu-ray movie', 
+					description:'Tells a great adventure story, I recommend it for teenagers.',
+					brand:'Disney',
+					},
+
+					{category_id:'10',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/MusicMovie/captain.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-04-30 00:00:00', 
+					name:'Captain America Blu-ray', 
+					description:'Captain America',
+					brand:'Marvel',
+					},
+
+					{category_id:'10',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/MusicMovie/jonah.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-30 00:00:00', 
+					name:'Jonah movie', 
+					description:'A very old movie, comes in blu-ray.',
+					},
+
+					{category_id:'11',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/MusicMovie/12strong.jpeg', 
+					condition:'Brand New', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-01-05 00:00:00', 
+					name:'12 Strong movie digital', 
+					description:'Recently released movie, action war drama. It is in my USB, you will need to pick it up.',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/printer.jpeg', 
+					condition:'Like New', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-01-01 00:00:00', 
+					name:'Canon printer',
+					brand:'Canon' ,
+					description:'A Canon printer I recently bought. I will not hand it to you, but if you are in my neighborhood and want to print something, I can do it for you with this.',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/pprinter.jpeg', 
+					condition:'Like New', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2029-06-01 00:00:00', 
+					name:'Epson portable printer', 
+					brand:'Epson',
+					description:'It is a portable printer, easy to carry around. It is taking too much space of my table, lending it out till I move',
+					},
+
+					{category_id:'13',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/scanner.jpeg', 
+					condition:'Brand New', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2022-06-01 00:00:00', 
+					name:'FastFoto FF640 scanner', 
+					brand:'Epson',
+					description:'Scanner in my room, come and use it if you want.',
+					},
+
+					{category_id:'14',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/gtx1080.jpeg', 
+					condition:'Like New', 
+					rate_level: 1, 
+					time_start:'2018-01-06 00:00:00', 
+					time_end: '2021-01-20 00:00:00', 
+					name:'GTX1080 card', 
+					brand:'ASUS',
+					description:'I will not hand the card to you, but you can use a server to do computation once I accept your request.',
+					},
+
+					{category_id:'14',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/keyboard.jpeg', 
+					condition:'Like New', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-06-01 00:00:00', 
+					name:'Majestouch keyboard black switch', 
+					brand:'Filco',
+					description:'Black switch filco keyboard, haven\'t used it since I had a new Razer keyboard.',
+					},
+
+					{category_id:'14',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Electronics/headset.jpeg', 
+					condition:'Defective', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-06-01 00:00:00', 
+					name:'Sony wireless headset (broken)', 
+					brand:'Sony',
+					description:'It is broken but still usable. I bought a new one, so whoever wants it just take it. Works totally well if you tape it together',
+					},
+
+					{category_id:'19',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/organizer.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2025-07-21 00:00:00', 
+					name:'portable organizer boxes', 
+					description:'Never used it since I moved in',
+					},
+
+					{category_id:'19',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/shed.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2023-07-21 00:00:00', 
+					name:'Portable storage shed', 
+					description:'About 3m x 5m, you need a backyard to place it',
+					},
+
+					{category_id:'19',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/vacuum.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2021-07-21 00:00:00', 
+					name:'Spare vacuum cleaner', 
+					brand:'Eureka',
+					},
+
+					{category_id:'20',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/rice.jpeg', 
+					condition:'Very Good', 
+					rate_level: 5, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2022-07-21 00:00:00', 
+					name:'Zojirushi rice cooker', 
+					brand:'Zojirushi',
+					description:'Very useful. It cooks rice, congee, even soup.',
+					},
 
 
-# Creating data for 'Request' table, definition as follows
-# request_id: identifier for each request relationship
-# item_id: identifier of the item connected with this borrowing request
-# lender: the email of user who want to borrow this item
-# address: final address for pick-up
-# status: current status of this request
-# rejected_reason: reason of rejection for lending, if any
-# time_start: the first day that the item is borrowed
-# time_end: the last day that the item is borrowed
-# time_pickup: final time for pick-up
-# received: whether the borrower received this item
-# returned: whether the borrower returned this item
+					{category_id:'22',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/garden1.jpeg', 
+					condition:'Good', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-06-15 00:00:00', 
+					name:'all kinds of garden tools', 
+					description:'Everything in the picture. Feel free to pick them up',
+					},
 
-	requests = Request.create([
-		#requests from active users/admin to active owners
-		{item_id:1, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:4, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:5, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:6, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:1, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+					{category_id:'22',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/garden2.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
+					name:'Garden tools', 
+					description:'See the picture',
+
+					},
+					{category_id:'22',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/farm.jpeg', 
+					condition:'Good', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2050-01-01 00:00:00', 
+					name:'farm tools', 
+					description:'Some tools I used in my farm, got multiple of each, so it will always be available.',
+					},
+
+					{category_id:'23',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/bob.jpeg', 
+					condition:'Brand New', 
+					rate_level: 5, 
+					time_start:'2018-12-25 00:00:00', 
+					time_end: '2028-01-15 00:00:00', 
+					name:'My cat Bob', 
+					description:'Someone please take care of my cat when I \'m away during Christmas. I will provide everything he needs and some accomodation fee. Contact me for more details',
+					},
+
+					{category_id:'23',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/dogbed.jpeg', 
+					condition:'Good', 
+					rate_level: 2, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-06-15 00:00:00', 
+					name:'Cozy bed for dogs', 
+					description:'I got a new one for my pet, now this one is spare. It is cleaned and no germs or anything',
+					},
+
+					{category_id:'23',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/cage.jpeg', 
+					condition:'Very Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2028-06-15 00:00:00', 
+					name:'hamster cage', 
+					description:'I used to have two hamseters, now I gave them to my friend and the cage is left.',
+					},
+
+					{category_id:'24',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/christree.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Christmas tree', 
+					description:'My new place is tight in space to keep it, have it as long as you want',
+					},
+					{category_id:'24',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/halo.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Haloween lights', 
+					description:'Good for everyday decoration as well, you can take one or take all, depends on you',
+					},
+					{category_id:'24',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/HGPT/hlw.jpeg', 
+					condition:'Good', 
+					rate_level: 1, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Haloween deco', 
+					description:'My kids\' creation. Looks gross to me, just take it whoever please.',
+					},
+
+					# {category_id:'27',
+					# address:5,
+					# owner:'raymondfzy@gmail.com', 
+					# photo_url:'/assets/img/Kids/.jpeg', 
+					# condition:'Good', 
+					# rate_level: 3, 
+					# time_start:'2018-12-01 00:00:00', 
+					# time_end: '2020-01-01 00:00:00', 
+					# name:'', 
+					# description:'',
+					# },
+				])
+                   
+
+requests = Request.create([
+		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:4, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:5, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:6, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:1, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 		
+		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:2, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:3, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
 
-		#requests from inactive users to active owners
-		{item_id:1, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:2, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:3, borrower:'raymondfzy@gmail.com', address:1, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-
-		#requests from active users/admin to inactive owners
-		{item_id:7, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'raymondfzy@gmail.com', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:7, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:8, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
-		{item_id:9, borrower:'geling.li@mail.utoronto.ca', address:2, time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
+		{item_id:7, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:7, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:8, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'},
+		{item_id:9, borrower:'geling.li@mail.utoronto.ca', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00'}
 	])
 
 
-
-
-# Creating data for 'FeedbackToBorrower' table, definition as follows
-# id: identifier of Feedback To Borrower
-# request_id: identifier of the request which this feedback connected to
-# rate: numerial score out of 5 to borrower 
-# tag: neat comment given to the borrower
-# credit: total score given to this user
-# comment: text feedback, if any
-
-
-	feedbackToBorrowers = FeedbackToBorrower.create([
+feedbackToBorrowers = FeedbackToBorrower.create([
 		{request_id:1, rate:4, credit:4, comment:'good'},
 		{request_id:8, rate:4, credit:4, comment:'good 2'},
 		{request_id:12, rate:5, credit:4}
 	])
 
 
-# Creating data for 'FeedbackToLender' table, definitions as follows
-# id: identifier of Feedback To Lender
-# request_id: identifier of the request which this feedback connected to
-# rate: numerial score out of 5 to lender 
-# tag: neat comment given to the lender
-# credit: total credit given to this user
-# comment: text feedback, if any
- 	feedbackToLenders = FeedbackToLender.create([
+feedbackToLenders = FeedbackToLender.create([
  		{request_id:1, rate:5, credit:2, comment:'This lender is great'},
 		{request_id:8, rate:3, credit:2, comment:'That lender is great 2'},
 		{request_id:12, rate:3, credit:4}
 	])
 
 
-# Creating data for 'Report' table, definition as follows
-# report_id: identifer of each report entry
-# type: report type
-# subject: main topic of this report
-# content: report content
-# status: the status of processing on this report
-# handler: email of the administrator who handle this report
-# request_id: id of the request connected with this report, if any
-	reports = Report.create([
+reports = Report.create([
 			#create all types of reports with all types of status, active admin handler
 			{report_type: 'system', subject:'system report subject1', content:'random complains about system problems', status:'submitted',handler: 'geling.li@mail.utoronto.ca', time_submitted:'2018-09-23 00:00:00'},
 			{report_type: 'system', subject:'system report subject2', content:'random complains about system problems', status:'in progress',handler: 'geling.li@mail.utoronto.ca', time_submitted:'2018-09-23 00:00:00'},
@@ -256,13 +805,11 @@ items = Item.create!([
 
 
 
-# Creating data for 'Chat' table
-	chats = Chat.create([
+
+chats = Chat.create([
 			{time:'2018-09-20 19:00:00', sender:'zeyu.feng@mail.utoronto.ca', receiver:'zikevin.wang@mail.utoronto.ca', content: 'Hi'},
 			{time:'2018-09-22 19:00:00', sender:'da.fu@mail.utoronto.ca', receiver:'zikevin.wang@mail.utoronto.ca', content: 'Hola'},
 			{time:'2018-09-23 19:00:00', sender:'geling.li@mail.utoronto.ca', receiver:'da.fu@mail.utoronto.ca', content: 'Bonjour'},
 			{time:'2018-09-24 19:00:00', sender:'geling.li@mail.utoronto.ca', receiver:'zeyu.feng@mail.utoronto.ca', content: 'Privet'},
 			{time:'2018-09-20 19:00:00', sender:'zeyu.feng@mail.utoronto.ca', receiver:'da.fu@mail.utoronto.ca', content: 'konchya'}
 	])
-
-

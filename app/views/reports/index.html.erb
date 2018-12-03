@@ -1,0 +1,191 @@
+<!--
+  * This modified template file is referenced to coreui.io,
+  * along with other third-party stylesheets and javascript files.
+  * Source Repository: https://github.com/coreui/coreui-free-bootstrap-admin-template
+-->
+
+<!--
+  * CoreUI - Free Bootstrap Admin Template
+  * @version v2.1.7
+  * @link https://coreui.io
+  * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+  * Licensed under MIT (https://coreui.io/license)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta information used for SEO -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Neighborrow - Your Platform to Borrow and Lend"
+    />
+    <meta name="author" content="Neighborrow" />
+    <meta name="keyword" content="Borrow, Lend, CSC444" />
+    <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
+    javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Neighborrow - Blank</title>
+
+    <!-- CSS files for third-party icons -->
+    <link
+      href="/vendors/@coreui/icons/css/coreui-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/flag-icon-css/css/flag-icon.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/vendors/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.2/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Base stylesheets & third-party stylesheets -->
+    <link href="/vendors/@coreui/coreui/css/style.css" rel="stylesheet" />
+    <link href="/vendors/pace-progress/css/pace.min.css" rel="stylesheet" />
+
+    <!-- Customized stylesheet goes here -->
+  </head>
+
+  <body
+    class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show"
+    data-turbolinks="false"
+  >
+    <header
+      class="app-header navbar"
+      style="width:100%"
+      id="headerModule"
+    ></header>
+    <div class="app-body">
+      <div class="sidebar" id="menuModule"></div>
+
+      <main class="main">
+        <span id="subHeaderModule" class="d-xl-none d-lg-none"></span>
+
+        <div class="container-fluid" style="margin-top:30px">
+          <h4>Your Feedback Matters</h4>
+          <hr />
+          <div class="row">
+            <div class="col-md-4">
+              <p>
+                We sincerely appreciate your praise and suggestion, and we have
+                been seriously investigating every report from our users
+                claiming for any potential issues and problems that might occur.
+              </p>
+              <strong
+                >If you report is related to one of your request and indicating
+                problematic actions on borrower-side or lender-side, we will
+                contact you via email within 3 business days.
+              </strong>
+              <hr />
+            </div>
+            <div class="col-md-6 offset-md-1">
+              <form>
+                <div class="form-group">
+                  <label>Report Type</label>
+                  <select class="form-control" id="reportType_field" required>
+                    <option value="system">system</option>
+                    <option value="client">client</option>
+                    <option value="suggestion">suggestion</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Request ID (optional)</label>
+                  <input class="form-control" id="requestID_field" required />
+                </div>
+                <div class="form-group">
+                  <label>Subject</label>
+                  <input class="form-control" id="subject_field" required />
+                </div>
+                <div class="form-group">
+                  <label>Content</label>
+                  <textarea
+                    class="form-control"
+                    id="content_field"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+              </form>
+              <button
+                class="btn btn-success pull-right"
+                style="cursor:pointer;"
+                onclick="submit()"
+              >
+                <i class="fa fa-check-circle"></i> Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer" id="footerModule"></footer>
+
+    <!-- CoreUI and other third-party plugins (js files) -->
+    <script src="/vendors/jquery/js/jquery.min.js"></script>
+    <script src="/vendors/popper.js/js/popper.min.js"></script>
+    <script src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendors/pace-progress/js/pace.min.js"></script>
+    <script src="/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="/vendors/@coreui/coreui/js/coreui.min.js"></script>
+    <script src="/vendors/momentjs/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Customized Javascript file goes here -->
+    <script src="/assets/js/dashboard-init.js?version=1"></script>
+    <script>
+      let submit = () => {
+        if ($("#subject_field").val() === "") {
+          $("#subject_field").addClass("is-invalid");
+        } else {
+          $("#subject_field").removeClass("is-invalid");
+        }
+        if ($("#content_field").val() === "") {
+          $("#content_field").addClass("is-invalid");
+          return;
+        } else {
+          $("#content_field").removeClass("is-invalid");
+		} 
+        $.post(
+          "/report",
+          {
+            authenticity_token: window._token,
+            report_type: $("#reportType_field").val(),
+            subject: $("#subject_field").val(),
+            content: $("#content_field").val(),
+            time_submitted: moment().format("YYYY-MM-DD HH:mm:ss"),
+            request_id: $("#requestID_field").val()
+          },
+          function(data) {
+            if (data.status === 200) {
+              swal("Thank you!", "We just received your report.", "success");
+            } else {
+              swal({
+                type: "error",
+                title: "Sorry...",
+                text: "We got a problem. Please try again later."
+              });
+            }
+          }
+		);
+		
+      };
+    </script>
+  </body>
+</html>
