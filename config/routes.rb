@@ -113,7 +113,8 @@ Rails.application.routes.draw do
   post '/media_contents' => 'media_contents#create'
   get '/media_contents' => 'media_contents#find_url'
 
-
+	get '/report' => 'reports#index'
+	post '/report' => 'reports#create'
 
 
 

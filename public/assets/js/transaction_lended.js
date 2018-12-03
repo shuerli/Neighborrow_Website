@@ -28,6 +28,7 @@ $("#filter_init").click(function() {
 
 $(document).ready(function() {
   $.get("/request?type=lended&range=all&sorted_by=update_time", data => {
+		console.log(data)
     cache = data;
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
@@ -173,8 +174,8 @@ let appendSection = info => {
         break;
       case "accepted":
         if (
-          moment(time_start).isSameOrAfter(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format()) &&
+          //moment(request.time_start).isSameOrAfter(moment().format()) &&
+          //moment(request.time_end).isSameOrAfter(moment().format()) &&
           !request.received &&
           !request.returned
         ) {
@@ -186,10 +187,10 @@ let appendSection = info => {
           progressbar_next_date =
             '<br /><small class="text-muted" >Before or On ' +
             moment(request.time_start).format("MMMM Do, YYYY") +
-            "</small >";
+						"</small >";
         } else if (
-          moment(time_start).isSameOrBefore(moment().format()) &&
-          moment(time_end).isSameOrAfter(moment().format()) &&
+          //moment(request.time_start).isSameOrBefore(moment().format()) &&
+          //moment(request.time_end).isSameOrAfter(moment().format()) &&
           request.received &&
           !request.returned
         ) {
@@ -313,7 +314,7 @@ let appendSection = info => {
             request.id +
             ')"> Item Returned </button>';
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for Help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for Help </button></a>';
         cancel_button =
           '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
           request.id +
@@ -322,7 +323,7 @@ let appendSection = info => {
           '<a href="mailto:' +
           info.borrowers.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Borrower </button></a>';
-        if (!request.received)
+        if (request.received)
           button_section =
             returned_button + contact_button + cancel_button + help_button;
         else button_section = contact_button + cancel_button + help_button;
@@ -345,7 +346,7 @@ let appendSection = info => {
         break;
       case "rejected":
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button></a>';
         contact_button =
           '<a href="mailto:' +
           info.borrowers.filter(x => x.request_id === request.id)[0].email +
