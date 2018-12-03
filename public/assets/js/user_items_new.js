@@ -76,7 +76,9 @@ function btnSubmit(){
         $.ajax({
             url: '/media_contents',
             method: "GET",
-        }).done(function(data){
+        }).done(function(url){
+
+            
             $.ajax({
                 url: "/address_new",
                 method: "POST",
@@ -98,7 +100,7 @@ function btnSubmit(){
                                 condition: item_condition,
                                 time_start: sdate,
                                 time_end: edate,
-                                //photo_url: img_url,
+                                photo_url: url.substr(url.indexOf('/uploads')),
                                 name: document.getElementById('item-name-input').value,
                                 description: document.getElementById('description-input').value,
                                 brand: document.getElementById('brand-input').value,
