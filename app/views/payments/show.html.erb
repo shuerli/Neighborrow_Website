@@ -43,7 +43,7 @@
 
 
 	<% if logged_in_as_user? (@account.id) %>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
+<body class="app sidebar-fixed aside-menu-fixed sidebar-md-show" data-turbolinks="false">
 	<!-- <header class="app-header navbar" style="width:100%" id="headerModule">
 
 	</header> -->
@@ -57,7 +57,7 @@
 
 			<div class="container-fluid">
 				<!-- Main section - Codes for main functionalities in this block -->
-				<h2>Account Profiles</h2>
+				<h2>Account Credit</h2>
 				<hr>
             
 	            <div class="row">
@@ -69,7 +69,7 @@
 	                    
 	                  <div class="card-body">
 	                  	<form method="put" class="form-horizontal">
-<div class="form-group">
+<div class="form-group text-center">
 <label>Your Current Credit:</label>
 <%= @payment.credit %>
 </div>
@@ -77,9 +77,14 @@
 
 	                    </form>
 	                    
-	                    
-	                    <button class="btn btn-primary pull-right"  ><%= link_to "Top Up Your Credit Now", edit_payment_path, method: :get, style: "color: white" %></button>
-	                    
+
+	                    <button class="btn btn-primary btn-block"  ><%= link_to "Top Up Your Credit Now", edit_payment_path, method: :get, style: "color: white" %></button>
+
+
+
+                        <button class="btn btn-secondary btn-block"  ><%= link_to "Withdraw Your Credit Now", edit_payment_path, method: :get, style: "color: white" %></button>
+
+
 	                    
 	                  </div>
 	                </div>

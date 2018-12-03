@@ -1,5 +1,6 @@
 class Payment < ApplicationRecord
   
+  serialize :notification_params, Hash
   def paypal_url(return_path)
       values = {
           business: "sixneighborrow-facilitator@gmail.com",

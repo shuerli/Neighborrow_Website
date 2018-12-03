@@ -10,7 +10,12 @@ class PaymentsController < ApplicationController
     
     def show
         @account = Account.find(current_user.id)
-        @payment = Payment.find_by_email(@account.email)         
+        @payment = Payment.find_by_email(@account.email)
+        
+        params = Hash.new
+        params[:credit] = @payment.credit.to_i + @payment.add_credit.to_i
+        params[:add_credit] = nil
+        @payment.update(params)
     end
     
     def edit
