@@ -191,12 +191,12 @@ let user_render = userBlock => {
   if (userBlock.borrowRate[0].borrow_rate !== null)
     document.getElementById(
       "suggest_user_borrow_rate"
-    ).innerText = userBlock.borrowRate[0].borrow_rate.toFixed(2);
+    ).innerText = parseFloat(userBlock.borrowRate[0].borrow_rate).toFixed(2);
   else document.getElementById("suggest_user_borrow_rate").innerText = "None";
   if (userBlock.lendRate[0].lend_rate !== null)
     document.getElementById(
       "suggest_user_lend_rate"
-    ).innerText = userBlock.lendRate[0].lend_rate.toFixed(2);
+    ).innerText = parseFloat(userBlock.lendRate[0].lend_rate).toFixed(2);
   else document.getElementById("suggest_user_lend_rate").innerText = "None";
 
   if (userBlock.result[0].gender == "Male")
@@ -272,7 +272,7 @@ let item_render = itemList => {
         itemList.result_itemISBN[i].ownerName +
         "</label>" +
         '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-        lenderRate.toFixed(1) +
+        parseFloat(lenderRate).toFixed(1) +
         "</label></span></div></div></div>";
       totalCount++;
     }
@@ -310,7 +310,7 @@ let item_render = itemList => {
           itemList.search_byItemNameAndBrand_lenderRate[
             itemList.result_itemNameBrand[i].ownerID
 					];
-			console.log(condition_pill[itemList.result_itemNameBrand[i].itemCondition])
+			console.log(lenderRate.toString())
       document.getElementById("itemNameBrand_section_content").innerHTML +=
         '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
         itemList.result_itemNameBrand[i].itemID +
@@ -333,7 +333,7 @@ let item_render = itemList => {
         itemList.result_itemNameBrand[i].ownerName +
         "</label>" +
         '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-        lenderRate.toFixed(1) +
+        parseFloat(lenderRate).toFixed(1) +
         "</label></span></div></div></div>";
       totalCount++;
     }
@@ -395,7 +395,7 @@ let item_render = itemList => {
           itemList.result_correctedKeyword[i].ownerName +
           "</label>" +
           '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-          lenderRate.toFixed(1) +
+          parseFloat(lenderRate).toFixed(1) +
           "</label></span></div></div></div>";
         totalCount++;
       }
