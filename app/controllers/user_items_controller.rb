@@ -83,6 +83,7 @@ class UserItemsController < ApplicationController
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
         @user_item.photo_url = params[:photo_url]
+        @user_item.address = params[:address]
 
         if @user_item.save
              render :json => {:status => 200}
@@ -113,7 +114,7 @@ class UserItemsController < ApplicationController
         @user_item.address = params[:address]
 
         if @user_item.save
-             render :json => @user_item#{:status => 200}
+             render :json => {:status => 200}
         else 
              render :json => {:status => 404}
         end
