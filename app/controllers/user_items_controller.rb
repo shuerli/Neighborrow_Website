@@ -143,8 +143,10 @@ class UserItemsController < ApplicationController
     end
 
     def find_borrower
-        @borrower_id = ActiveRecord::Base.connection.exec_query("SELECT borrower FROM Requests WHERE item_id = \'#{params[:itemId]}\' AND received = \'true\' AND returned = \'false\'")
-        render :json => {:status => 200, :result => @borrower_id}
-     
+        @input = 1
+        @borrower_email = ActiveRecord::Base.connection.exec_query("SELECT borrower FROM Requests WHERE item_id = \'#{params[:itemId]}\' AND status = \'accepted\'")
+        @borrower = @borrower_email[0]
+        # @borrower_id = ActiveRecord::Base.connection.exec_query("SELECT id FROM Accounts WHERE email = \'#{@borrower_email}\'")
+        render :json => @borrower
     end
 end

@@ -35,39 +35,47 @@ $(document).ready(function () {
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
     else {
-      for (var i = 0; i < data.result.length; i++) {
-        var cardField = document.createElement('div');
-        cardField.className = "col-md-6"
-        cardField.innerHTML = '<div class="card">\
-                                <div class="card-body">\
-                                    <div class="row">\
-                                      <div class="col-md-7">\
-                                          <div class="row">\
-                                            <div class="col-md-4 text-center">\
-                                              <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px; height:80px;">\
-                                            </div>\
-                                            <div class="col-md-8">\
-                                              <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
-                                              <small>\
-                                              <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
-                                              </small>\
-                                                |  \
-                                              <small>\
-                                              <a href="https://www.google.ca"> Borrower Profile</a>\
-                                              </small>\
-                                            </div>\
+
+
+          for (var i = 0; i < data.result.length; i++) {
+            var cardField = document.createElement('div');
+            cardField.className = "col-md-6"
+            cardField.innerHTML = '<div class="card">\
+                                    <div class="card-body">\
+                                        <div class="row">\
+                                          <div class="col-md-7">\
+                                              <div class="row">\
+                                                <div class="col-md-4 text-center">\
+                                                  <img id="item-img-' + data.result[i].id + '" src="' + data.result[i].photo_url + '" alt="Item photo unavailable" class="img-thumbnail" style="width:80px; height:80px;">\
+                                                </div>\
+                                                <div class="col-md-8">\
+                                                  <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
+                                                  <small>\
+                                                  <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
+                                                  </small>\
+                                                </div>\
+                                              </div>\
                                           </div>\
+                                          <div class="col-md-5 text-center" id="button_area">\
+                                            <a id="btnMail">\
+                                            <button class="btn btn-primary" style="width:65%;margin-bottom:15px;"> Contact Borrower </button>\
+                                            </a>\
+                                          </div>\
+                                        </div>\
                                       </div>\
-                                      <div class="col-md-5 text-center" id="button_area">\
-                                        <a href="mailto:raymondfzy@gmail.com">\
-                                        <button class="btn btn-primary" style="width:65%;margin-bottom:15px;"> Contact Borrower </button>\
-                                        </a>\
-                                      </div>\
-                                    </div>\
-                                  </div>\
-                                </div>'
-        document.getElementById("lent-items").appendChild(cardField);
-      }
+                                    </div>'
+            document.getElementById("lent-items").appendChild(cardField);
+
+            $.ajax({
+              url: "/get_borrower",
+              method: "GET",
+              data: { 
+                   itemId: data.result[i].id
+                 }
+           }).done(function(borrower) {
+              document.getElementById('btnMail').setAttribute('href', "mailto:"+ borrower.borrower);
+            });
+         }
     }
   });
   
