@@ -314,7 +314,7 @@ let appendSection = info => {
             request.id +
             ')"> Item Returned </button>';
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for Help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for Help </button></a>';
         cancel_button =
           '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
           request.id +
@@ -346,7 +346,7 @@ let appendSection = info => {
         break;
       case "rejected":
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button></a>';
         contact_button =
           '<a href="mailto:' +
           info.borrowers.filter(x => x.request_id === request.id)[0].email +

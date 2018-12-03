@@ -306,7 +306,7 @@ let appendSection = info => {
             request.id +
             ')"> Item Received </button>';
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button></a>';
         cancel_button =
           '<button class="btn btn-danger" style="width:65%;margin-bottom: 15px;" onclick="cancel_request(' +
           request.id +
@@ -342,12 +342,13 @@ let appendSection = info => {
         resubmit_button =
           '<a href="/"><button class="btn btn-outline-primary" style="width:65%;margin-bottom: 15px;" > Re-submit this request </button></a>';
         help_button =
-          '<button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button>';
+          '<a href="/report"><button class="btn btn-light" style="width:65%;margin-bottom: 15px;" > Request for help </button></a>';
         contact_button =
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-        button_section = contact_button + help_button + resubmit_button;
+				//button_section = contact_button + help_button + resubmit_button;
+				button_section = contact_button + help_button;
         break;
       case "cancelled":
         resubmit_button =
@@ -356,7 +357,8 @@ let appendSection = info => {
           '<a href="mailto:' +
           info.lenders.filter(x => x.request_id === request.id)[0].email +
           '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
-        button_section = contact_button + resubmit_button;
+				//button_section = contact_button + resubmit_button;
+				button_section = contact_button;
         break;
     }
 
