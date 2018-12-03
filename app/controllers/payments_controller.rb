@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
     
     def show
         @account = Account.find(current_user.id)
-        @payment = Payment.find_by_email(@account.email)
+        @payment = Payment.find_by_email(@account.email)         
     end
     
     def edit
@@ -29,8 +29,6 @@ class PaymentsController < ApplicationController
         end
         
     end
-    
-   
     
     private def payment_params
         params.require(:payment).permit(:email, :add_credit, :credit, :withdraw_credit)

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources:profiles
   resources:public_profiles
   resources:payments
-
+  
 	# Routes to dashboards
 	get '/user' => 'dashboards#user'
 	#get '/admin' => 'dashboards#admin'

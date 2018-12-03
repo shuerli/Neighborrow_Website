@@ -5,12 +5,9 @@ class Payment < ApplicationRecord
           business: "sixneighborrow-facilitator@gmail.com",
           cmd: "_xclick",
           upload: 1,
-          return: "http://localhost",
-          invoice: id,
+          return: "http://localhost:3000#{return_path}",
           amount: self.add_credit,
-          currency:  "CAD",
-          quantity: '1',
-          description: "Neighborrow credit top up"
+          item_name: "Neighborrow Credit",
       }
       "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
   end
