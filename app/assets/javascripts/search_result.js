@@ -219,6 +219,7 @@ let item_render = itemList => {
 	document.getElementById("itemISBN_section_content").innerHTML = "";
 	document.getElementById("itemNameBrand_section_content").innerHTML = "";
 	document.getElementById("itemISBN_section_content").innerHTML = "";
+	document.getElementById("no_results_section").style.display = "none";
 
   let totalCount = 0;
   if (
