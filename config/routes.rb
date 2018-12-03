@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   resources:categories
+
   get '/category/departments' => 'categories#departments'
   get '/category/department/category_names' => 'categories#by_department'
   get '/category/id' => 'categories#find_id'
@@ -83,8 +84,8 @@ Rails.application.routes.draw do
 
   get '/user_item/edit/:id' => 'user_items#edit'
   put '/user_item/edit' => 'user_items#update'
-  
-
+  get '/address' => 'user_items#get_address'
+ 
 	# Routes for redirecting to system pages (error handler)
 	get '/404' => 'application#page_not_found'
     
@@ -112,7 +113,8 @@ Rails.application.routes.draw do
   post '/media_contents' => 'media_contents#create'
   get '/media_contents' => 'media_contents#find_url'
 
-
+	get '/report' => 'reports#index'
+	post '/report' => 'reports#create'
 
 
 

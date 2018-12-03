@@ -22,6 +22,23 @@ $(document).ready(function () {
         if(itemInfo.description != null){
             document.getElementById('description-input').value = itemInfo.description;
         }
+
+        $.ajax({
+            type: "get",
+            url: "/address",
+            data:
+            {
+                add: itemInfo.address,
+            },
+            success: function (data) {
+                addressInfo = data.result;
+                document.getElementById('street-input').value = addressInfo.address_line1;
+                document.getElementById('city-input').value = addressInfo.city;
+                document.getElementById('province-input').value = addressInfo.province;
+                document.getElementById('country-input').value = addressInfo.country;
+                document.getElementById('postalcode-input').value = addressInfo.postal_code;
+            }
+        });
         // Get category info from DB
         $.ajax({
             type: "get",
