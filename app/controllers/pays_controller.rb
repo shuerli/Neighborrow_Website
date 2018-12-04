@@ -3,6 +3,7 @@ include PayPal::SDK::REST
 include PayPal::SDK::Core::Logging
 
 class PaysController < ApplicationController
+	layout false
     def new
         @pay = Pay.new
     end
@@ -73,8 +74,8 @@ class PaysController < ApplicationController
                                    
                                    # ###Redirect URLs
                                    :redirect_urls => {
-                                   :return_url => "https://neighborrow.herokuapp.com#{pay_path(@pay)}",
-                                   :cancel_url => "https://neighborrow.herokuapp.com/Error" },
+                                   :return_url => "http://localhost:3000#{pay_path(@pay)}",
+                                   :cancel_url => "http://localhost:3000/Error" },
                                    
                                    # ###Transaction
                                    # A transaction defines the contract of a

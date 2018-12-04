@@ -36,7 +36,7 @@ $(document).ready(function() {
 });
 
 let appendSection = info => {
-	console.log(info)
+	//console.log(info)
 	$("#list_section").empty();
 	if(info.result.length===0){
 		$("#list_section").append('<div class="col-12 text-center"><hr><h5 class="text-muted">You haven\'t borrowed any item yet.</h5></div>');

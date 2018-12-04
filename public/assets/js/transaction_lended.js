@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 let appendSection = info => {
 	$("#list_section").empty();
-	console.log(info)
+	//console.log(info)
 	if(info.result.length===0){
 		$("#list_section").append('<div class="col-12 text-center"><hr><h5 class="text-muted">You haven\'t lended any item yet.</h5></div>');
 	}
@@ -307,7 +307,7 @@ let appendSection = info => {
         contact_button =
           '<a href="mailto:' +
           info.borrowers.filter(x => x.request_id === request.id)[0].email +
-          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Lender </button></a>';
+          '"><button class="btn btn-primary" style="width:65%;margin-bottom: 15px;" > Contact Borrower </button></a>';
         button_section = accept_button + reject_button + '<hr>' +contact_button;
         break;
       case "accepted":

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  
+  layout false
   def new
     @profile = Profile.new 
   end  

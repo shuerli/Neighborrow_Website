@@ -22,6 +22,7 @@ class AccountsController < ApplicationController
         
         if (@account.save and @profile.save and @pay.save)
             AccountMailer.registration_confirmation(@account).deliver
+            flash[:notice] = "Sign up successful!"
             redirect_to @account
         else
             render 'new'

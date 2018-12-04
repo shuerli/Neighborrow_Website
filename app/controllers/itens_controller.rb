@@ -29,7 +29,8 @@ class ItensController < ApplicationController
 	end
 	
 	def keyword_prompt
-		search_result = ActiveRecord::Base.connection.exec_query("SELECT name FROM Itens WHERE name LIKE '"+params[:input]+"%' ")
+		#search_result = ActiveRecord::Base.connection.exec_query("SELECT name FROM Itens WHERE name LIKE '"+params[:input]+"%' ")
+		search_result = Iten.where("name like ?", params[:input]+"%")
 		render :json => {:status => 200, :result => search_result}
 	end
 

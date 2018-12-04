@@ -63,7 +63,7 @@
                         <div class="col-lg-4 ptb-20">
                             <div class="card-deck mt-3">
                                 <div class="card">
-                                    <%= link_to image_tag("#{@item.photo_url}",width: 356, height: 280), iten_path(@item),{ :class=>"center_image" }%>
+                                    <%= link_to image_tag("#{@item.photo_url}",width: 356, height: 280), iten_path(@item) ,{ :class=>"center_image" }%>
                                     <p class="card-text-center" style="text-align: center;"><%= @item.name %></p>
                                 </div>
                             </div>
