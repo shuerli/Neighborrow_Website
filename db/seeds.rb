@@ -27,12 +27,12 @@ profiles = Profile.create([
 							])
 
 pays = Pay.create!([
-                   {email:'raymondfzy@gmail.com'},
-                   {email:'zeyu.feng@mail.utoronto.ca'},
-                   {email:'geling.li@mail.utoronto.ca'},
-                   {email:'zikevin.wang@mail.utoronto.ca'},
-                   {email:'shuer.li@mail.utoronto.ca'},
-                   {email:'qingqing.zhuo@mail.utoronto.ca'},
+                   {email:'raymondfzy@gmail.com', credit: 5},
+                   {email:'zeyu.feng@mail.utoronto.ca', credit: 5},
+                   {email:'geling.li@mail.utoronto.ca', credit: 5},
+                   {email:'zikevin.wang@mail.utoronto.ca', credit: 5},
+                   {email:'shuer.li@mail.utoronto.ca', credit: 5},
+                   {email:'qingqing.zhuo@mail.utoronto.ca', credit: 5},
                    ])
 
 addresses = Pickupaddress.create!([

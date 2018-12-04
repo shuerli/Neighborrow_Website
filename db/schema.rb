@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.datetime "time_start", null: false
     t.datetime "time_end", null: false
     t.text "name", null: false
+    t.integer "deposit", default: 0
     t.text "photo_url"
     t.text "description"
     t.text "brand"

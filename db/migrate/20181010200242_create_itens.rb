@@ -12,6 +12,7 @@ class CreateItens < ActiveRecord::Migration[5.2]
 			t.timestamp :time_end, null: false
             #t.timestamp :time_pickup, array: true, null: false
 			t.text :name, null: false
+			t.integer :deposit, default: 0
 			t.text :photo_url
 			t.text :description
 			t.text :brand
