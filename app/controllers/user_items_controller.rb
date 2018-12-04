@@ -126,6 +126,7 @@ class UserItemsController < ApplicationController
         @user_item.address = params[:address]
         @user_item.deposit = params[:deposit]
         @user_item.rate_level = params[:rate_level]
+        
         if params[:remove_photo] == 'true'
             @user_item.photo_url = nil
         end
