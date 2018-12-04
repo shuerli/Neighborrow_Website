@@ -6,7 +6,7 @@ class Pay < ApplicationRecord
           business: "sixneighborrow-facilitator@gmail.com",
           cmd: "_xclick",
           upload: 1,
-          return: "https://neighborrow.herokuaoo.com#{return_path}",
+          return: "https://neighborrow.herokuapp.com#{return_path}",
           amount: self.add_credit,
           item_name: "Neighborrow Credit",
       }

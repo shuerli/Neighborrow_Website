@@ -195,7 +195,7 @@ $('#department-input').change(function () {
                                     deposit: document.getElementById('deposit-input').value,
                                 }
                             }).done(function(data){
-                                window.location = "https://neighborrow.herokuaoo.com/user_item/" + itemId;
+                                window.location = "https://neighborrow.herokuapp.com/user_item/" + itemId;
                             }).fail(function(data){
                                 alert( "Please fill all the empty forms!");
                             });
@@ -212,7 +212,7 @@ $('#department-input').change(function () {
 
     var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
     if (result) {
-        window.location = "https://neighborrow.herokuaoo.com/user_item/" + itemId;
+        window.location = "https://neighborrow.herokuapp.com/user_item/" + itemId;
     }
  };
 

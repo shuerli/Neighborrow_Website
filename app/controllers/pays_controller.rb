@@ -73,8 +73,8 @@ class PaysController < ApplicationController
                                    
                                    # ###Redirect URLs
                                    :redirect_urls => {
-                                   :return_url => "https://neighborrow.herokuaoo.com#{pay_path(@pay)}",
-                                   :cancel_url => "https://neighborrow.herokuaoo.com/Error" },
+                                   :return_url => "https://neighborrow.herokuapp.com#{pay_path(@pay)}",
+                                   :cancel_url => "https://neighborrow.herokuapp.com/Error" },
                                    
                                    # ###Transaction
                                    # A transaction defines the contract of a
