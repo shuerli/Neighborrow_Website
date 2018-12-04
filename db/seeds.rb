@@ -27,12 +27,12 @@ profiles = Profile.create([
 							])
 
 pays = Pay.create!([
-                   {email:'raymondfzy@gmail.com', credit: 5},
-                   {email:'zeyu.feng@mail.utoronto.ca', credit: 5},
-                   {email:'geling.li@mail.utoronto.ca', credit: 5},
-                   {email:'zikevin.wang@mail.utoronto.ca', credit: 5},
-                   {email:'shuer.li@mail.utoronto.ca', credit: 5},
-                   {email:'qingqing.zhuo@mail.utoronto.ca', credit: 5},
+                   {email:'raymondfzy@gmail.com', credit: 50},
+                   {email:'zeyu.feng@mail.utoronto.ca', credit: 50},
+                   {email:'geling.li@mail.utoronto.ca', credit: 50},
+                   {email:'zikevin.wang@mail.utoronto.ca', credit: 50},
+                   {email:'shuer.li@mail.utoronto.ca', credit: 50},
+                   {email:'qingqing.zhuo@mail.utoronto.ca', credit: 50},
                    ])
 
 pickupaddresses = Pickupaddress.create!([
@@ -217,12 +217,12 @@ itens = Iten.create!([
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/PVZGW2PC.jpeg', 
 					condition:'Very Good', 
-					rate_level: 4, 
+					rate_level: 0, 
 					time_start:'2018-12-25 00:00:00', 
 					time_end: '2019-02-15 00:00:00', 
 					name:'Plants VS Zombies GW2 PC', 
 					brand:'EA',
-					deposit:9,},
+					deposit:0,},
 					
 
 					{category_id:'3',
