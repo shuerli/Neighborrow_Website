@@ -163,8 +163,9 @@
                                         <div class="product-share">
                                             <div class="share_label">
                                                 <span>Posted by :</span>
-                                                <% @owner_profile = Profile.find_by(email: @item.owner) %>
-                                                <%= link_to("#{@owner_profile.display_name}", public_profiles/<%@owner_profile.id%>) %></p>
+                                                <% @owner = Account.find_by(email: @item.owner) %>
+                                                <% @ownerProfile = Profile.find_by(email: @item.owner) %>
+                                                <%= link_to "#{@ownerProfile.display_name}", controller: "public_profiles", action: "show", id:@owner.id %>
                                             </div>
                                         </div>
                                     </div>
