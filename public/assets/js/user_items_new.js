@@ -109,6 +109,7 @@ function btnSubmit(){
                                 address: addressInfo.id,
                                 rate_level: rate_level,
                                 deposit: document.getElementById('deposit-input').value,
+                                new_photo:new_photo,
                             }
                         }).done(function(data){
                             window.location = "https://neighborrow.herokuapp.com/user_item";
@@ -129,3 +130,11 @@ function btnExit(){
       window.location = "https://neighborrow.herokuapp.com/user_item";
   }
 };
+
+
+
+$('#media-dropzone').on('click', function(){
+    new_photo = true;
+ });
+ var new_photo = false;
+

@@ -89,7 +89,9 @@ class UserItemsController < ApplicationController
         @user_item.description = params[:description]
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
-        @user_item.photo_url = params[:photo_url]
+        if params[:new_photo] == 'true' 
+            @user_item.photo_url = params[:photo_url]
+        end
         @user_item.address = params[:address]
         @user_item.deposit = params[:deposit]
         @user_item.rate_level = params[:rate_level]
