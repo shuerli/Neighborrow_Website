@@ -151,7 +151,7 @@ itens = Iten.create!([
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-01-25 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
 					brand:'Ubisoft',
@@ -846,7 +846,9 @@ itens = Iten.create!([
                    
 
 requests = Request.create([
-		{item_id:1, borrower:'raymondfzy@gmail.com', time_start:'2018-09-25 00:00:00', time_end:'2018-11-22 00:00:00',status:'accepted'},
+		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'accepted'},
+		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-11 00:00:00',status:'accepted'},
+		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-01-20 00:00:00', time_end:'2018-01-23 00:00:00',status:'accepted'},
 	])
 
 
