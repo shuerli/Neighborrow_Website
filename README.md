@@ -27,5 +27,5 @@
 
 
 ## Quickstart
-Heroku: neighborrow.herokuapp.com
+Website access: https://neighborrow.herokuapp.com
 
