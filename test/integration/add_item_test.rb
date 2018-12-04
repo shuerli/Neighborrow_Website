@@ -9,7 +9,7 @@ class AccountsSignupTest < ActionDispatch::IntegrationTest
 
    test "valid signup information" do
        get signup_path
-       assert_difference 'Item.count', 1 do
+       assert_difference 'Iten.count', 1 do
            post user_items_path, params: {item: {category_id:'2',
              address:3,
              owner:'raymondfzy@gmail.com', 

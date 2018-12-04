@@ -27,15 +27,15 @@ profiles = Profile.create([
 							])
 
 pays = Pay.create!([
-                   {email:'raymondfzy@gmail.com'},
-                   {email:'zeyu.feng@mail.utoronto.ca'},
-                   {email:'geling.li@mail.utoronto.ca'},
-                   {email:'zikevin.wang@mail.utoronto.ca'},
-                   {email:'shuer.li@mail.utoronto.ca'},
-                   {email:'qingqing.zhuo@mail.utoronto.ca'},
+                   {email:'raymondfzy@gmail.com', credit: 5},
+                   {email:'zeyu.feng@mail.utoronto.ca', credit: 5},
+                   {email:'geling.li@mail.utoronto.ca', credit: 5},
+                   {email:'zikevin.wang@mail.utoronto.ca', credit: 5},
+                   {email:'shuer.li@mail.utoronto.ca', credit: 5},
+                   {email:'qingqing.zhuo@mail.utoronto.ca', credit: 5},
                    ])
 
-addresses = Pickupaddress.create!([
+pickupaddresses = Pickupaddress.create!([
 							#create three different addresses for an active user
 							{email:'raymondfzy@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
 							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '601-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
@@ -142,7 +142,7 @@ categories = Category.create([
 							])
 
 
-items = Iten.create!([
+itens = Iten.create!([
 					{category_id:'2',
 					address:1,
 					owner:'raymondfzy@gmail.com',
@@ -740,17 +740,92 @@ items = Iten.create!([
 					description:'My kids\' creation. Looks gross to me, just take it whoever please.',
 					},
 
-					# {category_id:'27',
-					# address:5,
-					# owner:'raymondfzy@gmail.com', 
-					# photo_url:'/assets/img/Kids/.jpeg', 
-					# condition:'Good', 
-					# rate_level: 3, 
-					# time_start:'2018-12-01 00:00:00', 
-					# time_end: '2020-01-01 00:00:00', 
-					# name:'', 
-					# description:'',
-					# },
+					{category_id:'27',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/doratoy.jpeg', 
+					condition:'Adequate', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2022-12-01 00:00:00', 
+					name:'Doraemon doll', 
+					brand:'Shyogakukan'
+					},
+
+					{category_id:'27',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/nrtmodel.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2019-01-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Naruto model kit', 
+					description:'A finished Naruto model kit, you can disassemble it and play with it if you want.',
+					brand:'Bandai Namco'
+					},
+
+					{category_id:'27',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/ygh.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Yugioh cosplay model', 
+					description:'It does not actually has the hollogram, but still it is a great toy for kids.',
+					brand:'Bandai Namco'
+					},
+
+					{category_id:'27',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/yghmodel.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Yugioh model kit', 
+					brand:'Bandai Namco'
+					},
+
+					{category_id:'28',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/cradle.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Cradle for baby', 
+					description:'A very nice baby cradle, warm and cozy',
+					},
+
+					{category_id:'28',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/cradle2.jpeg', 
+					condition:'Good', 
+					rate_level: 3, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2021-02-01 00:00:00', 
+					name:'Cradle', 
+					},
+
+					{category_id:'28',
+					address:5,
+					owner:'raymondfzy@gmail.com', 
+					photo_url:'/assets/img/Kids/carseat.jpeg', 
+					condition:'Very Good', 
+					rate_level: 4, 
+					time_start:'2018-12-01 00:00:00', 
+					time_end: '2020-01-01 00:00:00', 
+					name:'Car seat for baby', 
+					description:'Very steady, holds your kid safely, useful when traveling with your family.',
+					},
+
+
 				])
                    
 

@@ -1,0 +1,2 @@
+module PickupaddressesHelper
+end

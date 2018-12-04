@@ -14,19 +14,20 @@ Rails.application.routes.draw do
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
 
+  
   get    '/signup',  to: 'accounts#new'
   post    '/signup',  to: 'accounts#create'
   
   get 'auth/failure', to:redirect('/login')
   get   '/temp',     to: 'pages#temp'
-  get '/borrow',    to: 'item#borrow'
+  get '/borrow',    to: 'itens#borrow'
   
 	get '/sidebar_intialize' => 'accounts#userSidebar_Info'
 	get '/userdashboard_initialize' => 'accounts#userDashboard_Info'
 
 	# Routes to handlers related to search-result page
-	get '/result' => 'items#showResult'
-	get '/result_api' => 'items#generateResult'	
+	get '/result' => 'itens#showResult'
+	get '/result_api' => 'itens#generateResult'	
 
   resources:profiles
   resources:public_profiles
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
 	get '/admin_reports' => 'dashboard#show_report'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
+  
   resources:accounts do
       post :resendConfirmation, :on => :collection
       member do
@@ -56,7 +58,7 @@ Rails.application.routes.draw do
   get '/category/departments' => 'categories#departments'
   get '/category/department/category_names' => 'categories#by_department'
   get '/category/id' => 'categories#find_id'
-  resources:items
+  resources:itens
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
@@ -94,11 +96,11 @@ Rails.application.routes.draw do
 	get '/404' => 'application#page_not_found'
     
 	# Routes for searching (public access granted)
-	get '/search/keyword_prompt' => 'items#keyword_prompt'
+	get '/search/keyword_prompt' => 'itens#keyword_prompt'
 	#get '/search/geo/:lon/:lat'
     
     #routes related to public item show page
-    get '/search_show', to: 'item#search_show', as: 'search_show'
+    get '/search_show', to: 'itens#search_show', as: 'search_show'
     
     #Routes for testing purposes
       get   '/temp',     to: 'pages#temp'
