@@ -10,6 +10,7 @@ $(function() {
 	else if (data.status === 403) window.location("/login");
 
 	$("#menu_profile_href").attr("href","/profiles/"+data.id)
+	$("#menu_pay_href").attr("href","/pays/"+data.id)
 
 	$("#user_image_display").attr("src",data.display_photo);
 	
