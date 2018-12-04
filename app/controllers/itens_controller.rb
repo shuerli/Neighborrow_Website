@@ -135,4 +135,10 @@ class ItensController < ApplicationController
 		
 		render :json => {:status => 200, :given_city => city, :given_province => province, :given_country => country, :search_keyword => keyword, :result_userEmail => {display_photo: user_avatar, result: search_byUserEmail, borrowRate: search_byUserEmail_borrowRate, lendRate: search_byUserEmail_lendRate}, :result_itemISBN => search_byISBN, :result_itemNameBrand => search_byItemNameAndBrand, :corrected_keyword => correction_result, :result_correctedKeyword => search_byCorrection, :search_byISBN_requestsCount => search_byISBN_history, :search_byNameBrand_requestsCount => search_byItemNameAndBrand_history, :search_byCorrection_requestsCount => search_byCorrection_history, :search_byISBN_lenderPhoto => search_byISBN_lenderAvatar, :search_byItemNameAndBrand_lenderPhoto => search_byItemNameAndBrand_lenderAvatar, :search_byCorrection_lenderPhoto => search_byCorrection_lenderAvatar, :search_byItemNameAndBrand_lenderRate => search_byItemNameAndBrand_lenderAVG, :search_byISBN_lenderRate => search_byISBN_lenderAVG, :search_byCorrection_lenderRate => search_byCorrection_lenderAVG}
 	end
+
+	def unavailable_time
+		@item = params[:itemId]
+		@unavailable_time =  ActiveRecord::Base.connection.exec_query("SELECT time_start, time_end from Requests WHERE \'#{@item}\' = item_id AND status = \'accepted\'")
+		render :json => @unavailable_time
+	end
 end

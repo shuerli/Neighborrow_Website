@@ -124,7 +124,7 @@ Rails.application.routes.draw do
 	get '/report' => 'reports#index'
 	post '/report' => 'reports#create'
 
-
+  get '/unavailable_time' => 'itens#unavailable_time'
 
 end
 
