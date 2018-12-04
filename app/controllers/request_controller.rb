@@ -194,11 +194,11 @@ class RequestController < ApplicationController
 		if(current_credit[current_credit.length-1]["credit"]==nil or current_credit[current_credit.length-1]["credit"]<item.deposit)
 			puts "2"
 			flash[:error] = "Sorry... Your remaining credit is not high enough for the deposit of this item."
-            redirecst_to :controller => "items" ,:action => "show", :id => params[:item_id]
+            redirect_to :controller => "itens" ,:action => "show", :id => params[:item_id]
 		elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id], status: "pending"))
 			puts "3"
             flash[:error] = "Cannot submit multiple requests for an item!"
-            redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
+            redirect_to :controller => "itens" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
 			puts "4"
 			payment_create = Pay.new()

@@ -1,5 +1,5 @@
  function btnItemDetail(itemId){
-   window.location = "http://localhost:3000/user_item/" + itemId;
+   window.location = "https://neighborrow.herokuapp.com/user_item/" + itemId;
 };
 
  function btnItemDelete(itemId){
@@ -25,7 +25,7 @@
 
 
 function btnItemAdd(){
-  window.location = "http://localhost:3000/user_items/new";
+  window.location = "https://neighborrow.herokuapp.com/user_items/new";
 };
 
 //Receive data from controller when page loads
@@ -51,7 +51,7 @@ $(document).ready(function () {
                                                 <div class="col-md-8">\
                                                   <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
                                                   <small>\
-                                                  <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
+                                                  <a href="https://neighborrow.herokuapp.com/user_item/' + data.result[i].id + '"> Item Detail</a>\
                                                   </small>\
                                                 </div>\
                                               </div>\
@@ -98,7 +98,7 @@ $(document).ready(function () {
                                             <div class="col-md-8">\
                                               <h4 id="item_name" style="font-size:18px; line-height: 1.5em; height: 1.5em; overflow: hidden;">' + data.result[i].name + ' </h4>\
                                               <small>\
-                                              <a href="http://localhost:3000/user_item/' + data.result[i].id + '"> Item Detail</a>\
+                                              <a href="https://neighborrow.herokuapp.com/user_item/' + data.result[i].id + '"> Item Detail</a>\
                                               </small>\
                                             </div>\
                                           </div>\
