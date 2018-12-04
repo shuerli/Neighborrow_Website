@@ -123,7 +123,11 @@ class UserItemsController < ApplicationController
         @user_item.category_id = params[:category_id]
         @user_item.address = params[:address]
 
-        if params[:edit_photo] == 'true'    
+        if params[:remove_photo] == 'true'
+            @user_item.photo_url = nil
+        end
+
+        if params[:new_photo] == 'true' 
             @user_item.photo_url = params[:photo_url]
         end
         

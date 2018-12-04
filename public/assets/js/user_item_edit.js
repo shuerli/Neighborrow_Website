@@ -166,7 +166,8 @@ $('#department-input').change(function () {
                             method: "PUT",
                             data: { 
                                     authenticity_token: window._token,
-                                    edit_photo: edit_photo,
+                                    remove_photo: remove_photo,
+                                    new_photo: new_photo,
                                     id: itemId,
                                     category_id: category_id,
                                     condition: item_condition,
@@ -204,8 +205,13 @@ $('#department-input').change(function () {
     var result = confirm("Remove image?");
     if (result) {
         $('#existing-img').remove();
-        edit_photo = true;
+        remove_photo = true;
         document.getElementById('media-dropzone').style.visibility = 'visible';
     }
  }
- var edit_photo = false;
+
+ $('#media-dropzone').on('click', function(){
+    new_photo = true;
+ });
+ var remove_photo = false;
+ var new_photo = false;
