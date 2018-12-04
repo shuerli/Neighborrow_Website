@@ -10,7 +10,7 @@ $(document).ready(function () {
         
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').value = itemInfo.name;
-
+        
         
         $.ajax({
             type: "get",
