@@ -142,7 +142,7 @@ categories = Category.create([
 							])
 
 
-items = Iten.create!([
+itens = Iten.create!([
 					{category_id:'2',
 					address:1,
 					owner:'raymondfzy@gmail.com',
