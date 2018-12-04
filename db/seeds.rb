@@ -26,6 +26,14 @@ profiles = Profile.create([
 							{email:'qingqing.zhuo@mail.utoronto.ca', display_name:'qingqing', phone_number:'6478673581', gender:'Male', language:'Chinese', country:'Canada', avatar_url: 'https://cdn.onlinewebfonts.com/svg/img_311846.png'},
 							])
 
+pays = Pay.create!([
+                   {email:'raymondfzy@gmail.com'},
+                   {email:'zeyu.feng@mail.utoronto.ca'},
+                   {email:'geling.li@mail.utoronto.ca'},
+                   {email:'zikevin.wang@mail.utoronto.ca'},
+                   {email:'shuer.li@mail.utoronto.ca'},
+                   {email:'qingqing.zhuo@mail.utoronto.ca'},
+                   ])
 
 addresses = Address.create!([
 							#create three different addresses for an active user
