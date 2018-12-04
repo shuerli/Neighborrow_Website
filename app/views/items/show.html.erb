@@ -11,14 +11,12 @@
                         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
                             
                             <!-- all css here -->
-                            
-                            <%= stylesheet_link_tag 'bundle.css' %>
                             <%= stylesheet_link_tag 'style.css' %>
                            
-                            
                             <%= javascript_tag "window._token = '#{form_authenticity_token}'" %> <%=
                                 javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
                             <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+                            
                             <!-- Calendar related -->
                             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     </head>
@@ -48,7 +46,7 @@
         <div class="exporso_wrapper">
             
             <!--product Details Inner-->
-            <div class="product_details_inner left_sidebar ptb-60 border-top">
+            <div class="product_details_inner left_sidebar ptb-60 border-top ">
                 <%= render 'layouts/department_list' %>
                 
                 <div class="container border-bottom">
@@ -64,7 +62,7 @@
                     </div>
                     <% end %>
 
-                        <div class="container ptb-20">
+                        <div class="container ptb-20"  style="padding-top:30px">
                             <div class="row">
                                 <!--Product Tab Style start-->
                                 <div class="col">
@@ -171,30 +169,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Product Thumbnail Description Start -->
-                            <div class="product_desc_tab_container mt-100 ">
-                                
-                                <div class="thumb-desc-inner">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <ul class="product_desc_tab nav" role="tablist">
-                                                <li><a class="active" data-toggle="tab" href="#dtail">Description</a></li>
-                                                
-                                            <!-- Product Thumbnail Tab Content Start -->
-                                            <div class="tab-content thumb-content mt-30">
-                                                <div id="dtail" class="tab-pane fade show active">
-                                                    <p><%= @item.description %></p>
-                                                </div>
-                                            </div>
-                                            <!-- Product Thumbnail Tab Content End -->
-                                        </div>
-                                    </div>
-                                    <!-- Row End -->
-                                </div>
-                            </div>
                             
             <!--Google API section Start -->
-            <div class="newsletter_section ptb-80">
+            <div class="newsletter_section ptb-80 " style="padding-top:30px">
                 <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnpp7FDgcbpfqNskhkAR_Y2E_uMitVXd0
                     &q=place_id:ChIJ-bt_oLg0K4gRNNZIQRz78JA" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen>
                 </iframe>
@@ -228,6 +205,7 @@
                                                            });
               });
             </script>
+
         
     </body>
 </html>
