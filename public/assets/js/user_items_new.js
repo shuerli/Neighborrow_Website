@@ -112,7 +112,7 @@ function btnSubmit(){
                                 new_photo:new_photo,
                             }
                         }).done(function(data){
-                            window.location = "http://localhost:3000/user_item";
+                            window.location = "https://neighborrow.herokuapp.com/user_item";
                         }).fail(function(data){
                             alert( "Item adding failed");
                         });
@@ -127,12 +127,14 @@ function btnSubmit(){
 function btnExit(){
   var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
   if (result) {
-      window.location = "http://localhost:3000/user_item";
+      window.location = "https://neighborrow.herokuapp.com/user_item";
   }
 };
+
 
 
 $('#media-dropzone').on('click', function(){
     new_photo = true;
  });
  var new_photo = false;
+

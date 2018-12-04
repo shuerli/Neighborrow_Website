@@ -70,9 +70,9 @@ $(document).ready(function () {
 
 
 function btnEdit(){
-    window.location = "http://localhost:3000/user_item/edit/" + itemId;
+    window.location = "https://neighborrow.herokuapp.com/user_item/edit/" + itemId;
  };
 
  function btnExit(){
-    window.location = "http://localhost:3000/user_item";
+    window.location = "https://neighborrow.herokuapp.com/user_item";
  };
