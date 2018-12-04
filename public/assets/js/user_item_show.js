@@ -10,7 +10,11 @@ $(document).ready(function () {
         
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-field').value = itemInfo.name;
-        
+        alert(itemInfo.deposit)
+        alert(itemInfo.rate_level)
+        document.getElementById('deposit-input').value = itemInfo.deposit;
+        document.getElementById('rate-input').value = itemInfo.rate_level;
+    
         
         $.ajax({
             type: "get",
