@@ -1,6 +1,6 @@
-class CreateAddresses < ActiveRecord::Migration[5.2]
+class CreatePickupaddresses < ActiveRecord::Migration[5.2]
   def change
-    create_table :addresses do |t|
+    create_table :pickupaddresses do |t|
 			t.text :email, null: false
 			t.text :address_line1, null: false
 			t.text :address_line2

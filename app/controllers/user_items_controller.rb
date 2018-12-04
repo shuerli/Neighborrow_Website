@@ -139,12 +139,12 @@ class UserItemsController < ApplicationController
     end
 
     def get_address
-        @address = Address.find(params[:add])
+        @address = Pickupaddress.find(params[:add])
         render :json => {:status => 200, :result => @address}
     end
 
     def add_address
-        @address = Address.new
+        @address = Pickupaddress.new
 
         @address.email = current_user.email
         @address.address_line1 = params[:address_line1]

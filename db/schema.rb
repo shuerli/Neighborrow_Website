@@ -55,18 +55,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "addresses", force: :cascade do |t|
-    t.text "email", null: false
-    t.text "address_line1", null: false
-    t.text "address_line2"
-    t.text "city", null: false
-    t.text "province", null: false
-    t.text "country", null: false
-    t.text "postal_code", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.text "department", null: false
     t.text "name", null: false
@@ -144,6 +132,20 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.integer "withdraw_credit"
     t.integer "credit"
     t.text "payid"
+    t.boolean "add", default: false
+    t.text "paypal_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pickupaddresses", force: :cascade do |t|
+    t.text "email", null: false
+    t.text "address_line1", null: false
+    t.text "address_line2"
+    t.text "city", null: false
+    t.text "province", null: false
+    t.text "country", null: false
+    t.text "postal_code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
