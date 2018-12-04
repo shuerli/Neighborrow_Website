@@ -111,6 +111,8 @@ Rails.application.routes.draw do
       get '/Error' => 'pages#error'
 
       get '/sitemap' => 'sitemap#sitemap'
+
+  get '/userflow' => 'pages#userflow'
   
   
       # For file transfer
