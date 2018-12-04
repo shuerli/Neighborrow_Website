@@ -15,7 +15,7 @@ class RequestController < ApplicationController
     
     def complete
         @request = Request.find(params[:id])
-        @item = Item.find(@request.item_id)
+        @item = Iten.find(@request.item_id)
     end
     
 	def show
@@ -29,11 +29,11 @@ class RequestController < ApplicationController
 			case params[:range]
 			when 'all'
 				user_email = Account.find_by(id: 1).email
-				borrowed_requests_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Items.id"
+				borrowed_requests_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Itens.id"
 				feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id"
 				feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id"
-				associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Items.id AND Items.owner = Profiles.email;"
-				associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Requests.item_id = Items.id AND Items.address = Addresses.id AND Requests.borrower = '"+current_user.email+"';"
+				associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Itens.owner = Profiles.email;"
+				associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Requests.item_id = Itens.id AND Itens.address = Pickupaddresses.id AND Requests.borrower = '"+current_user.email+"';"
 				case params[:sorted_by]
 				when 'update_time'
 					order_query = " ORDER BY Requests.updated_at DESC;"
@@ -44,7 +44,7 @@ class RequestController < ApplicationController
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
 					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :lenders => associated_lenders, :addresses => associated_addresses}
 				when 'item_name'
-					order_query = " ORDER BY Items.name ASC;"
+					order_query = " ORDER BY Itens.name ASC;"
 					borrowed_requests = ActiveRecord::Base.connection.exec_query(borrowed_requests_query + order_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
@@ -62,11 +62,11 @@ class RequestController < ApplicationController
 				end
 			when 'keyword'
 				if params[:keyword].match(/^(\d)+$/)!=nil
-					search_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Items.id AND Items.owner = Profiles.email AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Items.address = Addresses.id AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
+					search_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Itens.owner = Profiles.email AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Itens.address = Pickupaddresses.id AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
 					borrowed_requests = ActiveRecord::Base.connection.exec_query(search_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
@@ -74,11 +74,11 @@ class RequestController < ApplicationController
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
 					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :lenders => associated_lenders, :addresses => associated_addresses}
 				else
-					search_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Items.id AND (Items.name LIKE '%"+params[:keyword]+"%');"
-					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Items.id AND (Items.name LIKE '%"+params[:keyword]+"%');"
-					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Items WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id AND (Items.name LIKE '%"+params[:keyword]+"%');"
-					associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Items.id AND Items.owner = Profiles.email AND (Items.name LIKE '%"+params[:keyword]+"%');"
-					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Items.address = Addresses.id AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Items.id AND (Items.name LIKE '%"+params[:keyword]+"%');"
+					search_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.item_id=Itens.id AND (Itens.name LIKE '%"+params[:keyword]+"%');"
+					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Itens.id AND (Itens.name LIKE '%"+params[:keyword]+"%');"
+					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Itens WHERE Requests.borrower = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Itens.id AND (Itens.name LIKE '%"+params[:keyword]+"%');"
+					associated_lenders_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Itens.owner = Profiles.email AND (Itens.name LIKE '%"+params[:keyword]+"%');"
+					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Itens.address = Pickupaddresses.id AND Requests.borrower = '"+current_user.email+"' AND Requests.item_id = Itens.id AND (Itens.name LIKE '%"+params[:keyword]+"%');"
 					borrowed_requests = ActiveRecord::Base.connection.exec_query(search_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
@@ -93,11 +93,11 @@ class RequestController < ApplicationController
 			case params[:range]
 			when 'all'
 				#user_email = Account.find_by(id: 1).email
-				lended_requests_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id"
-				feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Items, Feedback_to_lenders WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id AND Requests.id = Feedback_to_lenders.request_id"
-				feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Items, Requests, feedback_to_borrowers WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id"
-				associated_borrower_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Items.owner = '"+current_user.email+"' AND Requests.item_id = Items.id AND Requests.borrower = Profiles.email;"
-				associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Items.address = Addresses.id AND Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id;"
+				lended_requests_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.item_id=Itens.id"
+				feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Itens, Feedback_to_lenders WHERE Itens.owner = '"+current_user.email+"' AND Requests.item_id=Itens.id AND Requests.id = Feedback_to_lenders.request_id"
+				feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Itens, Requests, feedback_to_borrowers WHERE Itens.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Itens.id"
+				associated_borrower_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Itens.owner = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Requests.borrower = Profiles.email;"
+				associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Itens.address = Pickupaddresses.id AND Itens.owner = '"+current_user.email+"' AND Requests.item_id=Itens.id;"
 				case params[:sorted_by]
 				when 'update_time'
 					order_query = " ORDER BY Requests.updated_at DESC;"
@@ -108,7 +108,7 @@ class RequestController < ApplicationController
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
 					render :json => {:status => 200, :result => lended_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_borrowers, :addresses => associated_addresses}
 				when 'item_name'
-					order_query = " ORDER BY Items.name ASC;"
+					order_query = " ORDER BY Itens.name ASC;"
 					lended_requests = ActiveRecord::Base.connection.exec_query(lended_requests_query + order_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query + order_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query + order_query)
@@ -126,11 +126,11 @@ class RequestController < ApplicationController
 				end
 			when 'keyword'
 				if params[:keyword].match(/^(\d)+$/)!=nil
-					search_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					associated_borrowers_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Items.owner = '"+current_user.email+"' AND Requests.item_id = Items.id AND Requests.borrower = Profiles.email AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
-					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Items.address = Addresses.id AND Items.owner = '"+current_user.email+"' AND Requests.item_id = Items.id AND (Requests.id = "+ params[:keyword] +" OR Items.name LIKE '%"+params[:keyword]+"%' OR Items.id = "+ params[:keyword] +");"
+					search_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					associated_borrowers_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Itens.owner = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Requests.borrower = Profiles.email AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
+					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Itens.address = Pickupaddresses.id AND Itens.owner = '"+current_user.email+"' AND Requests.item_id = Itens.id AND (Requests.id = "+ params[:keyword] +" OR Itens.name LIKE '%"+params[:keyword]+"%' OR Itens.id = "+ params[:keyword] +");"
 					borrowed_requests = ActiveRecord::Base.connection.exec_query(search_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
@@ -138,11 +138,11 @@ class RequestController < ApplicationController
 					associated_addresses = ActiveRecord::Base.connection.exec_query(associated_addresses_query)
 					render :json => {:status => 200, :result => borrowed_requests, :feedbackToBorrower => feedbacks_to_borrower, :feedbackToLender => feedbacks_to_lender, :borrowers => associated_lenders, :addresses => associated_addresses}
 				else
-					search_query = "SELECT Requests.*, Items.id AS \"item_id\", Items.owner, Items.name, Items.photo_url FROM Requests, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.item_id=Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
-					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
-					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Items WHERE Items.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
-					associated_borrowers_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Items, Accounts WHERE Accounts.email = Profiles.email AND Items.owner = '"+current_user.email+"' AND Requests.item_id = Items.id AND Requests.borrower = Profiles.email AND Items.name LIKE '%"+params[:keyword]+"%';"
-					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Addresses.* FROM Requests, Addresses, Items WHERE Items.address = Addresses.id AND Items.owner = '"+current_user.email+"' AND Requests.item_id = Items.id AND Items.name LIKE '%"+params[:keyword]+"%';"
+					search_query = "SELECT Requests.*, Itens.id AS \"item_id\", Itens.owner, Itens.name, Itens.photo_url FROM Requests, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.item_id=Itens.id AND Itens.name LIKE '%"+params[:keyword]+"%';"
+					feedbacks_to_lender_query = "SELECT Requests.id AS \"request_id\", Feedback_to_lenders.rate, Feedback_to_lenders.comment FROM Requests, Feedback_to_lenders, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_lenders.request_id AND Requests.item_id=Itens.id AND Itens.name LIKE '%"+params[:keyword]+"%';"
+					feedbacks_to_borrower_query = "SELECT Requests.id AS \"request_id\", feedback_to_borrowers.rate, feedback_to_borrowers.comment FROM Requests, feedback_to_borrowers, Itens WHERE Itens.owner = '"+current_user.email+"' AND Requests.id = Feedback_to_borrowers.request_id AND Requests.item_id=Itens.id AND Itens.name LIKE '%"+params[:keyword]+"%';"
+					associated_borrowers_query = "SELECT Accounts.id AS \"account_id\", Profiles.display_name, Requests.id AS \"request_id\", Profiles.email From Requests, Profiles, Itens, Accounts WHERE Accounts.email = Profiles.email AND Itens.owner = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Requests.borrower = Profiles.email AND Itens.name LIKE '%"+params[:keyword]+"%';"
+					associated_addresses_query = "SELECT Requests.id AS \"request_id\", Pickupaddresses.* FROM Requests, Pickupaddresses, Itens WHERE Itens.address = Pickupaddresses.id AND Itens.owner = '"+current_user.email+"' AND Requests.item_id = Itens.id AND Itens.name LIKE '%"+params[:keyword]+"%';"
 					borrowed_requests = ActiveRecord::Base.connection.exec_query(search_query)
 					feedbacks_to_lender = ActiveRecord::Base.connection.exec_query(feedbacks_to_lender_query)
 					feedbacks_to_borrower = ActiveRecord::Base.connection.exec_query(feedbacks_to_borrower_query)
@@ -170,7 +170,7 @@ class RequestController < ApplicationController
 		@request.rejected_reason = params[:rejected_reason]
         @request.time_start = params[:time_start]
         @request.time_end = params[:time_end]
-        item = Item.find_by(id: params[:item_id])
+        item = Iten.find_by(id: params[:item_id])
         
         #check if borrower rate is high enough
         #borrower rate = all feedback_to_borrowers where the requests have (borrower = current user)
@@ -190,7 +190,7 @@ class RequestController < ApplicationController
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
 			################################### send email to lender ###################################
-			query = "SELECT Items.owner FROM Requests, Items WHERE Requests.id = #{@request.id} AND Requests.item_id = Items.id;"
+			query = "SELECT Itens.owner FROM Requests, Itens WHERE Requests.id = #{@request.id} AND Requests.item_id = Itens.id;"
 			lender_email = ActiveRecord::Base.connection.exec_query(query)
 			@account = Account.find_by(email: lender_email[0]["owner"])
 			AccountMailer.status_update(@account).deliver
@@ -230,7 +230,7 @@ class RequestController < ApplicationController
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
 
-			query = "SELECT Items.owner FROM Requests, Items WHERE Requests.id = #{params[:id]} AND Requests.item_id = Items.id;"
+			query = "SELECT Itens.owner FROM Requests, Itens WHERE Requests.id = #{params[:id]} AND Requests.item_id = Itens.id;"
 			lender_email = ActiveRecord::Base.connection.exec_query(query)
 			@account_sub = Account.find_by(email: lender_email[0]["owner"])
 

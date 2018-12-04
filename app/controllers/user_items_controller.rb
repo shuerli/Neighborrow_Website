@@ -15,11 +15,11 @@ class UserItemsController < ApplicationController
         case params[:type]     
         when 'lent'
            
-            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'lent' ORDER BY Items.created_at;")
+            lent_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Itens WHERE Itens.owner = '#{user}' AND Itens.status = 'lent' ORDER BY Itens.created_at;")
             render :json => {:status => 200, :result => lent_items}
 
         when 'registered'
-            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Items WHERE Items.owner = '#{user}' AND Items.status = 'registered' ORDER BY Items.created_at;")
+            registered_items = ActiveRecord::Base.connection.exec_query("SELECT * FROM Itens WHERE Itens.owner = '#{user}' AND Itens.status = 'registered' ORDER BY Itens.created_at;")
             render :json => {:status => 200, :result => registered_items}
         else
             render :json => {:status => 404}
@@ -37,7 +37,7 @@ class UserItemsController < ApplicationController
 			redirect_to "/login"
         end
 
-        @user_item = Item.find( params[:id])
+        @user_item = Iten.find( params[:id])
         if not @user_item.status == 'disabled'
             render :json => {:status => 200, :result => @user_item}
         else
@@ -53,7 +53,7 @@ class UserItemsController < ApplicationController
 			redirect_to "/login"
         end
 
-        @user_item = Item.find(params[:id])
+        @user_item = Iten.find(params[:id])
         if not @user_item.status == 'lent'
             @user_item.status = 'disabled'
             if @user_item.save
@@ -77,7 +77,7 @@ class UserItemsController < ApplicationController
 			redirect_to "/login"
         end
 
-        @user_item = Item.new
+        @user_item = Iten.new
 
         @user_item.owner = current_user.email
         # @user_item.owner = "raymondfzy@gmail.com"
@@ -112,7 +112,7 @@ class UserItemsController < ApplicationController
 
         
 
-        @user_item = Item.find(params[:id])
+        @user_item = Iten.find(params[:id])
 
         @user_item.condition = params[:condition]
         @user_item.time_start = params[:time_start]

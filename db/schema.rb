@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "itens", force: :cascade do |t|
     t.text "owner", null: false
     t.text "status", default: "registered", null: false
     t.text "category_id", null: false
