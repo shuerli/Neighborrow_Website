@@ -6,7 +6,7 @@ class CreateItens < ActiveRecord::Migration[5.2]
 			t.text :category_id, null: false
 			t.integer :address, null: false
 			t.text :condition, null: false
-			t.text :rate_level
+			t.text :rate_level, default:0
 			#t.text :address_option, array: true, null: false
 			t.timestamp :time_start, null: false
 			t.timestamp :time_end, null: false

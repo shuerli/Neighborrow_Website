@@ -162,6 +162,7 @@ class RequestController < ApplicationController
         #if !current_user
         #	render :json => {:status => 403}
         #end
+        item = Iten.find_by(id: params[:item_id])
         puts params.inspect
 		@request = Request.new()
 		@request.item_id = params[:item_id]
@@ -170,7 +171,7 @@ class RequestController < ApplicationController
 		@request.rejected_reason = params[:rejected_reason]
         @request.time_start = params[:time_start]
         @request.time_end = params[:time_end]
-        item = Iten.find_by(id: params[:item_id])
+        
         
         #check if borrower rate is high enough
         #borrower rate = all feedback_to_borrowers where the requests have (borrower = current user)

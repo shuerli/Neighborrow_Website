@@ -154,7 +154,8 @@ itens = Iten.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
-					brand:'Ubisoft'
+					brand:'Ubisoft',
+					deposit:15,
 					},
 
 					{category_id:'2',
@@ -168,6 +169,7 @@ itens = Iten.create!([
 					name:'Civilizaion 6 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.', 
 					brand:'2K Games',
+					deposit:15,
 					},
 
 					{category_id:'2',
@@ -180,7 +182,8 @@ itens = Iten.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Gears of War 4 digital version', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my account, so you can enjoy the game on my account and earn me some battle points. Please request it if you play A LOT.', 
-					brand:'Microsoft'},
+					brand:'Microsoft',
+					deposit:15,},
 
 					{category_id:'2',
 					address:3,
@@ -192,7 +195,8 @@ itens = Iten.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'GTA 5', 
 					description:'Sharing my games during Christmas. Just remember don\'t start a new game cuz it will overwrite my saved game.', 
-					brand:'Rock Star'},
+					brand:'Rock Star',
+					deposit:15,},
 
 					{category_id:'2',
 					address:5,
@@ -204,7 +208,8 @@ itens = Iten.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Monster Hunter World in steam account', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my steam account, I will share my password once I accept your request, if you are able to clear stage 5 for me.', 
-					brand:'Capcom'},
+					brand:'Capcom',
+					deposit:15,},
 
 					{category_id:'2',
 					address:3,
@@ -215,7 +220,8 @@ itens = Iten.create!([
 					time_start:'2018-12-25 00:00:00', 
 					time_end: '2019-01-15 00:00:00', 
 					name:'Plants VS Zombies GW2 PC', 
-					brand:'EA'},
+					brand:'EA',
+					deposit:15,},
 					
 
 					{category_id:'3',
@@ -228,7 +234,8 @@ itens = Iten.create!([
 					time_end: '2019-01-15 00:00:00', 
 					name:'Plants VS Zombies GW2 on ps4', 
 					description:'You can play local games with your friend(split screen mode), but online play will require your own psn subscription.',
-					brand:'EA'},
+					brand:'EA',
+					deposit:15,},
 
 					{category_id:'3',
 					address:1,
@@ -240,7 +247,8 @@ itens = Iten.create!([
 					time_end: '2099-01-01 00:00:00', 
 					name:'Tokiden 2 ps4 disk', 
 					description:'The game is just too hard. I actually won\'t be playing it anymore, you can keep it as long as you want.',
-					brand:'KoeiTecmo'},
+					brand:'KoeiTecmo',
+					deposit:15,},
 
 					{category_id:'3',
 					address:3,
@@ -252,7 +260,8 @@ itens = Iten.create!([
 					time_end: '2019-06-01 00:00:00', 
 					name:'GBA SP and 3DS consoles', 
 					description:'I only have the two consoles, you need to get games by yourself. I will be moving in summer 2019 so please give it back by then.',
-					brand:'Nintendo'},
+					brand:'Nintendo',
+					deposit:15,},
 
 					{category_id:'3',
 					address:5,
@@ -264,7 +273,8 @@ itens = Iten.create!([
 					time_end: '2019-06-01 00:00:00', 
 					name:'Gameboy Color console and Pokemon Gen 1', 
 					description:'You will need to by batteries for it. It comes with a game so don\'t worry about getting games, I will be moving in summer 2019 so please give it back by then.',
-					brand:'Nintendo'},
+					brand:'Nintendo',
+					deposit:15,},
 
 					{category_id:'4',
 					address:1,
@@ -276,7 +286,8 @@ itens = Iten.create!([
 					time_end: '2019-06-01 00:00:00', 
 					name:'Xbox Kinect', 
 					description:'Kinect controller, I play the games myself but I \'m tired of motion controller, so no games or console with it. I will be moving in summer 2019 so please give it back by then.',
-					brand:'Microsoft'},
+					brand:'Microsoft',
+					deposit:15,},
 
 					{category_id:'4',
 					address:1,
@@ -287,7 +298,8 @@ itens = Iten.create!([
 					time_start:'2018-12-01 00:00:00', 
 					time_end: '2019-01-01 00:00:00', 
 					name:'Switch Pro controller', 
-					brand:'Nintendo'},
+					brand:'Nintendo',
+					deposit:15,},
 					
 					{category_id:'4',
 					address:3,
@@ -299,7 +311,8 @@ itens = Iten.create!([
 					time_end: '2019-03-12 00:00:00', 
 					name:'duel shock 4 ps4 controller', 
 					description:'A spare one. Anyone can borrow it if your friend comes over, but must return it by the next day of borrow',
-					brand:'Sony'},
+					brand:'Sony',
+					deposit:15,},
 
 					{category_id:'5',
 					address:1,
@@ -311,7 +324,7 @@ itens = Iten.create!([
 					time_end: '2019-12-01 00:00:00', 
 					name:'First year university math books', 
 					description:'Some math textbooks I used in first year, it is helpful in general but you may or may not need all the topics in it. Some pages are stained but most of the content is readable.',
-					},
+					deposit:15,},
 
 					{category_id:'5',
 					address:3,
@@ -323,6 +336,7 @@ itens = Iten.create!([
 					time_end: '2019-05-01 00:00:00', 
 					name:'Introduction to Algorithms', 
 					description:'It is THE bible of algorithms, no need to say more.',
+					deposit:15,
 					},
 
 					{category_id:'5',
@@ -335,6 +349,7 @@ itens = Iten.create!([
 					time_end: '2019-03-12 00:00:00', 
 					name:'Chinese language learning textbooks', 
 					description:'There is couple of them, you can take them all.',
+					deposit:15,
 					},
 
 					{category_id:'5',
@@ -346,6 +361,7 @@ itens = Iten.create!([
 					time_start:'2018-12-01 00:00:00', 
 					time_end: '2019-03-12 00:00:00', 
 					name:'Medical Physiology', 
+					deposit:25,
 					},
 
 					{category_id:'6',
