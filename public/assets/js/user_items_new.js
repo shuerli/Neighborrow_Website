@@ -58,6 +58,8 @@ function btnSubmit(){
  
     var conditionList = document.getElementById('condition-input');
     var item_condition = conditionList.options[conditionList.selectedIndex].value;
+    var rateList = document.getElementById('rate-input');
+    var rate_level = rateList.options[rateList.selectedIndex].value;
 
   var sdate = moment(document.getElementById('date-input').value.substring(0,10) , 'MM/DD/YYYY');
   sdate = moment(sdate).format('YYYY-MM-DD') + " 00:00:00"
@@ -104,7 +106,9 @@ function btnSubmit(){
                                 name: document.getElementById('item-name-input').value,
                                 description: document.getElementById('description-input').value,
                                 brand: document.getElementById('brand-input').value,
-                                address: addressInfo.id
+                                address: addressInfo.id,
+                                rate_level: rate_level,
+                                deposit: document.getElementById('deposit-input').value,
                             }
                         }).done(function(data){
                             window.location = "http://localhost:3000/user_item";

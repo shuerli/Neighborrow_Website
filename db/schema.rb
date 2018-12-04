@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_050048) do
     t.text "category_id", null: false
     t.integer "address", null: false
     t.text "condition", null: false
-    t.text "rate_level"
+    t.text "rate_level", default: "0"
     t.datetime "time_start", null: false
     t.datetime "time_end", null: false
     t.text "name", null: false
