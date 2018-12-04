@@ -111,7 +111,7 @@ function btnSubmit(){
                                 deposit: document.getElementById('deposit-input').value,
                             }
                         }).done(function(data){
-                            window.location = "http://localhost:3000/user_item";
+                            window.location = "https://neighborrow.herokuaoo.com/user_item";
                         }).fail(function(data){
                             alert( "Item adding failed");
                         });
@@ -126,6 +126,6 @@ function btnSubmit(){
 function btnExit(){
   var result = confirm("Leaving this page will lose unsaved progress.\nAre you sure to leave this page?");
   if (result) {
-      window.location = "http://localhost:3000/user_item";
+      window.location = "https://neighborrow.herokuaoo.com/user_item";
   }
 };
