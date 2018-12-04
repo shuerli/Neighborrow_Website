@@ -155,6 +155,21 @@
 										<label> Description </label>
 										<textarea class="form-control" id='description-input' placeholder="Add a short description about this item..."></textarea>
 									</div>
+
+
+									<div class="form-group">
+											<label> Required minimum borrower deposit </label>
+										<div class="input-group col-lg-2">
+											<div class="input-group-prepend">
+											<span class="input-group-text">$</span>
+											</div>
+											<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+											<div class="input-group-append">
+											<span class="input-group-text">.00</span>
+											</div>
+										</div>
+									</div>
+
 								</div>
 
 
@@ -172,80 +187,6 @@
 					</div>
 				</div>
 
-				<!--
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;">Upload image</div>
-					<div class="col-3" style="background:white;padding-right:100px; padding-top:30px;">		
-						<form action="/media_contents" id="media-dropzone" class="dropzone" enctype="multipart/form-data">
-							<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-							<div class="fallback">
-								<input name="media" type="file" multiple />
-							</div>
-						</form>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-name'>Item name</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text" id='item-name-input'></div>
-				</div>
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Brand</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;"><input type="text" id='brand-input'></div>
-				</div>
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-condition'>Condition</div>
-					<div class="col-9" style="font-size:18px; background:white;padding-right:100px; padding-top:30px;">
-							<form>
-								<input type="radio" name="condition" value="Brand New">brand new<br>
-								<input type="radio" name="condition" value="Like New">like new<br>
-								<input type="radio" name="condition" value="Very Good">very good<br>
-								<input type="radio" name="condition" value="Good">good<br>
-								<input type="radio" name="condition" value="Adequate">adequate<br>
-								<input type="radio" name="condition" value="Defective">defective
-							</form>
-					</div>
-				</div>
-				<div class="row" >
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='date-start'>Available dates</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-							<input type="text" name="daterange" style="font-size:15px" id='date-input'/>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" >Description</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-						<textarea rows="8" cols="75" placeholder="Add a short description about this item..." style="font-size:15px;" id='description-input'></textarea></div>
-				</div>
-			
-
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-department'>Department</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-						<select class="selectpicker" id='department-input'>
-						  </select>
-						  
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3" style="text-align:right; background:white;font-size:18px; padding-top:30px;" id='item-category'>Category</div>
-					<div class="col-9" style="background:white;padding-right:100px; padding-top:30px;">
-						<select class="selectpicker" id='category-input'>
-						</select>
-					</div>
-				</div>
-
-				<br><br>
-				<div class="row">
-				<div class="col-4" style="text-align:right;"><input type="submit" value="Add item" id='submit-button' onclick='btnSubmit()'>
-				</div>
-				<div class="col-1" style="text-align:left;"><input type="submit" value="Return to item page" onclick="btnExit()">
-				</div>
-			 	</div>
-
-				 <br><br>
-			</div>
-		-->
 		</main>
 	</div>
 	<footer class="app-footer" id="footerModule"></footer>
