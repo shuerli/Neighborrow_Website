@@ -1,2 +1,2 @@
-module PickupaddressHelper
+module PickupaddressesHelper
 end
