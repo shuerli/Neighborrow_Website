@@ -95,7 +95,9 @@
                                             <span class="current_price"><%= "Condition: #{@item.condition}" %></span>
                                             <span class="discount_price">Hot</span>
                                         </div>
-                                        
+                                        <div class="price_amount">
+                                        <span class="current_price"><%= "Required Deposit: $#{@item.deposit}" %></span>
+                                        </div>
                                         <div class="price_amount">
                                             <span class="current_price"><%= "Available Times:" %></span><br>
                                                 <span class="current_price"> <%= "#{@item.time_start} - #{@item.time_end}" %></span>
