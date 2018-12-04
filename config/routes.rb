@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post  '/login',   to: 'sessions#create'
   delete    '/logout',  to: 'sessions#destroy'
 
+  
   get    '/signup',  to: 'accounts#new'
   post    '/signup',  to: 'accounts#create'
   
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
 	get '/admin_reports' => 'dashboard#show_report'
   
   get '/resendConfirmation', to:'accounts#resendConfirmation'
+  
   resources:accounts do
       post :resendConfirmation, :on => :collection
       member do
@@ -56,7 +58,7 @@ Rails.application.routes.draw do
   get '/category/departments' => 'categories#departments'
   get '/category/department/category_names' => 'categories#by_department'
   get '/category/id' => 'categories#find_id'
-  resources:items
+  resources:itens
   
 	# Routes related to request manipulation, request history and relevant api
 	get '/request_borrowed' => 'request#page_borrowed'
