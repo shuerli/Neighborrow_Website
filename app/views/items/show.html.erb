@@ -91,9 +91,7 @@
                                                 <a href="#"><i class="zmdi zmdi-star"></i></a>
                                                 <a href="#"><i class="zmdi zmdi-star-half"></i></a>
                                             </div>
-                                            <div class="review_count">
-                                                <span>2 Ratting (S)</span>
-                                            </div>
+                                            
                                         </div>
                                         <div class="price_amount">
                                             <span class="current_price"><%= "Condition: #{@item.condition}" %></span>
@@ -133,7 +131,6 @@
                                                         <div class="modal-body">
                                                             <% if not logged_in? %>
                                                                 <p><h6> Are you new to our community? Join us today to become a Neighborrow insider ! </h6>
-                                                                <%= link_to "Click here to Sign Up", login_url %></p>
                                                                 
                                                                 <p><h6> Already have an account? </h6>
                                                                 <%= link_to "Click here to Login", login_url %></p>
@@ -165,30 +162,11 @@
                                         <br></br>
                                         <div class="product-share">
                                             <div class="share_label">
-                                                <span>Share :</span>
+                                                <span>Posted by :</span>
+                                                <% @owner = Account.find_by(email: @item.owner) %>
+                                                <% @ownerProfile = Profile.find_by(email: @item.owner) %>
+                                                <%= link_to "#{@ownerProfile.display_name}", controller: "public_profiles", action: "show", id:@owner.id %>
                                             </div>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-google-plus"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-pinterest"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -201,95 +179,11 @@
                                         <div class="col-sm-12">
                                             <ul class="product_desc_tab nav" role="tablist">
                                                 <li><a class="active" data-toggle="tab" href="#dtail">Description</a></li>
-                                                <li><a data-toggle="tab" href="#review">Reviews 1</a></li>
-                                            </ul>
+                                                
                                             <!-- Product Thumbnail Tab Content Start -->
                                             <div class="tab-content thumb-content mt-30">
                                                 <div id="dtail" class="tab-pane fade show active">
                                                     <p><%= @item.description %></p>
-                                                </div>
-                                                <div id="review" class="tab-pane fade">
-                                                    <!-- Reviews Start -->
-                                                    <div class="review">
-                                                        <div class="group-title">
-                                                            <h2>customer review</h2>
-                                                        </div>
-                                                        <ul class="review-list">
-                                                            <!-- Single Review List Start -->
-                                                            
-                                                            <!-- Single Review List Start -->
-                                                            <li>
-                                                                <span>value</span>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <label>Posted on 12/20/18</label>
-                                                            </li>
-                                                            <!-- Single Review List End -->
-                                                        </ul>
-                                                    </div>
-                                                    <!-- Reviews End -->
-                                                    <!-- Reviews Start -->
-                                                    <div class="review mt-20">
-                                                        <h2 class="review-title mb-15">You're reviewing: <br><span>Faded Short Sleeves T-shirt</span></h2>
-                                                        <p class="review-mini-title">your rating</p>
-                                                        <ul class="review-list">
-                                                            <!-- Single Review List Start -->
-                                                            <li>
-                                                                <span>Quality</span>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </li>
-                                                            <!-- Single Review List End -->
-                                                            <!-- Single Review List Start -->
-                                                            <li>
-                                                                <span>price</span>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </li>
-                                                            <!-- Single Review List End -->
-                                                            <!-- Single Review List Start -->
-                                                            <li>
-                                                                <span>value</span>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </li>
-                                                            <!-- Single Review List End -->
-                                                        </ul>
-                                                        <!-- Reviews Field Start -->
-                                                        <div class="riview-field mt-40">
-                                                            <div class="review_comment_box_inner">
-                                                                <form action="#">
-                                                                    <div class="form-group">
-                                                                        <label class="req" for="sure-name">Name</label>
-                                                                        <input type="text" id="sure-name" required="required">
-                                                                            </div>
-                                                                    <div class="form-group">
-                                                                        <label class="req" for="subject">Title of review</label>
-                                                                        <input type="text"  id="subject" required="required">
-                                                                            </div>
-                                                                    <div class="form-group">
-                                                                        <label class="req" for="comments">Your Review</label>
-                                                                        <textarea rows="5" id="comments" required="required"></textarea>
-                                                                    </div>
-                                                                    <button type="submit" class="customer-btn">Submit</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <!-- Reviews Field Start -->
-                                                    </div>
-                                                    <!-- Reviews End -->
                                                 </div>
                                             </div>
                                             <!-- Product Thumbnail Tab Content End -->

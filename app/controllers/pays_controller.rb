@@ -39,25 +39,10 @@ class PaysController < ApplicationController
                 end
             end
         end
-        #params = Hash.new
-        #params[:credit] = @pay.credit.to_i + @pay.add_credit.to_i
-        #params[:add_credit] = nil
-        #@pay.update(params)
+       
     end
     
-    #   def showPay
-        # Get payment ID from query string following redirect
-        #   payment = Payment.find(ENV["PAYMENT_ID"])
-        #@account = Account.find(current_user.id)
-        #@pay = Pay.find_by_email(@account.email)
-
-        # Execute payment with the payer ID from query string following redirect
-        #if payment.execute( :payer_id => ENV["PAYER_ID"] )  #return true or false
-        #   logger.info "Payment[#{payment.id}] executed successfully"
-        #   else
-        #   logger.error payment.error.inspect
-        #end
-        #end
+   
     
     def edit
         @account = Account.find(current_user.id)
@@ -73,7 +58,9 @@ class PaysController < ApplicationController
         @account = Account.find(current_user.id)
         @pay = Pay.find_by_email(@account.email)
         
-        if @pay.update(pay_params)
+        @pay.update(pay_params)
+        
+        if @pay.add_credit
             # Build Payment object
             @payment = Payment.new({
                                    :intent =>  "sale",
@@ -127,23 +114,26 @@ class PaysController < ApplicationController
                                        params[:add] = true
                                        @pay.update(params)
                                        redirect_to @redirect_url
-                                   else
-                                       logger.error @payment.error.inspect
                                    end
+                                   
+        elsif @pay.withdraw_credit
+            if @pay.withdraw_credit > @pay.credit
+                flash.now[:danger] = 'You cannot withdraw more amount than your current credit'
+                render  'editTwo'
+            else
+                if @pay.update(pay_params)
+                    params = Hash.new
+                    params[:credit] = @pay.credit.to_i - @pay.withdraw_credit.to_i
+                    params[:withdraw_credit] = nil
+                    @pay.update(params)
+                    flash.now[:success] = 'You have successfully submitted the request to withdraw your credit. Please allow 3-5 business days for us to process this transaction.'
+                    render 'show'
+                else
+                    render 'editTwo'
+                end
+            end
         else
-            render 'edit'
-        end
-        
-    end
-    
-    def updateTwo
-        @account = Account.find(current_user.id)
-        @pay = Pay.find_by_email(@account.email)
-
-        if @pay.update(pay_params)
-            
-        else
-            render 'editTwo'
+            render '/Error'
         end
         
     end

@@ -6,6 +6,8 @@ class CreatePays < ActiveRecord::Migration[5.2]
       t.integer :withdraw_credit
       t.integer :credit
       t.text :payid
+      t.boolean :add, default:false
+      t.text :paypal_email
       t.timestamps
     end
   end
