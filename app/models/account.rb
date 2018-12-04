@@ -7,7 +7,7 @@ class Account < ApplicationRecord
     validates :role, presence: true, :inclusion => {:in => ROLE_OPTIONS}
     validates :password, presence: true, confirmation:true, length: { minimum: 5 }
     
-    has_many :addresses
+    has_many :pickupaddresses
     before_create :encrypt_password
     before_create :confirmation_token
     before_validation :assign_role, on: :create
