@@ -161,17 +161,20 @@ class RequestController < ApplicationController
         #Already checked inside the modal
         #if !current_user
         #	render :json => {:status => 403}
-        #end
+		#end
+		
+
         item = Iten.find_by(id: params[:item_id])
         puts params.inspect
 		@request = Request.new()
 		@request.item_id = params[:item_id]
 		@request.borrower = current_user.email
-		@request.address = params[:address]
-		@request.rejected_reason = params[:rejected_reason]
+		#@request.address = params[:address]
+		#@request.rejected_reason = params[:rejected_reason]
         @request.time_start = params[:time_start]
         @request.time_end = params[:time_end]
-        
+		
+
         
         #check if borrower rate is high enough
         #borrower rate = all feedback_to_borrowers where the requests have (borrower = current user)
@@ -182,18 +185,21 @@ class RequestController < ApplicationController
         puts (current_rating[0]["rate"])
         puts item.rate_level
         puts "!!!!!!!!!"
-        
-        if (current_rating[0]["rate"]== nil or (current_rating[0]["rate"] < item.rate_level))
-            
-            flash[:error] = "Sorry... Your rating is not high enough for this item."
-            redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
-		elsif(current_credit[current_credit.length-1]["credit"]==nil or current_credit[current_credit.length-1]["credit"]<item.deposit)
+		puts "======================"
+		puts current_rating[0]["rate"]
+        #if (current_rating[0]["rate"]== nil or (current_rating[0]["rate"] < item.rate_level))
+		#	puts "2"
+        #    flash[:error] = "Sorry... Your rating is not high enough for this item."
+        #    redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
+		if(current_credit[current_credit.length-1]["credit"]==nil or current_credit[current_credit.length-1]["credit"]<item.deposit)
+
 			flash[:error] = "Sorry... Your remaining credit is not high enough for the deposit of this item."
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
-		elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
+		elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id], status: "pending"))
             flash[:error] = "Cannot submit multiple requests for an item!"
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
+
 			payment_create = Pay.new()
 			payment_create.email = current_user.email
 			payment_create.credit = current_credit[current_credit.length-1]["credit"] - item.deposit
@@ -237,7 +243,7 @@ class RequestController < ApplicationController
 			entry.update( :status => 'cancelled')
 			deposit = Iten.find(entry.item_id)["deposit"]
 			payment_entry = Pay.where(:email => current_user.email)
-			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + item.deposit)
+			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + deposit)
 			##### email sent to borrower for status update ######
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
@@ -254,7 +260,7 @@ class RequestController < ApplicationController
 			entry.update( :status => 'rejected', :rejected_reason => params[:reason])
 			deposit = Iten.find(entry.item_id)["deposit"]
 			payment_entry = Pay.where(:email => current_user.email)
-			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + item.deposit)
+			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + deposit)
 			##### email sent to borrower for status update ######
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
@@ -263,16 +269,19 @@ class RequestController < ApplicationController
 		when 'complete'
 			###################################################
 			# Deposit Calculation and Payback
-			
+			puts "1"
+			entry = Request.find(params[:id])
 			deposit = Iten.find(entry.item_id)["deposit"]
 			payment_entry_borrower = Pay.where(:email => current_user.email)
-			payment_entry_borrower.update( :credit => payment_entry_borrower[payment_entry_borrower.length-1]["credit"] + (item.deposit))
-
+			payment_entry_borrower.update( :credit => payment_entry_borrower[payment_entry_borrower.length-1]["credit"] + (deposit))
+			puts "2"
 			payment_entry_lender = Pay.where(:email => Iten.find(entry.item_id)["owner"])
-			payment_entry_lender.update( :credit => payment_entry_lender[payment_entry_lender.length-1]["credit"] + (item.deposit))
+			payment_entry_lender.update( :credit => payment_entry_lender[payment_entry_lender.length-1]["credit"] + (deposit))
 			###################################################
+			puts "3"
 			entry = Request.find(params[:id])
-			entry.update( :status => 'completed')
+			entry.update( :returned => true, :status => 'completed')
+			puts "4"
 			render :json => {:status => 200}
 		when 'receive'
 			entry = Request.find(params[:id])
@@ -280,7 +289,8 @@ class RequestController < ApplicationController
 			render :json => {:status => 200}
 		when 'return'
 			entry = Request.find(params[:id])
-			entry.update( :returned => false)
+			entry.update( :returned => true)
+			
 			render :json => {:status => 200}
 		else
 			render :json => {:status => 404}

@@ -79,7 +79,12 @@ class ItensController < ApplicationController
 			search_byISBN_lenderEmail.each { |x|
 				search_byISBN_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
 				temp = ActiveRecord::Base.connection.exec_query("SELECT Itens.owner, AVG(Feedback_to_lenders.rate) AS \"average\" FROM Feedback_to_lenders, Requests, Itens WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Itens.id AND Itens.owner = '"+x["email"]+"';")
-				search_byISBN_lenderAVG[x["id"]] = temp[0]["average"]
+				
+				if(temp.length > 0)
+					search_byISBN_lenderAVG[x["id"]] = temp[0]["average"]
+				else
+					search_byISBN_lenderAVG[x["id"]] = "-"
+				end
 			}
 		end
 
@@ -89,18 +94,24 @@ class ItensController < ApplicationController
 		#end
 
 		# Situation 3: Name & Brand
-		search_byItenNameAndBrand = ActiveRecord::Base.connection.exec_query("SELECT Pickupaddresses.postal_code AS \"postcode\", Profiles.email, Profiles.avatar_url AS \"ownerPhoto\", Itens.condition AS \"itemCondition\", Itens.id AS \"itemID\", Itens.name, Itens.rate_level AS \"minRate\", Itens.photo_url AS \"itemPhoto\", Profiles.display_name AS \"ownerName\", Accounts.id AS \"ownerID\" FROM Itens, Profiles, Accounts, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Itens.owner = Profiles.email AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%'));")
-		search_byItenNameAndBrand_history = ActiveRecord::Base.connection.exec_query("SELECT Itens.id AS \"itemID\", COUNT(*) AS \"count\" FROM Requests, Itens, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Requests.item_id = Itens.id AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%')) GROUP BY Itens.id;")
-		search_byItenNameAndBrand_lenderEmail = ActiveRecord::Base.connection.exec_query("SELECT Profiles.email, Accounts.id FROM Itens, Profiles, Accounts, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Itens.owner = Profiles.email AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%'));")
-		search_byItenNameAndBrand_lenderAvatar = Hash.new
-		search_byItenNameAndBrand_lenderAVG = Hash.new
-		search_byItenNameAndBrand_lenderEmail.each { |x|
-			search_byItenNameAndBrand_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
+		search_byItemNameAndBrand = ActiveRecord::Base.connection.exec_query("SELECT Pickupaddresses.postal_code AS \"postcode\", Profiles.email, Profiles.avatar_url AS \"ownerPhoto\", Itens.condition AS \"itemCondition\", Itens.id AS \"itemID\", Itens.name, Itens.rate_level AS \"minRate\", Itens.photo_url AS \"itemPhoto\", Profiles.display_name AS \"ownerName\", Accounts.id AS \"ownerID\" FROM Itens, Profiles, Accounts, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Itens.owner = Profiles.email AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%'));")
+		search_byItemNameAndBrand_history = ActiveRecord::Base.connection.exec_query("SELECT Itens.id AS \"itemID\", COUNT(*) AS \"count\" FROM Requests, Itens, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Requests.item_id = Itens.id AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%')) GROUP BY Itens.id;")
+		search_byItemNameAndBrand_lenderEmail = ActiveRecord::Base.connection.exec_query("SELECT Profiles.email, Accounts.id FROM Itens, Profiles, Accounts, Pickupaddresses WHERE Itens.address = Pickupaddresses.id AND Pickupaddresses.city = '"+city+"' AND Pickupaddresses.province = '"+province+"' AND Pickupaddresses.country = '"+country+"' AND Accounts.email = Profiles.email AND Itens.owner = Profiles.email AND (LOWER(Itens.name) LIKE LOWER('%"+keyword+"%') OR LOWER(Itens.brand) = LOWER('%"+keyword+"%'));")
+		search_byItemNameAndBrand_lenderAvatar = Hash.new
+		search_byItemNameAndBrand_lenderAVG = Hash.new
+		search_byItemNameAndBrand_lenderEmail.each { |x|
+			search_byItemNameAndBrand_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
 			temp = ActiveRecord::Base.connection.exec_query("SELECT Itens.owner, AVG(Feedback_to_lenders.rate) AS \"average\" FROM Feedback_to_lenders, Requests, Itens WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Itens.id AND Itens.owner = '"+x["email"]+"' GROUP BY Itens.owner;")
-			search_byItenNameAndBrand_lenderAVG[x["id"]] = temp[0]["average"]
+			if(temp.length>0)
+				search_byItemNameAndBrand_lenderAVG[x["id"]] = temp[0]["average"]
+			else
+				search_byItemNameAndBrand_lenderAVG[x["id"]] = "-"
+			end
+				
+
 		}
 		
-		if(:search_byItenNameAndBrand.size==0)
+		if(:search_byItemNameAndBrand.size==0)
 			require 'gingerice'
 			parser = Gingerice::Parser.new
 			correction = parser.parse(keyword)
@@ -113,11 +124,16 @@ class ItensController < ApplicationController
 			search_byCorrection_lenderEmail.each { |x|
 				search_byCorrection_lenderAvatar[x["id"]] = url_for(Profile.find_by_email(x["email"]).avatar)
 				temp = ActiveRecord::Base.connection.exec_query("SELECT Itens.owner, AVG(Feedback_to_lenders.rate) AS \"average\" FROM Feedback_to_lenders, Requests, Itens WHERE Feedback_to_lenders.request_id = Requests.id AND Requests.item_id = Itens.id AND Itens.owner = '"+x["email"]+"' GROUP BY Itens.owner;")
-				search_byCorrection_lenderAVG[x["id"]] = temp[0]["average"]
+				
+				if(temp.length>0)
+					search_byCorrection_lenderAVG[x["id"]] = temp[0]["average"]
+				else
+					search_byCorrection_lenderAVG[x["id"]] = "-"
+				end
 			}
 		end
 		
-		render :json => {:status => 200, :given_city => city, :given_province => province, :given_country => country, :search_keyword => keyword, :result_userEmail => {display_photo: user_avatar, result: search_byUserEmail, borrowRate: search_byUserEmail_borrowRate, lendRate: search_byUserEmail_lendRate}, :result_itemISBN => search_byISBN, :result_itemNameBrand => search_byItenNameAndBrand, :corrected_keyword => correction_result, :result_correctedKeyword => search_byCorrection, :search_byISBN_requestsCount => search_byISBN_history, :search_byNameBrand_requestsCount => search_byItenNameAndBrand_history, :search_byCorrection_requestsCount => search_byCorrection_history, :search_byISBN_lenderPhoto => search_byISBN_lenderAvatar, :search_byItenNameAndBrand_lenderPhoto => search_byItenNameAndBrand_lenderAvatar, :search_byCorrection_lenderPhoto => search_byCorrection_lenderAvatar, :search_byItenNameAndBrand_lenderRate => search_byItenNameAndBrand_lenderAVG, :search_byISBN_lenderRate => search_byISBN_lenderAVG, :search_byCorrection_lenderRate => search_byCorrection_lenderAVG}
+		render :json => {:status => 200, :given_city => city, :given_province => province, :given_country => country, :search_keyword => keyword, :result_userEmail => {display_photo: user_avatar, result: search_byUserEmail, borrowRate: search_byUserEmail_borrowRate, lendRate: search_byUserEmail_lendRate}, :result_itemISBN => search_byISBN, :result_itemNameBrand => search_byItemNameAndBrand, :corrected_keyword => correction_result, :result_correctedKeyword => search_byCorrection, :search_byISBN_requestsCount => search_byISBN_history, :search_byNameBrand_requestsCount => search_byItemNameAndBrand_history, :search_byCorrection_requestsCount => search_byCorrection_history, :search_byISBN_lenderPhoto => search_byISBN_lenderAvatar, :search_byItemNameAndBrand_lenderPhoto => search_byItemNameAndBrand_lenderAvatar, :search_byCorrection_lenderPhoto => search_byCorrection_lenderAvatar, :search_byItemNameAndBrand_lenderRate => search_byItemNameAndBrand_lenderAVG, :search_byISBN_lenderRate => search_byISBN_lenderAVG, :search_byCorrection_lenderRate => search_byCorrection_lenderAVG}
 	end
 
 	def unavailable_time

@@ -91,6 +91,8 @@ $(document).ready(function() {
       }
     }
 
+		console.log(data)
+
     if (data.pending_request === null || data.pending_request.length === 0) {
       $("#pending_requests_section").empty();
       $("#pending_requests_section").append(

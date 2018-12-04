@@ -140,7 +140,7 @@ class AccountsController < ApplicationController
 
 		borrowed_item_list = ActiveRecord::Base.connection.exec_query("SELECT Profiles.display_name AS \"lenderName\", Requests.time_end AS \"endDate\", Itens.name AS \"itemName\" FROM Requests, Itens, Profiles WHERE Requests.borrower = '"+current_user.email+"' AND Itens.id = Requests.item_id AND Itens.owner = Profiles.email AND Requests.status = 'accepted' AND Requests.received = 'true' AND Requests.returned = 'false';")
 		
-		pending_request_list = ActiveRecord::Base.connection.exec_query("SELECT Profiles.display_name AS \"borrowerName\", Requests.id AS \"requestID\", Requests.time_start AS \"startDate\", Requests.time_end AS \"endDate\", Itens.name AS \"itemName\" FROM Requests, Itens, Profiles WHERE Itens.owner = '"+current_user.email+"' AND Itens.id = Requests.item_id AND Requests.borrower = Profiles.email AND Requests.status = 'Pending';")
+		pending_request_list = ActiveRecord::Base.connection.exec_query("SELECT Profiles.display_name AS \"borrowerName\", Requests.id AS \"requestID\", Requests.time_start AS \"startDate\", Requests.time_end AS \"endDate\", Itens.name AS \"itemName\" FROM Requests, Itens, Profiles WHERE Itens.owner = '"+current_user.email+"' AND Itens.id = Requests.item_id AND Requests.borrower = Profiles.email AND Requests.status = 'pending';")
 
 		render :json => {:status => 200, :display_name => display_name[0]["display_name"], :borrower_rate => borrower_rate[0]["borrower_avg"], :credit => current_credit[current_credit.length-1]["credit"], :lender_rate => lender_rate[0]["lender_avg"], :lended_item => lended_item_list, :pending_request => pending_request_list, :borrowed_item => borrowed_item_list}
 	end

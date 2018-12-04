@@ -251,7 +251,7 @@ let item_render = itemList => {
             itemList.result_itemISBN[i].ownerID
           ];
       document.getElementById("itemISBN_section_content").innerHTML +=
-        '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
+        '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/itens/' +
         itemList.result_itemISBN[i].itemID +
         '\'"><img class="card-img-top img-thumbnail" style="width:100%;height:250px; border-top-width: 0px; border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;" src="' +
         itemList.result_itemISBN[i].itemPhoto +
@@ -272,7 +272,7 @@ let item_render = itemList => {
         itemList.result_itemISBN[i].ownerName +
         "</label>" +
         '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-        parseFloat(lenderRate).toFixed(1) +
+        (lenderRate=="-" ? "-" : parseFloat(lenderRate).toFixed(1)) +
         "</label></span></div></div></div>";
       totalCount++;
     }
@@ -304,7 +304,7 @@ let item_render = itemList => {
         );
         if (temp.length > 0) history_count = temp[0]["count"];
       }
-      let lenderRate = 0;
+			let lenderRate = 0;
       if (itemList.search_byItemNameAndBrand_lenderRate !== null)
         lenderRate =
           itemList.search_byItemNameAndBrand_lenderRate[
@@ -312,7 +312,7 @@ let item_render = itemList => {
 					];
 			console.log(lenderRate.toString())
       document.getElementById("itemNameBrand_section_content").innerHTML +=
-        '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
+        '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/itens/' +
         itemList.result_itemNameBrand[i].itemID +
         '\'"><img class="card-img-top img-thumbnail" style="width:100%;height:250px; border-top-width: 0px; border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;" src="' +
         itemList.result_itemNameBrand[i].itemPhoto +
@@ -333,7 +333,7 @@ let item_render = itemList => {
         itemList.result_itemNameBrand[i].ownerName +
         "</label>" +
         '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-        parseFloat(lenderRate).toFixed(1) +
+        (lenderRate=="-" ? "-" : parseFloat(lenderRate).toFixed(1)) +
         "</label></span></div></div></div>";
       totalCount++;
     }
@@ -374,7 +374,7 @@ let item_render = itemList => {
               itemList.result_correctedKeyword[i].ownerID
             ];
         document.getElementById("corrected_results_section_content").innerHTML +=
-          '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/items/' +
+          '<div class="col-lg-3 col-md-4 col-sm-6"><div class="card"><span class="item_detail_span" style="cursor:pointer" onclick="location.href = \'/itens/' +
           itemList.result_correctedKeyword[i].itemID +
           '\'"><img class="card-img-top img-thumbnail" style="width:100%;height:250px; border-top-width: 0px; border-right-width: 0px;border-bottom-width: 0px;border-left-width: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;" src="' +
           itemList.result_correctedKeyword[i].itemPhoto +
@@ -395,7 +395,7 @@ let item_render = itemList => {
           itemList.result_correctedKeyword[i].ownerName +
           "</label>" +
           '<label class="pull-right text-warning" style="margin-top:1.5px;"><i class="fa fa-star"></i> ' +
-          parseFloat(lenderRate).toFixed(1) +
+          (lenderRate=="-" ? "-" : parseFloat(lenderRate).toFixed(1)) +
           "</label></span></div></div></div>";
         totalCount++;
       }
