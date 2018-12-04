@@ -13,6 +13,7 @@ const condition_pill = {
     '<span class="badge badge-dark" style="position:absolute;z-index:100;right:10px;top:10px;">Defective</span>'
 };
 
+/* Referenced to: https://gist.github.com/mshafrir/2646763 */
 const state_lookup = {
   AL: "Alabama",
   AK: "Alaska",
