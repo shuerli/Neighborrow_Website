@@ -127,7 +127,7 @@ $('#department-input').change(function () {
     itemId = curLoc[curLoc.length - 1];
 
 
-
+    
     var conditionList = document.getElementById('condition-input');
     var item_condition = conditionList.options[conditionList.selectedIndex].value;
 
@@ -161,6 +161,13 @@ $('#department-input').change(function () {
                     postal_code: $('#postalcode-input').val(),
                 }
           }).done(function(addressInfo){
+              var img;
+              if (!new_photo){
+                  img = null;
+              }
+              else{
+                  img = url.substr(url.indexOf('/uploads'));
+              }
                             $.ajax({
                             url: "/user_item/edit",
                             method: "PUT",
@@ -173,7 +180,7 @@ $('#department-input').change(function () {
                                     condition: item_condition,
                                     time_start: sdate,
                                     time_end: edate,
-                                    photo_url: url.substr(url.indexOf('/uploads')),
+                                    photo_url: img,
                                     name: document.getElementById('item-name-input').value,
                                     description: document.getElementById('description-input').value,
                                     brand: document.getElementById('brand-input').value,
