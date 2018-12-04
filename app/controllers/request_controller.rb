@@ -177,7 +177,8 @@ class RequestController < ApplicationController
         #borrower rate = all feedback_to_borrowers where the requests have (borrower = current user)
 
         current_rating = ActiveRecord::Base.connection.exec_query("SELECT AVG(Feedback_to_borrowers.rate) AS \"rate\" FROM Feedback_to_borrowers, Requests, Accounts WHERE Accounts.id = #{current_user.id} AND Requests.borrower = Accounts.email AND Requests.id = Feedback_to_borrowers.request_id;");
-        
+		# Deposit check for item, if there's any
+		current_credit = Pay.where(:email => current_user.email)
         puts (current_rating[0]["rate"])
         puts item.rate_level
         puts "!!!!!!!!!"
@@ -186,10 +187,17 @@ class RequestController < ApplicationController
             
             flash[:error] = "Sorry... Your rating is not high enough for this item."
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
-        elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
+		elsif(current_credit[current_credit.length-1]["credit"]==nil or current_credit[current_credit.length-1]["credit"]<item.deposit)
+			flash[:error] = "Sorry... Your remaining credit is not high enough for the deposit of this item."
+            redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
+		elsif (Request.exists?(borrower: current_user.email, item_id: params[:item_id]))
             flash[:error] = "Cannot submit multiple requests for an item!"
             redirect_to :controller => "items" ,:action => "show", :id => params[:item_id]
 		elsif(@request.save!)
+			payment_create = Pay.new()
+			payment_create.email = current_user.email
+			payment_create.credit = current_credit[current_credit.length-1]["credit"] - item.deposit
+			payment_create.save 
 			################################### send email to lender ###################################
 			query = "SELECT Itens.owner FROM Requests, Itens WHERE Requests.id = #{@request.id} AND Requests.item_id = Itens.id;"
 			lender_email = ActiveRecord::Base.connection.exec_query(query)
@@ -227,6 +235,9 @@ class RequestController < ApplicationController
 		when 'cancel'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'cancelled')
+			deposit = Iten.find(entry.item_id)["deposit"]
+			payment_entry = Pay.where(:email => current_user.email)
+			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + item.deposit)
 			##### email sent to borrower for status update ######
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
@@ -241,12 +252,25 @@ class RequestController < ApplicationController
 		when 'reject'
 			entry = Request.find(params[:id])
 			entry.update( :status => 'rejected', :rejected_reason => params[:reason])
+			deposit = Iten.find(entry.item_id)["deposit"]
+			payment_entry = Pay.where(:email => current_user.email)
+			payment_entry.update( :credit => payment_entry[payment_entry.length-1]["credit"] + item.deposit)
 			##### email sent to borrower for status update ######
 			borrower_email = Request.find(params[:id]).borrower
 			@account = Account.find_by(email: borrower_email)
             AccountMailer.status_update(@account).deliver
 			render :json => {:status => 200}
 		when 'complete'
+			###################################################
+			# Deposit Calculation and Payback
+			
+			deposit = Iten.find(entry.item_id)["deposit"]
+			payment_entry_borrower = Pay.where(:email => current_user.email)
+			payment_entry_borrower.update( :credit => payment_entry_borrower[payment_entry_borrower.length-1]["credit"] + (item.deposit))
+
+			payment_entry_lender = Pay.where(:email => Iten.find(entry.item_id)["owner"])
+			payment_entry_lender.update( :credit => payment_entry_lender[payment_entry_lender.length-1]["credit"] + (item.deposit))
+			###################################################
 			entry = Request.find(params[:id])
 			entry.update( :status => 'completed')
 			render :json => {:status => 200}
