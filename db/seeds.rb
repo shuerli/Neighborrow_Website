@@ -42,7 +42,8 @@ pickupaddresses = Pickupaddress.create!([
 							{email:'raymondfzy@gmail.com', address_line1: '907-222 Elm Street', city:'Toronto', province:'Ontario', country: 'Canada', postal_code:'M5T 1K5'},
 							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '510-200 Elm Street', city:'Toronto', province:'Ontario', country: 'Canada', postal_code:'M5T 1K4'},
 							{email:'raymondfzy@gmail.com', address_line1: '2058 Ellesmere Rd', city:'Scarborough', province:'Ontario', country: 'Canada', postal_code:'M1H 2V6'},
-							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '2055 Ellesmere Rd', city:'Scarborough', province:'Ontario', country: 'Canada', postal_code:'M1H 2V6'}
+							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '2055 Ellesmere Rd', city:'Scarborough', province:'Ontario', country: 'Canada', postal_code:'M1H 2V6'},
+							{email:'raymondfzy@gmail.com', address_line1: 'Wellington St', city:'Ottawa', province:'Ontario', country: 'Canada', postal_code:'K1A 0A9'},
 							])
 
 departments = Department.create([
@@ -151,7 +152,7 @@ itens = Iten.create!([
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-25 00:00:00', 
+					time_end: '2019-02-25 00:00:00', 
 					name:'Assassin\'s Creed 4 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
 					brand:'Ubisoft',
@@ -159,13 +160,13 @@ itens = Iten.create!([
 					},
 
 					{category_id:'2',
-					address:3,
+					address:7,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/civ6.jpeg', 
 					condition:'Like New', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'Civilizaion 6 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.', 
 					brand:'2K Games',
@@ -179,7 +180,7 @@ itens = Iten.create!([
 					condition:'Like New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'Gears of War 4 digital version', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my account, so you can enjoy the game on my account and earn me some battle points. Please request it if you play A LOT.', 
 					brand:'Microsoft',
@@ -192,20 +193,20 @@ itens = Iten.create!([
 					condition:'Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'GTA 5', 
 					description:'Sharing my games during Christmas. Just remember don\'t start a new game cuz it will overwrite my saved game.', 
 					brand:'Rock Star',
 					deposit:15,},
 
 					{category_id:'2',
-					address:5,
+					address:7,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/MHWPC.jpeg', 
 					condition:'Brand New', 
 					rate_level: 5, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'Monster Hunter World in steam account', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my steam account, I will share my password once I accept your request, if you are able to clear stage 5 for me.', 
 					brand:'Capcom',
@@ -218,7 +219,7 @@ itens = Iten.create!([
 					condition:'Very Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'Plants VS Zombies GW2 PC', 
 					brand:'EA',
 					deposit:15,},
@@ -231,7 +232,7 @@ itens = Iten.create!([
 					condition:'Very Good', 
 					rate_level: 4, 
 					time_start:'2018-12-25 00:00:00', 
-					time_end: '2019-01-15 00:00:00', 
+					time_end: '2019-02-15 00:00:00', 
 					name:'Plants VS Zombies GW2 on ps4', 
 					description:'You can play local games with your friend(split screen mode), but online play will require your own psn subscription.',
 					brand:'EA',
@@ -264,7 +265,7 @@ itens = Iten.create!([
 					deposit:15,},
 
 					{category_id:'3',
-					address:5,
+					address:7,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/GBC.jpeg', 
 					condition:'Adequate', 
@@ -846,23 +847,25 @@ itens = Iten.create!([
                    
 
 requests = Request.create([
-		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'accepted'},
-		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-11 00:00:00',status:'accepted'},
-		{item_id:1, borrower:'qingqing.zhuo@mail.utoronto.ca', time_start:'2018-01-20 00:00:00', time_end:'2018-01-23 00:00:00',status:'accepted'},
+		{item_id:1, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'completed',received:'true',returned:'true'},
+		{item_id:2, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-16 00:00:00',status:'completed',received:'true',returned:'true'},
+		{item_id:3, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-20 00:00:00', time_end:'2018-01-23 00:00:00',status:'accepted'},
+		{item_id:4, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'pending'},
+		{item_id:5, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-11 00:00:00',status:'pending'},
+		{item_id:6, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'rejected'},
+		{item_id:7, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-11 00:00:00',status:'accepted'},
 	])
 
 
 feedbackToBorrowers = FeedbackToBorrower.create([
 		{request_id:1, rate:4, credit:4, comment:'good'},
-		{request_id:8, rate:4, credit:4, comment:'good 2'},
-		{request_id:12, rate:5, credit:4}
+		{request_id:2, rate:4, credit:4, comment:'Very good, best experience in my life'},
 	])
 
 
 feedbackToLenders = FeedbackToLender.create([
  		{request_id:1, rate:5, credit:2, comment:'This lender is great'},
-		{request_id:8, rate:3, credit:2, comment:'That lender is great 2'},
-		{request_id:12, rate:3, credit:4}
+		{request_id:1, rate:3, credit:2, comment:'Very good.'},
 	])
 
 
