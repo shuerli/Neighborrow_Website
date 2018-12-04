@@ -89,7 +89,7 @@ class PaysController < ApplicationController
                                    :email => "sixneighborrow-facilitator@gmail.com"
                                    },
                                    
-                                   # Item List
+                                   # Iten List
                                    :item_list => {
                                    :items => [{
                                    :name => "item",
