@@ -865,7 +865,7 @@ feedbackToBorrowers = FeedbackToBorrower.create([
 
 feedbackToLenders = FeedbackToLender.create([
  		{request_id:1, rate:5, credit:2, comment:'This lender is great'},
-		{request_id:1, rate:3, credit:2, comment:'Very good.'},
+		{request_id:1, rate:3, credit:2, comment:'The lender is very nice, he even delivered the item to me.'},
 	])
 
 
