@@ -67,7 +67,15 @@
 <strong class="text-muted">Top Up Your Credit</strong>
 </div>
 <div class="card-body">
-
+<% flash.each do |key, value| %>
+<div id="error_explanation">
+<div class="alert alert-<%= key %>">
+<ul>
+<li><%= content_tag :div, value, class: "flash #{key}" %></li>
+</ul>
+</div>
+</div>
+<% end %>
 <%= form_for @pay, url:pay_path do |f| %>
 
 <div class="form-group">
@@ -75,10 +83,14 @@
 <%= @pay.credit %>
 </div>
 
+<div class="form-group">
+<label>Currently we only support PayPal. Please enter your PayPal email address to receive the payment:</label>
+<%= f.text_field :paypal_email, class: 'form-control', required: 'required', type: 'email'   %>
+</div>
 
 <div class="form-group">
 <label>Enter the amount of credits you want to withdraw below (1 dollar = 1 credit):</label>
-<%= f.text_field :withdraw_credit, class: 'form-control' %>
+<%= f.text_field :withdraw_credit, class: 'form-control', required: 'required' %>
 </div>
 
 
