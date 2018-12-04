@@ -145,7 +145,7 @@ categories = Category.create([
 
 itens = Iten.create!([
 					{category_id:'2',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com',
 					status:'lent', 
 					photo_url:'/assets/img/Video Games/Assassin.jpeg', 
@@ -174,7 +174,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'2',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/GoW4.jpeg', 
 					condition:'Like New', 
@@ -226,7 +226,7 @@ itens = Iten.create!([
 					
 
 					{category_id:'3',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/PVZGW2PS4.jpeg', 
 					condition:'Very Good', 
@@ -239,7 +239,7 @@ itens = Iten.create!([
 					deposit:19,},
 
 					{category_id:'3',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/Tokiden2.jpeg', 
 					condition:'Good', 
@@ -278,7 +278,7 @@ itens = Iten.create!([
 					deposit:15,},
 
 					{category_id:'4',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/Xbox360motion.jpeg', 
 					condition:'Very Good', 
@@ -291,7 +291,7 @@ itens = Iten.create!([
 					deposit:15,},
 
 					{category_id:'4',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Video Games/SwitchPro.jpeg', 
 					condition:'Good', 
@@ -316,7 +316,7 @@ itens = Iten.create!([
 					deposit:15,},
 
 					{category_id:'5',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/1styear.jpeg', 
 					condition:'Defective', 
@@ -341,7 +341,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'5',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/chinese.jpeg', 
 					condition:'Adequate', 
@@ -354,7 +354,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'5',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/medphy.jpeg', 
 					condition:'Very Good', 
@@ -366,7 +366,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'6',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/green.jpeg', 
 					condition:'Good', 
@@ -378,7 +378,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'6',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/green2.jpeg', 
 					condition:'Good', 
@@ -401,7 +401,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'6',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/doraeng.jpeg', 
 					condition:'Very Good', 
@@ -426,7 +426,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'8',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Books/narutostick.jpeg', 
 					condition:'Good', 
@@ -474,7 +474,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'10',
-					address:1,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/atlan.jpeg', 
 					condition:'Good', 
@@ -487,7 +487,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'10',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/captain.jpeg', 
 					condition:'Very Good', 
@@ -500,7 +500,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'10',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/jonah.jpeg', 
 					condition:'Good', 
@@ -512,7 +512,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'11',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/MusicMovie/12strong.jpeg', 
 					condition:'Brand New', 
@@ -524,7 +524,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'13',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/printer.jpeg', 
 					condition:'Like New', 
@@ -537,7 +537,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'13',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/pprinter.jpeg', 
 					condition:'Like New', 
@@ -550,7 +550,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'13',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/scanner.jpeg', 
 					condition:'Brand New', 
@@ -563,7 +563,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'14',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/gtx1080.jpeg', 
 					condition:'Like New', 
@@ -576,7 +576,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'14',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/keyboard.jpeg', 
 					condition:'Like New', 
@@ -589,7 +589,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'14',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Electronics/headset.jpeg', 
 					condition:'Defective', 
@@ -602,7 +602,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'19',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/organizer.jpeg', 
 					condition:'Good', 
@@ -614,7 +614,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'19',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/shed.jpeg', 
 					condition:'Good', 
@@ -626,7 +626,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'19',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/vacuum.jpeg', 
 					condition:'Good', 
@@ -638,7 +638,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'20',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/rice.jpeg', 
 					condition:'Very Good', 
@@ -652,7 +652,7 @@ itens = Iten.create!([
 
 
 					{category_id:'22',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/garden1.jpeg', 
 					condition:'Good', 
@@ -664,7 +664,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'22',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/garden2.jpeg', 
 					condition:'Good', 
@@ -676,7 +676,7 @@ itens = Iten.create!([
 
 					},
 					{category_id:'22',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/farm.jpeg', 
 					condition:'Good', 
@@ -688,7 +688,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'23',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/bob.jpeg', 
 					condition:'Brand New', 
@@ -700,7 +700,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'23',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/dogbed.jpeg', 
 					condition:'Good', 
@@ -712,7 +712,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'23',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/cage.jpeg', 
 					condition:'Very Good', 
@@ -724,7 +724,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'24',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/christree.jpeg', 
 					condition:'Good', 
@@ -735,7 +735,7 @@ itens = Iten.create!([
 					description:'My new place is tight in space to keep it, have it as long as you want',
 					},
 					{category_id:'24',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/halo.jpeg', 
 					condition:'Very Good', 
@@ -746,7 +746,7 @@ itens = Iten.create!([
 					description:'Good for everyday decoration as well, you can take one or take all, depends on you',
 					},
 					{category_id:'24',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/HGPT/hlw.jpeg', 
 					condition:'Good', 
@@ -758,7 +758,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'27',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/doratoy.jpeg', 
 					condition:'Adequate', 
@@ -770,7 +770,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'27',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/nrtmodel.jpeg', 
 					condition:'Good', 
@@ -783,7 +783,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'27',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/ygh.jpeg', 
 					condition:'Very Good', 
@@ -796,7 +796,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'27',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/yghmodel.jpeg', 
 					condition:'Very Good', 
@@ -808,7 +808,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'28',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/cradle.jpeg', 
 					condition:'Good', 
@@ -820,7 +820,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'28',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/cradle2.jpeg', 
 					condition:'Good', 
@@ -831,7 +831,7 @@ itens = Iten.create!([
 					},
 
 					{category_id:'28',
-					address:5,
+					address:3,
 					owner:'raymondfzy@gmail.com', 
 					photo_url:'/assets/img/Kids/carseat.jpeg', 
 					condition:'Very Good', 
