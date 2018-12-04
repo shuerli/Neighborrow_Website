@@ -2,15 +2,18 @@ $(document).ready(function() {
   $.get("/userdashboard_initialize", function(data) {
     if (data.status === 404) window.location("/404");
     else if (data.status === 403) window.location("/login");
-    console.log(data);
 
-    if (data.borrower_credit === null) {
-      data.borrower_credit = 0;
-    }
-    if (data.lender_credit === null) {
-      data.lender_credit = 0;
-    }
-    $("#main_credit").text(data.borrower_credit + data.lender_credit);
+		
+		let final_credit = 0;
+		if (data.credit===null || data.credit===undefined || isNaN(data.credit)) {
+      final_credit = 0;
+		}
+		else{
+			final_credit = data.credit;
+		}
+
+		document.getElementById("main_credit").innerText = final_credit;
+		
 		$("#dashboard-username").text(data.display_name)
     if (data.borrower_rate === null || data.borrower_rate === undefined)
       $("#main_rateBorrow").text("-");
