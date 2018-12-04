@@ -87,3 +87,4 @@ gem 'rails_admin', '~> 1.3'
 
 gem 'jquery-ui-rails'
 gem 'rails-controller-testing'
+gem 'rails_12factor', group: :production

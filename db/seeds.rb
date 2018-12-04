@@ -35,7 +35,7 @@ pays = Pay.create!([
                    {email:'qingqing.zhuo@mail.utoronto.ca'},
                    ])
 
-addresses = Pickupaddress.create!([
+pickupaddresses = Pickupaddress.create!([
 							#create three different addresses for an active user
 							{email:'raymondfzy@gmail.com', address_line1: '211-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
 							{email:'zikevin.wang@mail.utoronto.ca', address_line1: '601-325 South Park Rd', city:'Thornhill', province:'Ontario', country: 'Canada', postal_code:'L3T 0B8'},
