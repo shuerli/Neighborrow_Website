@@ -847,7 +847,7 @@ itens = Iten.create!([
                    
 
 requests = Request.create([
-		{item_id:1, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'completed',received:'true',returned:'true'},
+		{item_id:1, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'accepted',received:'true',returned:'true'},
 		{item_id:2, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-16 00:00:00',status:'completed',received:'true',returned:'true'},
 		{item_id:38, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'completed',received:'true',returned:'true'},
 		{item_id:3, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-20 00:00:00', time_end:'2018-01-23 00:00:00',status:'accepted'},

@@ -73,7 +73,7 @@ $(document).ready(function () {
                    itemId: data.result[i].id
                  }
            }).done(function(borrower) {
-              document.getElementById('btnMail').setAttribute('href', "mailto:"+ 'zikevin.wang@mail.utoronto.ca');
+              document.getElementById('btnMail').setAttribute('href', "mailto:"+ borrower.borrower);
             });
          }
     }
