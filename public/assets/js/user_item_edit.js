@@ -121,6 +121,8 @@ $('#department-input').change(function () {
 });
 
  function btnSave(){
+    
+
     curLoc = window.location.href.split("/");
     itemId = curLoc[curLoc.length - 1];
 
@@ -164,6 +166,8 @@ $('#department-input').change(function () {
                             method: "PUT",
                             data: { 
                                     authenticity_token: window._token,
+                                    remove_photo: remove_photo,
+                                    new_photo: new_photo,
                                     id: itemId,
                                     category_id: category_id,
                                     condition: item_condition,
@@ -178,7 +182,7 @@ $('#department-input').change(function () {
                             }).done(function(data){
                                 window.location = "http://localhost:3000/user_item/" + itemId;
                             }).fail(function(data){
-                                alert( "Item editing failed");
+                                alert( "Please fill all the empty forms!");
                             });
         });
       });
@@ -201,6 +205,13 @@ $('#department-input').change(function () {
     var result = confirm("Remove image?");
     if (result) {
         $('#existing-img').remove();
+        remove_photo = true;
         document.getElementById('media-dropzone').style.visibility = 'visible';
     }
  }
+
+ $('#media-dropzone').on('click', function(){
+    new_photo = true;
+ });
+ var remove_photo = false;
+ var new_photo = false;
