@@ -23,7 +23,7 @@ class FeedbackController < ApplicationController
 		entry.request_id = params[:request_id]
 		entry.rate = params[:rate].to_i
 		entry.comment = params[:comment]
-		entry.credit = 5
+		entry.credit = 0
 		entry.save 
 	end
 
@@ -32,7 +32,7 @@ class FeedbackController < ApplicationController
 		entry.request_id = params[:request_id]
 		entry.rate = params[:rate].to_i
 		entry.comment = params[:comment]
-		entry.credit = 5
+		entry.credit = 0
 		entry.save 
 	end
 

@@ -38,6 +38,9 @@ $(document).ready(function() {
 let appendSection = info => {
 	$("#list_section").empty();
 	console.log(info)
+	if(info.result.length===0){
+		$("#list_section").append('<div class="col-12 text-center"><hr><h5 class="text-muted">You haven\'t lended any item yet.</h5></div>');
+	}
   info.result.forEach(request => {
     // Cache every requests into a specific category based on their status
     if (filterOut_status[request.status]) return;
@@ -399,7 +402,7 @@ let appendSection = info => {
       request.name +
       '</h4> <h6 class="text-muted">Borrowed by <a id="user_name">' +
       info.borrowers.filter(x => x.request_id === request.id)[0].display_name +
-      '</a></h6> <small ><a href="/items/'+request.item_id+'" >View Item Detail</a ></small > | <small ><a href="/public_profiles/'+info.borrowers.filter(x => x.request_id === request.id)[0].account_id+'" >View Borrower Profile</a ></small > </div> </div> ' +
+      '</a></h6> <small ><a href="/itens/'+request.item_id+'" >View Item Detail</a ></small > | <small ><a href="/public_profiles/'+info.borrowers.filter(x => x.request_id === request.id)[0].account_id+'" >View Borrower Profile</a ></small > </div> </div> ' +
       "<hr />" +
       progressbar_section +
       '<div class="row" style="margin-top:15px;"> <div class="col-md-6"> <strong>Pick-up Location</strong><br /> <span id="pickup_location"></span> ' +
@@ -614,4 +617,18 @@ let reject_handler = request_id => {
     window.location = "/request_lended";
 	});
 	
+};
+
+let returned_item = request_id => {
+  $.ajax({
+    url: "/request",
+    method: "PUT",
+    data: {
+      authenticity_token: window._token,
+      id: request_id,
+      type: "complete"
+    }
+  }).done(function(data) {	
+			window.location = "/request_lended"
+  });
 };
