@@ -156,7 +156,7 @@ itens = Iten.create!([
 					name:'Assassin\'s Creed 4 CD', 
 					description:'I will share my games when I\'m away during Christmas. The game is in CD, you will need a disk reader to install and play it.',
 					brand:'Ubisoft',
-					deposit:15,
+					deposit:20,
 					},
 
 					{category_id:'2',
@@ -184,7 +184,7 @@ itens = Iten.create!([
 					name:'Gears of War 4 digital version', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my account, so you can enjoy the game on my account and earn me some battle points. Please request it if you play A LOT.', 
 					brand:'Microsoft',
-					deposit:15,},
+					deposit:30,},
 
 					{category_id:'2',
 					address:3,
@@ -197,7 +197,7 @@ itens = Iten.create!([
 					name:'GTA 5', 
 					description:'Sharing my games during Christmas. Just remember don\'t start a new game cuz it will overwrite my saved game.', 
 					brand:'Rock Star',
-					deposit:15,},
+					deposit:5,},
 
 					{category_id:'2',
 					address:7,
@@ -210,7 +210,7 @@ itens = Iten.create!([
 					name:'Monster Hunter World in steam account', 
 					description:'Sharing my games while I\'m away during Christmas. This game is in my steam account, I will share my password once I accept your request, if you are able to clear stage 5 for me.', 
 					brand:'Capcom',
-					deposit:15,},
+					deposit:18,},
 
 					{category_id:'2',
 					address:3,
@@ -222,7 +222,7 @@ itens = Iten.create!([
 					time_end: '2019-02-15 00:00:00', 
 					name:'Plants VS Zombies GW2 PC', 
 					brand:'EA',
-					deposit:15,},
+					deposit:9,},
 					
 
 					{category_id:'3',
@@ -236,7 +236,7 @@ itens = Iten.create!([
 					name:'Plants VS Zombies GW2 on ps4', 
 					description:'You can play local games with your friend(split screen mode), but online play will require your own psn subscription.',
 					brand:'EA',
-					deposit:15,},
+					deposit:19,},
 
 					{category_id:'3',
 					address:1,
@@ -849,6 +849,7 @@ itens = Iten.create!([
 requests = Request.create([
 		{item_id:1, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'completed',received:'true',returned:'true'},
 		{item_id:2, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-16 00:00:00',status:'completed',received:'true',returned:'true'},
+		{item_id:38, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'completed',received:'true',returned:'true'},
 		{item_id:3, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-20 00:00:00', time_end:'2018-01-23 00:00:00',status:'accepted'},
 		{item_id:4, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-12-28 00:00:00', time_end:'2018-12-30 00:00:00',status:'pending'},
 		{item_id:5, borrower:'zikevin.wang@mail.utoronto.ca', time_start:'2018-01-05 00:00:00', time_end:'2018-01-11 00:00:00',status:'pending'},
