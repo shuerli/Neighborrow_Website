@@ -91,6 +91,8 @@ class UserItemsController < ApplicationController
         @user_item.category_id = params[:category_id]
         @user_item.photo_url = params[:photo_url]
         @user_item.address = params[:address]
+        @user_item.deposit = params[:deposit]
+        @user_item.rate_level = params[:rate_level]
 
         if @user_item.save
              render :json => {:status => 200}
@@ -122,7 +124,8 @@ class UserItemsController < ApplicationController
         @user_item.brand = params[:brand]
         @user_item.category_id = params[:category_id]
         @user_item.address = params[:address]
-
+        @user_item.deposit = params[:deposit]
+        @user_item.rate_level = params[:rate_level]
         if params[:remove_photo] == 'true'
             @user_item.photo_url = nil
         end
