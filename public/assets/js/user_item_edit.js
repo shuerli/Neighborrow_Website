@@ -6,6 +6,10 @@ $(document).ready(function () {
     // Pull data from database for this item and prepare input fields
     $.get("/user_item/info/" + itemId, function (data) {
         itemInfo = data.result;
+
+        document.getElementById('deposit-input').value = itemInfo.deposit;
+        document.getElementById('rate-input').value = itemInfo.rate_level;
+        
         document.getElementById('item-img').src = itemInfo.photo_url;
         document.getElementById('item-name-input').value = itemInfo.name;
         if(itemInfo.brand != null){
