@@ -83,7 +83,7 @@ gem 'activestorage-validator'
 gem 'dropzonejs-rails'
 gem 'carrierwave'
 
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 
 gem 'jquery-ui-rails'
 gem 'rails-controller-testing'
